@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T05:54:19Z",
+  "generated_at": "2026-05-26T07:02:22Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
   "passed": 20,
@@ -73,7 +73,7 @@
     {
       "id": "social-preview",
       "passed": true,
-      "detail": "dimensions=(1600, 900)"
+      "detail": "dimensions=(1672, 941)"
     },
     {
       "id": "demo-gif",

@@ -20,7 +20,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `source-promotion-batch` | `pass` | selected=4 audited=4 runtime=2 static_smoke=2 |
 | `source-promotion-sandbox-cases` | `pass` | cases=3/3 required=13/13 configured_tests=264 |
 | `sandbox-runtime-matrix` | `pass` | cases=3/3 steps=12/12 |
-| `social-preview` | `pass` | dimensions=(1600, 900) |
+| `social-preview` | `pass` | dimensions=(1672, 941) |
 | `demo-gif` | `pass` | dimensions=(1200, 675) |
 | `issue-pr-templates` | `pass` | issue and PR templates include validation language |
 | `secret-and-metadata-scan` | `pass` | no generated metadata, local paths, or secret patterns |

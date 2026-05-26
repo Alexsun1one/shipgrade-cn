@@ -1,31 +1,87 @@
+<div align="center">
+
 # ShipGrade CN
 
-> An agent skill for Codex, Claude Code, and Cursor that turns vague requests into verified engineering delivery for Chinese-speaking teams.
+**A Chinese-first engineering delivery workbench for Codex, Claude Code, and Cursor.**
 
-Chinese version: [README.md](README.md)
+[中文](README.md) · [Quick Demo](#quick-demo) · [Install](#install-into-a-project) · [Evidence Index](docs/EVIDENCE_INDEX.md)
 
 [![Local verify](https://img.shields.io/badge/local%20verify-shipgrade__verify.py-2ea44f)](#release-preflight)
 [![Agents](https://img.shields.io/badge/agents-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
 [![Code license](https://img.shields.io/badge/code-MIT-blue)](LICENSE.md)
 [![Docs license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue)](NOTICE.md)
 
+</div>
+
+![ShipGrade CN function map](assets/shipgrade-hero-cn.png)
+
 ## What It Does
 
-ShipGrade CN installs a verifiable delivery workbench into any repository. Codex, Claude Code, and Cursor then work from the same goal, boundary, validation, and handoff rules.
+ShipGrade CN is a Chinese-first engineering delivery skill for AI coding agents. It is not a prompt pack. It installs repo-local files, quality gates, and verification scripts so Codex, Claude Code, and Cursor can work from the same contract.
 
-| Feature | What you get |
+Generated workbench:
+
+```text
+.shipgrade/task-brief.md   # goal, non-goal, evidence, acceptance
+.shipgrade/quality-gate.md # delivery constraints before completion
+.shipgrade/handoff.md      # result, proof, risk, next step
+AGENTS.md / CLAUDE.md / .cursor/rules/shipgrade.mdc
+```
+
+| Problem | What ShipGrade CN adds |
 | --- | --- |
-| Project workbench initialization | `.shipgrade/task-brief.md`, `quality-gate.md`, and `handoff.md`. |
-| Multi-agent rule wiring | `AGENTS.md`, `CLAUDE.md`, and Cursor rules generated from the same contract. |
-| Vague request compression | Goal, non-goal, evidence, acceptance criteria, risks, and the first implementation slice. |
-| Fake-completion rejection | `shipgrade_doctor.py` requires artifact paths and command or browser evidence. |
-| Distilled pattern kickoff | `shipgrade_patterns.py` turns Pattern/Task/Eval assets from real repositories into a task brief. |
-| Handoff after delivery | Result, validation proof, remaining risks, security boundary, and next action. |
-| Release preflight | `github_publish_preflight.py`, `shipgrade_verify.py`, GitHub Actions, and package scripts. |
+| The request is just "please fix this" | `.shipgrade/task-brief.md`: goal, non-goal, evidence, acceptance criteria, risk boundary, and first slice. |
+| Different agents read different rules | `AGENTS.md`, `CLAUDE.md`, and Cursor rules are generated from the same quality gate. |
+| The agent says "done" without proof | `shipgrade_doctor.py` rejects handoffs without artifact paths and command or browser evidence. |
+| You want to reuse strong engineering patterns | `shipgrade_patterns.py` turns real-repository Pattern/Task/Eval assets into a task brief. |
+| The next agent cannot continue | `.shipgrade/handoff.md` records result, validation proof, residual risk, security boundary, and next action. |
+| The repo needs to be public-ready | `github_publish_preflight.py`, `shipgrade_verify.py`, GitHub Actions, and evidence docs check the launch surface. |
+
+## Engineering Constraints
+
+ShipGrade CN gives agents delivery constraints, not tone preferences:
+
+| Constraint | Requirement |
+| --- | --- |
+| Goal | Define what this task must deliver before implementation starts. |
+| Non-goal | Name the modules, data, configs, and refactors that are out of scope. |
+| Evidence | Bind completion to file paths, commands, tests, browser checks, logs, or explicit manual checks. |
+| Safety | Do not copy secrets, tokens, cookies, sessions, private keys, browser profiles, or private source bodies. |
+| Source | Preserve source, license, applicability, and non-applicability when borrowing from public repos. |
+| Handoff | Leave enough result, proof, risk, and next-step context for another agent to continue. |
+
+## Why It Is Advanced
+
+| Prompt-pack habit | ShipGrade CN behavior |
+| --- | --- |
+| Longer instructions inside one chat | Repo-local files, quality gates, and runnable checks. |
+| Trust the model to self-police | `shipgrade_doctor.py` rejects unsupported completion claims. |
+| Works only in one agent session | Shared rules for Codex, Claude Code, and Cursor. |
+| Hard for beginners to apply | Chinese task briefs turn scope, risk, and acceptance into fillable structure. |
+| Hard for senior engineers to trust | Public claims map to evidence files, commands, and validation scripts. |
+| Copy surface patterns from famous repos | Convert strong practices into Pattern Briefs, Task Cards, and Evals. |
+
+## What It Borrows From
+
+| Source family | Borrowed idea | ShipGrade CN form |
+| --- | --- | --- |
+| GitHub Spec Kit / OpenSpec / Agent OS | spec-first, planning, tasks, acceptance gates | task brief + quality gate + pattern brief |
+| Addy Osmani Agent Skills / Matt Pocock skills | lifecycle skills, anti-rationalization, command surfaces | cross-agent skill structure |
+| Google Engineering Practices | review discipline, maintainability, testing | non-goals, evidence, validation, review boundary |
+| Karpathy-style training repos | minimal reproducibility, probes, metrics | demo, verify, release check |
+| OpenAI / Anthropic cookbooks | recipes, failure modes, eval thinking | Task Cards, Evals, doctor checks |
+| promptfoo / DeepEval | measurable model behavior | script-checkable handoff quality |
+| Rust RFC / Kubernetes KEP / OpenTelemetry spec | design docs, compatibility, stage gates | handoff, ADR habits, architecture constraints |
 
 ## Problem It Solves
 
-ShipGrade CN is not a prompt pack. It helps a user move from "please fix this" to a concrete delivery contract:
+ShipGrade CN is not a prompt pack. It helps Chinese-speaking teams turn everyday requests into a concrete engineering loop:
+
+```text
+vague request -> task brief -> smallest change -> validation proof -> handoff -> next agent
+```
+
+The delivery contract has six parts:
 
 1. goal
 2. non-goal
@@ -33,8 +89,6 @@ ShipGrade CN is not a prompt pack. It helps a user move from "please fix this" t
 4. acceptance criteria
 5. validation proof
 6. handoff for the next agent or future maintainer
-
-The project is written for Chinese-speaking workflows, but this file explains the package in English for reviewers, contributors, and global users.
 
 ## Quick Demo
 
@@ -120,24 +174,27 @@ CLAUDE.shipgrade.md
 .cursor/rules/shipgrade.mdc
 ```
 
-## Why It Is Credible: Repository Engineering Distillation Pipeline
+![ShipGrade terminal demo](assets/shipgrade-terminal-demo.png)
 
-The repository-engineering layer behind ShipGrade CN does not dump repositories into a model and hope it learns architecture. It treats repositories as engineering evidence and turns them into structured assets first:
+## How Different Users Use It
+
+| User | Short path | Advanced path |
+| --- | --- | --- |
+| Chinese-speaking beginner | Fill `.shipgrade/task-brief.md`, then ask the agent to follow project rules. | Run `shipgrade_doctor.py` before accepting the handoff. |
+| Builder | Use ShipGrade as the project workbench for every task. | Start common work from `--pattern` briefs distilled from stronger repositories. |
+| Senior reviewer | Review `SKILL.md`, quality gates, evidence docs, licenses, and preflight scripts. | Extend Pattern Cards, Task Cards, and Evals for the team. |
+
+![ShipGrade CN workflow](assets/shipgrade-loop.png)
+
+## Source Backbone: Repository Engineering Distillation Pipeline
+
+The distillation process is not the product promise; it is the sourcing discipline behind the skill. ShipGrade CN does not dump repositories into a model and hope it learns architecture. It turns public, license-reviewed repositories into reviewable engineering assets:
 
 ```text
 Repository -> Engineering Knowledge -> Task Data -> Eval -> RAG / SFT / DPO
 ```
 
-The model should not memorize source code. It should learn engineering judgment:
-
-- why a repository is layered the way it is
-- where module boundaries live
-- where a new feature should enter
-- where tests should be added
-- which designs are worth reusing
-- which failure modes should be avoided
-
-The full method is documented in `docs/repository-engineering-distillation-pipeline.md`.
+The output is what matters to users: task briefs, quality gates, doctor checks, pattern briefs, handoffs, and evals. The full method is documented in `docs/repository-engineering-distillation-pipeline.md`.
 
 ## Distilled Asset Types
 
@@ -208,18 +265,16 @@ ShipGrade CN gives agents a repeatable loop:
 | Is there runtime evidence? | Yes. Runtime and sandbox evidence live under `docs/`. |
 | Can the repo be released independently? | Yes. It includes local preflight, GitHub Actions, release packaging, issue templates, and license files. |
 
-## Source Influences
+## How Those Ideas Become Actions
 
-ShipGrade CN borrows engineering structure, not celebrity branding:
+The source influences land as runnable repository artifacts, not decorative citations:
 
-- Karpathy-style minimal reproducible training repos
-- Google engineering practices and style guides
-- GitHub Spec Kit, OpenSpec, and Agent OS
-- Matt Pocock-style skill organization
-- OpenAI and Anthropic cookbooks
-- promptfoo and DeepEval
-- Cline, Gemini CLI, opencode, Continue, and browser-use
-- Microsoft playbooks, Rust RFCs, Kubernetes KEPs, and OpenTelemetry specs
+- spec-first practice becomes `.shipgrade/task-brief.md`
+- review and test discipline becomes `.shipgrade/quality-gate.md`
+- eval thinking becomes `shipgrade_doctor.py`
+- multi-agent collaboration becomes shared `AGENTS.md`, `CLAUDE.md`, and Cursor rules
+- design-doc stage gates become `.shipgrade/handoff.md`
+- strong repository patterns become `tools/shipgrade_patterns.py brief`
 
 ## Document Map
 

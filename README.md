@@ -1,37 +1,93 @@
+<div align="center">
+
 # ShipGrade CN
 
-> 给 Codex、Claude Code、Cursor 用的中文工程交付技能包: 把一句模糊需求变成可执行、可验证、可接手的交付流程。
+**把中文口语需求变成 Codex / Claude Code / Cursor 都能执行、验证、接手的工程交付工作台。**
 
-英文版: [README.en.md](README.en.md)
+[English](README.en.md) · [快速开始](#5-分钟装进你的项目) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
 
 [![本地验证](https://img.shields.io/badge/本地验证-shipgrade__verify.py-2ea44f)](#发布前自检)
 [![适用工具](https://img.shields.io/badge/适用-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
 [![代码许可证](https://img.shields.io/badge/代码-MIT-blue)](LICENSE.md)
 [![文档许可证](https://img.shields.io/badge/文档-CC%20BY%204.0-blue)](NOTICE.md)
 
-## 它能做什么
-
-一句话: ShipGrade CN 给任意项目装一个“可验证交付工作台”,让 Codex、Claude Code、Cursor 按同一套目标、边界、验证和交接规则干活。
-
-| 功能 | 你会得到什么 |
-| --- | --- |
-| 初始化项目工作台 | `.shipgrade/task-brief.md`、`quality-gate.md`、`handoff.md`。 |
-| 接线多种 AI 编程工具 | 自动生成 `AGENTS.md`、`CLAUDE.md`、Cursor rule,让三个工具读同一套规则。 |
-| 把口语需求变成工程任务 | 目标、非目标、证据、验收标准、风险边界和第一刀切入点。 |
-| 拒绝“看起来好了”的假完成 | `shipgrade_doctor.py` 会要求具体文件路径、命令或浏览器证据。 |
-| 用蒸馏模式帮你开工 | `shipgrade_patterns.py` 把真实仓库提炼出的 Pattern/Task/Eval 变成任务 brief。 |
-| 交付后可接手 | handoff 会留下结果、验证、剩余风险、安全边界和下一步。 |
-| 发布前自检 | `github_publish_preflight.py`、`shipgrade_verify.py`、GitHub Actions 和发布包脚本。 |
+</div>
 
 ![ShipGrade CN function map](assets/shipgrade-hero-cn.png)
 
+## 它到底是做什么的
+
+ShipGrade CN 是一个面向中文项目的 **AI 工程交付 skill**。它不是“更会哄模型的提示词”,而是把 Codex、Claude Code、Cursor 的工作方式约束成一套可运行的工程契约。
+
+它会在你的项目里生成一套工作台:
+
+```text
+.shipgrade/task-brief.md   # 需求、目标、非目标、证据、验收
+.shipgrade/quality-gate.md # 交付前必须满足的质量门
+.shipgrade/handoff.md      # 结果、验证、风险、下一步
+AGENTS.md / CLAUDE.md / .cursor/rules/shipgrade.mdc
+```
+
+有了这套工作台,AI 编程助手不再只回答“看起来好了”,而是必须按同一份目标、边界、证据和接手规则交付。
+
+## 它能帮你完成什么
+
+| 场景 | 你得到的能力 |
+| --- | --- |
+| 新项目开工 | 把一句口语需求压成 task brief: 目标、非目标、验收标准、风险边界和第一刀切入点。 |
+| 多 Agent 协作 | 同时接入 Codex、Claude Code、Cursor,三个工具读同一套规则,避免各说各话。 |
+| 防止假完成 | `shipgrade_doctor.py` 会拒绝没有文件路径、命令输出、浏览器证据或日志证据的交付说明。 |
+| 复杂任务切入 | `shipgrade_patterns.py` 可以把高信源工程模式写成 `pattern-brief.md`,让 agent 从正确切口开工。 |
+| 交付后接手 | `handoff.md` 固定留下结果、验证、剩余风险、安全边界和下一步,下一位 agent 能继续。 |
+| 公开发布 | preflight、verify、GitHub Actions、证据索引、许可证边界一起检查,避免 README 只会喊口号。 |
+
+## 工程约束是什么
+
+ShipGrade CN 给 agent 套的不是风格偏好,而是交付约束:
+
+| 约束 | 要求 |
+| --- | --- |
+| 目标约束 | 先写清楚这次交付什么,不允许边做边重新定义成功。 |
+| 非目标约束 | 明确哪些模块、配置、数据、重构这次不碰。 |
+| 证据约束 | 结果必须绑定文件路径、命令输出、测试、浏览器检查、日志或人工验收。 |
+| 安全约束 | 不复制 secrets、token、cookie、session、私钥、浏览器资料和私有源码正文。 |
+| 来源约束 | 借鉴公开仓库时保留许可证、来源、适用场景和不适用边界。 |
+| 接手约束 | 每次交付都要留下 handoff,让未来的你或另一个 agent 能继续。 |
+
+## 为什么它先进
+
+| 传统提示词 | ShipGrade CN |
+| --- | --- |
+| 把要求写得更长 | 把要求变成项目内文件、质量门和可执行检查。 |
+| 靠模型自觉 | 用 `doctor` 和 preflight 拒绝没有证据的“完成”。 |
+| 一次聊天里有效 | 规则落进 repo,跨 Codex / Claude Code / Cursor 持续生效。 |
+| 新手看不懂工程规范 | 中文 brief 把目标、风险、验收拆成能填的结构。 |
+| 专业工程师不信口号 | 每个 claim 都能追到公开文档、命令、证据或验证脚本。 |
+| 只学某个仓库表面 | 把优秀项目的工作流压成 Pattern Brief / Task Card / Eval,用于开工和审查。 |
+
+## 它吸收了谁的经验
+
+ShipGrade CN 吸收的是工程动作,不是名人光环:
+
+| 来源 | 吸收什么 | 改造成什么 |
+| --- | --- | --- |
+| GitHub Spec Kit / OpenSpec / Agent OS | spec-first、plan、tasks、验收门 | task brief + quality gate + pattern brief |
+| Addy Osmani Agent Skills / Matt Pocock skills | 生命周期 skill、反自嗨检查、可执行命令面 | Codex / Claude / Cursor 通用 skill 结构 |
+| Google Engineering Practices | code review、可维护性、测试纪律 | 非目标、证据、测试和 review 边界 |
+| Karpathy 风格训练仓库 | 极简可复现、指标、探针 | demo、verify、release check 的最小证明链 |
+| OpenAI / Anthropic cookbooks | recipe、失败模式、eval 思维 | Task Card / Eval / doctor 检查项 |
+| promptfoo / DeepEval | 把模型质量变成可测对象 | 交付说明可被脚本判定是否合格 |
+| Rust RFC / Kubernetes KEP / OpenTelemetry spec | 设计前文档、兼容性、阶段门 | handoff、ADR/决策和架构约束习惯 |
+
 ## 它解决什么问题
 
-ShipGrade CN 不是提示词合集,也不是把英文最佳实践翻译一遍。它解决一个很常见的问题:
+中文团队真正缺的不是更多“神级提示词”,而是一套能让 AI 编程助手稳定交付的工程契约:
 
-> 你对 AI 说“帮我把这个弄好”,它回你“好了”,但你不知道它到底改了什么、验证了什么、哪里还能接着干。
+```text
+口语需求 -> 任务 brief -> 最小交付 -> 验证证据 -> handoff -> 下一轮可接手
+```
 
-ShipGrade CN 会把这种口语需求压成五件事:
+ShipGrade CN 会把一次模糊请求压成五件事:
 
 1. 目标: 这次到底要交付什么。
 2. 非目标: 哪些东西这次不碰。
@@ -125,24 +181,33 @@ CLAUDE.shipgrade.md   # Claude Code 的独立协作说明
 
 ![ShipGrade terminal demo](assets/shipgrade-terminal-demo.png)
 
-## 为什么可信: 仓库工程蒸馏流水线
+## 怎么用: 三类人都能走同一套质量门
 
-ShipGrade CN 的底层方法不是“把一堆 repo 直接塞给模型训练”。更合适的方法是:
+| 用户 | 最短路径 | 进阶用法 |
+| --- | --- | --- |
+| 中文小白 | 先填 `.shipgrade/task-brief.md`,把“我要什么”和“怎样算完成”写清楚。 | 交付前跑 `shipgrade_doctor.py`,避免被“已完成”糊弄。 |
+| 进阶用户 | 把 ShipGrade 当成项目工作台,每次开工先 brief,做完写 handoff。 | 给常见任务套用 `--pattern`,让 AI 从高信源工程模式里借力。 |
+| 专业工程师 | 直接审 `SKILL.md`、质量门、证据索引、许可证和发布前检查。 | 用 Pattern Card / Task Card / Eval 继续扩展自己的团队规范。 |
+
+## 工作流结构
+
+![ShipGrade CN workflow](assets/shipgrade-loop.png)
+
+1. 需求进入: 先把口语需求变成 brief。
+2. 规则接线: 让 Codex、Claude Code、Cursor 都看到同一套质量门。
+3. 最小交付: 只做当前目标需要的最小正确改动。
+4. 证据验证: 用测试、构建、浏览器冒烟检查、日志或人工检查证明结果。
+5. 接手沉淀: 写 handoff,保留下一步、风险和验证结果。
+
+## 背后的来源: 仓库工程蒸馏流水线
+
+蒸馏过程不是卖点本身,只是保证这个 skill 不是拍脑袋写出来。ShipGrade CN 不把一堆 repo 直接塞给模型背代码,而是把公开高信源仓库转成可审查的工程资产:
 
 ```text
 Repo -> 工程知识 -> 任务数据 -> 评测 -> RAG / SFT / DPO
 ```
 
-先知识库化,再构建任务集和评测集,最后才考虑微调。模型不应该背代码,而应该学习工程判断:
-
-- 这个仓库为什么这样分层。
-- 模块边界怎么定。
-- 新增功能应该从哪里切入。
-- 测试应该补在哪里。
-- 哪些设计值得迁移。
-- 哪些坑应该避免。
-
-完整方法论见 `docs/repository-engineering-distillation-pipeline.md`。
+重点不是展示“我们蒸馏了什么”,而是把这些经验变成用户能直接用的: task brief、quality gate、doctor、pattern brief、handoff 和 eval。完整方法论见 `docs/repository-engineering-distillation-pipeline.md`。
 
 ![仓库工程蒸馏流水线](assets/shipgrade-proof-map-cn.png)
 
@@ -160,20 +225,6 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 当前生成资产: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases。详见 `docs/repo-engineering-distillation-assets.md`,公开证据在 `docs/evidence/repo_engineering_distillation/`。
 
 ![四类蒸馏资产](assets/shipgrade-audience-cn.png)
-
-## 怎么用
-
-### 给中文小白
-
-你只需要填 `.shipgrade/task-brief.md`,把“我要什么”和“怎样算完成”写清楚。之后让 AI 读项目规则,它就会按目标、验证、交付说明的方式干活,不是随口说“已完成”。
-
-### 给进阶用户
-
-把 ShipGrade 当成项目工作台。每次开工先写 brief,做完跑测试或检查,最后写 handoff。这样 Codex、Claude Code、Cursor 之间不会各说各话。
-
-### 给专业工程师
-
-你可以审它的规则、来源、许可证、验证命令、发布前检查和证据索引。它不是要求你相信一个 README,而是把每条关键 claim 都落到文件、命令或报告里。
 
 ## 里面有什么
 
@@ -193,16 +244,6 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | `docs/deep-code-case-studies.md` | 对高信源项目的代码级案例研究。 |
 | `docs/source-promotion-sandbox-cases.md` | 候选项目进入临时沙箱后的真实运行记录。 |
 | `docs/LAUNCH_COPY.md` | 发布文案和首发说明。 |
-
-## 工作流结构
-
-![ShipGrade CN workflow](assets/shipgrade-loop.png)
-
-1. 需求进入: 先把口语需求变成 brief。
-2. 规则接线: 让 Codex、Claude Code、Cursor 都看到同一套质量门。
-3. 最小交付: 只做当前目标需要的最小正确改动。
-4. 证据验证: 用测试、构建、浏览器冒烟检查、日志或人工检查证明结果。
-5. 接手沉淀: 写 handoff,保留下一步、风险和验证结果。
 
 ## 为什么不是提示词合集
 
@@ -233,18 +274,16 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 交付记录证据: 2/2
 - GitHub 发布前检查: 已内置本地报告
 
-## 吸收了谁的经验
+## 这些经验怎么落到动作里
 
-ShipGrade CN 吸收的是工程结构,不是名人光环:
+它们最后不会停在 README 里,而是落成可执行文件:
 
-- Karpathy 系列训练仓库: 极简、可复现、指标和探针。
-- Google engineering practices/styleguide: review、可维护性和团队一致性。
-- GitHub Spec Kit / OpenSpec / Agent OS: spec-first、任务化、验收化。
-- Matt Pocock skills: 面向真实工程师的 skill 组织方式。
-- OpenAI / Anthropic cookbooks: recipe、eval 和失败模式。
-- promptfoo / DeepEval: 把模型质量变成可评测对象。
-- Cline / Gemini CLI / opencode / Continue / browser-use: 真实 agent 产品工作流。
-- Microsoft playbook / Rust RFCs / Kubernetes KEPs / OpenTelemetry spec: 设计前文档和阶段门。
+- spec-first 变成 `.shipgrade/task-brief.md`。
+- review 和测试纪律变成 `.shipgrade/quality-gate.md`。
+- eval 思维变成 `shipgrade_doctor.py` 的合格/不合格判定。
+- 多 Agent 协作变成 `AGENTS.md`、`CLAUDE.md`、Cursor rule 的同源规则。
+- 设计文档和阶段门变成 `.shipgrade/handoff.md`。
+- 高信源工程模式变成 `tools/shipgrade_patterns.py brief`。
 
 ## 资料地图
 

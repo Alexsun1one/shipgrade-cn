@@ -62,6 +62,8 @@ REQUIRED_FILES = [
     "docs/multi-repo-eval-proof.json",
     "docs/REAL_ISSUE_CASE_PROOF.md",
     "docs/real-issue-case-proof.json",
+    "docs/REAL_TASK_SUITE_PROOF.md",
+    "docs/real-task-suite-proof.json",
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
@@ -69,6 +71,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_external_trial.py",
     "tools/shipgrade_multi_repo_eval.py",
     "tools/shipgrade_real_issue_case.py",
+    "tools/shipgrade_real_task_suite.py",
     "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
@@ -149,6 +152,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "docs/MULTI_REPO_EVAL_PROOF.md",
         "python3 tools/shipgrade_real_issue_case.py --clean",
         "docs/REAL_ISSUE_CASE_PROOF.md",
+        "python3 tools/shipgrade_real_task_suite.py --clean",
+        "docs/REAL_TASK_SUITE_PROOF.md",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -192,6 +197,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "docs/MULTI_REPO_EVAL_PROOF.md",
         "python3 tools/shipgrade_real_issue_case.py --clean",
         "docs/REAL_ISSUE_CASE_PROOF.md",
+        "python3 tools/shipgrade_real_task_suite.py --clean",
+        "docs/REAL_TASK_SUITE_PROOF.md",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",
@@ -509,6 +516,35 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "pallets/click issue-style regression case passed validation and doctor review" if not missing_real_issue_case_terms else "missing_terms=" + ", ".join(missing_real_issue_case_terms),
     )
 
+    real_task_suite_proof = read_text("docs/REAL_TASK_SUITE_PROOF.md")
+    real_task_suite_payload = json.loads(read_text("docs/real-task-suite-proof.json"))
+    real_task_suite_terms = [
+        "shipgrade-real-task-suite-ok",
+        "repos=2",
+        "cases=4",
+        "passed=4",
+        "repo=pallets/click",
+        "repo=pallets/itsdangerous",
+        "task_type=repair",
+        "task_type=migration",
+        "task_type=review",
+        "task_type=anti_pattern_detection",
+        "doctor_handoffs=2/2",
+        "controller_intelligence=true",
+        "eval_rubric=true",
+        "chosen_rejected_samples=true",
+        "python_helper_used_in_target=false",
+        "service_started=false",
+        "source_body_copied_to_public=false",
+    ]
+    missing_real_task_suite_terms = [term for term in real_task_suite_terms if term not in real_task_suite_proof]
+    add(
+        checks,
+        "real-task-suite",
+        not missing_real_task_suite_terms and real_task_suite_payload.get("ok") is True,
+        "4 real task cases covered repair/migration/review/anti-pattern detection" if not missing_real_task_suite_terms else "missing_terms=" + ", ".join(missing_real_task_suite_terms),
+    )
+
     if run_verify:
         verify = run([sys.executable, "tools/shipgrade_verify.py"])
         add(checks, "shipgrade-verify", verify.returncode == 0 and "shipgrade-verify-ok" in verify.stdout, (verify.stdout + verify.stderr)[-500:])
@@ -554,6 +590,7 @@ def write_docs(checks: list[dict[str, Any]]) -> None:
             "python3 tools/shipgrade_external_trial.py --clean",
             "python3 tools/shipgrade_multi_repo_eval.py --clean",
             "python3 tools/shipgrade_real_issue_case.py --clean",
+            "python3 tools/shipgrade_real_task_suite.py --clean",
             "python3 tools/shipgrade_demo.py",
             "python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate",
             "python3 tools/shipgrade_patterns.py validate",

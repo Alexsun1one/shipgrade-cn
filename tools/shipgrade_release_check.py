@@ -38,6 +38,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_external_trial.py",
     "tools/shipgrade_multi_repo_eval.py",
     "tools/shipgrade_real_issue_case.py",
+    "tools/shipgrade_real_task_suite.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -178,6 +179,15 @@ def main() -> None:
         or "doctor=.shipgrade/handoff.md: ship-grade-ok" not in real_issue_out
     ):
         fail("real issue case did not prove ShipGrade controller workflow on a real public repo")
+    task_suite_out = run([sys.executable, "tools/shipgrade_real_task_suite.py", "--clean"])
+    if (
+        "shipgrade-real-task-suite-ok" not in task_suite_out
+        or "cases=4" not in task_suite_out
+        or "task_types=repair,migration,review,anti_pattern_detection" not in task_suite_out
+        or "chosen_rejected_samples=true" not in task_suite_out
+        or "doctor_handoffs=2/2" not in task_suite_out
+    ):
+        fail("real task suite did not prove multi-type engineering eval coverage")
     with tempfile.TemporaryDirectory() as tmp:
         fake = Path(tmp) / "fake-pass.md"
         fake.write_text(

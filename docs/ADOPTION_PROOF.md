@@ -10,7 +10,7 @@ The simulated target project starts with existing `AGENTS.md` and `CLAUDE.md` co
 
 ```text
 shipgrade-zero-install-demo-ok
-target=$TMP/shipgrade-zero-install-demo-e_lkhjy6
+target=$TMP/shipgrade-zero-install-demo-0ssbwf2y
 source=SHIPGRADE.md
 created=SHIPGRADE.md,AGENTS.md,CLAUDE.md,.cursor/rules/shipgrade.mdc
 preserved_existing_rules=true

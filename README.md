@@ -4,7 +4,7 @@
 
 **把中文口语需求变成 Codex / Claude Code / Cursor 都能执行、验证、接手的工程交付工作台。**
 
-[English](README.en.md) · [零安装](#零安装只用一个-md-文件) · [外部试用](docs/EXTERNAL_TRIAL_PROOF.md) · [多仓评测](docs/MULTI_REPO_EVAL_PROOF.md) · [快速开始](#两种接入方式) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
+[English](README.en.md) · [零安装](#零安装只用一个-md-文件) · [外部试用](docs/EXTERNAL_TRIAL_PROOF.md) · [多仓评测](docs/MULTI_REPO_EVAL_PROOF.md) · [真实案例](docs/REAL_ISSUE_CASE_PROOF.md) · [快速开始](#两种接入方式) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
 
 [![本地验证](https://img.shields.io/badge/本地验证-shipgrade__verify.py-2ea44f)](#发布前自检)
 [![适用工具](https://img.shields.io/badge/适用-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -156,6 +156,14 @@ python3 tools/shipgrade_multi_repo_eval.py --clean
 ```
 
 证据见 [docs/MULTI_REPO_EVAL_PROOF.md](docs/MULTI_REPO_EVAL_PROOF.md)。
+
+再往前一步是真实仓 issue 式案例: 发布包会临时 clone `pallets/click`,读取真实项目结构,用 ShipGrade 主控规则生成 task brief,写一个聚焦 `click.option(required=True)` 行为的回归检查,运行 `PYTHONPATH=src` 本地验证,再由 doctor 审 handoff。
+
+```bash
+python3 tools/shipgrade_real_issue_case.py --clean
+```
+
+证据见 [docs/REAL_ISSUE_CASE_PROOF.md](docs/REAL_ISSUE_CASE_PROOF.md)。
 
 ## 30 秒看懂差异
 
@@ -311,6 +319,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | `tools/shipgrade_zero_install_demo.py` | 证明只读 `SHIPGRADE.md` 也能接入项目,不要求目标项目安装 Python 或启动服务。 |
 | `tools/shipgrade_external_trial.py` | 在许可明确的小型公开仓库上做零安装试用,生成可被 doctor 审核的外部 handoff。 |
 | `tools/shipgrade_multi_repo_eval.py` | 在多个公开小仓重复零安装接入、轻量验证和 doctor 审核,生成可训练/可评测样本候选。 |
+| `tools/shipgrade_real_issue_case.py` | 在真实开源仓 `pallets/click` 中跑 issue 式回归验证,证明主控智能、证据矩阵和完成审计能进入真实项目。 |
 | `tools/shipgrade_doctor.py` | 检查交付说明是否包含结果、验证、来源、风险、安全边界和接手入口。 |
 | `tools/shipgrade_demo.py` | 30 秒演示初始化、拒绝假完成、接受合格交付。 |
 | `tools/shipgrade_patterns.py` | 查看 Pattern Card,并生成可执行的 `.shipgrade/pattern-brief.md`。 |
@@ -334,6 +343,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | 有没有真实运行 | 有。临时沙箱记录覆盖 `affaan-m/ECC`、`browser-use/browser-use`、`addyosmani/agent-skills`。 |
 | 有没有外部项目试用 | 有。`docs/EXTERNAL_TRIAL_PROOF.md` 记录了 `pypa/sampleproject` 的零安装接入、既有单测和 handoff doctor 审核。 |
 | 有没有多轮评测 | 有。`docs/MULTI_REPO_EVAL_PROOF.md` 记录 3 个公开小仓的重复接入、轻量验证和 doctor pass。 |
+| 有没有真实 issue 式案例 | 有。`docs/REAL_ISSUE_CASE_PROOF.md` 记录 `pallets/click` 的 CLI 行为回归验证和 handoff doctor 审核。 |
 | 能不能发布 | 可以。仓库内有发布前检查、GitHub Actions、模板、许可证、发布包和校验脚本。 |
 
 ## 证据快照
@@ -354,6 +364,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 交付记录证据: 2/2
 - 外部小仓零安装试用: `pypa/sampleproject` handoff doctor pass
 - 多仓外部评测: 3/3 public repos passed zero-install eval
+- 真实仓 issue 式案例: `pallets/click` required-option regression case pass
 - GitHub 发布前检查: 已内置本地报告
 
 ## 这些经验怎么落到动作里
@@ -379,6 +390,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 运行证据: `docs/runtime-smoke-evidence.md`、`docs/sandbox-runtime-cases.md`
 - 外部试用: `docs/EXTERNAL_TRIAL_PROOF.md`
 - 多仓评测: `docs/MULTI_REPO_EVAL_PROOF.md`
+- 真实 issue 案例: `docs/REAL_ISSUE_CASE_PROOF.md`
 - 晋级队列: `docs/high-signal-source-radar.md`、`docs/source-promotion-queue.md`、`docs/source-promotion-batch.md`
 - 发布检查: `docs/GITHUB_PUBLISH_PREFLIGHT.md`
 - 演示证明: `docs/DEMO_PROOF.md`

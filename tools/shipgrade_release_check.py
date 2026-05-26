@@ -37,6 +37,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_zero_install_demo.py",
     "tools/shipgrade_external_trial.py",
     "tools/shipgrade_multi_repo_eval.py",
+    "tools/shipgrade_real_issue_case.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -169,6 +170,14 @@ def main() -> None:
     demo_out = run([sys.executable, "tools/shipgrade_demo.py"])
     if "shipgrade-demo-ok" not in demo_out or "fake_rejection=" not in demo_out:
         fail("demo tool did not prove init/reject/accept path")
+    real_issue_out = run([sys.executable, "tools/shipgrade_real_issue_case.py", "--clean"])
+    if (
+        "shipgrade-real-issue-case-ok" not in real_issue_out
+        or "repo=pallets/click" not in real_issue_out
+        or "issue=click-required-option-regression" not in real_issue_out
+        or "doctor=.shipgrade/handoff.md: ship-grade-ok" not in real_issue_out
+    ):
+        fail("real issue case did not prove ShipGrade controller workflow on a real public repo")
     with tempfile.TemporaryDirectory() as tmp:
         fake = Path(tmp) / "fake-pass.md"
         fake.write_text(

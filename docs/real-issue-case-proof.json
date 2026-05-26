@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "command": "python3 tools/shipgrade_real_issue_case.py --clean",
+  "contains": {
+    "real_issue_case_ok": true,
+    "repo_click": true,
+    "issue_key": true,
+    "license_bsd": true,
+    "source_shipgrade_md": true,
+    "focused_test_ok": true,
+    "doctor_ok": true,
+    "controller_intelligence": true,
+    "evidence_matrix": true,
+    "completion_audit": true,
+    "no_python_helper_in_target": true,
+    "no_service": true,
+    "no_source_body": true,
+    "cleaned": true
+  },
+  "validation_lines": [
+    "validation=python -m py_compile .shipgrade/issue-case/test_click_required_option.py: ok exit 0",
+    "validation=PYTHONPATH=src python .shipgrade/issue-case/test_click_required_option.py: ok exit 0"
+  ],
+  "output_tail": [
+    "shipgrade-real-issue-case-ok",
+    "repo=pallets/click",
+    "url=https://github.com/pallets/click",
+    "revision=6a141c3681027e8124ce5a3c70e608dbbebffafb",
+    "license=BSD-3-Clause",
+    "issue=click-required-option-regression",
+    "source=SHIPGRADE.md",
+    "created=SHIPGRADE.md,AGENTS.md,CLAUDE.md,.cursor/rules/shipgrade.mdc,.shipgrade/task-brief.md,.shipgrade/issue-case/test_click_required_option.py,.shipgrade/handoff.md",
+    "validation=python -m py_compile .shipgrade/issue-case/test_click_required_option.py: ok exit 0",
+    "validation=PYTHONPATH=src python .shipgrade/issue-case/test_click_required_option.py: ok exit 0",
+    "doctor=.shipgrade/handoff.md: ship-grade-ok",
+    "controller_intelligence=true",
+    "evidence_matrix=true",
+    "completion_audit=true",
+    "python_helper_used_in_target=false",
+    "service_started=false",
+    "source_body_copied_to_public=false",
+    "target=$TMP/shipgrade-real-issue-case-uv88tgk0",
+    "cleaned=true"
+  ]
+}

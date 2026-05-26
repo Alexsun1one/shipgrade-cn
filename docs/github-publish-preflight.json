@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T10:51:52Z",
+  "generated_at": "2026-05-26T11:19:17Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 25,
-  "total": 25,
+  "passed": 26,
+  "total": 26,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "62 required files present"
+      "detail": "65 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -124,6 +124,11 @@
       "id": "multi-repo-external-eval",
       "passed": true,
       "detail": "3 public repositories passed zero-install eval with doctor-reviewed handoffs"
+    },
+    {
+      "id": "real-repo-issue-case",
+      "passed": true,
+      "detail": "pallets/click issue-style regression case passed validation and doctor review"
     },
     {
       "id": "shipgrade-verify",

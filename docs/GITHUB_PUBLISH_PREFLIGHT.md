@@ -2,12 +2,12 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `25/25`
+- passed: `26/26`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
 | --- | --- | --- |
-| `required-files` | `pass` | 62 required files present |
+| `required-files` | `pass` | 65 required files present |
 | `readme-launch-surface` | `pass` | README has hook, proof, and preflight surface |
 | `readme-english-surface` | `pass` | README.en.md has standalone onboarding surface |
 | `shipgrade-zero-install-rule` | `pass` | SHIPGRADE.md is Chinese-first and zero-install |
@@ -31,6 +31,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `zero-install-adoption-proof` | `pass` | SHIPGRADE.md-only adoption proof preserves existing rules and avoids target Python/service |
 | `external-zero-install-trial` | `pass` | pypa/sampleproject zero-install trial has unit-test and doctor proof |
 | `multi-repo-external-eval` | `pass` | 3 public repositories passed zero-install eval with doctor-reviewed handoffs |
+| `real-repo-issue-case` | `pass` | pallets/click issue-style regression case passed validation and doctor review |
 | `shipgrade-verify` | `pass` | shipgrade-verify-ok  |
 
 ## Publish Command Surface
@@ -41,6 +42,7 @@ python3 tools/shipgrade_verify.py
 python3 tools/shipgrade_zero_install_demo.py --clean
 python3 tools/shipgrade_external_trial.py --clean
 python3 tools/shipgrade_multi_repo_eval.py --clean
+python3 tools/shipgrade_real_issue_case.py --clean
 python3 tools/shipgrade_demo.py
 python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate
 python3 tools/shipgrade_patterns.py validate

@@ -4,7 +4,7 @@
     "pallets/itsdangerous"
   ],
   "base_overlap_repos": [],
-  "case_count": 8,
+  "case_count": 12,
   "holdout_not_training": true,
   "licenses": [
     "Apache-2.0",
@@ -18,11 +18,15 @@
     "addyosmani/agent-skills",
     "affaan-m/ECC",
     "browser-use/browser-use",
+    "cline/cline",
+    "crewAIInc/crewAI",
     "github/spec-kit",
     "humanlayer/12-factor-agents",
+    "langchain-ai/langgraph",
+    "openai/openai-agents-python",
     "promptfoo/promptfoo"
   ],
-  "strong_passed": 8,
+  "strong_passed": 12,
   "strong_results": [
     {
       "case_id": "spec-kit-spec-drift-review",
@@ -135,6 +139,62 @@
       "missing": [],
       "passed": true,
       "score": 1.0
+    },
+    {
+      "case_id": "openai-agents-sdk-tool-contract-review",
+      "forbidden_hit": [],
+      "matched": [
+        "tool contract",
+        "handoff",
+        "tracing",
+        "pyproject.toml",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "langgraph-state-checkpoint-gate",
+      "forbidden_hit": [],
+      "matched": [
+        "state",
+        "checkpoint",
+        "graph",
+        "tests",
+        "examples"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "crewai-multi-agent-process-boundary",
+      "forbidden_hit": [],
+      "matched": [
+        "agent",
+        "task",
+        "tool permission",
+        "process",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "cline-ide-agent-secret-boundary",
+      "forbidden_hit": [],
+      "matched": [
+        "workspace",
+        "secret",
+        "tool execution",
+        "package.json",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
     }
   ],
   "task_types": [
@@ -146,7 +206,7 @@
     "runtime_gate",
     "skill_design"
   ],
-  "weak_failed": 8,
+  "weak_failed": 12,
   "weak_results": [
     {
       "case_id": "spec-kit-spec-drift-review",
@@ -288,6 +348,80 @@
         "ci.yml",
         "catalog",
         "runtime gate"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "case_id": "openai-agents-sdk-tool-contract-review",
+      "forbidden_hit": [
+        "只跑 import",
+        "忽略 tracing",
+        "不用测试"
+      ],
+      "matched": [
+        "tracing"
+      ],
+      "missing": [
+        "tool contract",
+        "handoff",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed": false,
+      "score": 0.2
+    },
+    {
+      "case_id": "langgraph-state-checkpoint-gate",
+      "forbidden_hit": [
+        "无状态也可以",
+        "只看示例",
+        "不用恢复测试"
+      ],
+      "matched": [],
+      "missing": [
+        "state",
+        "checkpoint",
+        "graph",
+        "tests",
+        "examples"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "case_id": "crewai-multi-agent-process-boundary",
+      "forbidden_hit": [
+        "所有 agent 随便调工具",
+        "不用流程状态",
+        "没有权限边界"
+      ],
+      "matched": [
+        "agent"
+      ],
+      "missing": [
+        "task",
+        "tool permission",
+        "process",
+        "tests"
+      ],
+      "passed": false,
+      "score": 0.2
+    },
+    {
+      "case_id": "cline-ide-agent-secret-boundary",
+      "forbidden_hit": [
+        "读取所有 token",
+        "直接复制用户工作区",
+        "不用隔离工具"
+      ],
+      "matched": [],
+      "missing": [
+        "workspace",
+        "secret",
+        "tool execution",
+        "package.json",
+        "tests"
       ],
       "passed": false,
       "score": 0.0

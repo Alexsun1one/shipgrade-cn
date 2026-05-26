@@ -228,6 +228,7 @@ def write_outputs(output_dir: Path) -> dict[str, Any]:
     lazy_failed = summaries["lazy_or_overfit_draft"]["failed"]
     partial_failed = summaries["partial_candidate_draft"]["failed"]
     required_layers = {"validation_evidence_gap", "source_boundary_gap", "completion_audit_gap"}
+    case_count = len(cases)
 
     cases_path.write_text(
         "\n".join(json.dumps(case, ensure_ascii=False, sort_keys=True) for case in replay_cases) + "\n",
@@ -236,14 +237,14 @@ def write_outputs(output_dir: Path) -> dict[str, Any]:
     report = {
         "ok": (
             len(base_cases) == 4
-            and len(holdout_cases) == 8
-            and len(cases) == 12
-            and target_passed == 12
-            and lazy_failed == 12
-            and partial_failed >= 6
+            and len(holdout_cases) == 12
+            and case_count == 16
+            and target_passed == case_count
+            and lazy_failed == case_count
+            and partial_failed >= case_count // 2
             and required_layers.issubset(set(failure_layers))
         ),
-        "case_count": len(cases),
+        "case_count": case_count,
         "base_eval_cases": len(base_cases),
         "holdout_cases": len(holdout_cases),
         "profiles": 3,
@@ -261,12 +262,12 @@ def write_outputs(output_dir: Path) -> dict[str, Any]:
     readme_path.write_text(
         "# ShipGrade Model Output Replay\n\n"
         "This replay gate scores candidate/model-style outputs against the base eval and holdout replay cases, then stratifies failed outputs by failure layer.\n\n"
-        "- cases: `12`\n"
-        "- base eval cases: `4`\n"
-        "- holdout cases: `8`\n"
+        f"- cases: `{case_count}`\n"
+        f"- base eval cases: `{len(base_cases)}`\n"
+        f"- holdout cases: `{len(holdout_cases)}`\n"
         "- profiles: `shipgrade_target`, `lazy_or_overfit_draft`, `partial_candidate_draft`\n"
-        "- target profile: `12/12` pass\n"
-        "- lazy profile: `12/12` fail\n"
+        f"- target profile: `{target_passed}/{case_count}` pass\n"
+        f"- lazy profile: `{lazy_failed}/{case_count}` fail\n"
         "- boundary: metadata, path evidence, prompts, rubrics, and synthetic replay outputs only; no upstream source bodies.\n\n"
         "Use `model-output-replay-cases.jsonl` for candidate replay inputs and `model-output-replay-report.json` for deterministic scoring and failure stratification.\n",
         encoding="utf-8",

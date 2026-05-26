@@ -1,5 +1,5 @@
 {
-  "case_count": 12,
+  "case_count": 16,
   "cross_judge_packet_ready": true,
   "deterministic_judge_panel": true,
   "external_model_called": false,
@@ -10,10 +10,10 @@
     "completion_audit"
   ],
   "judges": 3,
-  "lazy_majority_rejected": 12,
+  "lazy_majority_rejected": 16,
   "model_replay_source": "docs/model-replay",
   "ok": true,
-  "partial_majority_rejected": 12,
+  "partial_majority_rejected": 16,
   "profiles": 3,
   "public_boundary": "No upstream source bodies, secrets, cookies, sessions, private keys, browser profiles, auth databases, or private repositories.",
   "results": [
@@ -1408,7 +1408,473 @@
           "reason": "answer is complete enough for handoff audit"
         }
       ]
+    },
+    {
+      "case_id": "openai-agents-sdk-tool-contract-review",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "只跑 import",
+        "忽略 tracing",
+        "不用测试"
+      ],
+      "majority_passed": false,
+      "matched": [
+        "tracing"
+      ],
+      "missing": [
+        "tool contract",
+        "handoff",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "openai/openai-agents-python",
+      "score": 0.2,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "openai-agents-sdk-tool-contract-review",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "tool contract",
+        "handoff"
+      ],
+      "missing": [
+        "tracing",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "openai/openai-agents-python",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "openai-agents-sdk-tool-contract-review",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "tool contract",
+        "handoff",
+        "tracing",
+        "pyproject.toml",
+        "tests"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "openai/openai-agents-python",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "langgraph-state-checkpoint-gate",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "无状态也可以",
+        "只看示例",
+        "不用恢复测试"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "state",
+        "checkpoint",
+        "graph",
+        "tests",
+        "examples"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "langchain-ai/langgraph",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "langgraph-state-checkpoint-gate",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "state",
+        "checkpoint"
+      ],
+      "missing": [
+        "graph",
+        "tests",
+        "examples"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "langchain-ai/langgraph",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "langgraph-state-checkpoint-gate",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "state",
+        "checkpoint",
+        "graph",
+        "tests",
+        "examples"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "langchain-ai/langgraph",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "crewai-multi-agent-process-boundary",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "所有 agent 随便调工具",
+        "不用流程状态",
+        "没有权限边界"
+      ],
+      "majority_passed": false,
+      "matched": [
+        "agent"
+      ],
+      "missing": [
+        "task",
+        "tool permission",
+        "process",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "crewAIInc/crewAI",
+      "score": 0.2,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "crewai-multi-agent-process-boundary",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "agent",
+        "task"
+      ],
+      "missing": [
+        "tool permission",
+        "process",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "crewAIInc/crewAI",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "crewai-multi-agent-process-boundary",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "agent",
+        "task",
+        "tool permission",
+        "process",
+        "tests"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "crewAIInc/crewAI",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "cline-ide-agent-secret-boundary",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "读取所有 token",
+        "直接复制用户工作区",
+        "不用隔离工具"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "workspace",
+        "secret",
+        "tool execution",
+        "package.json",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "cline/cline",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "cline-ide-agent-secret-boundary",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "workspace",
+        "secret"
+      ],
+      "missing": [
+        "tool execution",
+        "package.json",
+        "tests"
+      ],
+      "passed_votes": 1,
+      "profile": "partial_candidate_draft",
+      "repo": "cline/cline",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "cline-ide-agent-secret-boundary",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "workspace",
+        "secret",
+        "tool execution",
+        "package.json",
+        "tests"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "cline/cline",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
     }
   ],
-  "target_unanimous_pass": 12
+  "target_unanimous_pass": 16
 }

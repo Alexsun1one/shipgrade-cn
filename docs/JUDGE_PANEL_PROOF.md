@@ -2,7 +2,7 @@
 
 This file is generated from a real local run of `python3 tools/shipgrade_judge_panel.py --output-dir docs/judge-panel` during release packaging.
 
-It proves ShipGrade CN has a deterministic cross-review packet after candidate-output replay. The packet covers 12 replay cases and three judge lenses: `controller_quality`, `source_boundary`, and `completion_audit`.
+It proves ShipGrade CN has a deterministic cross-review packet after candidate-output replay. The packet covers 16 replay cases and three judge lenses: `controller_quality`, `source_boundary`, and `completion_audit`.
 
 This proof does not claim that an external model or human has already reviewed the outputs. It creates a public, CI-safe judge panel that can later be handed to human reviewers, Codex, Claude, or other reviewers without copying upstream source bodies.
 
@@ -10,13 +10,13 @@ This proof does not claim that an external model or human has already reviewed t
 
 ```text
 shipgrade-judge-panel-ok
-cases=12
+cases=16
 profiles=3
 judges=3
 judge_lenses=controller_quality,source_boundary,completion_audit
-target_unanimous_pass=12/12
-lazy_majority_rejected=12/12
-partial_majority_rejected=12/12
+target_unanimous_pass=16/16
+lazy_majority_rejected=16/16
+partial_majority_rejected=16/16
 judge_panel_cases_path=docs/judge-panel/judge-panel-cases.jsonl
 report_path=docs/judge-panel/judge-panel-report.json
 cross_judge_packet_ready=true

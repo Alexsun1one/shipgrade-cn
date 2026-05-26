@@ -27,7 +27,7 @@ chosen_rejected_samples=true
 python_helper_used_in_target=false
 service_started=false
 source_body_copied_to_public=false
-target=$TMP/shipgrade-real-task-suite-emq8byw8
+target=$TMP/shipgrade-real-task-suite-di4mjrqm
 cleaned=true
 ```
 

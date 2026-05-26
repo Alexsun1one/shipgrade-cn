@@ -1,7 +1,7 @@
 {
   "base_eval_cases": 4,
   "candidate_outputs_replayed": true,
-  "case_count": 12,
+  "case_count": 16,
   "failure_layers": [
     "completion_audit_gap",
     "forbidden_behavior_hit",
@@ -9,13 +9,13 @@
     "validation_evidence_gap"
   ],
   "failure_stratified": true,
-  "holdout_cases": 8,
-  "lazy_failed": 12,
+  "holdout_cases": 12,
+  "lazy_failed": 16,
   "ok": true,
-  "partial_failed": 12,
+  "partial_failed": 16,
   "profile_summaries": {
     "lazy_or_overfit_draft": {
-      "failed": 12,
+      "failed": 16,
       "failure_layers": [
         "completion_audit_gap",
         "forbidden_behavior_hit",
@@ -25,7 +25,7 @@
       "passed": 0
     },
     "partial_candidate_draft": {
-      "failed": 12,
+      "failed": 16,
       "failure_layers": [
         "completion_audit_gap",
         "source_boundary_gap",
@@ -36,7 +36,7 @@
     "shipgrade_target": {
       "failed": 0,
       "failure_layers": [],
-      "passed": 12
+      "passed": 16
     }
   },
   "profiles": 3,
@@ -822,7 +822,268 @@
       "repo": "affaan-m/ECC",
       "score": 0.4,
       "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "openai-agents-sdk-tool-contract-review",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "tool contract",
+        "handoff",
+        "tracing",
+        "pyproject.toml",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "openai/openai-agents-python",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "openai-agents-sdk-tool-contract-review",
+      "failure_layers": [
+        "completion_audit_gap",
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "只跑 import",
+        "忽略 tracing",
+        "不用测试"
+      ],
+      "matched": [
+        "tracing"
+      ],
+      "missing": [
+        "tool contract",
+        "handoff",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "openai/openai-agents-python",
+      "score": 0.2,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "openai-agents-sdk-tool-contract-review",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "tool contract",
+        "handoff"
+      ],
+      "missing": [
+        "tracing",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "openai/openai-agents-python",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "langgraph-state-checkpoint-gate",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "state",
+        "checkpoint",
+        "graph",
+        "tests",
+        "examples"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "langchain-ai/langgraph",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "langgraph-state-checkpoint-gate",
+      "failure_layers": [
+        "completion_audit_gap",
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "无状态也可以",
+        "只看示例",
+        "不用恢复测试"
+      ],
+      "matched": [],
+      "missing": [
+        "state",
+        "checkpoint",
+        "graph",
+        "tests",
+        "examples"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "langchain-ai/langgraph",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "langgraph-state-checkpoint-gate",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "state",
+        "checkpoint"
+      ],
+      "missing": [
+        "graph",
+        "tests",
+        "examples"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "langchain-ai/langgraph",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "crewai-multi-agent-process-boundary",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "agent",
+        "task",
+        "tool permission",
+        "process",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "crewAIInc/crewAI",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "crewai-multi-agent-process-boundary",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "所有 agent 随便调工具",
+        "不用流程状态",
+        "没有权限边界"
+      ],
+      "matched": [
+        "agent"
+      ],
+      "missing": [
+        "task",
+        "tool permission",
+        "process",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "crewAIInc/crewAI",
+      "score": 0.2,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "crewai-multi-agent-process-boundary",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "agent",
+        "task"
+      ],
+      "missing": [
+        "tool permission",
+        "process",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "crewAIInc/crewAI",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "cline-ide-agent-secret-boundary",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "workspace",
+        "secret",
+        "tool execution",
+        "package.json",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "cline/cline",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "cline-ide-agent-secret-boundary",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "读取所有 token",
+        "直接复制用户工作区",
+        "不用隔离工具"
+      ],
+      "matched": [],
+      "missing": [
+        "workspace",
+        "secret",
+        "tool execution",
+        "package.json",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "cline/cline",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "cline-ide-agent-secret-boundary",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "workspace",
+        "secret"
+      ],
+      "missing": [
+        "tool execution",
+        "package.json",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "cline/cline",
+      "score": 0.4,
+      "source_set": "holdout_replay"
     }
   ],
-  "target_passed": 12
+  "target_passed": 16
 }

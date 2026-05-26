@@ -2,7 +2,7 @@
 
 This file is generated from a real local run of `python3 tools/shipgrade_holdout_replay.py --output-dir docs/holdout-replay` during release packaging.
 
-It proves ShipGrade CN has an unseen-repo replay gate before claiming training or distillation quality. The holdout set contains eight cases from repositories that do not overlap with the base scored eval corpus.
+It proves ShipGrade CN has an unseen-repo replay gate before claiming training or distillation quality. The holdout set contains twelve cases from repositories that do not overlap with the base scored eval corpus.
 
 The self-check uses the same deterministic scoring style: strong answers must satisfy the rubric, weak answers must fail, and `base_overlap_repos` must be zero. The public package includes JSONL replay inputs and a scoring report under `docs/holdout-replay/`.
 
@@ -10,13 +10,13 @@ The self-check uses the same deterministic scoring style: strong answers must sa
 
 ```text
 shipgrade-holdout-replay-ok
-cases=8
+cases=12
 task_types=anti_pattern_detection,engineering_plan,migration,repair,review,runtime_gate,skill_design
-repos=SuperClaude-Org/SuperClaude_Framework,UKGovernmentBEIS/inspect_ai,addyosmani/agent-skills,affaan-m/ECC,browser-use/browser-use,github/spec-kit,humanlayer/12-factor-agents,promptfoo/promptfoo
+repos=SuperClaude-Org/SuperClaude_Framework,UKGovernmentBEIS/inspect_ai,addyosmani/agent-skills,affaan-m/ECC,browser-use/browser-use,cline/cline,crewAIInc/crewAI,github/spec-kit,humanlayer/12-factor-agents,langchain-ai/langgraph,openai/openai-agents-python,promptfoo/promptfoo
 licenses=Apache-2.0,MIT
 base_overlap_repos=0
-strong_passed=8/8
-weak_failed=8/8
+strong_passed=12/12
+weak_failed=12/12
 holdout_replay_cases_path=docs/holdout-replay/holdout-replay-cases.jsonl
 report_path=docs/holdout-replay/holdout-replay-report.json
 holdout_not_training=true

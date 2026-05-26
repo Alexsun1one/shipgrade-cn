@@ -205,11 +205,11 @@ def write_outputs(output_dir: Path) -> dict[str, Any]:
     )
     report = {
         "ok": (
-            case_count == 12
+            case_count == 16
             and len(JUDGES) == 3
-            and target_unanimous_pass == 12
-            and lazy_majority_rejected == 12
-            and partial_majority_rejected == 12
+            and target_unanimous_pass == case_count
+            and lazy_majority_rejected == case_count
+            and partial_majority_rejected == case_count
         ),
         "case_count": case_count,
         "profiles": 3,
@@ -230,12 +230,12 @@ def write_outputs(output_dir: Path) -> dict[str, Any]:
     readme_path.write_text(
         "# ShipGrade Judge Panel\n\n"
         "This deterministic judge panel turns model replay cases into a cross-review packet. It does not claim that an external model or human has already reviewed the outputs.\n\n"
-        "- cases: `12`\n"
+        f"- cases: `{case_count}`\n"
         "- profiles: `3`\n"
         "- judge lenses: `controller_quality`, `source_boundary`, `completion_audit`\n"
-        "- target profile: `12/12` unanimous pass\n"
-        "- lazy profile: `12/12` majority rejected\n"
-        "- partial profile: `12/12` majority rejected\n"
+        f"- target profile: `{target_unanimous_pass}/{case_count}` unanimous pass\n"
+        f"- lazy profile: `{lazy_majority_rejected}/{case_count}` majority rejected\n"
+        f"- partial profile: `{partial_majority_rejected}/{case_count}` majority rejected\n"
         "- boundary: metadata, prompts, rubrics, path evidence, and synthetic candidate outputs only; no upstream source bodies.\n\n"
         "Use `judge-panel-cases.jsonl` as a human/Codex/Claude review packet and `judge-panel-report.json` as the deterministic CI gate.\n",
         encoding="utf-8",

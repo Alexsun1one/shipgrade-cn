@@ -627,10 +627,10 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
     holdout_replay_cases = [line for line in read_text("docs/holdout-replay/holdout-replay-cases.jsonl").splitlines() if line.strip()]
     holdout_replay_terms = [
         "shipgrade-holdout-replay-ok",
-        "cases=8",
+        "cases=12",
         "base_overlap_repos=0",
-        "strong_passed=8/8",
-        "weak_failed=8/8",
+        "strong_passed=12/12",
+        "weak_failed=12/12",
         "holdout_not_training=true",
         "rubric_scored=true",
         "source_body_copied_to_public=false",
@@ -643,12 +643,12 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         not missing_holdout_replay_terms
         and holdout_replay_payload.get("ok") is True
         and holdout_replay_report.get("ok") is True
-        and holdout_replay_report.get("case_count") == 8
+        and holdout_replay_report.get("case_count") == 12
         and holdout_replay_report.get("holdout_not_training") is True
-        and holdout_replay_report.get("strong_passed") == 8
-        and holdout_replay_report.get("weak_failed") == 8
-        and len(holdout_replay_cases) == 8,
-        "8 holdout replay cases separate strong/weak answers with no base-repo overlap" if not missing_holdout_replay_terms else "missing_terms=" + ", ".join(missing_holdout_replay_terms),
+        and holdout_replay_report.get("strong_passed") == 12
+        and holdout_replay_report.get("weak_failed") == 12
+        and len(holdout_replay_cases) == 12,
+        "12 holdout replay cases separate strong/weak answers with no base-repo overlap" if not missing_holdout_replay_terms else "missing_terms=" + ", ".join(missing_holdout_replay_terms),
     )
 
     model_replay_proof = read_text("docs/MODEL_REPLAY_PROOF.md")
@@ -657,12 +657,12 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
     model_replay_cases = [line for line in read_text("docs/model-replay/model-output-replay-cases.jsonl").splitlines() if line.strip()]
     model_replay_terms = [
         "shipgrade-model-replay-ok",
-        "cases=12",
+        "cases=16",
         "base_eval_cases=4",
-        "holdout_cases=8",
+        "holdout_cases=12",
         "profiles=3",
-        "target_passed=12/12",
-        "lazy_failed=12/12",
+        "target_passed=16/16",
+        "lazy_failed=16/16",
         "candidate_outputs_replayed=true",
         "failure_stratified=true",
         "source_body_copied_to_public=false",
@@ -675,15 +675,15 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         not missing_model_replay_terms
         and model_replay_payload.get("ok") is True
         and model_replay_report.get("ok") is True
-        and model_replay_report.get("case_count") == 12
+        and model_replay_report.get("case_count") == 16
         and model_replay_report.get("base_eval_cases") == 4
-        and model_replay_report.get("holdout_cases") == 8
-        and model_replay_report.get("target_passed") == 12
-        and model_replay_report.get("lazy_failed") == 12
+        and model_replay_report.get("holdout_cases") == 12
+        and model_replay_report.get("target_passed") == 16
+        and model_replay_report.get("lazy_failed") == 16
         and model_replay_report.get("candidate_outputs_replayed") is True
         and model_replay_report.get("failure_stratified") is True
-        and len(model_replay_cases) == 12,
-        "12 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers" if not missing_model_replay_terms else "missing_terms=" + ", ".join(missing_model_replay_terms),
+        and len(model_replay_cases) == 16,
+        "16 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers" if not missing_model_replay_terms else "missing_terms=" + ", ".join(missing_model_replay_terms),
     )
 
     judge_panel_proof = read_text("docs/JUDGE_PANEL_PROOF.md")
@@ -692,13 +692,13 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
     judge_panel_cases = [line for line in read_text("docs/judge-panel/judge-panel-cases.jsonl").splitlines() if line.strip()]
     judge_panel_terms = [
         "shipgrade-judge-panel-ok",
-        "cases=12",
+        "cases=16",
         "profiles=3",
         "judges=3",
         "judge_lenses=controller_quality,source_boundary,completion_audit",
-        "target_unanimous_pass=12/12",
-        "lazy_majority_rejected=12/12",
-        "partial_majority_rejected=12/12",
+        "target_unanimous_pass=16/16",
+        "lazy_majority_rejected=16/16",
+        "partial_majority_rejected=16/16",
         "cross_judge_packet_ready=true",
         "deterministic_judge_panel=true",
         "external_model_called=false",
@@ -713,17 +713,17 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         not missing_judge_panel_terms
         and judge_panel_payload.get("ok") is True
         and judge_panel_report.get("ok") is True
-        and judge_panel_report.get("case_count") == 12
+        and judge_panel_report.get("case_count") == 16
         and judge_panel_report.get("judges") == 3
-        and judge_panel_report.get("target_unanimous_pass") == 12
-        and judge_panel_report.get("lazy_majority_rejected") == 12
-        and judge_panel_report.get("partial_majority_rejected") == 12
+        and judge_panel_report.get("target_unanimous_pass") == 16
+        and judge_panel_report.get("lazy_majority_rejected") == 16
+        and judge_panel_report.get("partial_majority_rejected") == 16
         and judge_panel_report.get("cross_judge_packet_ready") is True
         and judge_panel_report.get("deterministic_judge_panel") is True
         and judge_panel_report.get("external_model_called") is False
         and judge_panel_report.get("human_review_claimed") is False
-        and len(judge_panel_cases) == 12,
-        "12 replay cases have deterministic controller/source/completion judge-panel votes" if not missing_judge_panel_terms else "missing_terms=" + ", ".join(missing_judge_panel_terms),
+        and len(judge_panel_cases) == 16,
+        "16 replay cases have deterministic controller/source/completion judge-panel votes" if not missing_judge_panel_terms else "missing_terms=" + ", ".join(missing_judge_panel_terms),
     )
 
     if run_verify:

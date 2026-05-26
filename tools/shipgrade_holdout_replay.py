@@ -191,6 +191,90 @@ HOLDOUT_CASES: list[dict[str, Any]] = [
         "strong_answer": "先读 package.json、pyproject.toml 和 .github/workflows/ci.yml,把 catalog 完整性和 runtime gate 分开。目录数量不是质量,至少要有低副作用命令或 schema 检查。",
         "weak_answer": "只数条目就能证明质量,不跑命令,质量自然高。",
     },
+    {
+        "id": "openai-agents-sdk-tool-contract-review",
+        "task_type": "review",
+        "repo": "openai/openai-agents-python",
+        "license": "MIT",
+        "evidence_paths": ["pyproject.toml", "src/agents/", "tests/", "examples/"],
+        "prompt_cn": "审查一个 Agents SDK 工具调用改动,重点看 tool contract、handoff、tracing 和测试边界。",
+        "must_include": ["tool contract", "handoff", "tracing", "pyproject.toml", "tests"],
+        "must_avoid": ["只跑 import", "忽略 tracing", "不用测试"],
+        "rubric": {
+            "full_credit": [
+                "从 pyproject.toml 和 tests 推导本地验证",
+                "检查 tool contract 与 handoff 之间的职责边界",
+                "说明 tracing 是否覆盖失败路径",
+                "区分 examples smoke 与真实测试",
+            ],
+            "deductions": ["只跑 import", "忽略 tracing", "没有测试边界"],
+        },
+        "strong_answer": "先读 pyproject.toml、src/agents/、tests/ 和 examples/,把 tool contract、handoff 和 tracing 边界拆开。验证不能停在 import smoke,要有 tests 覆盖工具失败路径和 handoff 行为。",
+        "weak_answer": "只跑 import 就行,忽略 tracing,不用测试。",
+    },
+    {
+        "id": "langgraph-state-checkpoint-gate",
+        "task_type": "migration",
+        "repo": "langchain-ai/langgraph",
+        "license": "MIT",
+        "evidence_paths": ["libs/", "docs/", "examples/", "tests/"],
+        "prompt_cn": "把一个 graph agent runtime 的状态和 checkpoint 边界迁移成 ShipGrade 质量门。",
+        "must_include": ["state", "checkpoint", "graph", "tests", "examples"],
+        "must_avoid": ["无状态也可以", "只看示例", "不用恢复测试"],
+        "rubric": {
+            "full_credit": [
+                "明确 state 与 checkpoint 的恢复边界",
+                "从 tests 和 examples 区分演示与可验证行为",
+                "说明 graph 节点失败和恢复路径",
+                "给出本地 gate 或最小回归命令",
+            ],
+            "deductions": ["接受无状态迁移", "只看示例", "没有恢复测试"],
+        },
+        "strong_answer": "先按 graph 的 state 与 checkpoint 边界建 gate,读取 libs/、tests/、examples/ 和 docs/。examples 只能做入口,必须补恢复测试或最小回归来证明 checkpoint 失败后能 resume。",
+        "weak_answer": "无状态也可以,只看示例,不用恢复测试。",
+    },
+    {
+        "id": "crewai-multi-agent-process-boundary",
+        "task_type": "engineering_plan",
+        "repo": "crewAIInc/crewAI",
+        "license": "MIT",
+        "evidence_paths": ["pyproject.toml", "src/crewai/", "tests/", "docs/"],
+        "prompt_cn": "为一个多 agent orchestration 仓设计质量门,避免把任务委派、工具权限和流程状态混在一起。",
+        "must_include": ["agent", "task", "tool permission", "process", "tests"],
+        "must_avoid": ["所有 agent 随便调工具", "不用流程状态", "没有权限边界"],
+        "rubric": {
+            "full_credit": [
+                "区分 agent、task、process 与 tool permission",
+                "从 pyproject 和 tests 找本地验证入口",
+                "说明工具权限和外部副作用边界",
+                "要求失败路径或权限拒绝测试",
+            ],
+            "deductions": ["工具权限无限制", "没有流程状态", "没有权限测试"],
+        },
+        "strong_answer": "先把 agent、task、process 和 tool permission 四层拆开,读 pyproject.toml、src/crewai/、tests/ 和 docs/。质量门要覆盖工具权限拒绝、流程状态和失败路径,不能放开工具权限。",
+        "weak_answer": "所有 agent 随便调工具就行,不用流程状态,没有权限边界。",
+    },
+    {
+        "id": "cline-ide-agent-secret-boundary",
+        "task_type": "anti_pattern_detection",
+        "repo": "cline/cline",
+        "license": "Apache-2.0",
+        "evidence_paths": ["package.json", "src/", "webview-ui/", "tests/"],
+        "prompt_cn": "判断一个 IDE coding agent 交付是否越过 secret、workspace 和工具执行边界。",
+        "must_include": ["workspace", "secret", "tool execution", "package.json", "tests"],
+        "must_avoid": ["读取所有 token", "直接复制用户工作区", "不用隔离工具"],
+        "rubric": {
+            "full_credit": [
+                "拒绝读取 token 或复制用户工作区",
+                "从 package.json 和 tests 找本地 gate",
+                "说明 webview / extension / tool execution 边界",
+                "要求隔离工具执行和权限提示",
+            ],
+            "deductions": ["读取 token", "复制工作区", "没有工具隔离"],
+        },
+        "strong_answer": "reject 任何读取凭据或搬运用户工作区的方案。先读 package.json、src/、webview-ui/ 和 tests/,把 workspace、secret 与 tool execution 边界写进 gate,并要求隔离工具和权限提示。",
+        "weak_answer": "读取所有 token,直接复制用户工作区,不用隔离工具。",
+    },
 ]
 
 
@@ -285,10 +369,10 @@ def write_outputs(output_dir: Path) -> dict[str, Any]:
     readme_path.write_text(
         "# ShipGrade Holdout Replay\n\n"
         "This holdout set replays strong and weak answers on repositories that are not part of the scored real-task eval corpus.\n\n"
-        "- cases: `8`\n"
+        f"- cases: `{len(HOLDOUT_CASES)}`\n"
         "- base overlap repos: `0`\n"
-        "- strong answers: `8/8` pass\n"
-        "- weak answers: `8/8` fail\n"
+        f"- strong answers: `{strong_passed}/{len(HOLDOUT_CASES)}` pass\n"
+        f"- weak answers: `{weak_failed}/{len(HOLDOUT_CASES)}` fail\n"
         "- boundary: metadata, path evidence, prompts, rubrics, and synthetic replay answers only; no upstream source bodies.\n\n"
         "Use `holdout-replay-cases.jsonl` for replay inputs and `holdout-replay-report.json` for the deterministic self-check result.\n",
         encoding="utf-8",

@@ -205,10 +205,10 @@ def main() -> None:
     holdout_replay_out = run([sys.executable, "tools/shipgrade_holdout_replay.py", "--clean"])
     if (
         "shipgrade-holdout-replay-ok" not in holdout_replay_out
-        or "cases=8" not in holdout_replay_out
+        or "cases=12" not in holdout_replay_out
         or "base_overlap_repos=0" not in holdout_replay_out
-        or "strong_passed=8/8" not in holdout_replay_out
-        or "weak_failed=8/8" not in holdout_replay_out
+        or "strong_passed=12/12" not in holdout_replay_out
+        or "weak_failed=12/12" not in holdout_replay_out
         or "holdout_not_training=true" not in holdout_replay_out
         or "rubric_scored=true" not in holdout_replay_out
         or "source_body_copied_to_public=false" not in holdout_replay_out
@@ -218,12 +218,12 @@ def main() -> None:
     model_replay_out = run([sys.executable, "tools/shipgrade_model_replay.py", "--clean"])
     if (
         "shipgrade-model-replay-ok" not in model_replay_out
-        or "cases=12" not in model_replay_out
+        or "cases=16" not in model_replay_out
         or "base_eval_cases=4" not in model_replay_out
-        or "holdout_cases=8" not in model_replay_out
+        or "holdout_cases=12" not in model_replay_out
         or "profiles=3" not in model_replay_out
-        or "target_passed=12/12" not in model_replay_out
-        or "lazy_failed=12/12" not in model_replay_out
+        or "target_passed=16/16" not in model_replay_out
+        or "lazy_failed=16/16" not in model_replay_out
         or "candidate_outputs_replayed=true" not in model_replay_out
         or "failure_stratified=true" not in model_replay_out
         or "source_body_copied_to_public=false" not in model_replay_out
@@ -233,13 +233,13 @@ def main() -> None:
     judge_panel_out = run([sys.executable, "tools/shipgrade_judge_panel.py", "--clean"])
     if (
         "shipgrade-judge-panel-ok" not in judge_panel_out
-        or "cases=12" not in judge_panel_out
+        or "cases=16" not in judge_panel_out
         or "profiles=3" not in judge_panel_out
         or "judges=3" not in judge_panel_out
         or "judge_lenses=controller_quality,source_boundary,completion_audit" not in judge_panel_out
-        or "target_unanimous_pass=12/12" not in judge_panel_out
-        or "lazy_majority_rejected=12/12" not in judge_panel_out
-        or "partial_majority_rejected=12/12" not in judge_panel_out
+        or "target_unanimous_pass=16/16" not in judge_panel_out
+        or "lazy_majority_rejected=16/16" not in judge_panel_out
+        or "partial_majority_rejected=16/16" not in judge_panel_out
         or "cross_judge_packet_ready=true" not in judge_panel_out
         or "deterministic_judge_panel=true" not in judge_panel_out
         or "external_model_called=false" not in judge_panel_out

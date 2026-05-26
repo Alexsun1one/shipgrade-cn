@@ -181,7 +181,7 @@ python3 tools/shipgrade_eval_corpus.py --clean
 
 证据见 [docs/EVAL_CORPUS_PROOF.md](docs/EVAL_CORPUS_PROOF.md),实际语料在 [docs/eval-corpus/](docs/eval-corpus/)。
 
-为了防止评测只会通过自己见过的样本,发布包还包含 holdout replay: 8 条来自 `github/spec-kit`、`browser-use/browser-use`、`promptfoo/promptfoo`、`inspect_ai`、`SuperClaude`、`humanlayer/12-factor-agents`、`addyosmani/agent-skills`、`affaan-m/ECC` 的留出样本。它们不和基础 eval corpus 的仓库重叠,并用同一个 scorer 证明 strong 8/8 通过、weak 8/8 失败。
+为了防止评测只会通过自己见过的样本,发布包还包含 holdout replay: 12 条来自 `github/spec-kit`、`browser-use/browser-use`、`promptfoo/promptfoo`、`inspect_ai`、`SuperClaude`、`humanlayer/12-factor-agents`、`addyosmani/agent-skills`、`affaan-m/ECC`、`openai/openai-agents-python`、`langchain-ai/langgraph`、`crewAIInc/crewAI`、`cline/cline` 的留出样本。它们不和基础 eval corpus 的仓库重叠,并用同一个 scorer 证明 strong 12/12 通过、weak 12/12 失败。
 
 ```bash
 python3 tools/shipgrade_holdout_replay.py --clean
@@ -191,7 +191,7 @@ python3 tools/shipgrade_holdout_replay.py --clean
 
 ## 模型/候选输出复放
 
-留出集之外,发布包还会把基础 eval + holdout 的 12 条任务合并,复放三类候选输出: `shipgrade_target`、`lazy_or_overfit_draft`、`partial_candidate_draft`。这不是远端模型 benchmark,而是一个 deterministic replay gate: 目标答案必须 12/12 通过,偷懒/过拟合草稿必须 12/12 失败,partial 草稿的失败会分层到验证证据、来源边界、完成审计等 failure layer。
+留出集之外,发布包还会把基础 eval + holdout 的 16 条任务合并,复放三类候选输出: `shipgrade_target`、`lazy_or_overfit_draft`、`partial_candidate_draft`。这不是远端模型 benchmark,而是一个 deterministic replay gate: 目标答案必须 16/16 通过,偷懒/过拟合草稿必须 16/16 失败,partial 草稿的失败会分层到验证证据、来源边界、完成审计等 failure layer。
 
 ```bash
 python3 tools/shipgrade_model_replay.py --clean
@@ -366,9 +366,9 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | `tools/shipgrade_real_issue_case.py` | 在真实开源仓 `pallets/click` 中跑 issue 式回归验证,证明主控智能、证据矩阵和完成审计能进入真实项目。 |
 | `tools/shipgrade_real_task_suite.py` | 在 `pallets/click` 和 `pallets/itsdangerous` 中生成 repair、migration、review、anti-pattern detection 四类真实任务样本。 |
 | `tools/shipgrade_eval_corpus.py` | 把真实任务样本导出成 JSONL eval corpus,并验证 chosen/rejected 样本能被 rubric scorer 正确区分。 |
-| `tools/shipgrade_holdout_replay.py` | 用基础评测集之外的 8 条留出仓库样本复放 strong/weak 答案,防止训练质量只贴合已见样本。 |
-| `tools/shipgrade_model_replay.py` | 合并基础 eval + holdout 的 12 条任务,复放候选/模型输出并按验证、来源边界、完成审计分层失败。 |
-| `tools/shipgrade_judge_panel.py` | 把 12 条 replay case 生成三视角裁判包,为人工/Codex/Claude 交叉复审保留公开入口。 |
+| `tools/shipgrade_holdout_replay.py` | 用基础评测集之外的 12 条留出仓库样本复放 strong/weak 答案,防止训练质量只贴合已见样本。 |
+| `tools/shipgrade_model_replay.py` | 合并基础 eval + holdout 的 16 条任务,复放候选/模型输出并按验证、来源边界、完成审计分层失败。 |
+| `tools/shipgrade_judge_panel.py` | 把 16 条 replay case 生成三视角裁判包,为人工/Codex/Claude 交叉复审保留公开入口。 |
 | `tools/shipgrade_doctor.py` | 检查交付说明是否包含结果、验证、来源、风险、安全边界和接手入口。 |
 | `tools/shipgrade_demo.py` | 30 秒演示初始化、拒绝假完成、接受合格交付。 |
 | `tools/shipgrade_patterns.py` | 查看 Pattern Card,并生成可执行的 `.shipgrade/pattern-brief.md`。 |
@@ -395,9 +395,9 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | 有没有真实 issue 式案例 | 有。`docs/REAL_ISSUE_CASE_PROOF.md` 记录 `pallets/click` 的 CLI 行为回归验证和 handoff doctor 审核。 |
 | 有没有多类型任务质量证明 | 有。`docs/REAL_TASK_SUITE_PROOF.md` 记录 repair、migration、review、anti-pattern detection 四类真实开源仓任务样本。 |
 | 有没有可判分评测集 | 有。`docs/EVAL_CORPUS_PROOF.md` 记录 4 条真实任务 eval,chosen 4/4 通过、rejected 4/4 被拒绝。 |
-| 有没有留出集防止过拟合 | 有。`docs/HOLDOUT_REPLAY_PROOF.md` 记录 8 条非基础仓库 holdout replay,strong 8/8 通过、weak 8/8 失败、base overlap 为 0。 |
-| 能不能复放模型/候选输出 | 可以。`docs/MODEL_REPLAY_PROOF.md` 记录 12 条 base + holdout 任务的 candidate replay,并把失败分层到验证、来源边界和完成审计。 |
-| 能不能交叉审查输出 | 可以先用 deterministic judge panel。`docs/JUDGE_PANEL_PROOF.md` 记录 12 条 replay case 的 controller/source/completion 三视角判分包,不伪称已调用外部模型或真人。 |
+| 有没有留出集防止过拟合 | 有。`docs/HOLDOUT_REPLAY_PROOF.md` 记录 12 条非基础仓库 holdout replay,strong 12/12 通过、weak 12/12 失败、base overlap 为 0。 |
+| 能不能复放模型/候选输出 | 可以。`docs/MODEL_REPLAY_PROOF.md` 记录 16 条 base + holdout 任务的 candidate replay,并把失败分层到验证、来源边界和完成审计。 |
+| 能不能交叉审查输出 | 可以先用 deterministic judge panel。`docs/JUDGE_PANEL_PROOF.md` 记录 16 条 replay case 的 controller/source/completion 三视角判分包,不伪称已调用外部模型或真人。 |
 | 能不能发布 | 可以。仓库内有发布前检查、GitHub Actions、模板、许可证、发布包和校验脚本。 |
 
 ## 证据快照
@@ -421,8 +421,8 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 真实仓 issue 式案例: `pallets/click` required-option regression case pass
 - 多类型真实任务套件: 4/4 real task cases across repair/migration/review/anti-pattern detection
 - 真实任务评测集: 4 eval cases, chosen 4/4 pass, rejected 4/4 fail
-- 模型/候选输出复放: 12 candidate replays with failure stratification
-- 裁判面板: 12 replay cases, 3 deterministic judge lenses
+- 模型/候选输出复放: 16 candidate replays with failure stratification
+- 裁判面板: 16 replay cases, 3 deterministic judge lenses
 - GitHub 发布前检查: 已内置本地报告
 
 ## 这些经验怎么落到动作里

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T14:05:51Z",
+  "generated_at": "2026-05-26T14:40:54Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
   "passed": 31,
@@ -143,17 +143,17 @@
     {
       "id": "scored-holdout-replay",
       "passed": true,
-      "detail": "8 holdout replay cases separate strong/weak answers with no base-repo overlap"
+      "detail": "12 holdout replay cases separate strong/weak answers with no base-repo overlap"
     },
     {
       "id": "scored-model-output-replay",
       "passed": true,
-      "detail": "12 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers"
+      "detail": "16 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers"
     },
     {
       "id": "deterministic-judge-panel",
       "passed": true,
-      "detail": "12 replay cases have deterministic controller/source/completion judge-panel votes"
+      "detail": "16 replay cases have deterministic controller/source/completion judge-panel votes"
     },
     {
       "id": "shipgrade-verify",

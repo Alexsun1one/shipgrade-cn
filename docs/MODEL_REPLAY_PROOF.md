@@ -2,21 +2,21 @@
 
 This file is generated from a real local run of `python3 tools/shipgrade_model_replay.py --output-dir docs/model-replay` during release packaging.
 
-It proves ShipGrade CN can replay candidate or model-style outputs through the same base eval and holdout replay gates before making quality claims. The replay set contains 12 cases: 4 base eval cases and 8 holdout cases.
+It proves ShipGrade CN can replay candidate or model-style outputs through the same base eval and holdout replay gates before making quality claims. The replay set contains 16 cases: 4 base eval cases and 12 holdout cases.
 
-The self-check uses deterministic rubric scoring across three profiles: `shipgrade_target`, `lazy_or_overfit_draft`, and `partial_candidate_draft`. Target answers must pass 12/12, lazy drafts must fail 12/12, and partial drafts must expose stratified failure layers such as validation evidence gaps, source boundary gaps, and completion audit gaps.
+The self-check uses deterministic rubric scoring across three profiles: `shipgrade_target`, `lazy_or_overfit_draft`, and `partial_candidate_draft`. Target answers must pass 16/16, lazy drafts must fail 16/16, and partial drafts must expose stratified failure layers such as validation evidence gaps, source boundary gaps, and completion audit gaps.
 
 ## Captured Output
 
 ```text
 shipgrade-model-replay-ok
-cases=12
+cases=16
 base_eval_cases=4
-holdout_cases=8
+holdout_cases=12
 profiles=3
-target_passed=12/12
-lazy_failed=12/12
-partial_failed=12/12
+target_passed=16/16
+lazy_failed=16/16
+partial_failed=16/16
 failure_layers=completion_audit_gap,forbidden_behavior_hit,source_boundary_gap,validation_evidence_gap
 model_replay_cases_path=docs/model-replay/model-output-replay-cases.jsonl
 report_path=docs/model-replay/model-output-replay-report.json

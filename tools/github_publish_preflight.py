@@ -55,6 +55,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
+    "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
     "scripts/verify.sh",
@@ -70,6 +71,13 @@ SECRET_PATTERNS = [
     re.compile(r"-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----"),
     re.compile(r"\bsk-[A-Za-z0-9_-]{20,}"),
     re.compile(r"(?i)(api[_-]?key|secret|token)\s*[:=]\s*['\"][^'\"]{16,}['\"]"),
+]
+
+LOCAL_PATH_PATTERNS = [
+    re.compile(r"/Users/"),
+    re.compile(r"/var/folders"),
+    re.compile(r"/private/var"),
+    re.compile("sun" + "wuyuan"),
 ]
 
 
@@ -116,6 +124,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "5 分钟装进你的项目",
         "30 秒看懂差异",
         "python3 tools/shipgrade_demo.py",
+        "python3 tools/shipgrade_patterns.py list",
+        "用蒸馏出来的模式开工",
         "docs/DEMO_PROOF.md",
         "assets/shipgrade-hero-cn.png",
         "assets/shipgrade-demo.gif",
@@ -154,6 +164,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "Repo Cards / 15 Pattern Cards",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py",
+        "python3 tools/shipgrade_patterns.py list",
+        "Use A Distilled Pattern",
         "docs/EVIDENCE_INDEX.md",
         "docs/source-promotion-sandbox-cases.md",
     ]
@@ -204,6 +216,36 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         and distillation.get("eval_case_count") == distillation_counts["eval_cases"]
         and distillation_counts["task_cards"] == distillation_counts["eval_cases"],
         f"summary={distillation.get('repo_card_count')}/{distillation.get('pattern_card_count')}/{distillation.get('task_card_count')}/{distillation.get('eval_case_count')} files={distillation_counts}",
+    )
+
+    patterns_validate = run([sys.executable, "tools/shipgrade_patterns.py", "validate"])
+    patterns_show = run([sys.executable, "tools/shipgrade_patterns.py", "show", "command_topology_quality_gate"])
+    with tempfile.TemporaryDirectory() as tmp:
+        brief_path = Path(tmp) / "pattern-brief.md"
+        patterns_brief = run(
+            [
+                sys.executable,
+                "tools/shipgrade_patterns.py",
+                "brief",
+                "command_topology_quality_gate",
+                "--type",
+                "engineering_plan",
+                "--write",
+                str(brief_path),
+            ]
+        )
+        brief_text = brief_path.read_text(encoding="utf-8") if brief_path.exists() else ""
+    add(
+        checks,
+        "patterns-tool",
+        patterns_validate.returncode == 0
+        and "shipgrade-patterns-ok" in patterns_validate.stdout
+        and patterns_show.returncode == 0
+        and "先读命令拓扑" in patterns_show.stdout
+        and patterns_brief.returncode == 0
+        and "shipgrade-pattern-brief-ok" in patterns_brief.stdout
+        and "验收标准" in brief_text,
+        patterns_validate.stdout.strip().splitlines()[-1] + "; show=command_topology_quality_gate; brief=pattern-brief-ok",
     )
 
     batch = json.loads(read_text("docs/evidence/source_promotion_batch.json"))
@@ -257,7 +299,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
             text = path.read_text(encoding="utf-8", errors="ignore")
             if any(pattern.search(text) for pattern in SECRET_PATTERNS):
                 forbidden_hits.append(path.relative_to(ROOT).as_posix())
-    add(checks, "secret-and-metadata-scan", not forbidden_hits, "hits=" + ", ".join(forbidden_hits[:8]) if forbidden_hits else "no generated metadata or secret patterns")
+            if path.suffix in {".md", ".json", ".yml", ".yaml", ".mdc"} and any(pattern.search(text) for pattern in LOCAL_PATH_PATTERNS):
+                forbidden_hits.append(path.relative_to(ROOT).as_posix())
+    add(checks, "secret-and-metadata-scan", not forbidden_hits, "hits=" + ", ".join(forbidden_hits[:8]) if forbidden_hits else "no generated metadata, local paths, or secret patterns")
 
     with tempfile.TemporaryDirectory() as tmp:
         fake = Path(tmp) / "fake-pass.md"
@@ -327,6 +371,8 @@ def write_docs(checks: list[dict[str, Any]]) -> None:
             "python3 tools/github_publish_preflight.py --write-docs --run-verify",
             "python3 tools/shipgrade_verify.py",
             "python3 tools/shipgrade_demo.py",
+            "python3 tools/shipgrade_patterns.py validate",
+            "python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type engineering_plan --write .shipgrade/pattern-brief.md",
             "python3 scripts/create-public-stage.py /tmp/shipgrade-cn-public --init-git",
             "bash scripts/package.sh",
             "```",

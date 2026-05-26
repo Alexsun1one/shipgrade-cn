@@ -19,6 +19,7 @@
 | 接线多种 AI 编程工具 | 自动生成 `AGENTS.md`、`CLAUDE.md`、Cursor rule,让三个工具读同一套规则。 |
 | 把口语需求变成工程任务 | 目标、非目标、证据、验收标准、风险边界和第一刀切入点。 |
 | 拒绝“看起来好了”的假完成 | `shipgrade_doctor.py` 会要求具体文件路径、命令或浏览器证据。 |
+| 用蒸馏模式帮你开工 | `shipgrade_patterns.py` 把真实仓库提炼出的 Pattern/Task/Eval 变成任务 brief。 |
 | 交付后可接手 | handoff 会留下结果、验证、剩余风险、安全边界和下一步。 |
 | 发布前自检 | `github_publish_preflight.py`、`shipgrade_verify.py`、GitHub Actions 和发布包脚本。 |
 
@@ -88,6 +89,18 @@ python3 tools/shipgrade_doctor.py .shipgrade/handoff.md
 ```bash
 python3 tools/install_skill.py --force
 ```
+
+## 用蒸馏出来的模式开工
+
+如果你不是从空白 brief 开始,可以直接挑一个真实仓库里提炼过的工程模式:
+
+```bash
+python3 tools/shipgrade_patterns.py list
+python3 tools/shipgrade_patterns.py show command_topology_quality_gate
+python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type engineering_plan --write .shipgrade/pattern-brief.md
+```
+
+这会生成一份可交给 Codex、Claude Code 或 Cursor 的 `pattern-brief.md`: 它包含适用场景、任务上下文、应包含点、坏答案、证据路径和验收标准。也就是说,蒸馏资产不是摆在 README 里好看的名词,而是能直接进入项目工作台的输入。
 
 ## 它会生成什么
 
@@ -164,6 +177,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | `tools/shipgrade_init.py` | 给任意项目生成 `.shipgrade/`、`AGENTS.md`、`CLAUDE.md` 和 Cursor 规则。 |
 | `tools/shipgrade_doctor.py` | 检查交付说明是否包含结果、验证、来源、风险、安全边界和接手入口。 |
 | `tools/shipgrade_demo.py` | 30 秒演示初始化、拒绝假完成、接受合格交付。 |
+| `tools/shipgrade_patterns.py` | 查看 Pattern Card,并生成可执行的 `.shipgrade/pattern-brief.md`。 |
 | `tools/github_publish_preflight.py` | 发布前检查 README、证据、模板、工作流、图片和安全边界。 |
 | `docs/repository-engineering-distillation-pipeline.md` | 仓库画像、工程模式卡、任务卡、评测集的工程蒸馏方法论。 |
 | `docs/repo-engineering-distillation-assets.md` | 从真实仓库证据生成的 Repo/Pattern/Task/Eval 资产样例和计数。 |

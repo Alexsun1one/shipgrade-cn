@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T05:03:19Z",
+  "generated_at": "2026-05-26T05:39:07Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 18,
-  "total": 18,
+  "passed": 19,
+  "total": 19,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "50 required files present"
+      "detail": "51 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -46,6 +46,11 @@
       "detail": "summary=11/15/90/90 files={'repo_cards': 11, 'pattern_cards': 15, 'task_cards': 90, 'eval_cases': 90}"
     },
     {
+      "id": "patterns-tool",
+      "passed": true,
+      "detail": "shipgrade-patterns-ok patterns=15 tasks=90 evals=90; show=command_topology_quality_gate; brief=pattern-brief-ok"
+    },
+    {
       "id": "source-promotion-batch",
       "passed": true,
       "detail": "selected=4 audited=4 runtime=2 static_smoke=2"
@@ -78,7 +83,7 @@
     {
       "id": "secret-and-metadata-scan",
       "passed": true,
-      "detail": "no generated metadata or secret patterns"
+      "detail": "no generated metadata, local paths, or secret patterns"
     },
     {
       "id": "doctor-fake-rejection",

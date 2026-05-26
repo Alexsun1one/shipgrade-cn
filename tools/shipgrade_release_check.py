@@ -32,6 +32,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_doctor.py",
     "tools/shipgrade_init.py",
     "tools/shipgrade_demo.py",
+    "tools/shipgrade_patterns.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -114,6 +115,12 @@ def main() -> None:
     doctor_out = run([sys.executable, "tools/shipgrade_doctor.py", "demo/demo-output.md"])
     if "ship-grade-ok" not in doctor_out:
         fail("doctor did not accept demo output")
+    patterns_out = run([sys.executable, "tools/shipgrade_patterns.py", "validate"])
+    if "shipgrade-patterns-ok" not in patterns_out:
+        fail("patterns tool did not validate distilled assets")
+    patterns_show = run([sys.executable, "tools/shipgrade_patterns.py", "show", "command_topology_quality_gate"])
+    if "先读命令拓扑" not in patterns_show:
+        fail("patterns tool did not show core pattern")
     demo_out = run([sys.executable, "tools/shipgrade_demo.py"])
     if "shipgrade-demo-ok" not in demo_out or "fake_rejection=" not in demo_out:
         fail("demo tool did not prove init/reject/accept path")

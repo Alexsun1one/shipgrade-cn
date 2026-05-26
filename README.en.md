@@ -19,6 +19,7 @@ ShipGrade CN installs a verifiable delivery workbench into any repository. Codex
 | Multi-agent rule wiring | `AGENTS.md`, `CLAUDE.md`, and Cursor rules generated from the same contract. |
 | Vague request compression | Goal, non-goal, evidence, acceptance criteria, risks, and the first implementation slice. |
 | Fake-completion rejection | `shipgrade_doctor.py` requires artifact paths and command or browser evidence. |
+| Distilled pattern kickoff | `shipgrade_patterns.py` turns Pattern/Task/Eval assets from real repositories into a task brief. |
 | Handoff after delivery | Result, validation proof, remaining risks, security boundary, and next action. |
 | Release preflight | `github_publish_preflight.py`, `shipgrade_verify.py`, GitHub Actions, and package scripts. |
 
@@ -86,6 +87,18 @@ Install as a Codex skill:
 python3 tools/install_skill.py --force
 ```
 
+## Use A Distilled Pattern
+
+If you are not starting from a blank brief, pick an engineering pattern distilled from real repositories:
+
+```bash
+python3 tools/shipgrade_patterns.py list
+python3 tools/shipgrade_patterns.py show command_topology_quality_gate
+python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type engineering_plan --write .shipgrade/pattern-brief.md
+```
+
+The generated `pattern-brief.md` is ready for Codex, Claude Code, or Cursor. It contains the scenario, task context, required points, bad-answer patterns, evidence paths, and acceptance criteria.
+
 ## Generated Structure
 
 ```text
@@ -141,6 +154,7 @@ Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 
 | `tools/shipgrade_init.py` | Generates the project workbench and agent-rule wiring. |
 | `tools/shipgrade_doctor.py` | Checks whether a handoff contains result, validation, source, risk, security, and next-step evidence. |
 | `tools/shipgrade_demo.py` | Runs the quick proof path. |
+| `tools/shipgrade_patterns.py` | Lists distilled patterns and writes `.shipgrade/pattern-brief.md`. |
 | `tools/github_publish_preflight.py` | Checks the repository before release. |
 | `docs/repository-engineering-distillation-pipeline.md` | The Repo Card / Pattern Card / Task Card / Eval methodology. |
 | `docs/repo-engineering-distillation-assets.md` | Generated Repo/Pattern/Task/Eval assets from real repository evidence. |

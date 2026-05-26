@@ -18,6 +18,18 @@ python3 tools/shipgrade_doctor.py demo/demo-output.md
 - `AGENTS.md` / `CLAUDE.md` 被接线,后续 agent 会看到规则。
 - `shipgrade_doctor.py` 不只看关键词,会拒绝没有命令/浏览器证据的假完成,也会接受合格 handoff。
 
+## 用蒸馏模式开工
+
+你也可以不从空白 brief 开始,而是从真实仓库里提炼出的工程模式开工:
+
+```bash
+python3 tools/shipgrade_patterns.py list
+python3 tools/shipgrade_patterns.py show command_topology_quality_gate
+python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type engineering_plan --write .shipgrade/pattern-brief.md
+```
+
+这会生成 `.shipgrade/pattern-brief.md`,里面有任务上下文、证据路径、应包含点、坏答案和验收标准。适合“我不知道项目一开始该写什么文档”“这个功能应该怎么切入”“怎么审查 AI 的交付质量”这类场景。
+
 ## 你是哪类用户
 
 | 你是谁 | 先打开 | 你要做什么 |

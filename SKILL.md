@@ -74,6 +74,23 @@ description: "Chinese ship-grade engineering workflow for Codex, Claude Code, Cu
 4. 验证: 跑测试、类型检查、构建、浏览器 smoke、探针或人工检查。
 5. 写回: 更新 handoff、README、Obsidian、工作日志或规则。
 
+## 蒸馏资产使用入口
+
+当任务涉及架构规划、代码审查、修复路径、项目开项或“借鉴优秀仓库经验”时,不要只凭直觉输出。先把仓库工程蒸馏资产转成当前任务可用的 brief:
+
+```bash
+python3 tools/shipgrade_patterns.py list
+python3 tools/shipgrade_patterns.py show command_topology_quality_gate
+python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type engineering_plan --write .shipgrade/pattern-brief.md
+```
+
+使用规则:
+
+- `docs/repo-engineering-distillation-assets.md` 负责解释 Repo/Pattern/Task/Eval 的来源和边界。
+- `docs/evidence/repo_engineering_distillation/*.jsonl` 是机器可读证据,只包含路径级证据和评测 rubric,不复制上游源码正文。
+- `tools/shipgrade_patterns.py` 负责把 Pattern Card + Task Card 变成可执行任务输入。
+- 生成的 `.shipgrade/pattern-brief.md` 应该进入本次任务的证据集合,并在 handoff 中说明采用了哪个 pattern、为什么适用、哪里不适用。
+
 ## 模式选择
 
 ### Mode 0: Intake

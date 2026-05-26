@@ -2,12 +2,12 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `18/18`
+- passed: `19/19`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
 | --- | --- | --- |
-| `required-files` | `pass` | 50 required files present |
+| `required-files` | `pass` | 51 required files present |
 | `readme-launch-surface` | `pass` | README has hook, proof, and preflight surface |
 | `readme-english-surface` | `pass` | README.en.md has standalone onboarding surface |
 | `skill-frontmatter` | `pass` | machine-readable frontmatter with name/description triggers |
@@ -15,13 +15,14 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `repo-metadata` | `pass` | topics=10 missing=[] |
 | `public-evidence-manifest` | `pass` | evidence_files=17 |
 | `repo-engineering-distillation-assets` | `pass` | summary=11/15/90/90 files={'repo_cards': 11, 'pattern_cards': 15, 'task_cards': 90, 'eval_cases': 90} |
+| `patterns-tool` | `pass` | shipgrade-patterns-ok patterns=15 tasks=90 evals=90; show=command_topology_quality_gate; brief=pattern-brief-ok |
 | `source-promotion-batch` | `pass` | selected=4 audited=4 runtime=2 static_smoke=2 |
 | `source-promotion-sandbox-cases` | `pass` | cases=3/3 required=13/13 configured_tests=264 |
 | `sandbox-runtime-matrix` | `pass` | cases=3/3 steps=12/12 |
 | `social-preview` | `pass` | dimensions=(1600, 900) |
 | `demo-gif` | `pass` | dimensions=(1200, 675) |
 | `issue-pr-templates` | `pass` | issue and PR templates include validation language |
-| `secret-and-metadata-scan` | `pass` | no generated metadata or secret patterns |
+| `secret-and-metadata-scan` | `pass` | no generated metadata, local paths, or secret patterns |
 | `doctor-fake-rejection` | `pass` | fake completion rejected |
 | `demo-proof` | `pass` | demo proof captures init/reject/accept path |
 | `shipgrade-verify` | `pass` | shipgrade-verify-ok  |
@@ -32,6 +33,8 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 python3 tools/github_publish_preflight.py --write-docs --run-verify
 python3 tools/shipgrade_verify.py
 python3 tools/shipgrade_demo.py
+python3 tools/shipgrade_patterns.py validate
+python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type engineering_plan --write .shipgrade/pattern-brief.md
 python3 scripts/create-public-stage.py /tmp/shipgrade-cn-public --init-git
 bash scripts/package.sh
 ```

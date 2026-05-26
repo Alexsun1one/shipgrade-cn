@@ -58,11 +58,14 @@ REQUIRED_FILES = [
     "docs/adoption-proof.json",
     "docs/EXTERNAL_TRIAL_PROOF.md",
     "docs/external-trial-proof.json",
+    "docs/MULTI_REPO_EVAL_PROOF.md",
+    "docs/multi-repo-eval-proof.json",
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
     "tools/shipgrade_zero_install_demo.py",
     "tools/shipgrade_external_trial.py",
+    "tools/shipgrade_multi_repo_eval.py",
     "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
@@ -139,6 +142,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "docs/ADOPTION_PROOF.md",
         "python3 tools/shipgrade_external_trial.py --clean",
         "docs/EXTERNAL_TRIAL_PROOF.md",
+        "python3 tools/shipgrade_multi_repo_eval.py --clean",
+        "docs/MULTI_REPO_EVAL_PROOF.md",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -178,6 +183,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "docs/ADOPTION_PROOF.md",
         "python3 tools/shipgrade_external_trial.py --clean",
         "docs/EXTERNAL_TRIAL_PROOF.md",
+        "python3 tools/shipgrade_multi_repo_eval.py --clean",
+        "docs/MULTI_REPO_EVAL_PROOF.md",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",
@@ -428,6 +435,28 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "pypa/sampleproject zero-install trial has unit-test and doctor proof" if not missing_external_trial_terms else "missing_terms=" + ", ".join(missing_external_trial_terms),
     )
 
+    multi_repo_eval_proof = read_text("docs/MULTI_REPO_EVAL_PROOF.md")
+    multi_repo_eval_payload = json.loads(read_text("docs/multi-repo-eval-proof.json"))
+    multi_repo_eval_terms = [
+        "shipgrade-multi-repo-eval-ok",
+        "cases=3",
+        "passed=3",
+        "case=pypa/sampleproject",
+        "case=pallets/click",
+        "case=pallets/itsdangerous",
+        "doctor=ship-grade-ok",
+        "python_helper_used_in_target=false",
+        "service_started=false",
+        "source_body_copied_to_public=false",
+    ]
+    missing_multi_repo_eval_terms = [term for term in multi_repo_eval_terms if term not in multi_repo_eval_proof]
+    add(
+        checks,
+        "multi-repo-external-eval",
+        not missing_multi_repo_eval_terms and multi_repo_eval_payload.get("ok") is True,
+        "3 public repositories passed zero-install eval with doctor-reviewed handoffs" if not missing_multi_repo_eval_terms else "missing_terms=" + ", ".join(missing_multi_repo_eval_terms),
+    )
+
     if run_verify:
         verify = run([sys.executable, "tools/shipgrade_verify.py"])
         add(checks, "shipgrade-verify", verify.returncode == 0 and "shipgrade-verify-ok" in verify.stdout, (verify.stdout + verify.stderr)[-500:])
@@ -471,6 +500,7 @@ def write_docs(checks: list[dict[str, Any]]) -> None:
             "python3 tools/shipgrade_verify.py",
             "python3 tools/shipgrade_zero_install_demo.py --clean",
             "python3 tools/shipgrade_external_trial.py --clean",
+            "python3 tools/shipgrade_multi_repo_eval.py --clean",
             "python3 tools/shipgrade_demo.py",
             "python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate",
             "python3 tools/shipgrade_patterns.py validate",

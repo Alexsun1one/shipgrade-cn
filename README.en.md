@@ -4,7 +4,7 @@
 
 **A Chinese-first engineering delivery workbench for Codex, Claude Code, and Cursor.**
 
-[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [External Trial](docs/EXTERNAL_TRIAL_PROOF.md) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
+[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [External Trial](docs/EXTERNAL_TRIAL_PROOF.md) · [Multi-Repo Eval](docs/MULTI_REPO_EVAL_PROOF.md) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
 
 [![Local verify](https://img.shields.io/badge/local%20verify-shipgrade__verify.py-2ea44f)](#release-preflight)
 [![Agents](https://img.shields.io/badge/agents-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -131,6 +131,14 @@ python3 tools/shipgrade_external_trial.py --clean
 ```
 
 See [docs/EXTERNAL_TRIAL_PROOF.md](docs/EXTERNAL_TRIAL_PROOF.md).
+
+The stronger layer is a multi-repo eval. The release package repeats the same zero-install workflow across `pypa/sampleproject`, `pallets/click`, and `pallets/itsdangerous`: `SHIPGRADE.md` wiring, task brief, handoff, lightweight repository-native validation, and doctor review.
+
+```bash
+python3 tools/shipgrade_multi_repo_eval.py --clean
+```
+
+See [docs/MULTI_REPO_EVAL_PROOF.md](docs/MULTI_REPO_EVAL_PROOF.md).
 
 ## Quick Demo
 
@@ -274,6 +282,7 @@ Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 
 | `tools/shipgrade_init.py` | Generates the project workbench and agent-rule wiring. |
 | `tools/shipgrade_zero_install_demo.py` | Proves `SHIPGRADE.md` can wire a target project without Python or a service in that target. |
 | `tools/shipgrade_external_trial.py` | Runs a zero-install trial against a small public MIT repository and doctor-checks the resulting handoff. |
+| `tools/shipgrade_multi_repo_eval.py` | Repeats zero-install wiring, lightweight validation, and doctor review across multiple small public repositories. |
 | `tools/shipgrade_doctor.py` | Checks whether a handoff contains result, validation, source, risk, security, and next-step evidence. |
 | `tools/shipgrade_demo.py` | Runs the quick proof path. |
 | `tools/shipgrade_patterns.py` | Lists distilled patterns and writes `.shipgrade/pattern-brief.md`. |
@@ -312,6 +321,7 @@ ShipGrade CN gives agents a repeatable loop:
 - Real project gauntlet: 5/5
 - Transcript evidence: 2/2
 - External zero-install trial: `pypa/sampleproject` handoff doctor pass
+- Multi-repo external eval: 3/3 public repos passed zero-install eval
 
 ## Why It Is Not Just Prompts
 
@@ -323,6 +333,7 @@ ShipGrade CN gives agents a repeatable loop:
 | Is the research README-only? | No. It generates 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases. Structure scans cover 88 repositories, and deep code case studies cover 11 repositories. |
 | Is there runtime evidence? | Yes. Runtime and sandbox evidence live under `docs/`. |
 | Has it touched an external repo? | Yes. `docs/EXTERNAL_TRIAL_PROOF.md` records a zero-install trial against `pypa/sampleproject`, including existing unit test evidence and doctor-reviewed handoff. |
+| Is there repeated eval evidence? | Yes. `docs/MULTI_REPO_EVAL_PROOF.md` records 3 public repositories passing the same zero-install eval loop. |
 | Can the repo be released independently? | Yes. It includes local preflight, GitHub Actions, release packaging, issue templates, and license files. |
 
 ## How Those Ideas Become Actions
@@ -347,6 +358,7 @@ The source influences land as runnable repository artifacts, not decorative cita
 - Code case studies: `docs/deep-code-case-studies.md`
 - Runtime evidence: `docs/runtime-smoke-evidence.md`, `docs/sandbox-runtime-cases.md`
 - External trial: `docs/EXTERNAL_TRIAL_PROOF.md`
+- Multi-repo eval: `docs/MULTI_REPO_EVAL_PROOF.md`
 - Source promotion: `docs/high-signal-source-radar.md`, `docs/source-promotion-queue.md`, `docs/source-promotion-batch.md`
 - Release preflight: `docs/GITHUB_PUBLISH_PREFLIGHT.md`
 - Demo proof: `docs/DEMO_PROOF.md`

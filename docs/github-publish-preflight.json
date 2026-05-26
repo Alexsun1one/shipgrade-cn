@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T10:10:13Z",
+  "generated_at": "2026-05-26T10:36:50Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 23,
-  "total": 23,
+  "passed": 24,
+  "total": 24,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "59 required files present"
+      "detail": "62 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -114,6 +114,11 @@
       "id": "external-zero-install-trial",
       "passed": true,
       "detail": "pypa/sampleproject zero-install trial has unit-test and doctor proof"
+    },
+    {
+      "id": "multi-repo-external-eval",
+      "passed": true,
+      "detail": "3 public repositories passed zero-install eval with doctor-reviewed handoffs"
     },
     {
       "id": "shipgrade-verify",

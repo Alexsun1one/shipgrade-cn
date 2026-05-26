@@ -2,12 +2,12 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `30/30`
+- passed: `31/31`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
 | --- | --- | --- |
-| `required-files` | `pass` | 86 required files present |
+| `required-files` | `pass` | 92 required files present |
 | `readme-launch-surface` | `pass` | README has hook, proof, and preflight surface |
 | `readme-english-surface` | `pass` | README.en.md has standalone onboarding surface |
 | `shipgrade-zero-install-rule` | `pass` | SHIPGRADE.md is Chinese-first and zero-install |
@@ -36,6 +36,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `scored-eval-corpus` | `pass` | 4 scored eval cases separate chosen/rejected answers |
 | `scored-holdout-replay` | `pass` | 8 holdout replay cases separate strong/weak answers with no base-repo overlap |
 | `scored-model-output-replay` | `pass` | 12 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers |
+| `deterministic-judge-panel` | `pass` | 12 replay cases have deterministic controller/source/completion judge-panel votes |
 | `shipgrade-verify` | `pass` | shipgrade-verify-ok  |
 
 ## Publish Command Surface

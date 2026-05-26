@@ -79,6 +79,11 @@ REQUIRED_FILES = [
     "docs/model-replay/README.md",
     "docs/model-replay/model-output-replay-cases.jsonl",
     "docs/model-replay/model-output-replay-report.json",
+    "docs/JUDGE_PANEL_PROOF.md",
+    "docs/judge-panel-proof.json",
+    "docs/judge-panel/README.md",
+    "docs/judge-panel/judge-panel-cases.jsonl",
+    "docs/judge-panel/judge-panel-report.json",
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
@@ -90,6 +95,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_eval_corpus.py",
     "tools/shipgrade_holdout_replay.py",
     "tools/shipgrade_model_replay.py",
+    "tools/shipgrade_judge_panel.py",
     "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
@@ -181,6 +187,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "python3 tools/shipgrade_model_replay.py --clean",
         "docs/MODEL_REPLAY_PROOF.md",
         "docs/model-replay/",
+        "python3 tools/shipgrade_judge_panel.py --clean",
+        "docs/JUDGE_PANEL_PROOF.md",
+        "docs/judge-panel/",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -235,6 +244,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "python3 tools/shipgrade_model_replay.py --clean",
         "docs/MODEL_REPLAY_PROOF.md",
         "docs/model-replay/",
+        "python3 tools/shipgrade_judge_panel.py --clean",
+        "docs/JUDGE_PANEL_PROOF.md",
+        "docs/judge-panel/",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",
@@ -672,6 +684,46 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         and model_replay_report.get("failure_stratified") is True
         and len(model_replay_cases) == 12,
         "12 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers" if not missing_model_replay_terms else "missing_terms=" + ", ".join(missing_model_replay_terms),
+    )
+
+    judge_panel_proof = read_text("docs/JUDGE_PANEL_PROOF.md")
+    judge_panel_payload = json.loads(read_text("docs/judge-panel-proof.json"))
+    judge_panel_report = json.loads(read_text("docs/judge-panel/judge-panel-report.json"))
+    judge_panel_cases = [line for line in read_text("docs/judge-panel/judge-panel-cases.jsonl").splitlines() if line.strip()]
+    judge_panel_terms = [
+        "shipgrade-judge-panel-ok",
+        "cases=12",
+        "profiles=3",
+        "judges=3",
+        "judge_lenses=controller_quality,source_boundary,completion_audit",
+        "target_unanimous_pass=12/12",
+        "lazy_majority_rejected=12/12",
+        "partial_majority_rejected=12/12",
+        "cross_judge_packet_ready=true",
+        "deterministic_judge_panel=true",
+        "external_model_called=false",
+        "human_review_claimed=false",
+        "source_body_copied_to_public=false",
+        "secret_scan=pass",
+    ]
+    missing_judge_panel_terms = [term for term in judge_panel_terms if term not in judge_panel_proof]
+    add(
+        checks,
+        "deterministic-judge-panel",
+        not missing_judge_panel_terms
+        and judge_panel_payload.get("ok") is True
+        and judge_panel_report.get("ok") is True
+        and judge_panel_report.get("case_count") == 12
+        and judge_panel_report.get("judges") == 3
+        and judge_panel_report.get("target_unanimous_pass") == 12
+        and judge_panel_report.get("lazy_majority_rejected") == 12
+        and judge_panel_report.get("partial_majority_rejected") == 12
+        and judge_panel_report.get("cross_judge_packet_ready") is True
+        and judge_panel_report.get("deterministic_judge_panel") is True
+        and judge_panel_report.get("external_model_called") is False
+        and judge_panel_report.get("human_review_claimed") is False
+        and len(judge_panel_cases) == 12,
+        "12 replay cases have deterministic controller/source/completion judge-panel votes" if not missing_judge_panel_terms else "missing_terms=" + ", ".join(missing_judge_panel_terms),
     )
 
     if run_verify:

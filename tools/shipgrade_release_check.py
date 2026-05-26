@@ -42,6 +42,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_eval_corpus.py",
     "tools/shipgrade_holdout_replay.py",
     "tools/shipgrade_model_replay.py",
+    "tools/shipgrade_judge_panel.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -229,6 +230,24 @@ def main() -> None:
         or "secret_scan=pass" not in model_replay_out
     ):
         fail("model output replay did not prove candidate replay and failure stratification")
+    judge_panel_out = run([sys.executable, "tools/shipgrade_judge_panel.py", "--clean"])
+    if (
+        "shipgrade-judge-panel-ok" not in judge_panel_out
+        or "cases=12" not in judge_panel_out
+        or "profiles=3" not in judge_panel_out
+        or "judges=3" not in judge_panel_out
+        or "judge_lenses=controller_quality,source_boundary,completion_audit" not in judge_panel_out
+        or "target_unanimous_pass=12/12" not in judge_panel_out
+        or "lazy_majority_rejected=12/12" not in judge_panel_out
+        or "partial_majority_rejected=12/12" not in judge_panel_out
+        or "cross_judge_packet_ready=true" not in judge_panel_out
+        or "deterministic_judge_panel=true" not in judge_panel_out
+        or "external_model_called=false" not in judge_panel_out
+        or "human_review_claimed=false" not in judge_panel_out
+        or "source_body_copied_to_public=false" not in judge_panel_out
+        or "secret_scan=pass" not in judge_panel_out
+    ):
+        fail("judge panel did not prove deterministic cross-review readiness")
     with tempfile.TemporaryDirectory() as tmp:
         fake = Path(tmp) / "fake-pass.md"
         fake.write_text(

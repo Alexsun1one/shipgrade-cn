@@ -23,7 +23,7 @@ doctor=.shipgrade/handoff.md: ship-grade-ok
 python_helper_used_in_target=false
 service_started=false
 source_body_copied_to_public=false
-target=$TMP/shipgrade-external-trial-w6selsdz
+target=$TMP/shipgrade-external-trial-f1x0zeao
 cleaned=true
 ```
 

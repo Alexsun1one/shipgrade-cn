@@ -4,7 +4,7 @@
 
 **A Chinese-first engineering delivery workbench for Codex, Claude Code, and Cursor.**
 
-[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [External Trial](docs/EXTERNAL_TRIAL_PROOF.md) · [Multi-Repo Eval](docs/MULTI_REPO_EVAL_PROOF.md) · [Real Case](docs/REAL_ISSUE_CASE_PROOF.md) · [Task Suite](docs/REAL_TASK_SUITE_PROOF.md) · [Eval Corpus](docs/EVAL_CORPUS_PROOF.md) · [Holdout Replay](docs/HOLDOUT_REPLAY_PROOF.md) · [Model Replay](docs/MODEL_REPLAY_PROOF.md) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
+[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [External Trial](docs/EXTERNAL_TRIAL_PROOF.md) · [Multi-Repo Eval](docs/MULTI_REPO_EVAL_PROOF.md) · [Real Case](docs/REAL_ISSUE_CASE_PROOF.md) · [Task Suite](docs/REAL_TASK_SUITE_PROOF.md) · [Eval Corpus](docs/EVAL_CORPUS_PROOF.md) · [Holdout Replay](docs/HOLDOUT_REPLAY_PROOF.md) · [Model Replay](docs/MODEL_REPLAY_PROOF.md) · [Judge Panel](docs/JUDGE_PANEL_PROOF.md) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
 
 [![Local verify](https://img.shields.io/badge/local%20verify-shipgrade__verify.py-2ea44f)](#release-preflight)
 [![Agents](https://img.shields.io/badge/agents-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -182,6 +182,16 @@ python3 tools/shipgrade_model_replay.py --clean
 
 See [docs/MODEL_REPLAY_PROOF.md](docs/MODEL_REPLAY_PROOF.md), with replay inputs and reports under [docs/model-replay/](docs/model-replay/).
 
+## Judge Panel
+
+After candidate-output replay, the release package also generates a deterministic judge panel. It does not claim that an external model or human has already reviewed the outputs. Instead, it packages the 12 replay cases for later human / Codex / Claude review and runs three CI-safe lenses: `controller_quality`, `source_boundary`, and `completion_audit`.
+
+```bash
+python3 tools/shipgrade_judge_panel.py --clean
+```
+
+See [docs/JUDGE_PANEL_PROOF.md](docs/JUDGE_PANEL_PROOF.md), with judge packets and reports under [docs/judge-panel/](docs/judge-panel/).
+
 ## Quick Demo
 
 Requirements: Python 3.10+. No API key and no network access are required.
@@ -330,6 +340,7 @@ Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 
 | `tools/shipgrade_eval_corpus.py` | Exports real-task samples as JSONL eval cases and proves chosen/rejected answers are separated by the rubric scorer. |
 | `tools/shipgrade_holdout_replay.py` | Replays strong/weak answers on 8 repositories outside the base eval corpus to catch overfit quality claims. |
 | `tools/shipgrade_model_replay.py` | Replays candidate/model outputs across 12 base + holdout cases and stratifies failures by validation, boundary, and completion gaps. |
+| `tools/shipgrade_judge_panel.py` | Generates a three-lens judge packet for the 12 replay cases, ready for later human/Codex/Claude cross-review. |
 | `tools/shipgrade_doctor.py` | Checks whether a handoff contains result, validation, source, risk, security, and next-step evidence. |
 | `tools/shipgrade_demo.py` | Runs the quick proof path. |
 | `tools/shipgrade_patterns.py` | Lists distilled patterns and writes `.shipgrade/pattern-brief.md`. |
@@ -373,6 +384,7 @@ ShipGrade CN gives agents a repeatable loop:
 - Real task suite: 4/4 cases across repair/migration/review/anti-pattern detection
 - Scored real-task eval corpus: 4 cases, chosen 4/4 pass, rejected 4/4 fail
 - Model/candidate output replay: 12 candidate replays with failure stratification
+- Judge panel: 12 replay cases, 3 deterministic judge lenses
 
 ## Why It Is Not Just Prompts
 
@@ -390,6 +402,7 @@ ShipGrade CN gives agents a repeatable loop:
 | Is there a scored eval corpus? | Yes. `docs/EVAL_CORPUS_PROOF.md` records 4 real-task eval cases with chosen 4/4 pass and rejected 4/4 fail. |
 | Is there a holdout gate? | Yes. `docs/HOLDOUT_REPLAY_PROOF.md` records 8 non-base-repo replay cases with strong 8/8 pass, weak 8/8 fail, and base overlap 0. |
 | Can it replay model/candidate outputs? | Yes. `docs/MODEL_REPLAY_PROOF.md` records 12 base + holdout candidate-output replays and stratifies failures into validation, boundary, and completion gaps. |
+| Can outputs be cross-reviewed? | The repo now includes a deterministic judge panel. `docs/JUDGE_PANEL_PROOF.md` records controller/source/completion lenses for 12 replay cases without claiming external model or human review already happened. |
 | Can the repo be released independently? | Yes. It includes local preflight, GitHub Actions, release packaging, issue templates, and license files. |
 
 ## How Those Ideas Become Actions
@@ -420,6 +433,7 @@ The source influences land as runnable repository artifacts, not decorative cita
 - Eval corpus: `docs/EVAL_CORPUS_PROOF.md`, `docs/eval-corpus/`
 - Holdout replay: `docs/HOLDOUT_REPLAY_PROOF.md`, `docs/holdout-replay/`
 - Model replay: `docs/MODEL_REPLAY_PROOF.md`, `docs/model-replay/`
+- Judge panel: `docs/JUDGE_PANEL_PROOF.md`, `docs/judge-panel/`
 - Source promotion: `docs/high-signal-source-radar.md`, `docs/source-promotion-queue.md`, `docs/source-promotion-batch.md`
 - Release preflight: `docs/GITHUB_PUBLISH_PREFLIGHT.md`
 - Demo proof: `docs/DEMO_PROOF.md`

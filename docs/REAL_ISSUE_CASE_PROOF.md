@@ -26,7 +26,7 @@ completion_audit=true
 python_helper_used_in_target=false
 service_started=false
 source_body_copied_to_public=false
-target=$TMP/shipgrade-real-issue-case-y71s7f3r
+target=$TMP/shipgrade-real-issue-case-xvc1323j
 cleaned=true
 ```
 

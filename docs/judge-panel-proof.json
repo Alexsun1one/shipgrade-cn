@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "command": "python3 tools/shipgrade_judge_panel.py --output-dir docs/judge-panel",
+  "contains": {
+    "judge_panel_ok": true,
+    "cases_12": true,
+    "profiles_3": true,
+    "judges_3": true,
+    "judge_lenses": true,
+    "target_unanimous_pass": true,
+    "lazy_majority_rejected": true,
+    "partial_majority_rejected": true,
+    "cross_judge_packet_ready": true,
+    "deterministic_judge_panel": true,
+    "external_model_not_called": true,
+    "human_review_not_claimed": true,
+    "no_source_body": true,
+    "secret_scan": true
+  },
+  "output_tail": [
+    "shipgrade-judge-panel-ok",
+    "cases=12",
+    "profiles=3",
+    "judges=3",
+    "judge_lenses=controller_quality,source_boundary,completion_audit",
+    "target_unanimous_pass=12/12",
+    "lazy_majority_rejected=12/12",
+    "partial_majority_rejected=12/12",
+    "judge_panel_cases_path=docs/judge-panel/judge-panel-cases.jsonl",
+    "report_path=docs/judge-panel/judge-panel-report.json",
+    "cross_judge_packet_ready=true",
+    "deterministic_judge_panel=true",
+    "external_model_called=false",
+    "human_review_claimed=false",
+    "source_body_copied_to_public=false",
+    "secret_scan=pass"
+  ]
+}

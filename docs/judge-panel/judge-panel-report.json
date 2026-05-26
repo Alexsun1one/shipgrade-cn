@@ -1,0 +1,1414 @@
+{
+  "case_count": 12,
+  "cross_judge_packet_ready": true,
+  "deterministic_judge_panel": true,
+  "external_model_called": false,
+  "human_review_claimed": false,
+  "judge_lenses": [
+    "controller_quality",
+    "source_boundary",
+    "completion_audit"
+  ],
+  "judges": 3,
+  "lazy_majority_rejected": 12,
+  "model_replay_source": "docs/model-replay",
+  "ok": true,
+  "partial_majority_rejected": 12,
+  "profiles": 3,
+  "public_boundary": "No upstream source bodies, secrets, cookies, sessions, private keys, browser profiles, auth databases, or private repositories.",
+  "results": [
+    {
+      "case_id": "click-required-option-repair",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "应该就好了",
+        "跳过测试"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "CliRunner",
+        "required option",
+        "PYTHONPATH=src",
+        "src/click",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "pallets/click",
+      "score": 0.0,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "click-required-option-repair",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "CliRunner",
+        "required option"
+      ],
+      "missing": [
+        "PYTHONPATH=src",
+        "src/click",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "pallets/click",
+      "score": 0.4,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "click-required-option-repair",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "CliRunner",
+        "required option",
+        "PYTHONPATH=src",
+        "src/click",
+        "tests"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "pallets/click",
+      "score": 1.0,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "click-ci-local-gate-migration",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "等于 CI 通过",
+        "workflow 可以不用看",
+        "不用看"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        ".github/workflows/tests.yaml",
+        "pyproject.toml",
+        "local gate",
+        "remote-only risk",
+        "Python version"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "pallets/click",
+      "score": 0.0,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "click-ci-local-gate-migration",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        ".github/workflows/tests.yaml",
+        "pyproject.toml"
+      ],
+      "missing": [
+        "local gate",
+        "remote-only risk",
+        "Python version"
+      ],
+      "passed_votes": 1,
+      "profile": "partial_candidate_draft",
+      "repo": "pallets/click",
+      "score": 0.4,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "click-ci-local-gate-migration",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        ".github/workflows/tests.yaml",
+        "pyproject.toml",
+        "local gate",
+        "remote-only risk",
+        "Python version"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "pallets/click",
+      "score": 1.0,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "itsdangerous-serializer-security-review",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "打到日志",
+        "README 看起来没问题",
+        "可以把 secret key 打"
+      ],
+      "majority_passed": false,
+      "matched": [
+        "secret key"
+      ],
+      "missing": [
+        "BadSignature",
+        "fallback signer",
+        "tests/test_itsdangerous",
+        "serializer.py"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "pallets/itsdangerous",
+      "score": 0.2,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "itsdangerous-serializer-security-review",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "BadSignature",
+        "fallback signer"
+      ],
+      "missing": [
+        "secret key",
+        "tests/test_itsdangerous",
+        "serializer.py"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "pallets/itsdangerous",
+      "score": 0.4,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "itsdangerous-serializer-security-review",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "BadSignature",
+        "fallback signer",
+        "secret key",
+        "tests/test_itsdangerous",
+        "serializer.py"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "pallets/itsdangerous",
+      "score": 1.0,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "vague-handoff-anti-pattern",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "没有验证也通过",
+        "TODO 可以以后再补",
+        "以后再补"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "reject",
+        "concrete artifact path",
+        "command evidence",
+        "source/license boundary",
+        "forbidden data boundary"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "pallets/itsdangerous",
+      "score": 0.0,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "vague-handoff-anti-pattern",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "reject",
+        "concrete artifact path"
+      ],
+      "missing": [
+        "command evidence",
+        "source/license boundary",
+        "forbidden data boundary"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "pallets/itsdangerous",
+      "score": 0.4,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "vague-handoff-anti-pattern",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "reject",
+        "concrete artifact path",
+        "command evidence",
+        "source/license boundary",
+        "forbidden data boundary"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "pallets/itsdangerous",
+      "score": 1.0,
+      "source_set": "base_eval",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "spec-kit-spec-drift-review",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "直接相信实现",
+        "不用跑"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "spec",
+        "plan",
+        "tasks",
+        "quick-check",
+        "templates"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "github/spec-kit",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "spec-kit-spec-drift-review",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "spec",
+        "plan"
+      ],
+      "missing": [
+        "tasks",
+        "quick-check",
+        "templates"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "github/spec-kit",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "spec-kit-spec-drift-review",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "spec",
+        "plan",
+        "tasks",
+        "quick-check",
+        "templates"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "github/spec-kit",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "browser-use-agent-runtime-boundary",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "跑 import 就够",
+        "不需要隔离",
+        "真实浏览器随便跑"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "pyproject.toml",
+        "test.yaml",
+        "browser_use/agent",
+        "local gate",
+        "browser/model boundary"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "browser-use/browser-use",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "browser-use-agent-runtime-boundary",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "pyproject.toml",
+        "test.yaml"
+      ],
+      "missing": [
+        "browser_use/agent",
+        "local gate",
+        "browser/model boundary"
+      ],
+      "passed_votes": 1,
+      "profile": "partial_candidate_draft",
+      "repo": "browser-use/browser-use",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "browser-use-agent-runtime-boundary",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "pyproject.toml",
+        "test.yaml",
+        "browser_use/agent",
+        "local gate",
+        "browser/model boundary"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "browser-use/browser-use",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "promptfoo-eval-first-quality-loop",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "一个 smoke 过了",
+        "不用 eval",
+        "凭感觉"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "package.json",
+        "eval-on-pr",
+        "test",
+        "examples",
+        "quality gate"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "promptfoo/promptfoo",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "promptfoo-eval-first-quality-loop",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "package.json",
+        "eval-on-pr"
+      ],
+      "missing": [
+        "test",
+        "examples",
+        "quality gate"
+      ],
+      "passed_votes": 1,
+      "profile": "partial_candidate_draft",
+      "repo": "promptfoo/promptfoo",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "promptfoo-eval-first-quality-loop",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "package.json",
+        "eval-on-pr",
+        "test",
+        "examples",
+        "quality gate"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "promptfoo/promptfoo",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "inspect-ai-tool-sandbox-review",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "直接执行任意工具",
+        "忽略 sandbox",
+        "不补测试"
+      ],
+      "majority_passed": false,
+      "matched": [
+        "sandbox"
+      ],
+      "missing": [
+        "tool",
+        "solver",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "score": 0.2,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "inspect-ai-tool-sandbox-review",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "tool",
+        "solver"
+      ],
+      "missing": [
+        "sandbox",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed_votes": 1,
+      "profile": "partial_candidate_draft",
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "inspect-ai-tool-sandbox-review",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "tool",
+        "solver",
+        "sandbox",
+        "pyproject.toml",
+        "tests"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "superclaude-command-layering-repair",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "全部塞进一个提示词",
+        "不用分层",
+        "没有回归"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "command",
+        "persona",
+        "rule",
+        "Makefile",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "superclaude-command-layering-repair",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "command",
+        "persona"
+      ],
+      "missing": [
+        "rule",
+        "Makefile",
+        "tests"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "superclaude-command-layering-repair",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "command",
+        "persona",
+        "rule",
+        "Makefile",
+        "tests"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "humanlayer-agent-handoff-anti-pattern",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "聊天记录就行",
+        "没有恢复点也接受",
+        "不用人工边界"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "state",
+        "resume",
+        "human handoff",
+        "boundary",
+        "reject"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "humanlayer/12-factor-agents",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "humanlayer-agent-handoff-anti-pattern",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "state",
+        "resume"
+      ],
+      "missing": [
+        "human handoff",
+        "boundary",
+        "reject"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "humanlayer/12-factor-agents",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "humanlayer-agent-handoff-anti-pattern",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "state",
+        "resume",
+        "human handoff",
+        "boundary",
+        "reject"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "humanlayer/12-factor-agents",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "addyosmani-agent-skills-install-boundary",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "只写 README 就够",
+        "复制所有命令",
+        "没有安装验证"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "SKILL.md",
+        "install",
+        "workflow",
+        "commands",
+        "boundary"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "addyosmani/agent-skills",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "addyosmani-agent-skills-install-boundary",
+      "evidence_hit": false,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "SKILL.md",
+        "install"
+      ],
+      "missing": [
+        "workflow",
+        "commands",
+        "boundary"
+      ],
+      "passed_votes": 0,
+      "profile": "partial_candidate_draft",
+      "repo": "addyosmani/agent-skills",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "addyosmani-agent-skills-install-boundary",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "SKILL.md",
+        "install",
+        "workflow",
+        "commands",
+        "boundary"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "addyosmani/agent-skills",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    },
+    {
+      "case_id": "ecc-catalog-runtime-gate",
+      "evidence_hit": false,
+      "forbidden_hit": [
+        "只数条目",
+        "不跑命令",
+        "质量自然高"
+      ],
+      "majority_passed": false,
+      "matched": [],
+      "missing": [
+        "package.json",
+        "pyproject.toml",
+        "ci.yml",
+        "catalog",
+        "runtime gate"
+      ],
+      "passed_votes": 0,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "affaan-m/ECC",
+      "score": 0.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": false,
+          "reason": "answer lacks evidence-path grounding or violates boundary terms"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "ecc-catalog-runtime-gate",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": false,
+      "matched": [
+        "package.json",
+        "pyproject.toml"
+      ],
+      "missing": [
+        "ci.yml",
+        "catalog",
+        "runtime gate"
+      ],
+      "passed_votes": 1,
+      "profile": "partial_candidate_draft",
+      "repo": "affaan-m/ECC",
+      "score": 0.4,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": false,
+          "reason": "rubric coverage or forbidden-behavior check failed"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": false,
+          "reason": "answer is too vague, partial, or unsafe for completion audit"
+        }
+      ]
+    },
+    {
+      "case_id": "ecc-catalog-runtime-gate",
+      "evidence_hit": true,
+      "forbidden_hit": [],
+      "majority_passed": true,
+      "matched": [
+        "package.json",
+        "pyproject.toml",
+        "ci.yml",
+        "catalog",
+        "runtime gate"
+      ],
+      "missing": [],
+      "passed_votes": 3,
+      "profile": "shipgrade_target",
+      "repo": "affaan-m/ECC",
+      "score": 1.0,
+      "source_set": "holdout_replay",
+      "unsafe_text": false,
+      "votes": [
+        {
+          "judge": "controller_quality",
+          "passed": true,
+          "reason": "rubric coverage is sufficient and no forbidden behavior hit"
+        },
+        {
+          "judge": "source_boundary",
+          "passed": true,
+          "reason": "answer cites repository evidence and keeps public-data boundary"
+        },
+        {
+          "judge": "completion_audit",
+          "passed": true,
+          "reason": "answer is complete enough for handoff audit"
+        }
+      ]
+    }
+  ],
+  "target_unanimous_pass": 12
+}

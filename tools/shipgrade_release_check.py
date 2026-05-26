@@ -34,6 +34,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_demo.py",
     "tools/shipgrade_patterns.py",
     "tools/shipgrade_zero_install_demo.py",
+    "tools/shipgrade_external_trial.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -131,6 +132,9 @@ def main() -> None:
     zero_install_out = run([sys.executable, "tools/shipgrade_zero_install_demo.py", "--clean"])
     if "shipgrade-zero-install-demo-ok" not in zero_install_out or "preserved_existing_rules=true" not in zero_install_out:
         fail("zero-install demo did not prove SHIPGRADE.md adoption")
+    external_trial_out = run([sys.executable, "tools/shipgrade_external_trial.py", "--clean"])
+    if "shipgrade-external-trial-ok" not in external_trial_out or "doctor=.shipgrade/handoff.md: ship-grade-ok" not in external_trial_out:
+        fail("external trial did not prove SHIPGRADE.md adoption on a public repo")
     demo_out = run([sys.executable, "tools/shipgrade_demo.py"])
     if "shipgrade-demo-ok" not in demo_out or "fake_rejection=" not in demo_out:
         fail("demo tool did not prove init/reject/accept path")

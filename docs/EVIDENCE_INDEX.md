@@ -21,6 +21,7 @@ This file maps public README claims to repository-local evidence. It exists so S
 | Distilled patterns can initialize a real project workbench | `tools/shipgrade_init.py`, `tools/shipgrade_patterns.py`, and `docs/GITHUB_PUBLISH_PREFLIGHT.md` |
 | Source overlap was compressed, not blindly merged | `docs/overlap-decisions.md` and `docs/evidence/source_overlap_report.json` |
 | Adapter metrics are bounded execution evidence | `QUALITY_REPORT.md` and `docs/evidence/qwen_lora_quality_review.json` |
+| Zero-install works on a small external public repo | `docs/EXTERNAL_TRIAL_PROOF.md` and `docs/external-trial-proof.json` |
 | Non-self release artifacts have stable hashes | `docs/public-evidence-manifest.json` |
 
 ## Verification

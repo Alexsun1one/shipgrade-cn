@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "command": "python3 tools/shipgrade_external_trial.py --clean",
+  "contains": {
+    "external_trial_ok": true,
+    "repo": true,
+    "license_mit": true,
+    "source_shipgrade_md": true,
+    "unit_test_ok": true,
+    "doctor_ok": true,
+    "no_python_helper_in_target": true,
+    "no_service": true,
+    "no_source_body": true,
+    "cleaned": true
+  },
+  "output_tail": [
+    "shipgrade-external-trial-ok",
+    "repo=pypa/sampleproject",
+    "url=https://github.com/pypa/sampleproject",
+    "revision=621e4974ca25ce531773def586ba3ed8e736b3fc",
+    "license=MIT",
+    "tracked_files=12",
+    "source=SHIPGRADE.md",
+    "created=SHIPGRADE.md,AGENTS.md,CLAUDE.md,.cursor/rules/shipgrade.mdc,.shipgrade/task-brief.md,.shipgrade/handoff.md",
+    "validation=python -m py_compile src/sample/simple.py: ok exit 0",
+    "validation=PYTHONPATH=src python -m unittest tests.test_simple: ok exit 0",
+    "doctor=.shipgrade/handoff.md: ship-grade-ok",
+    "python_helper_used_in_target=false",
+    "service_started=false",
+    "source_body_copied_to_public=false",
+    "target=$TMP/shipgrade-external-trial-66qa4kgc",
+    "cleaned=true"
+  ]
+}

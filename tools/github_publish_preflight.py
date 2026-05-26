@@ -64,6 +64,11 @@ REQUIRED_FILES = [
     "docs/real-issue-case-proof.json",
     "docs/REAL_TASK_SUITE_PROOF.md",
     "docs/real-task-suite-proof.json",
+    "docs/EVAL_CORPUS_PROOF.md",
+    "docs/eval-corpus-proof.json",
+    "docs/eval-corpus/README.md",
+    "docs/eval-corpus/real-task-eval-cases.jsonl",
+    "docs/eval-corpus/real-task-eval-report.json",
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
@@ -72,6 +77,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_multi_repo_eval.py",
     "tools/shipgrade_real_issue_case.py",
     "tools/shipgrade_real_task_suite.py",
+    "tools/shipgrade_eval_corpus.py",
     "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
@@ -154,6 +160,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "docs/REAL_ISSUE_CASE_PROOF.md",
         "python3 tools/shipgrade_real_task_suite.py --clean",
         "docs/REAL_TASK_SUITE_PROOF.md",
+        "python3 tools/shipgrade_eval_corpus.py --clean",
+        "docs/EVAL_CORPUS_PROOF.md",
+        "docs/eval-corpus/",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -199,6 +208,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "docs/REAL_ISSUE_CASE_PROOF.md",
         "python3 tools/shipgrade_real_task_suite.py --clean",
         "docs/REAL_TASK_SUITE_PROOF.md",
+        "python3 tools/shipgrade_eval_corpus.py --clean",
+        "docs/EVAL_CORPUS_PROOF.md",
+        "docs/eval-corpus/",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",
@@ -545,6 +557,34 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "4 real task cases covered repair/migration/review/anti-pattern detection" if not missing_real_task_suite_terms else "missing_terms=" + ", ".join(missing_real_task_suite_terms),
     )
 
+    eval_corpus_proof = read_text("docs/EVAL_CORPUS_PROOF.md")
+    eval_corpus_payload = json.loads(read_text("docs/eval-corpus-proof.json"))
+    eval_corpus_report = json.loads(read_text("docs/eval-corpus/real-task-eval-report.json"))
+    eval_corpus_cases = [line for line in read_text("docs/eval-corpus/real-task-eval-cases.jsonl").splitlines() if line.strip()]
+    eval_corpus_terms = [
+        "shipgrade-eval-corpus-ok",
+        "cases=4",
+        "chosen_passed=4/4",
+        "rejected_failed=4/4",
+        "chosen_rejected_samples=true",
+        "rubric_scored=true",
+        "source_body_copied_to_public=false",
+        "secret_scan=pass",
+    ]
+    missing_eval_corpus_terms = [term for term in eval_corpus_terms if term not in eval_corpus_proof]
+    add(
+        checks,
+        "scored-eval-corpus",
+        not missing_eval_corpus_terms
+        and eval_corpus_payload.get("ok") is True
+        and eval_corpus_report.get("ok") is True
+        and eval_corpus_report.get("case_count") == 4
+        and eval_corpus_report.get("chosen_passed") == 4
+        and eval_corpus_report.get("rejected_failed") == 4
+        and len(eval_corpus_cases) == 4,
+        "4 scored eval cases separate chosen/rejected answers" if not missing_eval_corpus_terms else "missing_terms=" + ", ".join(missing_eval_corpus_terms),
+    )
+
     if run_verify:
         verify = run([sys.executable, "tools/shipgrade_verify.py"])
         add(checks, "shipgrade-verify", verify.returncode == 0 and "shipgrade-verify-ok" in verify.stdout, (verify.stdout + verify.stderr)[-500:])
@@ -591,6 +631,7 @@ def write_docs(checks: list[dict[str, Any]]) -> None:
             "python3 tools/shipgrade_multi_repo_eval.py --clean",
             "python3 tools/shipgrade_real_issue_case.py --clean",
             "python3 tools/shipgrade_real_task_suite.py --clean",
+            "python3 tools/shipgrade_eval_corpus.py --clean",
             "python3 tools/shipgrade_demo.py",
             "python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate",
             "python3 tools/shipgrade_patterns.py validate",

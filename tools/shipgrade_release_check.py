@@ -39,6 +39,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_multi_repo_eval.py",
     "tools/shipgrade_real_issue_case.py",
     "tools/shipgrade_real_task_suite.py",
+    "tools/shipgrade_eval_corpus.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -188,6 +189,16 @@ def main() -> None:
         or "doctor_handoffs=2/2" not in task_suite_out
     ):
         fail("real task suite did not prove multi-type engineering eval coverage")
+    eval_corpus_out = run([sys.executable, "tools/shipgrade_eval_corpus.py", "--clean"])
+    if (
+        "shipgrade-eval-corpus-ok" not in eval_corpus_out
+        or "cases=4" not in eval_corpus_out
+        or "chosen_passed=4/4" not in eval_corpus_out
+        or "rejected_failed=4/4" not in eval_corpus_out
+        or "rubric_scored=true" not in eval_corpus_out
+        or "source_body_copied_to_public=false" not in eval_corpus_out
+    ):
+        fail("eval corpus did not prove chosen/rejected scoring")
     with tempfile.TemporaryDirectory() as tmp:
         fake = Path(tmp) / "fake-pass.md"
         fake.write_text(

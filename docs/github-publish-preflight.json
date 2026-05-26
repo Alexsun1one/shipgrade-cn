@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T11:44:21Z",
+  "generated_at": "2026-05-26T12:04:41Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 27,
-  "total": 27,
+  "passed": 28,
+  "total": 28,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "68 required files present"
+      "detail": "74 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -134,6 +134,11 @@
       "id": "real-task-suite",
       "passed": true,
       "detail": "4 real task cases covered repair/migration/review/anti-pattern detection"
+    },
+    {
+      "id": "scored-eval-corpus",
+      "passed": true,
+      "detail": "4 scored eval cases separate chosen/rejected answers"
     },
     {
       "id": "shipgrade-verify",

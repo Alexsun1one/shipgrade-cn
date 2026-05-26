@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "command": "python3 tools/shipgrade_eval_corpus.py --output-dir docs/eval-corpus",
+  "contains": {
+    "eval_corpus_ok": true,
+    "cases_4": true,
+    "chosen_passed": true,
+    "rejected_failed": true,
+    "chosen_rejected": true,
+    "rubric_scored": true,
+    "no_source_body": true,
+    "secret_scan": true
+  },
+  "output_tail": [
+    "shipgrade-eval-corpus-ok",
+    "cases=4",
+    "task_types=anti_pattern_detection,migration,repair,review",
+    "repos=pallets/click,pallets/itsdangerous",
+    "licenses=BSD-3-Clause",
+    "chosen_passed=4/4",
+    "rejected_failed=4/4",
+    "eval_cases_path=docs/eval-corpus/real-task-eval-cases.jsonl",
+    "report_path=docs/eval-corpus/real-task-eval-report.json",
+    "chosen_rejected_samples=true",
+    "rubric_scored=true",
+    "source_body_copied_to_public=false",
+    "secret_scan=pass"
+  ]
+}

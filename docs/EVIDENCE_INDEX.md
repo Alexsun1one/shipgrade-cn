@@ -25,6 +25,7 @@ This file maps public README claims to repository-local evidence. It exists so S
 | Zero-install generalizes across multiple small public repos | `docs/MULTI_REPO_EVAL_PROOF.md` and `docs/multi-repo-eval-proof.json` |
 | ShipGrade can drive an issue-style real repo case | `docs/REAL_ISSUE_CASE_PROOF.md` and `docs/real-issue-case-proof.json` |
 | ShipGrade covers multi-type real engineering tasks | `docs/REAL_TASK_SUITE_PROOF.md` and `docs/real-task-suite-proof.json` |
+| ShipGrade has a scored real-task eval corpus | `docs/EVAL_CORPUS_PROOF.md`, `docs/eval-corpus-proof.json`, and `docs/eval-corpus/real-task-eval-cases.jsonl` |
 | Non-self release artifacts have stable hashes | `docs/public-evidence-manifest.json` |
 
 ## Verification

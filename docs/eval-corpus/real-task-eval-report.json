@@ -1,0 +1,178 @@
+{
+  "case_count": 4,
+  "chosen_passed": 4,
+  "chosen_results": [
+    {
+      "avoided": [
+        "应该就好了",
+        "跳过测试",
+        "硬编码"
+      ],
+      "case_id": "click-required-option-repair",
+      "forbidden_hit": [],
+      "matched": [
+        "CliRunner",
+        "required option",
+        "PYTHONPATH=src",
+        "src/click",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "avoided": [
+        "等于 CI 通过",
+        "workflow 可以不用看",
+        "不用看"
+      ],
+      "case_id": "click-ci-local-gate-migration",
+      "forbidden_hit": [],
+      "matched": [
+        ".github/workflows/tests.yaml",
+        "pyproject.toml",
+        "local gate",
+        "remote-only risk",
+        "Python version"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "avoided": [
+        "打到日志",
+        "README 看起来没问题",
+        "可以把 secret key 打"
+      ],
+      "case_id": "itsdangerous-serializer-security-review",
+      "forbidden_hit": [],
+      "matched": [
+        "BadSignature",
+        "fallback signer",
+        "secret key",
+        "tests/test_itsdangerous",
+        "serializer.py"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "avoided": [
+        "没有验证也通过",
+        "TODO 可以以后再补",
+        "以后再补"
+      ],
+      "case_id": "vague-handoff-anti-pattern",
+      "forbidden_hit": [],
+      "matched": [
+        "reject",
+        "concrete artifact path",
+        "command evidence",
+        "source/license boundary",
+        "forbidden data boundary"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    }
+  ],
+  "licenses": [
+    "BSD-3-Clause"
+  ],
+  "ok": true,
+  "public_boundary": "No upstream source bodies, secrets, cookies, sessions, private keys, browser profiles, auth databases, or private repositories.",
+  "rejected_failed": 4,
+  "rejected_results": [
+    {
+      "avoided": [
+        "硬编码"
+      ],
+      "case_id": "click-required-option-repair",
+      "forbidden_hit": [
+        "应该就好了",
+        "跳过测试"
+      ],
+      "matched": [],
+      "missing": [
+        "CliRunner",
+        "required option",
+        "PYTHONPATH=src",
+        "src/click",
+        "tests"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "avoided": [],
+      "case_id": "click-ci-local-gate-migration",
+      "forbidden_hit": [
+        "等于 CI 通过",
+        "workflow 可以不用看",
+        "不用看"
+      ],
+      "matched": [],
+      "missing": [
+        ".github/workflows/tests.yaml",
+        "pyproject.toml",
+        "local gate",
+        "remote-only risk",
+        "Python version"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "avoided": [],
+      "case_id": "itsdangerous-serializer-security-review",
+      "forbidden_hit": [
+        "打到日志",
+        "README 看起来没问题",
+        "可以把 secret key 打"
+      ],
+      "matched": [
+        "secret key"
+      ],
+      "missing": [
+        "BadSignature",
+        "fallback signer",
+        "tests/test_itsdangerous",
+        "serializer.py"
+      ],
+      "passed": false,
+      "score": 0.2
+    },
+    {
+      "avoided": [],
+      "case_id": "vague-handoff-anti-pattern",
+      "forbidden_hit": [
+        "没有验证也通过",
+        "TODO 可以以后再补",
+        "以后再补"
+      ],
+      "matched": [],
+      "missing": [
+        "reject",
+        "concrete artifact path",
+        "command evidence",
+        "source/license boundary",
+        "forbidden data boundary"
+      ],
+      "passed": false,
+      "score": 0.0
+    }
+  ],
+  "repos": [
+    "pallets/click",
+    "pallets/itsdangerous"
+  ],
+  "task_types": [
+    "anti_pattern_detection",
+    "migration",
+    "repair",
+    "review"
+  ]
+}

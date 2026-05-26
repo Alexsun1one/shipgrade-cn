@@ -21,6 +21,8 @@ python3 tools/shipgrade_demo.py
 
 可审计演示记录: `docs/DEMO_PROOF.md`。
 
+![ShipGrade CN demo](assets/shipgrade-demo.gif)
+
 你会看到三件事:
 
 - `shipgrade_init.py` 生成 `.shipgrade/` 工作台,并把 `AGENTS.md` / `CLAUDE.md` / Cursor rule 接上线。

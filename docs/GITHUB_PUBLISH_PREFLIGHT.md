@@ -2,12 +2,12 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `15/15`
+- passed: `16/16`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
 | --- | --- | --- |
-| `required-files` | `pass` | 38 required files present |
+| `required-files` | `pass` | 39 required files present |
 | `readme-launch-surface` | `pass` | README has hook, proof, and preflight surface |
 | `skill-frontmatter` | `pass` | machine-readable frontmatter with name/description triggers |
 | `github-workflow` | `pass` | validate workflow has PR/push and release check |
@@ -17,6 +17,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `source-promotion-sandbox-cases` | `pass` | cases=2/2 required=9/9 configured_tests=225 |
 | `sandbox-runtime-matrix` | `pass` | cases=3/3 steps=12/12 |
 | `social-preview` | `pass` | dimensions=(1600, 900) |
+| `demo-gif` | `pass` | dimensions=(1200, 675) |
 | `issue-pr-templates` | `pass` | issue and PR templates include validation language |
 | `secret-and-metadata-scan` | `pass` | no generated metadata or secret patterns |
 | `doctor-fake-rejection` | `pass` | fake completion rejected |

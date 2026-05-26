@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T01:53:20Z",
+  "generated_at": "2026-05-26T02:14:30Z",
   "purpose": "Public, redacted, repository-local evidence index for README and QUALITY_REPORT claims.",
   "boundary": "No private source bodies, secrets, cookies, sessions, auth databases, browser profiles, private keys, or API tokens.",
   "evidence_files": [
@@ -84,8 +84,8 @@
     },
     {
       "path": "releases/shipgrade-cn-v0.1.tar.gz.sha256",
-      "content": "2b82a153c3236292ae969b82dc125e7f41b6a92039dc32838af017e12d26bd6e  releases/shipgrade-cn-v0.1.tar.gz",
-      "sha256": "f4a3cbc31466c79dccffbec5bc6fcca9a3a0f908ad47bac2b19634e12a960829"
+      "content": "ed26f87a03f4dcf5680ae3409bca59c3d0114af8e7c301d074a823f9d995fa42  releases/shipgrade-cn-v0.1.tar.gz",
+      "sha256": "8d4ea0c377c0aa180a2123f3597c312f3742f858ea8dbbbfa08229c1ebac4718"
     },
     {
       "path": "releases/skills-cn-v0.1.tar.gz.sha256",

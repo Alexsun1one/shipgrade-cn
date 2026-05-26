@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T01:57:25Z",
+  "generated_at": "2026-05-26T02:16:30Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 15,
-  "total": 15,
+  "passed": 16,
+  "total": 16,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "38 required files present"
+      "detail": "39 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -54,6 +54,11 @@
       "id": "social-preview",
       "passed": true,
       "detail": "dimensions=(1600, 900)"
+    },
+    {
+      "id": "demo-gif",
+      "passed": true,
+      "detail": "dimensions=(1200, 675)"
     },
     {
       "id": "issue-pr-templates",

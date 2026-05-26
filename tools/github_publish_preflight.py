@@ -52,6 +52,7 @@ REQUIRED_FILES = [
     "scripts/verify.sh",
     "assets/shipgrade-loop.png",
     "assets/shipgrade-terminal-demo.png",
+    "assets/shipgrade-demo.gif",
 ]
 
 SECRET_PATTERNS = [
@@ -79,6 +80,16 @@ def png_dimensions(rel: str) -> tuple[int, int] | None:
     return struct.unpack(">II", data[16:24])
 
 
+def gif_dimensions(rel: str) -> tuple[int, int] | None:
+    path = ROOT / rel
+    if not path.exists():
+        return None
+    data = path.read_bytes()
+    if not data.startswith((b"GIF87a", b"GIF89a")):
+        return None
+    return struct.unpack("<HH", data[6:10])
+
+
 def run(args: list[str]) -> subprocess.CompletedProcess[str]:
     return subprocess.run(args, cwd=ROOT, text=True, capture_output=True, check=False)
 
@@ -95,6 +106,7 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "30 秒跑出差异",
         "python3 tools/shipgrade_demo.py",
         "docs/DEMO_PROOF.md",
+        "assets/shipgrade-demo.gif",
         "为什么值得 Star",
         "证据快照",
         "GitHub publish preflight",
@@ -167,6 +179,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
 
     dims = png_dimensions(metadata.get("social_preview", ""))
     add(checks, "social-preview", bool(dims and dims[0] >= 1200 and dims[1] >= 650), f"dimensions={dims}")
+    gif_dims = gif_dimensions("assets/shipgrade-demo.gif")
+    add(checks, "demo-gif", bool(gif_dims and gif_dims[0] >= 1000 and gif_dims[1] >= 560), f"dimensions={gif_dims}")
 
     template_files = [
         ".github/ISSUE_TEMPLATE/bug_report.md",

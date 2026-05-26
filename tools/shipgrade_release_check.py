@@ -174,7 +174,12 @@ def main() -> None:
     if "shipgrade-multi-repo-eval-ok" not in multi_repo_eval_out or "passed=3" not in multi_repo_eval_out:
         fail("multi-repo eval did not prove repeated SHIPGRADE.md adoption")
     demo_out = run([sys.executable, "tools/shipgrade_demo.py"])
-    if "shipgrade-demo-ok" not in demo_out or "fake_rejection=" not in demo_out:
+    if (
+        "shipgrade-demo-ok" not in demo_out
+        or "fake_rejection=" not in demo_out
+        or "visible=.shipgrade/product-map.html" not in demo_out
+        or "idea_prefilled=true" not in demo_out
+    ):
         fail("demo tool did not prove init/reject/accept path")
     real_issue_out = run([sys.executable, "tools/shipgrade_real_issue_case.py", "--clean"])
     if (
@@ -289,16 +294,25 @@ def main() -> None:
 
     with tempfile.TemporaryDirectory() as tmp:
         target = Path(tmp) / "project"
-        run([sys.executable, "tools/shipgrade_init.py", str(target)])
+        idea = "做一个能看见订单风险、库存缺口和下一步动作的运营工作台"
+        init_out = run([sys.executable, "tools/shipgrade_init.py", str(target), "--idea", idea])
+        if "idea_prefilled=true" not in init_out:
+            fail("init did not report idea prefill")
         if not (target / ".shipgrade" / "START_HERE.md").exists():
             fail("init did not create visible start guide")
         if not (target / ".shipgrade" / "product-map.html").exists():
             fail("init did not create visible product map")
+        start_guide = (target / ".shipgrade" / "START_HERE.md").read_text(encoding="utf-8")
         product_map = (target / ".shipgrade" / "product-map.html").read_text(encoding="utf-8")
         if "ShipGrade Workbench" not in product_map or "把想法变成可验证交付" not in product_map:
             fail("init product map missing visible workbench content")
+        if idea not in start_guide or idea not in product_map:
+            fail("init did not surface the idea in visible first-run files")
         if not (target / ".shipgrade" / "task-brief.md").exists():
             fail("init did not create task brief")
+        task_brief = (target / ".shipgrade" / "task-brief.md").read_text(encoding="utf-8")
+        if idea not in task_brief:
+            fail("init did not prefill task brief from --idea")
         if "SHIPGRADE-CN:BEGIN" not in (target / "AGENTS.md").read_text(encoding="utf-8"):
             fail("init did not wire AGENTS.md")
         if "SHIPGRADE-CN:BEGIN" not in (target / "CLAUDE.md").read_text(encoding="utf-8"):

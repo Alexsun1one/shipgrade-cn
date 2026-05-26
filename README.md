@@ -260,7 +260,7 @@ accepted=... ship-grade-ok
 适合进阶用户和公开仓库维护者。要求: Python 3.10+。不需要 API key,不需要联网。
 
 ```bash
-python3 tools/shipgrade_init.py /path/to/your-project
+python3 tools/shipgrade_init.py /path/to/your-project --idea "做一个能看见订单风险、库存缺口和下一步动作的运营工作台"
 cd /path/to/your-project
 open .shipgrade/product-map.html
 sed -n '1,120p' .shipgrade/START_HERE.md
@@ -270,8 +270,8 @@ sed -n '1,160p' AGENTS.md
 
 然后按这个顺序用:
 
-1. 先打开 `.shipgrade/product-map.html`,看见这次工作台会输出什么。
-2. 在 `.shipgrade/task-brief.md` 填清楚目标、非目标、验收标准和风险边界。
+1. 先打开 `.shipgrade/product-map.html`,看见这次工作台会输出什么,以及 `--idea` 有没有进入当前想法。
+2. 在 `.shipgrade/task-brief.md` 复核预填的用户原话,再补清楚目标、非目标、验收标准和风险边界。
 3. 让 Codex、Claude Code 或 Cursor 读取项目规则,按 ShipGrade 流程工作。
 4. 交付前把结果写进 `.shipgrade/handoff.md`。
 5. 用质量检查器检查交付说明是不是有证据。
@@ -372,7 +372,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | --- | --- |
 | `SKILL.md` | AI 编程助手真正会读取的核心技能说明。 |
 | `START_HERE.md` | 第一次打开项目时的路线图。 |
-| `tools/shipgrade_init.py` | 给任意项目生成 `.shipgrade/`、`AGENTS.md`、`CLAUDE.md` 和 Cursor 规则。 |
+| `tools/shipgrade_init.py` | 给任意项目生成 `.shipgrade/`、`AGENTS.md`、`CLAUDE.md` 和 Cursor 规则；可用 `--idea` 预填第一版 brief 和可视化工作台。 |
 | `tools/shipgrade_zero_install_demo.py` | 证明只读 `SHIPGRADE.md` 也能接入项目,不要求目标项目安装 Python 或启动服务。 |
 | `tools/shipgrade_external_trial.py` | 在许可明确的小型公开仓库上做零安装试用,生成可被 doctor 审核的外部 handoff。 |
 | `tools/shipgrade_multi_repo_eval.py` | 在多个公开小仓重复零安装接入、轻量验证和 doctor 审核,生成可训练/可评测样本候选。 |

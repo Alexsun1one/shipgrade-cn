@@ -202,6 +202,7 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "docs/REVIEW_PACKET_PROOF.md",
         "docs/review-packet/",
         "python3 tools/shipgrade_demo.py",
+        "python3 tools/shipgrade_init.py /path/to/your-project --idea",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
         "用蒸馏出来的模式开工",
@@ -271,6 +272,7 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "Repo Cards / 15 Pattern Cards",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py",
+        "python3 tools/shipgrade_init.py /path/to/your-project --idea",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
         "Use A Distilled Pattern",
@@ -395,6 +397,7 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
 
     with tempfile.TemporaryDirectory() as tmp:
         target = Path(tmp) / "pattern-init-project"
+        idea = "做一个能看见订单风险、库存缺口和下一步动作的运营工作台"
         init_pattern = run(
             [
                 sys.executable,
@@ -402,9 +405,14 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
                 str(target),
                 "--pattern",
                 "command_topology_quality_gate",
+                "--idea",
+                idea,
             ]
         )
         pattern_brief = target / ".shipgrade" / "pattern-brief.md"
+        start_text = (target / ".shipgrade" / "START_HERE.md").read_text(encoding="utf-8") if (target / ".shipgrade" / "START_HERE.md").exists() else ""
+        map_text = (target / ".shipgrade" / "product-map.html").read_text(encoding="utf-8") if (target / ".shipgrade" / "product-map.html").exists() else ""
+        task_text = (target / ".shipgrade" / "task-brief.md").read_text(encoding="utf-8") if (target / ".shipgrade" / "task-brief.md").exists() else ""
         agents_text = (target / "AGENTS.md").read_text(encoding="utf-8") if (target / "AGENTS.md").exists() else ""
         brief_text = pattern_brief.read_text(encoding="utf-8") if pattern_brief.exists() else ""
         pattern_brief_exists = pattern_brief.exists()
@@ -414,8 +422,12 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         init_pattern.returncode == 0
         and pattern_brief_exists
         and "先读命令拓扑" in brief_text
-        and ".shipgrade/pattern-brief.md" in agents_text,
-        "shipgrade_init --pattern writes pattern-brief and wires agent rules",
+        and ".shipgrade/pattern-brief.md" in agents_text
+        and "idea_prefilled=true" in init_pattern.stdout
+        and idea in start_text
+        and idea in map_text
+        and idea in task_text,
+        "shipgrade_init --pattern --idea writes pattern-brief, prefills first-run outputs, and wires agent rules",
     )
 
     batch = json.loads(read_text("docs/evidence/source_promotion_batch.json"))
@@ -490,13 +502,13 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
 
     demo_proof = read_text("docs/DEMO_PROOF.md")
     demo_proof_payload = json.loads(read_text("docs/demo-proof.json"))
-    demo_terms = ["shipgrade-demo-ok", "fake_rejection=", "ship-grade-fail", "accepted=", "ship-grade-ok"]
+    demo_terms = ["shipgrade-demo-ok", "fake_rejection=", "ship-grade-fail", "accepted=", "ship-grade-ok", "visible=.shipgrade/product-map.html", "idea_prefilled=true"]
     missing_demo_terms = [term for term in demo_terms if term not in demo_proof]
     add(
         checks,
         "demo-proof",
         not missing_demo_terms and demo_proof_payload.get("ok") is True,
-        "demo proof captures init/reject/accept path" if not missing_demo_terms else "missing_terms=" + ", ".join(missing_demo_terms),
+        "demo proof captures visible init/prefill/reject/accept path" if not missing_demo_terms else "missing_terms=" + ", ".join(missing_demo_terms),
     )
 
     adoption_proof = read_text("docs/ADOPTION_PROOF.md")

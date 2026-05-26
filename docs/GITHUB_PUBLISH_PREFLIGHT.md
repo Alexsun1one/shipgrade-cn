@@ -18,7 +18,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `public-evidence-manifest` | `pass` | evidence_files=17 |
 | `repo-engineering-distillation-assets` | `pass` | summary=11/15/90/90 files={'repo_cards': 11, 'pattern_cards': 15, 'task_cards': 90, 'eval_cases': 90} |
 | `patterns-tool` | `pass` | shipgrade-patterns-ok patterns=15 tasks=90 evals=90; show=command_topology_quality_gate; brief=pattern-brief-ok |
-| `init-pattern-workbench` | `pass` | shipgrade_init --pattern writes pattern-brief and wires agent rules |
+| `init-pattern-workbench` | `pass` | shipgrade_init --pattern --idea writes pattern-brief, prefills first-run outputs, and wires agent rules |
 | `source-promotion-batch` | `pass` | selected=4 audited=4 runtime=2 static_smoke=2 |
 | `source-promotion-sandbox-cases` | `pass` | cases=3/3 required=13/13 configured_tests=264 |
 | `sandbox-runtime-matrix` | `pass` | cases=3/3 steps=12/12 |
@@ -27,7 +27,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `issue-pr-templates` | `pass` | issue and PR templates include validation language |
 | `secret-and-metadata-scan` | `pass` | no generated metadata, local paths, or secret patterns |
 | `doctor-fake-rejection` | `pass` | fake completion rejected |
-| `demo-proof` | `pass` | demo proof captures init/reject/accept path |
+| `demo-proof` | `pass` | demo proof captures visible init/prefill/reject/accept path |
 | `zero-install-adoption-proof` | `pass` | SHIPGRADE.md-only adoption proof preserves existing rules and avoids target Python/service |
 | `external-zero-install-trial` | `pass` | pypa/sampleproject zero-install trial has unit-test and doctor proof |
 | `multi-repo-external-eval` | `pass` | 3 public repositories passed zero-install eval with doctor-reviewed handoffs |

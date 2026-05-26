@@ -21,18 +21,18 @@ Run:
 python3 tools/shipgrade_demo.py
 ```
 
-Show `shipgrade-demo-ok`, `fake_rejection=...ship-grade-fail`, and `accepted=...ship-grade-ok`.
+Show `shipgrade-demo-ok`, `visible=.shipgrade/product-map.html`, `idea_prefilled=true`, `fake_rejection=...ship-grade-fail`, and `accepted=...ship-grade-ok`.
 
 ## Scene 2 - Generate A Project Workbench
 
 Run:
 
 ```bash
-python3 tools/shipgrade_init.py /tmp/shipgrade-demo-project --pattern command_topology_quality_gate
+python3 tools/shipgrade_init.py /tmp/shipgrade-demo-project --pattern command_topology_quality_gate --idea "做一个能看见订单风险、库存缺口和下一步动作的运营工作台"
 find /tmp/shipgrade-demo-project -maxdepth 3 -type f | sort
 ```
 
-Open `.shipgrade/task-brief.md`, `.shipgrade/pattern-brief.md`, `.shipgrade/quality-gate.md`, and `.shipgrade/handoff.md`.
+Open `.shipgrade/product-map.html`, `.shipgrade/task-brief.md`, `.shipgrade/pattern-brief.md`, `.shipgrade/quality-gate.md`, and `.shipgrade/handoff.md`.
 
 ## Scene 3 - Verify The Package
 

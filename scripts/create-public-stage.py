@@ -61,12 +61,14 @@ def sanitize_demo_output(output: str) -> str:
 def write_publish_proof(target: Path, git_initialized: bool, verify_output: str, demo_output: str) -> None:
     files = sorted(path for path in target.rglob("*") if path.is_file() and ".git" not in path.parts)
     release = target / ".release" / "shipgrade-cn-v0.1.tar.gz"
+    demo_markers = ("shipgrade-demo-ok", "visible=.shipgrade/product-map.html", "idea_prefilled=true", "fake_rejection=", "accepted=", "cleaned=true")
+    demo_lines = [line for line in demo_output.strip().splitlines() if any(marker in line for marker in demo_markers)]
     proof = {
         "repo": "shipgrade-cn",
         "file_count": len(files),
         "git_initialized": git_initialized,
         "verify_output": verify_output.strip().splitlines()[-6:],
-        "demo_output": demo_output.strip().splitlines()[-8:],
+        "demo_output": demo_lines[-12:],
         "top_level": sorted(path.name for path in target.iterdir() if path.name != ".git")[:40],
         "sha256": {path.relative_to(target).as_posix(): sha256(path) for path in files[:80]},
     }

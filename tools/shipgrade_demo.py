@@ -39,6 +39,8 @@ def write_fake_completion(path: Path) -> None:
 
 
 def write_good_handoff(path: Path, project: Path) -> None:
+    start = project / ".shipgrade" / "START_HERE.md"
+    product_map = project / ".shipgrade" / "product-map.html"
     task = project / ".shipgrade" / "task-brief.md"
     agents = project / "AGENTS.md"
     claude = project / "CLAUDE.md"
@@ -46,9 +48,9 @@ def write_good_handoff(path: Path, project: Path) -> None:
     path.write_text(
         "# ShipGrade Demo Handoff\n\n"
         "## 已完成\n"
-        f"交付: 已生成 `{task}`、`{agents}`、`{claude}`、`{cursor}` 四个可打开入口。\n\n"
+        f"交付: 已生成 `{start}`、`{product_map}`、`{task}`、`{agents}`、`{claude}`、`{cursor}` 六个可打开入口。\n\n"
         "## 验证证据\n"
-        f"- `python3 tools/shipgrade_init.py {project}` 成功, exit: `0`。\n"
+        f"- `python3 tools/shipgrade_init.py {project} --idea ...` 成功, exit: `0`。\n"
         f"- `python3 tools/shipgrade_doctor.py {path}` 成功, exit: `0`。\n\n"
         "## 来源和许可证\n"
         "来源: ShipGrade CN 本仓库自带模板。许可证: 未引入外部正文或第三方代码。\n\n"
@@ -74,7 +76,8 @@ def main() -> None:
         shutil.rmtree(target)
     target.mkdir(parents=True, exist_ok=True)
 
-    init = run([sys.executable, "tools/shipgrade_init.py", str(target)])
+    demo_idea = "做一个能看见订单风险、库存缺口和下一步动作的运营工作台"
+    init = run([sys.executable, "tools/shipgrade_init.py", str(target), "--idea", demo_idea])
     if init.returncode != 0:
         raise SystemExit(init.stdout + init.stderr)
 
@@ -91,6 +94,8 @@ def main() -> None:
         raise SystemExit(good_check.stdout + good_check.stderr)
 
     expected_files = [
+        ".shipgrade/START_HERE.md",
+        ".shipgrade/product-map.html",
         ".shipgrade/task-brief.md",
         ".shipgrade/quality-gate.md",
         ".shipgrade/handoff.md",
@@ -103,10 +108,16 @@ def main() -> None:
     missing = [rel for rel in expected_files if not (target / rel).exists()]
     if missing:
         raise SystemExit("demo failed: missing " + ", ".join(missing))
+    task_text = (target / ".shipgrade" / "task-brief.md").read_text(encoding="utf-8")
+    map_text = (target / ".shipgrade" / "product-map.html").read_text(encoding="utf-8")
+    if demo_idea not in task_text or demo_idea not in map_text or "idea_prefilled=true" not in init.stdout:
+        raise SystemExit("demo failed: idea was not visible in first-run outputs")
 
     print("shipgrade-demo-ok")
     print(f"target={target}")
     print("created=" + ",".join(expected_files))
+    print("visible=.shipgrade/product-map.html")
+    print("idea_prefilled=true")
     print("fake_rejection=" + fake_check.stdout.strip().splitlines()[-1])
     print("accepted=" + good_check.stdout.strip().splitlines()[-1])
     print("next=open " + str(target / ".shipgrade" / "task-brief.md"))

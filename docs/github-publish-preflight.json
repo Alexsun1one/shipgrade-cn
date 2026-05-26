@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T16:38:50Z",
+  "generated_at": "2026-05-26T17:46:46Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
   "passed": 32,
@@ -63,7 +63,7 @@
     {
       "id": "init-pattern-workbench",
       "passed": true,
-      "detail": "shipgrade_init --pattern writes pattern-brief and wires agent rules"
+      "detail": "shipgrade_init --pattern --idea writes pattern-brief, prefills first-run outputs, and wires agent rules"
     },
     {
       "id": "source-promotion-batch",
@@ -108,7 +108,7 @@
     {
       "id": "demo-proof",
       "passed": true,
-      "detail": "demo proof captures init/reject/accept path"
+      "detail": "demo proof captures visible init/prefill/reject/accept path"
     },
     {
       "id": "zero-install-adoption-proof",

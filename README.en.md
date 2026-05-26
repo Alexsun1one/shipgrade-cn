@@ -243,7 +243,7 @@ After that, deliver every task with goal, non-goal, evidence, acceptance, risk, 
 Best for maintainers and power users. Requirements: Python 3.10+. No API key and no network access are required.
 
 ```bash
-python3 tools/shipgrade_init.py /path/to/your-project
+python3 tools/shipgrade_init.py /path/to/your-project --idea "Build an operations workbench that shows order risk, inventory gaps, and the next action."
 cd /path/to/your-project
 open .shipgrade/product-map.html
 sed -n '1,120p' .shipgrade/START_HERE.md
@@ -253,8 +253,8 @@ sed -n '1,160p' AGENTS.md
 
 Then use it like this:
 
-1. Open `.shipgrade/product-map.html` to see the first visible workbench.
-2. Fill `.shipgrade/task-brief.md`.
+1. Open `.shipgrade/product-map.html` to see the first visible workbench and confirm the `--idea` prefill is visible.
+2. Review `.shipgrade/task-brief.md`, then tighten the goal, non-goal, acceptance, and risk boundary.
 3. Ask Codex, Claude Code, or Cursor to read the project rules.
 4. Make the smallest verified change.
 5. Write the result and evidence into `.shipgrade/handoff.md`, then run the doctor.
@@ -343,7 +343,7 @@ Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 
 | --- | --- |
 | `SKILL.md` | The actual skill instructions consumed by agents. |
 | `START_HERE.md` | The first navigation file for new users. |
-| `tools/shipgrade_init.py` | Generates the project workbench and agent-rule wiring. |
+| `tools/shipgrade_init.py` | Generates the project workbench and agent-rule wiring; `--idea` prefills the first brief and visible workbench. |
 | `tools/shipgrade_zero_install_demo.py` | Proves `SHIPGRADE.md` can wire a target project without Python or a service in that target. |
 | `tools/shipgrade_external_trial.py` | Runs a zero-install trial against a small public MIT repository and doctor-checks the resulting handoff. |
 | `tools/shipgrade_multi_repo_eval.py` | Repeats zero-install wiring, lightweight validation, and doctor review across multiple small public repositories. |

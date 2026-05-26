@@ -9,11 +9,24 @@
 [![代码许可证](https://img.shields.io/badge/代码-MIT-blue)](LICENSE.md)
 [![文档许可证](https://img.shields.io/badge/文档-CC%20BY%204.0-blue)](NOTICE.md)
 
-![ShipGrade CN hero](assets/shipgrade-hero-cn.png)
+## 它能做什么
 
-## 这是什么
+一句话: ShipGrade CN 给任意项目装一个“可验证交付工作台”,让 Codex、Claude Code、Cursor 按同一套目标、边界、验证和交接规则干活。
 
-ShipGrade CN 是一套仓库工程蒸馏流水线和中文 AI 编程助手交付技能包。它不是提示词合集,也不是把英文最佳实践翻译一遍。它解决一个很常见的问题:
+| 功能 | 你会得到什么 |
+| --- | --- |
+| 初始化项目工作台 | `.shipgrade/task-brief.md`、`quality-gate.md`、`handoff.md`。 |
+| 接线多种 AI 编程工具 | 自动生成 `AGENTS.md`、`CLAUDE.md`、Cursor rule,让三个工具读同一套规则。 |
+| 把口语需求变成工程任务 | 目标、非目标、证据、验收标准、风险边界和第一刀切入点。 |
+| 拒绝“看起来好了”的假完成 | `shipgrade_doctor.py` 会要求具体文件路径、命令或浏览器证据。 |
+| 交付后可接手 | handoff 会留下结果、验证、剩余风险、安全边界和下一步。 |
+| 发布前自检 | `github_publish_preflight.py`、`shipgrade_verify.py`、GitHub Actions 和发布包脚本。 |
+
+![ShipGrade CN function map](assets/shipgrade-hero-cn.png)
+
+## 它解决什么问题
+
+ShipGrade CN 不是提示词合集,也不是把英文最佳实践翻译一遍。它解决一个很常见的问题:
 
 > 你对 AI 说“帮我把这个弄好”,它回你“好了”,但你不知道它到底改了什么、验证了什么、哪里还能接着干。
 
@@ -24,27 +37,6 @@ ShipGrade CN 会把这种口语需求压成五件事:
 3. 证据: 当前有什么文件、日志、截图、命令输出或外部来源。
 4. 验收: 什么结果才算完成。
 5. 接手: 下一位 agent 或未来的你怎么继续。
-
-## 仓库工程蒸馏流水线
-
-ShipGrade CN 的核心路线不是“把一堆 repo 直接塞给模型训练”。更合适的方法是:
-
-```text
-Repo -> 工程知识 -> 任务数据 -> 评测 -> RAG / SFT / DPO
-```
-
-先知识库化,再构建任务集和评测集,最后才考虑微调。模型不应该背代码,而应该学习工程判断:
-
-- 这个仓库为什么这样分层。
-- 模块边界怎么定。
-- 新增功能应该从哪里切入。
-- 测试应该补在哪里。
-- 哪些设计值得迁移。
-- 哪些坑应该避免。
-
-完整方法论见 `docs/repository-engineering-distillation-pipeline.md`。
-
-![仓库工程蒸馏流水线](assets/shipgrade-proof-map-cn.png)
 
 ## 30 秒看懂差异
 
@@ -113,6 +105,27 @@ CLAUDE.shipgrade.md   # Claude Code 的独立协作说明
 
 ![ShipGrade terminal demo](assets/shipgrade-terminal-demo.png)
 
+## 为什么可信: 仓库工程蒸馏流水线
+
+ShipGrade CN 的底层方法不是“把一堆 repo 直接塞给模型训练”。更合适的方法是:
+
+```text
+Repo -> 工程知识 -> 任务数据 -> 评测 -> RAG / SFT / DPO
+```
+
+先知识库化,再构建任务集和评测集,最后才考虑微调。模型不应该背代码,而应该学习工程判断:
+
+- 这个仓库为什么这样分层。
+- 模块边界怎么定。
+- 新增功能应该从哪里切入。
+- 测试应该补在哪里。
+- 哪些设计值得迁移。
+- 哪些坑应该避免。
+
+完整方法论见 `docs/repository-engineering-distillation-pipeline.md`。
+
+![仓库工程蒸馏流水线](assets/shipgrade-proof-map-cn.png)
+
 ## 四类蒸馏资产
 
 ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、评测、训练和人工审查的工程资产:
@@ -123,6 +136,8 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | Pattern Card（工程模式卡） | 记录适用场景、问题、解法、证据、优点、代价和迁移判断。 |
 | Task Card（任务卡） | 给模型或 AI 编程助手使用的规划、审查、修复、迁移和反模式识别任务。 |
 | Eval（评测集） | 记录输入、期望点、扣分点、命令、人工或模型裁判标准。 |
+
+当前生成资产: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases。详见 `docs/repo-engineering-distillation-assets.md`,公开证据在 `docs/evidence/repo_engineering_distillation/`。
 
 ![四类蒸馏资产](assets/shipgrade-audience-cn.png)
 
@@ -151,6 +166,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | `tools/shipgrade_demo.py` | 30 秒演示初始化、拒绝假完成、接受合格交付。 |
 | `tools/github_publish_preflight.py` | 发布前检查 README、证据、模板、工作流、图片和安全边界。 |
 | `docs/repository-engineering-distillation-pipeline.md` | 仓库画像、工程模式卡、任务卡、评测集的工程蒸馏方法论。 |
+| `docs/repo-engineering-distillation-assets.md` | 从真实仓库证据生成的 Repo/Pattern/Task/Eval 资产样例和计数。 |
 | `docs/EVIDENCE_INDEX.md` | 所有公开 claim 对应到哪些证据文件。 |
 | `docs/source-depth-dossier.md` | 信源不是只看 README,而是看结构、脚本、测试、命令和 agent 入口。 |
 | `docs/deep-code-case-studies.md` | 对高信源项目的代码级案例研究。 |
@@ -174,7 +190,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | 新手能不能用 | 可以。先跑 `shipgrade_init.py`,再填 `.shipgrade/task-brief.md`。 |
 | 初始化后 agent 真能看到吗 | 可以。默认接入 `AGENTS.md`、`CLAUDE.md` 和 Cursor rule。 |
 | 会不会放过假完成 | 不会只看好听的话。doctor 要求具体产物路径和命令或浏览器证据。 |
-| 是不是只抓 README | 不是。先做仓库画像、工程模式卡、任务卡、评测集,结构扫描覆盖 88 个仓库,代码级案例研究覆盖 11 个仓库。 |
+| 是不是只抓 README | 不是。已生成 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases,结构扫描覆盖 88 个仓库,代码级案例研究覆盖 11 个仓库。 |
 | 有没有真实运行 | 有。临时沙箱记录覆盖 `affaan-m/ECC`、`browser-use/browser-use`、`addyosmani/agent-skills`。 |
 | 能不能发布 | 可以。仓库内有发布前检查、GitHub Actions、模板、许可证、发布包和校验脚本。 |
 
@@ -188,6 +204,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 信源批量审计: 4 selected / 4 audited / 2 runtime candidates / 2 static smoke passed (`affaan-m/ECC`, `addyosmani/agent-skills`, `browser-use/browser-use`, `VoltAgent/awesome-agent-skills`)
 - 晋级信源沙箱: 3/3 cases / 13/13 required steps / 264 configured upstream tests (`affaan-m/ECC`, `browser-use/browser-use`, `addyosmani/agent-skills`)
 - 代码级案例研究: 11 repos / 17649 files / 5381 test paths / 786 eval paths
+- 仓库工程蒸馏资产: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases
 - 评测任务: 12
 - 运行冒烟检查: 33 passed checks / 33 checks on 7 cloned repos
 - 沙箱运行矩阵: 3/3 cases and 12/12 steps across `Yeachan-Heo/oh-my-claudecode`, `SuperClaude-Org/SuperClaude_Framework`, `github/spec-kit`, with 590 configured upstream tests discovered
@@ -213,6 +230,7 @@ ShipGrade CN 吸收的是工程结构,不是名人光环:
 - 快速入口: `START_HERE.md`
 - 证据索引: `docs/EVIDENCE_INDEX.md`
 - 蒸馏流水线: `docs/repository-engineering-distillation-pipeline.md`
+- 蒸馏资产: `docs/repo-engineering-distillation-assets.md`
 - 信源地图: `docs/source-attribution.md`
 - 深度研究: `docs/source-depth-dossier.md`
 - 代码案例: `docs/deep-code-case-studies.md`

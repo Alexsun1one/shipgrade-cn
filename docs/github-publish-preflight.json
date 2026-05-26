@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T04:16:21Z",
+  "generated_at": "2026-05-26T05:03:19Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 17,
-  "total": 17,
+  "passed": 18,
+  "total": 18,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "44 required files present"
+      "detail": "50 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -38,7 +38,12 @@
     {
       "id": "public-evidence-manifest",
       "passed": true,
-      "detail": "evidence_files=12"
+      "detail": "evidence_files=17"
+    },
+    {
+      "id": "repo-engineering-distillation-assets",
+      "passed": true,
+      "detail": "summary=11/15/90/90 files={'repo_cards': 11, 'pattern_cards': 15, 'task_cards': 90, 'eval_cases': 90}"
     },
     {
       "id": "source-promotion-batch",
@@ -58,7 +63,7 @@
     {
       "id": "social-preview",
       "passed": true,
-      "detail": "dimensions=(1672, 941)"
+      "detail": "dimensions=(1600, 900)"
     },
     {
       "id": "demo-gif",

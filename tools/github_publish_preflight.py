@@ -36,6 +36,7 @@ REQUIRED_FILES = [
     "docs/EVIDENCE_INDEX.md",
     "docs/public-evidence-manifest.json",
     "docs/repository-engineering-distillation-pipeline.md",
+    "docs/repo-engineering-distillation-assets.md",
     "docs/sandbox-runtime-cases.md",
     "docs/high-signal-source-radar.md",
     "docs/source-promotion-queue.md",
@@ -44,6 +45,11 @@ REQUIRED_FILES = [
     "docs/deep-code-case-studies.md",
     "docs/evidence/source_promotion_batch.json",
     "docs/evidence/source_promotion_sandbox_cases.json",
+    "docs/evidence/repo_engineering_distillation_summary.json",
+    "docs/evidence/repo_engineering_distillation/repo_cards.jsonl",
+    "docs/evidence/repo_engineering_distillation/pattern_cards.jsonl",
+    "docs/evidence/repo_engineering_distillation/task_cards.jsonl",
+    "docs/evidence/repo_engineering_distillation/eval_cases.jsonl",
     "docs/DEMO_PROOF.md",
     "docs/demo-proof.json",
     "tools/shipgrade_verify.py",
@@ -118,6 +124,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "仓库工程蒸馏流水线",
         "四类蒸馏资产",
         "docs/repository-engineering-distillation-pipeline.md",
+        "docs/repo-engineering-distillation-assets.md",
+        "Repo Cards / 15 Pattern Cards",
         "怎么用",
         "里面有什么",
         "工作流结构",
@@ -142,6 +150,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "Release Preflight",
         "Repository Engineering Distillation Pipeline",
         "Distilled Asset Types",
+        "docs/repo-engineering-distillation-assets.md",
+        "Repo Cards / 15 Pattern Cards",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py",
         "docs/EVIDENCE_INDEX.md",
@@ -176,7 +186,25 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
 
     evidence = json.loads(read_text("docs/public-evidence-manifest.json"))
     evidence_files = evidence.get("evidence_files") if isinstance(evidence.get("evidence_files"), list) else []
-    add(checks, "public-evidence-manifest", len(evidence_files) >= 12, f"evidence_files={len(evidence_files)}")
+    add(checks, "public-evidence-manifest", len(evidence_files) >= 16, f"evidence_files={len(evidence_files)}")
+
+    distillation = json.loads(read_text("docs/evidence/repo_engineering_distillation_summary.json"))
+    distillation_counts = {
+        "repo_cards": sum(1 for line in read_text("docs/evidence/repo_engineering_distillation/repo_cards.jsonl").splitlines() if line.strip()),
+        "pattern_cards": sum(1 for line in read_text("docs/evidence/repo_engineering_distillation/pattern_cards.jsonl").splitlines() if line.strip()),
+        "task_cards": sum(1 for line in read_text("docs/evidence/repo_engineering_distillation/task_cards.jsonl").splitlines() if line.strip()),
+        "eval_cases": sum(1 for line in read_text("docs/evidence/repo_engineering_distillation/eval_cases.jsonl").splitlines() if line.strip()),
+    }
+    add(
+        checks,
+        "repo-engineering-distillation-assets",
+        distillation.get("repo_card_count", 0) >= 8
+        and distillation.get("pattern_card_count", 0) >= 10
+        and distillation.get("task_card_count", 0) >= 50
+        and distillation.get("eval_case_count") == distillation_counts["eval_cases"]
+        and distillation_counts["task_cards"] == distillation_counts["eval_cases"],
+        f"summary={distillation.get('repo_card_count')}/{distillation.get('pattern_card_count')}/{distillation.get('task_card_count')}/{distillation.get('eval_case_count')} files={distillation_counts}",
+    )
 
     batch = json.loads(read_text("docs/evidence/source_promotion_batch.json"))
     add(

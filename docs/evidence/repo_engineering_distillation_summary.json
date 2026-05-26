@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-05-26T04:46:15Z",
+  "repo_card_count": 11,
+  "pattern_card_count": 15,
+  "task_card_count": 90,
+  "eval_case_count": 90,
+  "source_repos": [
+    "affaan-m/ECC",
+    "github/spec-kit",
+    "browser-use/browser-use",
+    "addyosmani/agent-skills",
+    "Yeachan-Heo/oh-my-claudecode",
+    "VoltAgent/awesome-agent-skills",
+    "SuperClaude-Org/SuperClaude_Framework",
+    "humanlayer/12-factor-agents",
+    "promptfoo/promptfoo",
+    "microsoft/code-with-engineering-playbook",
+    "UKGovernmentBEIS/inspect_ai"
+  ],
+  "pattern_keys": [
+    "agent_surface_contract",
+    "ci_mirrored_quality_gate",
+    "command_topology_quality_gate",
+    "cross_harness_portability",
+    "docs_as_architecture_contract",
+    "eval_first_quality_loop",
+    "examples_onboarding_ladder",
+    "kickoff_doc_stack",
+    "license_provenance_boundary",
+    "multi_agent_fanout_merge",
+    "sandbox_promotion_ladder",
+    "skill_persona_command_layering",
+    "source_depth_before_readme",
+    "tests_as_acceptance_language",
+    "tool_config_as_contract"
+  ],
+  "public_boundary": "Path-level, metric-level, and rubric-level distillation only; source bodies are not copied.",
+  "route": "Repo -> Engineering Knowledge -> Task Data -> Eval -> RAG / SFT / DPO"
+}

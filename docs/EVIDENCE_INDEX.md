@@ -17,6 +17,7 @@ This file maps public README claims to repository-local evidence. It exists so S
 | Source promotion queue is actually audited | `docs/source-promotion-batch.md` and `docs/evidence/source_promotion_batch.json` |
 | Promoted runtime candidates are actually executed | `docs/source-promotion-sandbox-cases.md` and `docs/evidence/source_promotion_sandbox_cases.json` |
 | Deep code case studies inspected runtime clones | `docs/deep-code-case-studies.md` and `docs/evidence/deep_code_case_studies.json` |
+| Repo/Pattern/Task/Eval assets are generated from code evidence | `docs/repo-engineering-distillation-assets.md` and `docs/evidence/repo_engineering_distillation/*.jsonl` |
 | Source overlap was compressed, not blindly merged | `docs/overlap-decisions.md` and `docs/evidence/source_overlap_report.json` |
 | Adapter metrics are bounded execution evidence | `QUALITY_REPORT.md` and `docs/evidence/qwen_lora_quality_review.json` |
 | Non-self release artifacts have stable hashes | `docs/public-evidence-manifest.json` |

@@ -8,7 +8,7 @@
 - Includes source-depth dossier, real-project gauntlet, transcript evidence, eval tasks, templates, and a 30-second init/reject/accept demo.
 - Adds `docs/DEMO_PROOF.md`, `docs/demo-proof.json`, `PUBLISH_PROOF.md`, and `publish-proof.json` so people can inspect the demo and staging proof without trusting a claim.
 - Adds high-signal source radar, source promotion queue, and source promotion batch evidence so discovery keeps turning into audited code review work.
-- Local GitHub publish preflight is `17/17`, including bilingual README onboarding, distillation-pipeline docs, `demo-proof`, fake-completion rejection, social preview dimensions, evidence manifest, workflow file, and secret/metadata scan.
+- Local GitHub publish preflight covers bilingual README onboarding, distillation-pipeline docs, generated Repo/Pattern/Task/Eval assets, `demo-proof`, fake-completion rejection, social preview dimensions, evidence manifest, workflow file, and secret/metadata scan.
 
 ## Validation
 
@@ -25,7 +25,7 @@ bash scripts/verify.sh
 Expected high-signal outputs:
 
 - `shipgrade-demo-ok`
-- `github-publish-preflight-ok checks=17`
+- `github-publish-preflight-ok checks=18`
 - `shipgrade-release-check-ok`
 - staged publish proof contains both fake rejection and accepted handoff tails
 

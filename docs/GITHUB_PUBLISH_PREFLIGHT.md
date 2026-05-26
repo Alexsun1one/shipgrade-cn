@@ -2,22 +2,23 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `17/17`
+- passed: `18/18`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
 | --- | --- | --- |
-| `required-files` | `pass` | 44 required files present |
+| `required-files` | `pass` | 50 required files present |
 | `readme-launch-surface` | `pass` | README has hook, proof, and preflight surface |
 | `readme-english-surface` | `pass` | README.en.md has standalone onboarding surface |
 | `skill-frontmatter` | `pass` | machine-readable frontmatter with name/description triggers |
 | `github-workflow` | `pass` | validate workflow has PR/push and release check |
 | `repo-metadata` | `pass` | topics=10 missing=[] |
-| `public-evidence-manifest` | `pass` | evidence_files=12 |
+| `public-evidence-manifest` | `pass` | evidence_files=17 |
+| `repo-engineering-distillation-assets` | `pass` | summary=11/15/90/90 files={'repo_cards': 11, 'pattern_cards': 15, 'task_cards': 90, 'eval_cases': 90} |
 | `source-promotion-batch` | `pass` | selected=4 audited=4 runtime=2 static_smoke=2 |
 | `source-promotion-sandbox-cases` | `pass` | cases=3/3 required=13/13 configured_tests=264 |
 | `sandbox-runtime-matrix` | `pass` | cases=3/3 steps=12/12 |
-| `social-preview` | `pass` | dimensions=(1672, 941) |
+| `social-preview` | `pass` | dimensions=(1600, 900) |
 | `demo-gif` | `pass` | dimensions=(1200, 675) |
 | `issue-pr-templates` | `pass` | issue and PR templates include validation language |
 | `secret-and-metadata-scan` | `pass` | no generated metadata or secret patterns |

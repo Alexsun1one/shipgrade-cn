@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T04:13:39Z",
+  "generated_at": "2026-05-26T05:01:44Z",
   "purpose": "Public, redacted, repository-local evidence index for README and QUALITY_REPORT claims.",
   "boundary": "No private source bodies, secrets, cookies, sessions, auth databases, browser profiles, private keys, or API tokens.",
   "evidence_files": [
@@ -64,6 +64,12 @@
       "bytes": 85667
     },
     {
+      "path": "docs/evidence/repo_engineering_distillation_summary.json",
+      "source": "outputs/repo_engineering_distillation/summary.json",
+      "sha256": "da35239fd94df9ad51f596867129fb2205def3c469a758e5e683626516d43d53",
+      "bytes": 1262
+    },
+    {
       "path": "docs/evidence/source_overlap_report.json",
       "source": "outputs/source_overlap_report.json",
       "sha256": "866d8acaf9fa18adbc73f8f6f60d88bc405b2f654f78b13e56768ac504dc0e10",
@@ -74,6 +80,30 @@
       "source": "outputs/training_runs/qwen-lora-20260526-041639/quality_review.json",
       "sha256": "50a756f6f6f639712001b8f0d4c8912a680d06c62328375ecc365661f89d2b11",
       "bytes": 1887
+    },
+    {
+      "path": "docs/evidence/repo_engineering_distillation/repo_cards.jsonl",
+      "source": "outputs/repo_engineering_distillation/repo_cards.jsonl",
+      "sha256": "10ce7ebafa02ba3f777297fdf58698f3463151b90d4e2c8fc4370bfc75adc611",
+      "bytes": 43418
+    },
+    {
+      "path": "docs/evidence/repo_engineering_distillation/pattern_cards.jsonl",
+      "source": "outputs/repo_engineering_distillation/pattern_cards.jsonl",
+      "sha256": "946e7ad1ac7e2eb1f08040e9a48ce3aacb81488d5ec1f6c9c671d233747e3654",
+      "bytes": 94549
+    },
+    {
+      "path": "docs/evidence/repo_engineering_distillation/task_cards.jsonl",
+      "source": "outputs/repo_engineering_distillation/task_cards.jsonl",
+      "sha256": "acff2e3841327f42eb91f175f1a32260495f15d4697954a0d1491cb8b0616add",
+      "bytes": 185220
+    },
+    {
+      "path": "docs/evidence/repo_engineering_distillation/eval_cases.jsonl",
+      "source": "outputs/repo_engineering_distillation/eval_cases.jsonl",
+      "sha256": "72c697ec44c4f4962f01efa0d6ad9d1c028b098246a535d4d7932065655cab9b",
+      "bytes": 222405
     }
   ],
   "release_files": [

@@ -175,7 +175,11 @@ python3 scripts/build_source_promotion_queue.py
 python3 scripts/run_source_promotion_batch.py
 python3 scripts/run_source_promotion_sandbox_cases.py
 python3 scripts/analyze_deep_code_case_studies.py
+python3 scripts/build_repo_engineering_distillation.py
+python3 scripts/validate_repo_engineering_distillation.py
 ```
+
+Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases.
 
 ## Hard Rule
 

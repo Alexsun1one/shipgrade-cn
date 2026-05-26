@@ -9,11 +9,22 @@ Chinese version: [README.md](README.md)
 [![Code license](https://img.shields.io/badge/code-MIT-blue)](LICENSE.md)
 [![Docs license](https://img.shields.io/badge/docs-CC%20BY%204.0-blue)](NOTICE.md)
 
-## What It Is
+## What It Does
 
-ShipGrade CN is not a prompt pack. It is a repository engineering distillation pipeline and a small, installable engineering workflow for AI coding agents.
+ShipGrade CN installs a verifiable delivery workbench into any repository. Codex, Claude Code, and Cursor then work from the same goal, boundary, validation, and handoff rules.
 
-It helps a user move from "please fix this" to a concrete delivery contract:
+| Feature | What you get |
+| --- | --- |
+| Project workbench initialization | `.shipgrade/task-brief.md`, `quality-gate.md`, and `handoff.md`. |
+| Multi-agent rule wiring | `AGENTS.md`, `CLAUDE.md`, and Cursor rules generated from the same contract. |
+| Vague request compression | Goal, non-goal, evidence, acceptance criteria, risks, and the first implementation slice. |
+| Fake-completion rejection | `shipgrade_doctor.py` requires artifact paths and command or browser evidence. |
+| Handoff after delivery | Result, validation proof, remaining risks, security boundary, and next action. |
+| Release preflight | `github_publish_preflight.py`, `shipgrade_verify.py`, GitHub Actions, and package scripts. |
+
+## Problem It Solves
+
+ShipGrade CN is not a prompt pack. It helps a user move from "please fix this" to a concrete delivery contract:
 
 1. goal
 2. non-goal
@@ -23,25 +34,6 @@ It helps a user move from "please fix this" to a concrete delivery contract:
 6. handoff for the next agent or future maintainer
 
 The project is written for Chinese-speaking workflows, but this file explains the package in English for reviewers, contributors, and global users.
-
-## Repository Engineering Distillation Pipeline
-
-The right path is not to dump repositories into a model and hope it learns architecture. ShipGrade CN treats repositories as engineering evidence and turns them into structured assets first:
-
-```text
-Repository -> Engineering Knowledge -> Task Data -> Eval -> RAG / SFT / DPO
-```
-
-The model should not memorize source code. It should learn engineering judgment:
-
-- why a repository is layered the way it is
-- where module boundaries live
-- where a new feature should enter
-- where tests should be added
-- which designs are worth reusing
-- which failure modes should be avoided
-
-The full method is documented in `docs/repository-engineering-distillation-pipeline.md`.
 
 ## Quick Demo
 
@@ -108,6 +100,25 @@ CLAUDE.shipgrade.md
 .cursor/rules/shipgrade.mdc
 ```
 
+## Why It Is Credible: Repository Engineering Distillation Pipeline
+
+The repository-engineering layer behind ShipGrade CN does not dump repositories into a model and hope it learns architecture. It treats repositories as engineering evidence and turns them into structured assets first:
+
+```text
+Repository -> Engineering Knowledge -> Task Data -> Eval -> RAG / SFT / DPO
+```
+
+The model should not memorize source code. It should learn engineering judgment:
+
+- why a repository is layered the way it is
+- where module boundaries live
+- where a new feature should enter
+- where tests should be added
+- which designs are worth reusing
+- which failure modes should be avoided
+
+The full method is documented in `docs/repository-engineering-distillation-pipeline.md`.
+
 ## Distilled Asset Types
 
 ShipGrade CN turns repository evidence into four reviewable asset types:
@@ -118,6 +129,8 @@ ShipGrade CN turns repository evidence into four reviewable asset types:
 | Pattern Card | Engineering pattern: scenario, problem, solution, code evidence, benefits, tradeoffs, and migration judgment. |
 | Task Card | Task data for planning, review, repair, migration, and anti-pattern recognition. |
 | Eval | Evaluation cases with inputs, expected points, deductions, commands, and judge rubrics. |
+
+Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases. See `docs/repo-engineering-distillation-assets.md` and `docs/evidence/repo_engineering_distillation/`.
 
 ## What Is Inside
 
@@ -130,6 +143,7 @@ ShipGrade CN turns repository evidence into four reviewable asset types:
 | `tools/shipgrade_demo.py` | Runs the quick proof path. |
 | `tools/github_publish_preflight.py` | Checks the repository before release. |
 | `docs/repository-engineering-distillation-pipeline.md` | The Repo Card / Pattern Card / Task Card / Eval methodology. |
+| `docs/repo-engineering-distillation-assets.md` | Generated Repo/Pattern/Task/Eval assets from real repository evidence. |
 | `docs/EVIDENCE_INDEX.md` | Maps public claims to evidence files. |
 | `docs/source-depth-dossier.md` | Explains how sources were studied beyond README files. |
 | `docs/deep-code-case-studies.md` | Code-level case studies from high-signal repositories. |
@@ -155,6 +169,7 @@ ShipGrade CN gives agents a repeatable loop:
 - Source promotion batch: 4 selected / 4 audited / 2 runtime candidates / 2 static smoke passed (`affaan-m/ECC`, `addyosmani/agent-skills`, `browser-use/browser-use`, `VoltAgent/awesome-agent-skills`)
 - Source promotion sandbox cases: 3/3 cases / 13/13 required steps / 264 configured upstream tests (`affaan-m/ECC`, `browser-use/browser-use`, `addyosmani/agent-skills`)
 - Deep code case studies: 11 repos / 17649 files / 5381 test paths / 786 eval paths
+- Repository engineering distillation assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases
 - Evaluation tasks: 12
 - Runtime smoke checks: 33 passed checks / 33 checks on 7 cloned repos
 - Sandbox runtime matrix: 3/3 cases and 12/12 steps across `Yeachan-Heo/oh-my-claudecode`, `SuperClaude-Org/SuperClaude_Framework`, `github/spec-kit`, with 590 configured upstream tests discovered
@@ -168,7 +183,7 @@ ShipGrade CN gives agents a repeatable loop:
 | Can a beginner use it? | Yes. Run `shipgrade_init.py`, fill the brief, then follow the quality gate. |
 | Does the agent actually see the rules? | Yes. The initializer wires `AGENTS.md`, `CLAUDE.md`, and Cursor rules. |
 | Can it reject fake completion? | Yes. The doctor requires artifact paths and validation evidence. |
-| Is the research README-only? | No. It builds Repo Cards, Pattern Cards, Task Cards, and Evals. Structure scans cover 88 repositories, and deep code case studies cover 11 repositories. |
+| Is the research README-only? | No. It generates 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 Eval Cases. Structure scans cover 88 repositories, and deep code case studies cover 11 repositories. |
 | Is there runtime evidence? | Yes. Runtime and sandbox evidence live under `docs/`. |
 | Can the repo be released independently? | Yes. It includes local preflight, GitHub Actions, release packaging, issue templates, and license files. |
 
@@ -190,6 +205,7 @@ ShipGrade CN borrows engineering structure, not celebrity branding:
 - Start here: `START_HERE.md`
 - Evidence index: `docs/EVIDENCE_INDEX.md`
 - Distillation pipeline: `docs/repository-engineering-distillation-pipeline.md`
+- Distillation assets: `docs/repo-engineering-distillation-assets.md`
 - Source attribution: `docs/source-attribution.md`
 - Deep source study: `docs/source-depth-dossier.md`
 - Code case studies: `docs/deep-code-case-studies.md`

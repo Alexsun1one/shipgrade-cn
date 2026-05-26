@@ -33,6 +33,85 @@ Use this project through the ShipGrade loop: define the verifiable result, inspe
 """
 
 FILES = {
+    ".shipgrade/START_HERE.md": """# ShipGrade Workbench Start
+
+ShipGrade CN 不是“装上就自动做出很牛产品”的魔法按钮。它给你的 AI 编程工具加上一层产品总工和交付审计器: 先把想法压成可验证任务,再要求它交付能打开、能运行、能复查的结果。
+
+## 第一眼先打开什么
+
+- 可视化状态页: `.shipgrade/product-map.html`
+- 任务入口: `.shipgrade/task-brief.md`
+- 质量门: `.shipgrade/quality-gate.md`
+- 交接单: `.shipgrade/handoff.md`
+
+## 第一步会输出什么
+
+1. 一个项目工作台,告诉你“目标、第一刀、证据、质量门、接手点”分别在哪里。
+2. 一份 task brief,把口语需求变成目标、非目标、当前证据、验收标准和风险边界。
+3. 一份 quality gate,防止 agent 用“看起来好了”冒充完成。
+4. 一份 handoff,让未来的你或下一个 agent 能继续。
+
+## 对你的工作有什么帮助
+
+- 新项目: 先生成可执行 brief,避免从空白聊天开始。
+- 修 bug: 先锁定可复现证据和最小验证命令。
+- 做产品: 先明确用户能看到什么、怎么验收、哪些暂时不做。
+- 多 agent 协作: Codex / Claude / Cursor 读同一套规则,不会各说各话。
+""",
+    ".shipgrade/product-map.html": """<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>ShipGrade Workbench</title>
+  <style>
+    :root { --bg:#f8fafc; --panel:#fff; --ink:#0f172a; --muted:#475569; --line:#dbe4ee; --teal:#0f766e; --blue:#2563eb; --amber:#b45309; --rose:#be123c; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55; }
+    main { width:min(1120px,calc(100% - 32px)); margin:0 auto; padding:40px 0 56px; }
+    header { display:grid; grid-template-columns:1.4fr .9fr; gap:24px; align-items:end; border-bottom:1px solid var(--line); padding-bottom:28px; }
+    h1 { margin:0 0 12px; font-size:clamp(30px,5vw,56px); line-height:1.05; letter-spacing:0; }
+    h2 { margin:0 0 12px; font-size:22px; letter-spacing:0; }
+    p { margin:0; color:var(--muted); }
+    .eyebrow { color:var(--teal); font-weight:700; font-size:13px; margin-bottom:10px; }
+    .status,.step,.panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+    .status { display:grid; gap:10px; padding:18px; }
+    .status div { display:flex; justify-content:space-between; gap:16px; border-bottom:1px solid #edf2f7; padding-bottom:8px; font-size:14px; }
+    .status div:last-child { border-bottom:0; padding-bottom:0; }
+    .section { padding-top:30px; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+    .step { padding:18px; min-height:190px; }
+    .step b { display:inline-flex; width:32px; height:32px; align-items:center; justify-content:center; border-radius:999px; color:#fff; margin-bottom:14px; font-size:14px; }
+    .blue{background:var(--blue)} .teal{background:var(--teal)} .amber{background:var(--amber)} .rose{background:var(--rose)}
+    .step h3 { margin:0 0 8px; font-size:17px; letter-spacing:0; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.92em; background:#eef2f7; border:1px solid #d8e1ec; border-radius:6px; padding:2px 5px; }
+    .two { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .panel { padding:20px; }
+    ul { margin:0; padding-left:20px; color:var(--muted); }
+    li + li { margin-top:8px; }
+    .next { border-left:4px solid var(--teal); background:#ecfdf5; padding:18px 20px; border-radius:8px; }
+    @media (max-width:860px){ main{width:min(100% - 24px,680px); padding-top:28px} header,.two{grid-template-columns:1fr} .grid{grid-template-columns:1fr} .step{min-height:auto} }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div><div class="eyebrow">ShipGrade Workbench</div><h1>把想法变成可验证交付</h1><p>它不会替你自动做出伟大产品,但会让 AI 从第一步开始围绕目标、证据、质量门和接手点工作。</p></div>
+      <aside class="status" aria-label="Project status"><div><span>当前阶段</span><strong>Brief first</strong></div><div><span>第一步</span><strong>填写 task brief</strong></div><div><span>完成标准</span><strong>证据优先</strong></div><div><span>可见产物</span><strong>4 个工作台文件</strong></div></aside>
+    </header>
+    <section class="section"><h2>第一轮会输出什么</h2><div class="grid">
+      <article class="step"><b class="blue">1</b><h3>任务 Brief</h3><p><code>task-brief.md</code> 把口语需求压成目标、非目标、证据、验收和第一刀。</p></article>
+      <article class="step"><b class="teal">2</b><h3>质量门</h3><p><code>quality-gate.md</code> 要求测试、截图、日志、命令或人工检查点,拒绝假完成。</p></article>
+      <article class="step"><b class="amber">3</b><h3>Agent 接线</h3><p><code>AGENTS.md</code>、<code>CLAUDE.md</code> 和 Cursor rules 让工具按同一套交付闭环工作。</p></article>
+      <article class="step"><b class="rose">4</b><h3>交接单</h3><p><code>handoff.md</code> 记录结果、验证、风险和下一步,让下一位 agent 能接着做。</p></article>
+    </div></section>
+    <section class="section two"><div class="panel"><h2>对产品工作有什么帮助</h2><ul><li>把“做个很牛的东西”拆成用户能看到的第一版。</li><li>先定义验收标准,再让 agent 写代码或改设计。</li><li>每次交付都留下证据和下一步,减少返工。</li><li>把 Codex、Claude、Cursor 的行为对齐到同一套规则。</li></ul></div><div class="panel"><h2>它不会承诺什么</h2><ul><li>不会保证安装后自动产生市场成功。</li><li>不会把一个小 smoke 冒充完整质量证明。</li><li>不会复制 secret、cookie、session 或许可证不清的源码正文。</li><li>不会把模型草稿当成最终质量裁判。</li></ul></div></section>
+    <section class="section"><div class="next"><h2>现在该做的第一步</h2><p>打开 <code>.shipgrade/task-brief.md</code>,粘贴用户原话,写清楚“用户完成后能看到什么”。然后让 agent 按 ShipGrade 规则实现最小可验证 slice。</p></div></section>
+  </main>
+</body>
+</html>
+""",
     ".shipgrade/task-brief.md": """# Task Brief
 
 ## 用户原话
@@ -238,10 +317,11 @@ def main() -> None:
     if not args.no_wire:
         print(upsert_block(root / "AGENTS.md", AGENTS_BLOCK, args.force))
         print(upsert_block(root / "CLAUDE.md", CLAUDE_BLOCK, args.force))
+    print("visible=.shipgrade/product-map.html")
     if args.pattern:
-        print("next: fill .shipgrade/task-brief.md, cite .shipgrade/pattern-brief.md, run validation, then update .shipgrade/handoff.md")
+        print("next: open .shipgrade/START_HERE.md, fill .shipgrade/task-brief.md, cite .shipgrade/pattern-brief.md, run validation, then update .shipgrade/handoff.md")
     else:
-        print("next: fill .shipgrade/task-brief.md, optionally add --pattern on re-run, run validation, then update .shipgrade/handoff.md")
+        print("next: open .shipgrade/START_HERE.md, fill .shipgrade/task-brief.md, optionally add --pattern on re-run, run validation, then update .shipgrade/handoff.md")
 
 
 if __name__ == "__main__":

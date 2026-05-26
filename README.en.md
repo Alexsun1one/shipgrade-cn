@@ -4,7 +4,7 @@
 
 **A Chinese-first engineering delivery workbench for Codex, Claude Code, and Cursor.**
 
-[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [External Trial](docs/EXTERNAL_TRIAL_PROOF.md) · [Multi-Repo Eval](docs/MULTI_REPO_EVAL_PROOF.md) · [Real Case](docs/REAL_ISSUE_CASE_PROOF.md) · [Task Suite](docs/REAL_TASK_SUITE_PROOF.md) · [Eval Corpus](docs/EVAL_CORPUS_PROOF.md) · [Holdout Replay](docs/HOLDOUT_REPLAY_PROOF.md) · [Model Replay](docs/MODEL_REPLAY_PROOF.md) · [Judge Panel](docs/JUDGE_PANEL_PROOF.md) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
+[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [External Trial](docs/EXTERNAL_TRIAL_PROOF.md) · [Multi-Repo Eval](docs/MULTI_REPO_EVAL_PROOF.md) · [Real Case](docs/REAL_ISSUE_CASE_PROOF.md) · [Task Suite](docs/REAL_TASK_SUITE_PROOF.md) · [Eval Corpus](docs/EVAL_CORPUS_PROOF.md) · [Holdout Replay](docs/HOLDOUT_REPLAY_PROOF.md) · [Model Replay](docs/MODEL_REPLAY_PROOF.md) · [Judge Panel](docs/JUDGE_PANEL_PROOF.md) · [Review Packet](docs/REVIEW_PACKET_PROOF.md) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
 
 [![Local verify](https://img.shields.io/badge/local%20verify-shipgrade__verify.py-2ea44f)](#release-preflight)
 [![Agents](https://img.shields.io/badge/agents-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -192,6 +192,16 @@ python3 tools/shipgrade_judge_panel.py --clean
 
 See [docs/JUDGE_PANEL_PROOF.md](docs/JUDGE_PANEL_PROOF.md), with judge packets and reports under [docs/judge-panel/](docs/judge-panel/).
 
+## Blind Review Packet
+
+For real Codex / Claude / human review, the release package still does not claim that external review already happened. It first generates a blind review packet: 16 cases, 48 candidate outputs, a separate answer key, and a scorecard template. Reviewers inspect `candidate A/B/C` first, record signed decisions, then compare against the answer key.
+
+```bash
+python3 tools/shipgrade_review_packet.py --clean
+```
+
+See [docs/REVIEW_PACKET_PROOF.md](docs/REVIEW_PACKET_PROOF.md), with review packet files under [docs/review-packet/](docs/review-packet/).
+
 ## Quick Demo
 
 Requirements: Python 3.10+. No API key and no network access are required.
@@ -235,17 +245,19 @@ Best for maintainers and power users. Requirements: Python 3.10+. No API key and
 ```bash
 python3 tools/shipgrade_init.py /path/to/your-project
 cd /path/to/your-project
+open .shipgrade/product-map.html
+sed -n '1,120p' .shipgrade/START_HERE.md
 sed -n '1,160p' .shipgrade/task-brief.md
 sed -n '1,160p' AGENTS.md
 ```
 
 Then use it like this:
 
-1. Fill `.shipgrade/task-brief.md`.
-2. Ask Codex, Claude Code, or Cursor to read the project rules.
-3. Make the smallest verified change.
-4. Write the result and evidence into `.shipgrade/handoff.md`.
-5. Run the doctor.
+1. Open `.shipgrade/product-map.html` to see the first visible workbench.
+2. Fill `.shipgrade/task-brief.md`.
+3. Ask Codex, Claude Code, or Cursor to read the project rules.
+4. Make the smallest verified change.
+5. Write the result and evidence into `.shipgrade/handoff.md`, then run the doctor.
 
 ```bash
 python3 tools/shipgrade_doctor.py .shipgrade/handoff.md
@@ -341,6 +353,7 @@ Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 
 | `tools/shipgrade_holdout_replay.py` | Replays strong/weak answers on 12 repositories outside the base eval corpus to catch overfit quality claims. |
 | `tools/shipgrade_model_replay.py` | Replays candidate/model outputs across 16 base + holdout cases and stratifies failures by validation, boundary, and completion gaps. |
 | `tools/shipgrade_judge_panel.py` | Generates a three-lens judge packet for the 16 replay cases, ready for later human/Codex/Claude cross-review. |
+| `tools/shipgrade_review_packet.py` | Generates a 16-case / 48-candidate blind review packet, separate answer key, and scorecard template for real reviewer handoff. |
 | `tools/shipgrade_doctor.py` | Checks whether a handoff contains result, validation, source, risk, security, and next-step evidence. |
 | `tools/shipgrade_demo.py` | Runs the quick proof path. |
 | `tools/shipgrade_patterns.py` | Lists distilled patterns and writes `.shipgrade/pattern-brief.md`. |
@@ -385,6 +398,7 @@ ShipGrade CN gives agents a repeatable loop:
 - Scored real-task eval corpus: 4 cases, chosen 4/4 pass, rejected 4/4 fail
 - Model/candidate output replay: 16 candidate replays with failure stratification
 - Judge panel: 16 replay cases, 3 deterministic judge lenses
+- Blind review packet: 16 replay cases, 48 blinded candidate outputs
 
 ## Why It Is Not Just Prompts
 
@@ -403,6 +417,7 @@ ShipGrade CN gives agents a repeatable loop:
 | Is there a holdout gate? | Yes. `docs/HOLDOUT_REPLAY_PROOF.md` records 12 non-base-repo replay cases with strong 12/12 pass, weak 12/12 fail, and base overlap 0. |
 | Can it replay model/candidate outputs? | Yes. `docs/MODEL_REPLAY_PROOF.md` records 16 base + holdout candidate-output replays and stratifies failures into validation, boundary, and completion gaps. |
 | Can outputs be cross-reviewed? | The repo now includes a deterministic judge panel. `docs/JUDGE_PANEL_PROOF.md` records controller/source/completion lenses for 16 replay cases without claiming external model or human review already happened. |
+| Can external reviewers blind-review outputs? | Yes. `docs/REVIEW_PACKET_PROOF.md` records a 16-case / 48-candidate blind review packet, separate answer key, and scorecard template without claiming external model or human review already happened. |
 | Can the repo be released independently? | Yes. It includes local preflight, GitHub Actions, release packaging, issue templates, and license files. |
 
 ## How Those Ideas Become Actions
@@ -434,6 +449,7 @@ The source influences land as runnable repository artifacts, not decorative cita
 - Holdout replay: `docs/HOLDOUT_REPLAY_PROOF.md`, `docs/holdout-replay/`
 - Model replay: `docs/MODEL_REPLAY_PROOF.md`, `docs/model-replay/`
 - Judge panel: `docs/JUDGE_PANEL_PROOF.md`, `docs/judge-panel/`
+- Review packet: `docs/REVIEW_PACKET_PROOF.md`, `docs/review-packet/`
 - Source promotion: `docs/high-signal-source-radar.md`, `docs/source-promotion-queue.md`, `docs/source-promotion-batch.md`
 - Release preflight: `docs/GITHUB_PUBLISH_PREFLIGHT.md`
 - Demo proof: `docs/DEMO_PROOF.md`

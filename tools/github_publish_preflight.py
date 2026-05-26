@@ -84,6 +84,13 @@ REQUIRED_FILES = [
     "docs/judge-panel/README.md",
     "docs/judge-panel/judge-panel-cases.jsonl",
     "docs/judge-panel/judge-panel-report.json",
+    "docs/REVIEW_PACKET_PROOF.md",
+    "docs/review-packet-proof.json",
+    "docs/review-packet/README.md",
+    "docs/review-packet/review-packet-cases.jsonl",
+    "docs/review-packet/review-answer-key.jsonl",
+    "docs/review-packet/review-scorecard-template.jsonl",
+    "docs/review-packet/review-packet-report.json",
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
@@ -96,6 +103,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_holdout_replay.py",
     "tools/shipgrade_model_replay.py",
     "tools/shipgrade_judge_panel.py",
+    "tools/shipgrade_review_packet.py",
     "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
@@ -190,6 +198,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "python3 tools/shipgrade_judge_panel.py --clean",
         "docs/JUDGE_PANEL_PROOF.md",
         "docs/judge-panel/",
+        "python3 tools/shipgrade_review_packet.py --clean",
+        "docs/REVIEW_PACKET_PROOF.md",
+        "docs/review-packet/",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -247,6 +258,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "python3 tools/shipgrade_judge_panel.py --clean",
         "docs/JUDGE_PANEL_PROOF.md",
         "docs/judge-panel/",
+        "python3 tools/shipgrade_review_packet.py --clean",
+        "docs/REVIEW_PACKET_PROOF.md",
+        "docs/review-packet/",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",
@@ -726,6 +740,47 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "16 replay cases have deterministic controller/source/completion judge-panel votes" if not missing_judge_panel_terms else "missing_terms=" + ", ".join(missing_judge_panel_terms),
     )
 
+    review_packet_proof = read_text("docs/REVIEW_PACKET_PROOF.md")
+    review_packet_payload = json.loads(read_text("docs/review-packet-proof.json"))
+    review_packet_report = json.loads(read_text("docs/review-packet/review-packet-report.json"))
+    review_packet_cases = [line for line in read_text("docs/review-packet/review-packet-cases.jsonl").splitlines() if line.strip()]
+    review_answer_key = [line for line in read_text("docs/review-packet/review-answer-key.jsonl").splitlines() if line.strip()]
+    review_scorecard = [line for line in read_text("docs/review-packet/review-scorecard-template.jsonl").splitlines() if line.strip()]
+    review_packet_terms = [
+        "shipgrade-review-packet-ok",
+        "cases=16",
+        "candidate_outputs=48",
+        "scorecard_rows=48",
+        "blind_profile_labels=true",
+        "answer_key_separate=true",
+        "scorecard_template_ready=true",
+        "signed_review_required_before_claim=true",
+        "external_model_called=false",
+        "human_review_claimed=false",
+        "source_body_copied_to_public=false",
+        "secret_scan=pass",
+    ]
+    missing_review_packet_terms = [term for term in review_packet_terms if term not in review_packet_proof]
+    add(
+        checks,
+        "blind-review-packet",
+        not missing_review_packet_terms
+        and review_packet_payload.get("ok") is True
+        and review_packet_report.get("ok") is True
+        and review_packet_report.get("case_count") == 16
+        and review_packet_report.get("candidate_outputs") == 48
+        and review_packet_report.get("scorecard_rows") == 48
+        and review_packet_report.get("blind_profile_labels") is True
+        and review_packet_report.get("answer_key_separate") is True
+        and review_packet_report.get("signed_review_required_before_claim") is True
+        and review_packet_report.get("external_model_called") is False
+        and review_packet_report.get("human_review_claimed") is False
+        and len(review_packet_cases) == 16
+        and len(review_answer_key) == 48
+        and len(review_scorecard) == 48,
+        "16 cases and 48 blinded candidates are ready for signed external review" if not missing_review_packet_terms else "missing_terms=" + ", ".join(missing_review_packet_terms),
+    )
+
     if run_verify:
         verify = run([sys.executable, "tools/shipgrade_verify.py"])
         add(checks, "shipgrade-verify", verify.returncode == 0 and "shipgrade-verify-ok" in verify.stdout, (verify.stdout + verify.stderr)[-500:])
@@ -773,6 +828,10 @@ def write_docs(checks: list[dict[str, Any]]) -> None:
             "python3 tools/shipgrade_real_issue_case.py --clean",
             "python3 tools/shipgrade_real_task_suite.py --clean",
             "python3 tools/shipgrade_eval_corpus.py --clean",
+            "python3 tools/shipgrade_holdout_replay.py --clean",
+            "python3 tools/shipgrade_model_replay.py --clean",
+            "python3 tools/shipgrade_judge_panel.py --clean",
+            "python3 tools/shipgrade_review_packet.py --clean",
             "python3 tools/shipgrade_demo.py",
             "python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate",
             "python3 tools/shipgrade_patterns.py validate",

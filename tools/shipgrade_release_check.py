@@ -43,6 +43,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_holdout_replay.py",
     "tools/shipgrade_model_replay.py",
     "tools/shipgrade_judge_panel.py",
+    "tools/shipgrade_review_packet.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -248,6 +249,22 @@ def main() -> None:
         or "secret_scan=pass" not in judge_panel_out
     ):
         fail("judge panel did not prove deterministic cross-review readiness")
+    review_packet_out = run([sys.executable, "tools/shipgrade_review_packet.py", "--clean"])
+    if (
+        "shipgrade-review-packet-ok" not in review_packet_out
+        or "cases=16" not in review_packet_out
+        or "candidate_outputs=48" not in review_packet_out
+        or "scorecard_rows=48" not in review_packet_out
+        or "blind_profile_labels=true" not in review_packet_out
+        or "answer_key_separate=true" not in review_packet_out
+        or "scorecard_template_ready=true" not in review_packet_out
+        or "signed_review_required_before_claim=true" not in review_packet_out
+        or "external_model_called=false" not in review_packet_out
+        or "human_review_claimed=false" not in review_packet_out
+        or "source_body_copied_to_public=false" not in review_packet_out
+        or "secret_scan=pass" not in review_packet_out
+    ):
+        fail("review packet did not prove blind external-review handoff readiness")
     with tempfile.TemporaryDirectory() as tmp:
         fake = Path(tmp) / "fake-pass.md"
         fake.write_text(
@@ -273,6 +290,13 @@ def main() -> None:
     with tempfile.TemporaryDirectory() as tmp:
         target = Path(tmp) / "project"
         run([sys.executable, "tools/shipgrade_init.py", str(target)])
+        if not (target / ".shipgrade" / "START_HERE.md").exists():
+            fail("init did not create visible start guide")
+        if not (target / ".shipgrade" / "product-map.html").exists():
+            fail("init did not create visible product map")
+        product_map = (target / ".shipgrade" / "product-map.html").read_text(encoding="utf-8")
+        if "ShipGrade Workbench" not in product_map or "把想法变成可验证交付" not in product_map:
+            fail("init product map missing visible workbench content")
         if not (target / ".shipgrade" / "task-brief.md").exists():
             fail("init did not create task brief")
         if "SHIPGRADE-CN:BEGIN" not in (target / "AGENTS.md").read_text(encoding="utf-8"):

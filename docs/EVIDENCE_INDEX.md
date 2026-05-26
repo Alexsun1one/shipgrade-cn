@@ -29,6 +29,7 @@ This file maps public README claims to repository-local evidence. It exists so S
 | ShipGrade has an unseen-repo holdout replay gate | `docs/HOLDOUT_REPLAY_PROOF.md`, `docs/holdout-replay-proof.json`, and `docs/holdout-replay/holdout-replay-cases.jsonl` |
 | ShipGrade can replay candidate/model outputs and stratify failure modes | `docs/MODEL_REPLAY_PROOF.md`, `docs/model-replay-proof.json`, and `docs/model-replay/model-output-replay-report.json` |
 | ShipGrade has a deterministic judge panel packet | `docs/JUDGE_PANEL_PROOF.md`, `docs/judge-panel-proof.json`, and `docs/judge-panel/judge-panel-report.json` |
+| ShipGrade can hand off outputs for blind external review | `docs/REVIEW_PACKET_PROOF.md`, `docs/review-packet-proof.json`, and `docs/review-packet/review-packet-report.json` |
 | Non-self release artifacts have stable hashes | `docs/public-evidence-manifest.json` |
 
 ## Verification

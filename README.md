@@ -4,7 +4,7 @@
 
 **把中文口语需求变成 Codex / Claude Code / Cursor 都能执行、验证、接手的工程交付工作台。**
 
-[English](README.en.md) · [零安装](#零安装只用一个-md-文件) · [外部试用](docs/EXTERNAL_TRIAL_PROOF.md) · [多仓评测](docs/MULTI_REPO_EVAL_PROOF.md) · [真实案例](docs/REAL_ISSUE_CASE_PROOF.md) · [任务套件](docs/REAL_TASK_SUITE_PROOF.md) · [评测集](docs/EVAL_CORPUS_PROOF.md) · [留出复放](docs/HOLDOUT_REPLAY_PROOF.md) · [输出复放](docs/MODEL_REPLAY_PROOF.md) · [裁判面板](docs/JUDGE_PANEL_PROOF.md) · [快速开始](#两种接入方式) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
+[English](README.en.md) · [零安装](#零安装只用一个-md-文件) · [外部试用](docs/EXTERNAL_TRIAL_PROOF.md) · [多仓评测](docs/MULTI_REPO_EVAL_PROOF.md) · [真实案例](docs/REAL_ISSUE_CASE_PROOF.md) · [任务套件](docs/REAL_TASK_SUITE_PROOF.md) · [评测集](docs/EVAL_CORPUS_PROOF.md) · [留出复放](docs/HOLDOUT_REPLAY_PROOF.md) · [输出复放](docs/MODEL_REPLAY_PROOF.md) · [裁判面板](docs/JUDGE_PANEL_PROOF.md) · [盲审包](docs/REVIEW_PACKET_PROOF.md) · [快速开始](#两种接入方式) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
 
 [![本地验证](https://img.shields.io/badge/本地验证-shipgrade__verify.py-2ea44f)](#发布前自检)
 [![适用工具](https://img.shields.io/badge/适用-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -201,13 +201,23 @@ python3 tools/shipgrade_model_replay.py --clean
 
 ## 裁判面板
 
-在候选输出复放之后,发布包还会生成一个 deterministic judge panel。它不伪称已经调用外部模型或真人评审,而是把 12 条 replay case 打包成可给人工 / Codex / Claude 继续复审的公开裁判包,并用三种内置 lens 做 CI 级自检: `controller_quality`、`source_boundary`、`completion_audit`。
+在候选输出复放之后,发布包还会生成一个 deterministic judge panel。它不伪称已经调用外部模型或真人评审,而是把 16 条 replay case 打包成可给人工 / Codex / Claude 继续复审的公开裁判包,并用三种内置 lens 做 CI 级自检: `controller_quality`、`source_boundary`、`completion_audit`。
 
 ```bash
 python3 tools/shipgrade_judge_panel.py --clean
 ```
 
 证据见 [docs/JUDGE_PANEL_PROOF.md](docs/JUDGE_PANEL_PROOF.md),裁判包和报告在 [docs/judge-panel/](docs/judge-panel/)。
+
+## 盲审复审包
+
+如果要继续接真实 Codex / Claude / 人工复审,发布包不会直接宣称“已经被外部审过”。它会先生成一个 blind review packet: 16 条 case、48 个候选输出、单独 answer key 和 scorecard 模板。复审者先看 `candidate A/B/C`,记录签名/结论后再打开 answer key 对照。
+
+```bash
+python3 tools/shipgrade_review_packet.py --clean
+```
+
+证据见 [docs/REVIEW_PACKET_PROOF.md](docs/REVIEW_PACKET_PROOF.md),盲审包在 [docs/review-packet/](docs/review-packet/)。
 
 ## 30 秒看懂差异
 
@@ -252,16 +262,19 @@ accepted=... ship-grade-ok
 ```bash
 python3 tools/shipgrade_init.py /path/to/your-project
 cd /path/to/your-project
+open .shipgrade/product-map.html
+sed -n '1,120p' .shipgrade/START_HERE.md
 sed -n '1,160p' .shipgrade/task-brief.md
 sed -n '1,160p' AGENTS.md
 ```
 
 然后按这个顺序用:
 
-1. 在 `.shipgrade/task-brief.md` 填清楚目标、非目标、验收标准和风险边界。
-2. 让 Codex、Claude Code 或 Cursor 读取项目规则,按 ShipGrade 流程工作。
-3. 交付前把结果写进 `.shipgrade/handoff.md`。
-4. 用质量检查器检查交付说明是不是有证据。
+1. 先打开 `.shipgrade/product-map.html`,看见这次工作台会输出什么。
+2. 在 `.shipgrade/task-brief.md` 填清楚目标、非目标、验收标准和风险边界。
+3. 让 Codex、Claude Code 或 Cursor 读取项目规则,按 ShipGrade 流程工作。
+4. 交付前把结果写进 `.shipgrade/handoff.md`。
+5. 用质量检查器检查交付说明是不是有证据。
 
 ```bash
 python3 tools/shipgrade_doctor.py .shipgrade/handoff.md
@@ -369,6 +382,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | `tools/shipgrade_holdout_replay.py` | 用基础评测集之外的 12 条留出仓库样本复放 strong/weak 答案,防止训练质量只贴合已见样本。 |
 | `tools/shipgrade_model_replay.py` | 合并基础 eval + holdout 的 16 条任务,复放候选/模型输出并按验证、来源边界、完成审计分层失败。 |
 | `tools/shipgrade_judge_panel.py` | 把 16 条 replay case 生成三视角裁判包,为人工/Codex/Claude 交叉复审保留公开入口。 |
+| `tools/shipgrade_review_packet.py` | 生成 16 case / 48 candidate 的 blind review packet、answer key 和 scorecard 模板,用于真实复审前的交接。 |
 | `tools/shipgrade_doctor.py` | 检查交付说明是否包含结果、验证、来源、风险、安全边界和接手入口。 |
 | `tools/shipgrade_demo.py` | 30 秒演示初始化、拒绝假完成、接受合格交付。 |
 | `tools/shipgrade_patterns.py` | 查看 Pattern Card,并生成可执行的 `.shipgrade/pattern-brief.md`。 |
@@ -398,6 +412,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | 有没有留出集防止过拟合 | 有。`docs/HOLDOUT_REPLAY_PROOF.md` 记录 12 条非基础仓库 holdout replay,strong 12/12 通过、weak 12/12 失败、base overlap 为 0。 |
 | 能不能复放模型/候选输出 | 可以。`docs/MODEL_REPLAY_PROOF.md` 记录 16 条 base + holdout 任务的 candidate replay,并把失败分层到验证、来源边界和完成审计。 |
 | 能不能交叉审查输出 | 可以先用 deterministic judge panel。`docs/JUDGE_PANEL_PROOF.md` 记录 16 条 replay case 的 controller/source/completion 三视角判分包,不伪称已调用外部模型或真人。 |
+| 能不能交给外部 reviewer 盲审 | 可以。`docs/REVIEW_PACKET_PROOF.md` 记录 16 case / 48 candidate 的 blind review packet、单独 answer key 和 scorecard 模板,并明确外部模型/真人尚未被调用。 |
 | 能不能发布 | 可以。仓库内有发布前检查、GitHub Actions、模板、许可证、发布包和校验脚本。 |
 
 ## 证据快照
@@ -423,6 +438,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 真实任务评测集: 4 eval cases, chosen 4/4 pass, rejected 4/4 fail
 - 模型/候选输出复放: 16 candidate replays with failure stratification
 - 裁判面板: 16 replay cases, 3 deterministic judge lenses
+- 盲审复审包: 16 replay cases, 48 blinded candidate outputs
 - GitHub 发布前检查: 已内置本地报告
 
 ## 这些经验怎么落到动作里
@@ -454,6 +470,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 留出复放: `docs/HOLDOUT_REPLAY_PROOF.md`, `docs/holdout-replay/`
 - 输出复放: `docs/MODEL_REPLAY_PROOF.md`, `docs/model-replay/`
 - 裁判面板: `docs/JUDGE_PANEL_PROOF.md`, `docs/judge-panel/`
+- 盲审复审包: `docs/REVIEW_PACKET_PROOF.md`, `docs/review-packet/`
 - 晋级队列: `docs/high-signal-source-radar.md`、`docs/source-promotion-queue.md`、`docs/source-promotion-batch.md`
 - 发布检查: `docs/GITHUB_PUBLISH_PREFLIGHT.md`
 - 演示证明: `docs/DEMO_PROOF.md`

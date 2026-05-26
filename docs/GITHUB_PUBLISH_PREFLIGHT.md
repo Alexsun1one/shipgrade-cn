@@ -2,12 +2,12 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `31/31`
+- passed: `32/32`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
 | --- | --- | --- |
-| `required-files` | `pass` | 92 required files present |
+| `required-files` | `pass` | 100 required files present |
 | `readme-launch-surface` | `pass` | README has hook, proof, and preflight surface |
 | `readme-english-surface` | `pass` | README.en.md has standalone onboarding surface |
 | `shipgrade-zero-install-rule` | `pass` | SHIPGRADE.md is Chinese-first and zero-install |
@@ -37,6 +37,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `scored-holdout-replay` | `pass` | 12 holdout replay cases separate strong/weak answers with no base-repo overlap |
 | `scored-model-output-replay` | `pass` | 16 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers |
 | `deterministic-judge-panel` | `pass` | 16 replay cases have deterministic controller/source/completion judge-panel votes |
+| `blind-review-packet` | `pass` | 16 cases and 48 blinded candidates are ready for signed external review |
 | `shipgrade-verify` | `pass` | shipgrade-verify-ok  |
 
 ## Publish Command Surface
@@ -50,6 +51,10 @@ python3 tools/shipgrade_multi_repo_eval.py --clean
 python3 tools/shipgrade_real_issue_case.py --clean
 python3 tools/shipgrade_real_task_suite.py --clean
 python3 tools/shipgrade_eval_corpus.py --clean
+python3 tools/shipgrade_holdout_replay.py --clean
+python3 tools/shipgrade_model_replay.py --clean
+python3 tools/shipgrade_judge_panel.py --clean
+python3 tools/shipgrade_review_packet.py --clean
 python3 tools/shipgrade_demo.py
 python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate
 python3 tools/shipgrade_patterns.py validate

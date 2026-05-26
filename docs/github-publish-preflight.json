@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T14:40:54Z",
+  "generated_at": "2026-05-26T16:38:50Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 31,
-  "total": 31,
+  "passed": 32,
+  "total": 32,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "92 required files present"
+      "detail": "100 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -154,6 +154,11 @@
       "id": "deterministic-judge-panel",
       "passed": true,
       "detail": "16 replay cases have deterministic controller/source/completion judge-panel votes"
+    },
+    {
+      "id": "blind-review-packet",
+      "passed": true,
+      "detail": "16 cases and 48 blinded candidates are ready for signed external review"
     },
     {
       "id": "shipgrade-verify",

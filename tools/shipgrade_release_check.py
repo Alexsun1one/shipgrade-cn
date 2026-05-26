@@ -41,6 +41,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_real_task_suite.py",
     "tools/shipgrade_eval_corpus.py",
     "tools/shipgrade_holdout_replay.py",
+    "tools/shipgrade_model_replay.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -213,6 +214,21 @@ def main() -> None:
         or "secret_scan=pass" not in holdout_replay_out
     ):
         fail("holdout replay did not prove unseen-repo chosen/weak separation")
+    model_replay_out = run([sys.executable, "tools/shipgrade_model_replay.py", "--clean"])
+    if (
+        "shipgrade-model-replay-ok" not in model_replay_out
+        or "cases=12" not in model_replay_out
+        or "base_eval_cases=4" not in model_replay_out
+        or "holdout_cases=8" not in model_replay_out
+        or "profiles=3" not in model_replay_out
+        or "target_passed=12/12" not in model_replay_out
+        or "lazy_failed=12/12" not in model_replay_out
+        or "candidate_outputs_replayed=true" not in model_replay_out
+        or "failure_stratified=true" not in model_replay_out
+        or "source_body_copied_to_public=false" not in model_replay_out
+        or "secret_scan=pass" not in model_replay_out
+    ):
+        fail("model output replay did not prove candidate replay and failure stratification")
     with tempfile.TemporaryDirectory() as tmp:
         fake = Path(tmp) / "fake-pass.md"
         fake.write_text(

@@ -4,7 +4,7 @@
 
 **A Chinese-first engineering delivery workbench for Codex, Claude Code, and Cursor.**
 
-[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [External Trial](docs/EXTERNAL_TRIAL_PROOF.md) · [Multi-Repo Eval](docs/MULTI_REPO_EVAL_PROOF.md) · [Real Case](docs/REAL_ISSUE_CASE_PROOF.md) · [Task Suite](docs/REAL_TASK_SUITE_PROOF.md) · [Eval Corpus](docs/EVAL_CORPUS_PROOF.md) · [Holdout Replay](docs/HOLDOUT_REPLAY_PROOF.md) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
+[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [External Trial](docs/EXTERNAL_TRIAL_PROOF.md) · [Multi-Repo Eval](docs/MULTI_REPO_EVAL_PROOF.md) · [Real Case](docs/REAL_ISSUE_CASE_PROOF.md) · [Task Suite](docs/REAL_TASK_SUITE_PROOF.md) · [Eval Corpus](docs/EVAL_CORPUS_PROOF.md) · [Holdout Replay](docs/HOLDOUT_REPLAY_PROOF.md) · [Model Replay](docs/MODEL_REPLAY_PROOF.md) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
 
 [![Local verify](https://img.shields.io/badge/local%20verify-shipgrade__verify.py-2ea44f)](#release-preflight)
 [![Agents](https://img.shields.io/badge/agents-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -172,6 +172,16 @@ python3 tools/shipgrade_holdout_replay.py --clean
 
 See [docs/HOLDOUT_REPLAY_PROOF.md](docs/HOLDOUT_REPLAY_PROOF.md), with machine-readable holdout files under [docs/holdout-replay/](docs/holdout-replay/).
 
+## Model / Candidate Output Replay
+
+Beyond the holdout set, the release package combines the 4 base eval cases and 8 holdout cases, then replays three candidate-output profiles: `shipgrade_target`, `lazy_or_overfit_draft`, and `partial_candidate_draft`. This is not a remote model benchmark. It is a deterministic replay gate: the target profile must pass 12/12, lazy drafts must fail 12/12, and partial drafts are stratified into failure layers such as validation evidence, source boundary, and completion audit gaps.
+
+```bash
+python3 tools/shipgrade_model_replay.py --clean
+```
+
+See [docs/MODEL_REPLAY_PROOF.md](docs/MODEL_REPLAY_PROOF.md), with replay inputs and reports under [docs/model-replay/](docs/model-replay/).
+
 ## Quick Demo
 
 Requirements: Python 3.10+. No API key and no network access are required.
@@ -319,6 +329,7 @@ Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 
 | `tools/shipgrade_real_task_suite.py` | Generates repair, migration, review, and anti-pattern detection task samples inside `pallets/click` and `pallets/itsdangerous`. |
 | `tools/shipgrade_eval_corpus.py` | Exports real-task samples as JSONL eval cases and proves chosen/rejected answers are separated by the rubric scorer. |
 | `tools/shipgrade_holdout_replay.py` | Replays strong/weak answers on 8 repositories outside the base eval corpus to catch overfit quality claims. |
+| `tools/shipgrade_model_replay.py` | Replays candidate/model outputs across 12 base + holdout cases and stratifies failures by validation, boundary, and completion gaps. |
 | `tools/shipgrade_doctor.py` | Checks whether a handoff contains result, validation, source, risk, security, and next-step evidence. |
 | `tools/shipgrade_demo.py` | Runs the quick proof path. |
 | `tools/shipgrade_patterns.py` | Lists distilled patterns and writes `.shipgrade/pattern-brief.md`. |
@@ -361,6 +372,7 @@ ShipGrade CN gives agents a repeatable loop:
 - Real repository issue case: `pallets/click` required-option regression case pass
 - Real task suite: 4/4 cases across repair/migration/review/anti-pattern detection
 - Scored real-task eval corpus: 4 cases, chosen 4/4 pass, rejected 4/4 fail
+- Model/candidate output replay: 12 candidate replays with failure stratification
 
 ## Why It Is Not Just Prompts
 
@@ -377,6 +389,7 @@ ShipGrade CN gives agents a repeatable loop:
 | Is there multi-type engineering task evidence? | Yes. `docs/REAL_TASK_SUITE_PROOF.md` records repair, migration, review, and anti-pattern detection samples from real public repositories. |
 | Is there a scored eval corpus? | Yes. `docs/EVAL_CORPUS_PROOF.md` records 4 real-task eval cases with chosen 4/4 pass and rejected 4/4 fail. |
 | Is there a holdout gate? | Yes. `docs/HOLDOUT_REPLAY_PROOF.md` records 8 non-base-repo replay cases with strong 8/8 pass, weak 8/8 fail, and base overlap 0. |
+| Can it replay model/candidate outputs? | Yes. `docs/MODEL_REPLAY_PROOF.md` records 12 base + holdout candidate-output replays and stratifies failures into validation, boundary, and completion gaps. |
 | Can the repo be released independently? | Yes. It includes local preflight, GitHub Actions, release packaging, issue templates, and license files. |
 
 ## How Those Ideas Become Actions
@@ -406,6 +419,7 @@ The source influences land as runnable repository artifacts, not decorative cita
 - Real task suite: `docs/REAL_TASK_SUITE_PROOF.md`
 - Eval corpus: `docs/EVAL_CORPUS_PROOF.md`, `docs/eval-corpus/`
 - Holdout replay: `docs/HOLDOUT_REPLAY_PROOF.md`, `docs/holdout-replay/`
+- Model replay: `docs/MODEL_REPLAY_PROOF.md`, `docs/model-replay/`
 - Source promotion: `docs/high-signal-source-radar.md`, `docs/source-promotion-queue.md`, `docs/source-promotion-batch.md`
 - Release preflight: `docs/GITHUB_PUBLISH_PREFLIGHT.md`
 - Demo proof: `docs/DEMO_PROOF.md`

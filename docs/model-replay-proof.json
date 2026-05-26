@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "command": "python3 tools/shipgrade_model_replay.py --output-dir docs/model-replay",
+  "contains": {
+    "model_replay_ok": true,
+    "cases_12": true,
+    "base_eval_cases_4": true,
+    "holdout_cases_8": true,
+    "profiles_3": true,
+    "target_passed": true,
+    "lazy_failed": true,
+    "candidate_outputs_replayed": true,
+    "failure_stratified": true,
+    "no_source_body": true,
+    "secret_scan": true
+  },
+  "output_tail": [
+    "shipgrade-model-replay-ok",
+    "cases=12",
+    "base_eval_cases=4",
+    "holdout_cases=8",
+    "profiles=3",
+    "target_passed=12/12",
+    "lazy_failed=12/12",
+    "partial_failed=12/12",
+    "failure_layers=completion_audit_gap,forbidden_behavior_hit,source_boundary_gap,validation_evidence_gap",
+    "model_replay_cases_path=docs/model-replay/model-output-replay-cases.jsonl",
+    "report_path=docs/model-replay/model-output-replay-report.json",
+    "candidate_outputs_replayed=true",
+    "failure_stratified=true",
+    "source_body_copied_to_public=false",
+    "secret_scan=pass"
+  ]
+}

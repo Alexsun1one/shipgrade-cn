@@ -4,7 +4,7 @@
 
 **把中文口语需求变成 Codex / Claude Code / Cursor 都能执行、验证、接手的工程交付工作台。**
 
-[English](README.en.md) · [零安装](#零安装只用一个-md-文件) · [外部试用](docs/EXTERNAL_TRIAL_PROOF.md) · [多仓评测](docs/MULTI_REPO_EVAL_PROOF.md) · [真实案例](docs/REAL_ISSUE_CASE_PROOF.md) · [任务套件](docs/REAL_TASK_SUITE_PROOF.md) · [评测集](docs/EVAL_CORPUS_PROOF.md) · [留出复放](docs/HOLDOUT_REPLAY_PROOF.md) · [快速开始](#两种接入方式) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
+[English](README.en.md) · [零安装](#零安装只用一个-md-文件) · [外部试用](docs/EXTERNAL_TRIAL_PROOF.md) · [多仓评测](docs/MULTI_REPO_EVAL_PROOF.md) · [真实案例](docs/REAL_ISSUE_CASE_PROOF.md) · [任务套件](docs/REAL_TASK_SUITE_PROOF.md) · [评测集](docs/EVAL_CORPUS_PROOF.md) · [留出复放](docs/HOLDOUT_REPLAY_PROOF.md) · [输出复放](docs/MODEL_REPLAY_PROOF.md) · [快速开始](#两种接入方式) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
 
 [![本地验证](https://img.shields.io/badge/本地验证-shipgrade__verify.py-2ea44f)](#发布前自检)
 [![适用工具](https://img.shields.io/badge/适用-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -189,6 +189,16 @@ python3 tools/shipgrade_holdout_replay.py --clean
 
 证据见 [docs/HOLDOUT_REPLAY_PROOF.md](docs/HOLDOUT_REPLAY_PROOF.md),实际语料在 [docs/holdout-replay/](docs/holdout-replay/)。
 
+## 模型/候选输出复放
+
+留出集之外,发布包还会把基础 eval + holdout 的 12 条任务合并,复放三类候选输出: `shipgrade_target`、`lazy_or_overfit_draft`、`partial_candidate_draft`。这不是远端模型 benchmark,而是一个 deterministic replay gate: 目标答案必须 12/12 通过,偷懒/过拟合草稿必须 12/12 失败,partial 草稿的失败会分层到验证证据、来源边界、完成审计等 failure layer。
+
+```bash
+python3 tools/shipgrade_model_replay.py --clean
+```
+
+证据见 [docs/MODEL_REPLAY_PROOF.md](docs/MODEL_REPLAY_PROOF.md),实际复放输入和报告在 [docs/model-replay/](docs/model-replay/)。
+
 ## 30 秒看懂差异
 
 ```bash
@@ -347,6 +357,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | `tools/shipgrade_real_task_suite.py` | 在 `pallets/click` 和 `pallets/itsdangerous` 中生成 repair、migration、review、anti-pattern detection 四类真实任务样本。 |
 | `tools/shipgrade_eval_corpus.py` | 把真实任务样本导出成 JSONL eval corpus,并验证 chosen/rejected 样本能被 rubric scorer 正确区分。 |
 | `tools/shipgrade_holdout_replay.py` | 用基础评测集之外的 8 条留出仓库样本复放 strong/weak 答案,防止训练质量只贴合已见样本。 |
+| `tools/shipgrade_model_replay.py` | 合并基础 eval + holdout 的 12 条任务,复放候选/模型输出并按验证、来源边界、完成审计分层失败。 |
 | `tools/shipgrade_doctor.py` | 检查交付说明是否包含结果、验证、来源、风险、安全边界和接手入口。 |
 | `tools/shipgrade_demo.py` | 30 秒演示初始化、拒绝假完成、接受合格交付。 |
 | `tools/shipgrade_patterns.py` | 查看 Pattern Card,并生成可执行的 `.shipgrade/pattern-brief.md`。 |
@@ -374,6 +385,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | 有没有多类型任务质量证明 | 有。`docs/REAL_TASK_SUITE_PROOF.md` 记录 repair、migration、review、anti-pattern detection 四类真实开源仓任务样本。 |
 | 有没有可判分评测集 | 有。`docs/EVAL_CORPUS_PROOF.md` 记录 4 条真实任务 eval,chosen 4/4 通过、rejected 4/4 被拒绝。 |
 | 有没有留出集防止过拟合 | 有。`docs/HOLDOUT_REPLAY_PROOF.md` 记录 8 条非基础仓库 holdout replay,strong 8/8 通过、weak 8/8 失败、base overlap 为 0。 |
+| 能不能复放模型/候选输出 | 可以。`docs/MODEL_REPLAY_PROOF.md` 记录 12 条 base + holdout 任务的 candidate replay,并把失败分层到验证、来源边界和完成审计。 |
 | 能不能发布 | 可以。仓库内有发布前检查、GitHub Actions、模板、许可证、发布包和校验脚本。 |
 
 ## 证据快照
@@ -397,6 +409,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 真实仓 issue 式案例: `pallets/click` required-option regression case pass
 - 多类型真实任务套件: 4/4 real task cases across repair/migration/review/anti-pattern detection
 - 真实任务评测集: 4 eval cases, chosen 4/4 pass, rejected 4/4 fail
+- 模型/候选输出复放: 12 candidate replays with failure stratification
 - GitHub 发布前检查: 已内置本地报告
 
 ## 这些经验怎么落到动作里
@@ -426,6 +439,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 - 多类型任务套件: `docs/REAL_TASK_SUITE_PROOF.md`
 - 可判分评测集: `docs/EVAL_CORPUS_PROOF.md`, `docs/eval-corpus/`
 - 留出复放: `docs/HOLDOUT_REPLAY_PROOF.md`, `docs/holdout-replay/`
+- 输出复放: `docs/MODEL_REPLAY_PROOF.md`, `docs/model-replay/`
 - 晋级队列: `docs/high-signal-source-radar.md`、`docs/source-promotion-queue.md`、`docs/source-promotion-batch.md`
 - 发布检查: `docs/GITHUB_PUBLISH_PREFLIGHT.md`
 - 演示证明: `docs/DEMO_PROOF.md`

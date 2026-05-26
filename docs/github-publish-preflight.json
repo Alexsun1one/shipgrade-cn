@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T13:00:22Z",
+  "generated_at": "2026-05-26T13:36:38Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 29,
-  "total": 29,
+  "passed": 30,
+  "total": 30,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "80 required files present"
+      "detail": "86 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -144,6 +144,11 @@
       "id": "scored-holdout-replay",
       "passed": true,
       "detail": "8 holdout replay cases separate strong/weak answers with no base-repo overlap"
+    },
+    {
+      "id": "scored-model-output-replay",
+      "passed": true,
+      "detail": "12 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers"
     },
     {
       "id": "shipgrade-verify",

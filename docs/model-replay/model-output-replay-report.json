@@ -1,0 +1,828 @@
+{
+  "base_eval_cases": 4,
+  "candidate_outputs_replayed": true,
+  "case_count": 12,
+  "failure_layers": [
+    "completion_audit_gap",
+    "forbidden_behavior_hit",
+    "source_boundary_gap",
+    "validation_evidence_gap"
+  ],
+  "failure_stratified": true,
+  "holdout_cases": 8,
+  "lazy_failed": 12,
+  "ok": true,
+  "partial_failed": 12,
+  "profile_summaries": {
+    "lazy_or_overfit_draft": {
+      "failed": 12,
+      "failure_layers": [
+        "completion_audit_gap",
+        "forbidden_behavior_hit",
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "passed": 0
+    },
+    "partial_candidate_draft": {
+      "failed": 12,
+      "failure_layers": [
+        "completion_audit_gap",
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "passed": 0
+    },
+    "shipgrade_target": {
+      "failed": 0,
+      "failure_layers": [],
+      "passed": 12
+    }
+  },
+  "profiles": 3,
+  "public_boundary": "No upstream source bodies, secrets, cookies, sessions, private keys, browser profiles, auth databases, or private repositories.",
+  "results": [
+    {
+      "case_id": "click-required-option-repair",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "CliRunner",
+        "required option",
+        "PYTHONPATH=src",
+        "src/click",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "pallets/click",
+      "score": 1.0,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "click-required-option-repair",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "应该就好了",
+        "跳过测试"
+      ],
+      "matched": [],
+      "missing": [
+        "CliRunner",
+        "required option",
+        "PYTHONPATH=src",
+        "src/click",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "pallets/click",
+      "score": 0.0,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "click-required-option-repair",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "CliRunner",
+        "required option"
+      ],
+      "missing": [
+        "PYTHONPATH=src",
+        "src/click",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "pallets/click",
+      "score": 0.4,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "click-ci-local-gate-migration",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        ".github/workflows/tests.yaml",
+        "pyproject.toml",
+        "local gate",
+        "remote-only risk",
+        "Python version"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "pallets/click",
+      "score": 1.0,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "click-ci-local-gate-migration",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "等于 CI 通过",
+        "workflow 可以不用看",
+        "不用看"
+      ],
+      "matched": [],
+      "missing": [
+        ".github/workflows/tests.yaml",
+        "pyproject.toml",
+        "local gate",
+        "remote-only risk",
+        "Python version"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "pallets/click",
+      "score": 0.0,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "click-ci-local-gate-migration",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        ".github/workflows/tests.yaml",
+        "pyproject.toml"
+      ],
+      "missing": [
+        "local gate",
+        "remote-only risk",
+        "Python version"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "pallets/click",
+      "score": 0.4,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "itsdangerous-serializer-security-review",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "BadSignature",
+        "fallback signer",
+        "secret key",
+        "tests/test_itsdangerous",
+        "serializer.py"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "pallets/itsdangerous",
+      "score": 1.0,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "itsdangerous-serializer-security-review",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "打到日志",
+        "README 看起来没问题",
+        "可以把 secret key 打"
+      ],
+      "matched": [
+        "secret key"
+      ],
+      "missing": [
+        "BadSignature",
+        "fallback signer",
+        "tests/test_itsdangerous",
+        "serializer.py"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "pallets/itsdangerous",
+      "score": 0.2,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "itsdangerous-serializer-security-review",
+      "failure_layers": [
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "BadSignature",
+        "fallback signer"
+      ],
+      "missing": [
+        "secret key",
+        "tests/test_itsdangerous",
+        "serializer.py"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "pallets/itsdangerous",
+      "score": 0.4,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "vague-handoff-anti-pattern",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "reject",
+        "concrete artifact path",
+        "command evidence",
+        "source/license boundary",
+        "forbidden data boundary"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "pallets/itsdangerous",
+      "score": 1.0,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "vague-handoff-anti-pattern",
+      "failure_layers": [
+        "completion_audit_gap",
+        "forbidden_behavior_hit",
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "没有验证也通过",
+        "TODO 可以以后再补",
+        "以后再补"
+      ],
+      "matched": [],
+      "missing": [
+        "reject",
+        "concrete artifact path",
+        "command evidence",
+        "source/license boundary",
+        "forbidden data boundary"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "pallets/itsdangerous",
+      "score": 0.0,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "vague-handoff-anti-pattern",
+      "failure_layers": [
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "reject",
+        "concrete artifact path"
+      ],
+      "missing": [
+        "command evidence",
+        "source/license boundary",
+        "forbidden data boundary"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "pallets/itsdangerous",
+      "score": 0.4,
+      "source_set": "base_eval"
+    },
+    {
+      "case_id": "spec-kit-spec-drift-review",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "spec",
+        "plan",
+        "tasks",
+        "quick-check",
+        "templates"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "github/spec-kit",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "spec-kit-spec-drift-review",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "直接相信实现",
+        "不用跑"
+      ],
+      "matched": [],
+      "missing": [
+        "spec",
+        "plan",
+        "tasks",
+        "quick-check",
+        "templates"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "github/spec-kit",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "spec-kit-spec-drift-review",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "spec",
+        "plan"
+      ],
+      "missing": [
+        "tasks",
+        "quick-check",
+        "templates"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "github/spec-kit",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "browser-use-agent-runtime-boundary",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "pyproject.toml",
+        "test.yaml",
+        "browser_use/agent",
+        "local gate",
+        "browser/model boundary"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "browser-use/browser-use",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "browser-use-agent-runtime-boundary",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "跑 import 就够",
+        "不需要隔离",
+        "真实浏览器随便跑"
+      ],
+      "matched": [],
+      "missing": [
+        "pyproject.toml",
+        "test.yaml",
+        "browser_use/agent",
+        "local gate",
+        "browser/model boundary"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "browser-use/browser-use",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "browser-use-agent-runtime-boundary",
+      "failure_layers": [
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "pyproject.toml",
+        "test.yaml"
+      ],
+      "missing": [
+        "browser_use/agent",
+        "local gate",
+        "browser/model boundary"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "browser-use/browser-use",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "promptfoo-eval-first-quality-loop",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "package.json",
+        "eval-on-pr",
+        "test",
+        "examples",
+        "quality gate"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "promptfoo/promptfoo",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "promptfoo-eval-first-quality-loop",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "一个 smoke 过了",
+        "不用 eval",
+        "凭感觉"
+      ],
+      "matched": [],
+      "missing": [
+        "package.json",
+        "eval-on-pr",
+        "test",
+        "examples",
+        "quality gate"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "promptfoo/promptfoo",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "promptfoo-eval-first-quality-loop",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "package.json",
+        "eval-on-pr"
+      ],
+      "missing": [
+        "test",
+        "examples",
+        "quality gate"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "promptfoo/promptfoo",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "inspect-ai-tool-sandbox-review",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "tool",
+        "solver",
+        "sandbox",
+        "pyproject.toml",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "inspect-ai-tool-sandbox-review",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "直接执行任意工具",
+        "忽略 sandbox",
+        "不补测试"
+      ],
+      "matched": [
+        "sandbox"
+      ],
+      "missing": [
+        "tool",
+        "solver",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "score": 0.2,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "inspect-ai-tool-sandbox-review",
+      "failure_layers": [
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "tool",
+        "solver"
+      ],
+      "missing": [
+        "sandbox",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "superclaude-command-layering-repair",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "command",
+        "persona",
+        "rule",
+        "Makefile",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "superclaude-command-layering-repair",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "全部塞进一个提示词",
+        "不用分层",
+        "没有回归"
+      ],
+      "matched": [],
+      "missing": [
+        "command",
+        "persona",
+        "rule",
+        "Makefile",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "superclaude-command-layering-repair",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "command",
+        "persona"
+      ],
+      "missing": [
+        "rule",
+        "Makefile",
+        "tests"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "humanlayer-agent-handoff-anti-pattern",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "state",
+        "resume",
+        "human handoff",
+        "boundary",
+        "reject"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "humanlayer/12-factor-agents",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "humanlayer-agent-handoff-anti-pattern",
+      "failure_layers": [
+        "completion_audit_gap",
+        "forbidden_behavior_hit",
+        "source_boundary_gap"
+      ],
+      "forbidden_hit": [
+        "聊天记录就行",
+        "没有恢复点也接受",
+        "不用人工边界"
+      ],
+      "matched": [],
+      "missing": [
+        "state",
+        "resume",
+        "human handoff",
+        "boundary",
+        "reject"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "humanlayer/12-factor-agents",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "humanlayer-agent-handoff-anti-pattern",
+      "failure_layers": [
+        "completion_audit_gap",
+        "source_boundary_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "state",
+        "resume"
+      ],
+      "missing": [
+        "human handoff",
+        "boundary",
+        "reject"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "humanlayer/12-factor-agents",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "addyosmani-agent-skills-install-boundary",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "SKILL.md",
+        "install",
+        "workflow",
+        "commands",
+        "boundary"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "addyosmani/agent-skills",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "addyosmani-agent-skills-install-boundary",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "只写 README 就够",
+        "复制所有命令",
+        "没有安装验证"
+      ],
+      "matched": [],
+      "missing": [
+        "SKILL.md",
+        "install",
+        "workflow",
+        "commands",
+        "boundary"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "addyosmani/agent-skills",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "addyosmani-agent-skills-install-boundary",
+      "failure_layers": [
+        "source_boundary_gap",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "SKILL.md",
+        "install"
+      ],
+      "missing": [
+        "workflow",
+        "commands",
+        "boundary"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "addyosmani/agent-skills",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "ecc-catalog-runtime-gate",
+      "failure_layers": [],
+      "forbidden_hit": [],
+      "matched": [
+        "package.json",
+        "pyproject.toml",
+        "ci.yml",
+        "catalog",
+        "runtime gate"
+      ],
+      "missing": [],
+      "passed": true,
+      "profile": "shipgrade_target",
+      "repo": "affaan-m/ECC",
+      "score": 1.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "ecc-catalog-runtime-gate",
+      "failure_layers": [
+        "forbidden_behavior_hit",
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [
+        "只数条目",
+        "不跑命令",
+        "质量自然高"
+      ],
+      "matched": [],
+      "missing": [
+        "package.json",
+        "pyproject.toml",
+        "ci.yml",
+        "catalog",
+        "runtime gate"
+      ],
+      "passed": false,
+      "profile": "lazy_or_overfit_draft",
+      "repo": "affaan-m/ECC",
+      "score": 0.0,
+      "source_set": "holdout_replay"
+    },
+    {
+      "case_id": "ecc-catalog-runtime-gate",
+      "failure_layers": [
+        "validation_evidence_gap"
+      ],
+      "forbidden_hit": [],
+      "matched": [
+        "package.json",
+        "pyproject.toml"
+      ],
+      "missing": [
+        "ci.yml",
+        "catalog",
+        "runtime gate"
+      ],
+      "passed": false,
+      "profile": "partial_candidate_draft",
+      "repo": "affaan-m/ECC",
+      "score": 0.4,
+      "source_set": "holdout_replay"
+    }
+  ],
+  "target_passed": 12
+}

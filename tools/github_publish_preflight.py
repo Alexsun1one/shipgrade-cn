@@ -74,6 +74,11 @@ REQUIRED_FILES = [
     "docs/holdout-replay/README.md",
     "docs/holdout-replay/holdout-replay-cases.jsonl",
     "docs/holdout-replay/holdout-replay-report.json",
+    "docs/MODEL_REPLAY_PROOF.md",
+    "docs/model-replay-proof.json",
+    "docs/model-replay/README.md",
+    "docs/model-replay/model-output-replay-cases.jsonl",
+    "docs/model-replay/model-output-replay-report.json",
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
@@ -84,6 +89,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_real_task_suite.py",
     "tools/shipgrade_eval_corpus.py",
     "tools/shipgrade_holdout_replay.py",
+    "tools/shipgrade_model_replay.py",
     "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
@@ -172,6 +178,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "python3 tools/shipgrade_holdout_replay.py --clean",
         "docs/HOLDOUT_REPLAY_PROOF.md",
         "docs/holdout-replay/",
+        "python3 tools/shipgrade_model_replay.py --clean",
+        "docs/MODEL_REPLAY_PROOF.md",
+        "docs/model-replay/",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -223,6 +232,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "python3 tools/shipgrade_holdout_replay.py --clean",
         "docs/HOLDOUT_REPLAY_PROOF.md",
         "docs/holdout-replay/",
+        "python3 tools/shipgrade_model_replay.py --clean",
+        "docs/MODEL_REPLAY_PROOF.md",
+        "docs/model-replay/",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",
@@ -625,6 +637,41 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         and holdout_replay_report.get("weak_failed") == 8
         and len(holdout_replay_cases) == 8,
         "8 holdout replay cases separate strong/weak answers with no base-repo overlap" if not missing_holdout_replay_terms else "missing_terms=" + ", ".join(missing_holdout_replay_terms),
+    )
+
+    model_replay_proof = read_text("docs/MODEL_REPLAY_PROOF.md")
+    model_replay_payload = json.loads(read_text("docs/model-replay-proof.json"))
+    model_replay_report = json.loads(read_text("docs/model-replay/model-output-replay-report.json"))
+    model_replay_cases = [line for line in read_text("docs/model-replay/model-output-replay-cases.jsonl").splitlines() if line.strip()]
+    model_replay_terms = [
+        "shipgrade-model-replay-ok",
+        "cases=12",
+        "base_eval_cases=4",
+        "holdout_cases=8",
+        "profiles=3",
+        "target_passed=12/12",
+        "lazy_failed=12/12",
+        "candidate_outputs_replayed=true",
+        "failure_stratified=true",
+        "source_body_copied_to_public=false",
+        "secret_scan=pass",
+    ]
+    missing_model_replay_terms = [term for term in model_replay_terms if term not in model_replay_proof]
+    add(
+        checks,
+        "scored-model-output-replay",
+        not missing_model_replay_terms
+        and model_replay_payload.get("ok") is True
+        and model_replay_report.get("ok") is True
+        and model_replay_report.get("case_count") == 12
+        and model_replay_report.get("base_eval_cases") == 4
+        and model_replay_report.get("holdout_cases") == 8
+        and model_replay_report.get("target_passed") == 12
+        and model_replay_report.get("lazy_failed") == 12
+        and model_replay_report.get("candidate_outputs_replayed") is True
+        and model_replay_report.get("failure_stratified") is True
+        and len(model_replay_cases) == 12,
+        "12 candidate/model output replays pass target, fail lazy drafts, and stratify failure layers" if not missing_model_replay_terms else "missing_terms=" + ", ".join(missing_model_replay_terms),
     )
 
     if run_verify:

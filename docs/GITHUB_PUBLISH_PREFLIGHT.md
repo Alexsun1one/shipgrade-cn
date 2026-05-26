@@ -7,7 +7,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 
 | check | status | detail |
 | --- | --- | --- |
-| `required-files` | `pass` | 51 required files present |
+| `required-files` | `pass` | 53 required files present |
 | `readme-launch-surface` | `pass` | README has hook, proof, and preflight surface |
 | `readme-english-surface` | `pass` | README.en.md has standalone onboarding surface |
 | `skill-frontmatter` | `pass` | machine-readable frontmatter with name/description triggers |

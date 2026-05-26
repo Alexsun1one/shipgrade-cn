@@ -4,7 +4,7 @@
 
 **把中文口语需求变成 Codex / Claude Code / Cursor 都能执行、验证、接手的工程交付工作台。**
 
-[English](README.en.md) · [快速开始](#5-分钟装进你的项目) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
+[English](README.en.md) · [零安装](#零安装只用一个-md-文件) · [快速开始](#两种接入方式) · [演示证明](docs/DEMO_PROOF.md) · [证据索引](docs/EVIDENCE_INDEX.md)
 
 [![本地验证](https://img.shields.io/badge/本地验证-shipgrade__verify.py-2ea44f)](#发布前自检)
 [![适用工具](https://img.shields.io/badge/适用-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -34,9 +34,10 @@ AGENTS.md / CLAUDE.md / .cursor/rules/shipgrade.mdc
 
 | 场景 | 你得到的能力 |
 | --- | --- |
+| 零安装接入 | 只用 `SHIPGRADE.md` 这个单文件规则,让 Codex / Claude Code / Cursor 直接读规则开工。 |
 | 新项目开工 | 把一句口语需求压成 task brief: 目标、非目标、验收标准、风险边界和第一刀切入点。 |
 | 多 Agent 协作 | 同时接入 Codex、Claude Code、Cursor,三个工具读同一套规则,避免各说各话。 |
-| 防止假完成 | `shipgrade_doctor.py` 会拒绝没有文件路径、命令输出、浏览器证据或日志证据的交付说明。 |
+| 防止假完成 | 默认由规则要求证据;可选 `shipgrade_doctor.py` 会拒绝没有文件路径、命令输出、浏览器证据或日志证据的交付说明。 |
 | 复杂任务切入 | `shipgrade_patterns.py` 可以把高信源工程模式写成 `pattern-brief.md`,让 agent 从正确切口开工。 |
 | 交付后接手 | `handoff.md` 固定留下结果、验证、剩余风险、安全边界和下一步,下一位 agent 能继续。 |
 | 公开发布 | preflight、verify、GitHub Actions、证据索引、许可证边界一起检查,避免 README 只会喊口号。 |
@@ -58,8 +59,8 @@ ShipGrade CN 给 agent 套的不是风格偏好,而是交付约束:
 
 | 传统提示词 | ShipGrade CN |
 | --- | --- |
-| 把要求写得更长 | 把要求变成项目内文件、质量门和可执行检查。 |
-| 靠模型自觉 | 用 `doctor` 和 preflight 拒绝没有证据的“完成”。 |
+| 把要求写得更长 | 先用一个 MD 规则文件让 agent 进入交付闭环,再按需生成项目内文件。 |
+| 靠模型自觉 | 规则层先拒绝无证据交付,Python `doctor` 和 preflight 是可选加强。 |
 | 一次聊天里有效 | 规则落进 repo,跨 Codex / Claude Code / Cursor 持续生效。 |
 | 新手看不懂工程规范 | 中文 brief 把目标、风险、验收拆成能填的结构。 |
 | 专业工程师不信口号 | 每个 claim 都能追到公开文档、命令、证据或验证脚本。 |
@@ -95,6 +96,43 @@ ShipGrade CN 会把一次模糊请求压成五件事:
 4. 验收: 什么结果才算完成。
 5. 接手: 下一位 agent 或未来的你怎么继续。
 
+## 零安装: 只用一个 MD 文件
+
+**不需要 Python、不需要服务、不需要 API key。** 最低门槛就是把 [SHIPGRADE.md](SHIPGRADE.md) 放进你的项目,或让 Codex / Claude Code / Cursor 读取它。
+
+你可以直接对任意 AI 编程工具说:
+
+```text
+请读取 https://github.com/Alexsun1one/shipgrade-cn/blob/main/SHIPGRADE.md,
+把 ShipGrade CN 接入当前项目,以后按它的工程交付闭环工作。
+只需要写入适合本工具的规则文件,不要安装 Python,不要启动服务。
+```
+
+工具会按场景写入:
+
+| 工具 | 推荐落点 |
+| --- | --- |
+| Codex | `AGENTS.md` 或项目已有的 agent 规则文件 |
+| Claude Code | `CLAUDE.md` |
+| Cursor | `.cursor/rules/shipgrade.mdc` |
+| 通用 AI 编程助手 | 项目根目录 `SHIPGRADE.md` |
+
+这个模式适合中文小白和第一次试用: 用户只说“用 ShipGrade 做”,agent 就能按目标、非目标、证据、验收、风险、接手这套结构推进。
+
+## Python 是可选增强,不是使用前提
+
+ShipGrade CN 的 Python 工具只做三件事:
+
+| 可选工具 | 什么时候需要 |
+| --- | --- |
+| `tools/shipgrade_init.py` | 想一键生成 `.shipgrade/`、`AGENTS.md`、`CLAUDE.md` 和 Cursor 规则。 |
+| `tools/shipgrade_doctor.py` | 想用脚本自动拒绝“看起来好了”这种无证据 handoff。 |
+| `tools/github_publish_preflight.py` | 想发布公开仓库前跑 README、证据、许可证和安全边界检查。 |
+
+它**不需要做成常驻服务**。只有未来要做团队云端模板库、网页控制台、共享 eval 看板或远程规则同步时,服务才值得出现。当前 v1 最优形态是: **单文件 MD 可用,Python 可增强,服务不介入。**
+
+完整说明见 [docs/zero-install.md](docs/zero-install.md)。
+
 ## 30 秒看懂差异
 
 ```bash
@@ -118,9 +156,22 @@ accepted=... ship-grade-ok
 
 ![ShipGrade CN demo](assets/shipgrade-demo.gif)
 
-## 5 分钟装进你的项目
+## 两种接入方式
 
-要求: Python 3.10+。不需要 API key,不需要联网。
+### 方式 A: 零安装 MD 模式
+
+适合第一次使用、中文小白、公司电脑不能乱装东西的场景:
+
+```text
+请把 ShipGrade CN 接入当前项目。
+优先使用零安装模式: 读取仓库里的 SHIPGRADE.md,
+把规则写入 AGENTS.md / CLAUDE.md / .cursor/rules/shipgrade.mdc 中适合当前工具的文件。
+之后所有任务都按目标、非目标、证据、验收、风险、接手来交付。
+```
+
+### 方式 B: Python 一键初始化模式
+
+适合进阶用户和公开仓库维护者。要求: Python 3.10+。不需要 API key,不需要联网。
 
 ```bash
 python3 tools/shipgrade_init.py /path/to/your-project

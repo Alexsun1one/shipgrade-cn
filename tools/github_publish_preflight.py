@@ -17,6 +17,7 @@ REQUIRED_FILES = [
     "README.md",
     "README.en.md",
     "START_HERE.md",
+    "SHIPGRADE.md",
     "SKILL.md",
     "agents/openai.yaml",
     "AGENTS.md",
@@ -35,6 +36,7 @@ REQUIRED_FILES = [
     ".github/pull_request_template.md",
     "docs/EVIDENCE_INDEX.md",
     "docs/public-evidence-manifest.json",
+    "docs/zero-install.md",
     "docs/repository-engineering-distillation-pipeline.md",
     "docs/repo-engineering-distillation-assets.md",
     "docs/sandbox-runtime-cases.md",
@@ -121,8 +123,12 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
 
     readme = read_text("README.md")
     readme_terms = [
-        "5 分钟装进你的项目",
+        "零安装: 只用一个 MD 文件",
+        "Python 是可选增强,不是使用前提",
         "30 秒看懂差异",
+        "两种接入方式",
+        "SHIPGRADE.md",
+        "docs/zero-install.md",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -153,8 +159,11 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
 
     readme_en = read_text("README.en.md")
     readme_en_terms = [
+        "Zero Install: One MD File",
         "Quick Demo",
-        "Install Into A Project",
+        "Two Install Paths",
+        "SHIPGRADE.md",
+        "docs/zero-install.md",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",

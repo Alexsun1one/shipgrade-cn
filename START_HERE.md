@@ -18,6 +18,19 @@ python3 tools/shipgrade_doctor.py demo/demo-output.md
 - `AGENTS.md` / `CLAUDE.md` 被接线,后续 agent 会看到规则。
 - `shipgrade_doctor.py` 不只看关键词,会拒绝没有命令/浏览器证据的假完成,也会接受合格 handoff。
 
+## 最短路径: 零安装
+
+如果你只是想把 ShipGrade CN 用起来,不需要先装 Python、启动服务或申请 API key。让 Codex / Claude Code / Cursor 读取仓库里的 `SHIPGRADE.md`,再写入当前工具对应的规则入口即可。
+
+```text
+请读取 ShipGrade CN 的 SHIPGRADE.md,
+把它接入当前项目。优先使用零安装模式:
+只写入 AGENTS.md / CLAUDE.md / .cursor/rules/shipgrade.mdc 等规则文件,
+不要安装 Python,不要启动服务。
+```
+
+Python 脚本只是增强路径: 需要批量初始化、doctor 检查、演示证明或发布前检查时再用。v1 不需要做成常驻服务。
+
 ## 用蒸馏模式开工
 
 你也可以不从空白 brief 开始,而是从真实仓库里提炼出的工程模式开工:

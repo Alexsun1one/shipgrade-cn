@@ -4,7 +4,7 @@
 
 **A Chinese-first engineering delivery workbench for Codex, Claude Code, and Cursor.**
 
-[中文](README.md) · [Quick Demo](#quick-demo) · [Install](#install-into-a-project) · [Evidence Index](docs/EVIDENCE_INDEX.md)
+[中文](README.md) · [Zero Install](#zero-install-one-md-file) · [Quick Demo](#quick-demo) · [Install](#two-install-paths) · [Evidence Index](docs/EVIDENCE_INDEX.md)
 
 [![Local verify](https://img.shields.io/badge/local%20verify-shipgrade__verify.py-2ea44f)](#release-preflight)
 [![Agents](https://img.shields.io/badge/agents-Codex%20%7C%20Claude%20Code%20%7C%20Cursor-111827)](START_HERE.md)
@@ -30,9 +30,10 @@ AGENTS.md / CLAUDE.md / .cursor/rules/shipgrade.mdc
 
 | Problem | What ShipGrade CN adds |
 | --- | --- |
+| Users should not install anything first | `SHIPGRADE.md` gives a one-file, zero-install rule surface for Codex, Claude Code, Cursor, or any AI coding agent. |
 | The request is just "please fix this" | `.shipgrade/task-brief.md`: goal, non-goal, evidence, acceptance criteria, risk boundary, and first slice. |
 | Different agents read different rules | `AGENTS.md`, `CLAUDE.md`, and Cursor rules are generated from the same quality gate. |
-| The agent says "done" without proof | `shipgrade_doctor.py` rejects handoffs without artifact paths and command or browser evidence. |
+| The agent says "done" without proof | The MD contract requires proof first; optional `shipgrade_doctor.py` rejects handoffs without artifact paths and command or browser evidence. |
 | You want to reuse strong engineering patterns | `shipgrade_patterns.py` turns real-repository Pattern/Task/Eval assets into a task brief. |
 | The next agent cannot continue | `.shipgrade/handoff.md` records result, validation proof, residual risk, security boundary, and next action. |
 | The repo needs to be public-ready | `github_publish_preflight.py`, `shipgrade_verify.py`, GitHub Actions, and evidence docs check the launch surface. |
@@ -54,8 +55,8 @@ ShipGrade CN gives agents delivery constraints, not tone preferences:
 
 | Prompt-pack habit | ShipGrade CN behavior |
 | --- | --- |
-| Longer instructions inside one chat | Repo-local files, quality gates, and runnable checks. |
-| Trust the model to self-police | `shipgrade_doctor.py` rejects unsupported completion claims. |
+| Longer instructions inside one chat | A one-file MD contract first; repo-local workbench files only when useful. |
+| Trust the model to self-police | The MD contract requires proof; optional `shipgrade_doctor.py` rejects unsupported completion claims. |
 | Works only in one agent session | Shared rules for Codex, Claude Code, and Cursor. |
 | Hard for beginners to apply | Chinese task briefs turn scope, risk, and acceptance into fillable structure. |
 | Hard for senior engineers to trust | Public claims map to evidence files, commands, and validation scripts. |
@@ -90,6 +91,31 @@ The delivery contract has six parts:
 5. validation proof
 6. handoff for the next agent or future maintainer
 
+## Zero Install: One MD File
+
+**No Python, no background service, no API key.** The lowest-friction version is just [SHIPGRADE.md](SHIPGRADE.md). Put it in a project or ask Codex, Claude Code, or Cursor to read it.
+
+You can tell an AI coding tool:
+
+```text
+Read https://github.com/Alexsun1one/shipgrade-cn/blob/main/SHIPGRADE.md,
+wire ShipGrade CN into this project, and use the zero-install path.
+Only write the rule file that fits this tool. Do not install Python or start a service.
+```
+
+Recommended landing files:
+
+| Tool | File |
+| --- | --- |
+| Codex | `AGENTS.md` |
+| Claude Code | `CLAUDE.md` |
+| Cursor | `.cursor/rules/shipgrade.mdc` |
+| Generic AI coding agent | project-root `SHIPGRADE.md` |
+
+Python tools are optional enhancers: `shipgrade_init.py` creates the workbench, `shipgrade_doctor.py` checks handoffs, and `github_publish_preflight.py` checks public release readiness. A hosted service is not needed for v1; it only becomes useful later for shared team dashboards, cloud evals, or remote rule sync.
+
+See [docs/zero-install.md](docs/zero-install.md).
+
 ## Quick Demo
 
 Requirements: Python 3.10+. No API key and no network access are required.
@@ -114,7 +140,21 @@ accepted=... ship-grade-ok
 
 See `docs/DEMO_PROOF.md` for the captured proof.
 
-## Install Into A Project
+## Two Install Paths
+
+### Path A: Zero-install MD
+
+Best for first-time users, locked-down company laptops, and Chinese-speaking beginners:
+
+```text
+Wire ShipGrade CN into this project using the zero-install path.
+Read SHIPGRADE.md from the repo, then write the matching AGENTS.md / CLAUDE.md / Cursor rule.
+After that, deliver every task with goal, non-goal, evidence, acceptance, risk, and handoff.
+```
+
+### Path B: Python helper tools
+
+Best for maintainers and power users. Requirements: Python 3.10+. No API key and no network access are required.
 
 ```bash
 python3 tools/shipgrade_init.py /path/to/your-project

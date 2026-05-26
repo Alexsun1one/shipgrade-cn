@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T07:02:22Z",
+  "generated_at": "2026-05-26T07:52:02Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
   "passed": 20,
@@ -8,7 +8,7 @@
     {
       "id": "required-files",
       "passed": true,
-      "detail": "51 required files present"
+      "detail": "53 required files present"
     },
     {
       "id": "readme-launch-surface",

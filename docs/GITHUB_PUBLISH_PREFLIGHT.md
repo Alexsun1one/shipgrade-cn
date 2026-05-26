@@ -14,7 +14,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `repo-metadata` | `pass` | topics=10 missing=[] |
 | `public-evidence-manifest` | `pass` | evidence_files=12 |
 | `source-promotion-batch` | `pass` | selected=4 audited=4 runtime=2 static_smoke=2 |
-| `source-promotion-sandbox-cases` | `pass` | cases=2/2 required=9/9 configured_tests=225 |
+| `source-promotion-sandbox-cases` | `pass` | cases=3/3 required=13/13 configured_tests=264 |
 | `sandbox-runtime-matrix` | `pass` | cases=3/3 steps=12/12 |
 | `social-preview` | `pass` | dimensions=(1600, 900) |
 | `demo-gif` | `pass` | dimensions=(1200, 675) |

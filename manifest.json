@@ -2,7 +2,7 @@
   "name": "ship-grade-engineering-cn",
   "display_name": "ShipGrade CN",
   "version": "v0.1",
-  "generated_at": "2026-05-26T01:27:08Z",
+  "generated_at": "2026-05-26T02:53:15Z",
   "recommended_repo_names": [
     "shipgrade-cn",
     "ship-grade-engineering-cn",
@@ -118,9 +118,9 @@
     "promotion_batch_selected_count": 4,
     "promotion_batch_audited_count": 4,
     "promotion_batch_runtime_candidate_count": 2,
-    "promotion_sandbox_case_count": 2,
-    "promotion_sandbox_passed_case_count": 2,
-    "promotion_sandbox_configured_test_count": 225
+    "promotion_sandbox_case_count": 3,
+    "promotion_sandbox_passed_case_count": 3,
+    "promotion_sandbox_configured_test_count": 264
   },
   "influence_profiles": [
     {
@@ -345,16 +345,17 @@
     "boundary": "Promotion batch only. It performs sparse clone and safe static smoke, not arbitrary dependency execution."
   },
   "source_promotion_sandbox_cases": {
-    "case_count": 2,
-    "passed_case_count": 2,
-    "step_count": 10,
-    "passed_step_count": 10,
-    "required_step_count": 9,
-    "passed_required_step_count": 9,
-    "configured_test_count": 225,
+    "case_count": 3,
+    "passed_case_count": 3,
+    "step_count": 14,
+    "passed_step_count": 14,
+    "required_step_count": 13,
+    "passed_required_step_count": 13,
+    "configured_test_count": 264,
     "repos": [
       "affaan-m/ECC",
-      "browser-use/browser-use"
+      "browser-use/browser-use",
+      "addyosmani/agent-skills"
     ],
     "boundary": "scrub env to PATH/system temp only; HOME and package caches are temp; no token/key/secret/cookie/session variables"
   },

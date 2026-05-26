@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T00:34:55Z",
+  "generated_at": "2026-05-26T02:40:28Z",
   "environment_policy": "scrub env to PATH/system temp only; HOME and package caches are temp; no token/key/secret/cookie/session variables",
   "temp_copy_policy": "copy source to TemporaryDirectory; exclude .git, node_modules, .venv, __pycache__, .DS_Store, AppleDouble files; materialize selected public git paths",
-  "case_count": 2,
-  "passed_case_count": 2,
-  "step_count": 10,
-  "passed_step_count": 10,
-  "required_step_count": 9,
-  "passed_required_step_count": 9,
-  "configured_test_count": 225,
+  "case_count": 3,
+  "passed_case_count": 3,
+  "step_count": 14,
+  "passed_step_count": 14,
+  "required_step_count": 13,
+  "passed_required_step_count": 13,
+  "configured_test_count": 264,
   "cases": [
     {
       "id": "ecc-agent-operating-system",
@@ -92,7 +92,7 @@
               "--fund=false"
             ],
             "exit_code": 0,
-            "stdout_tail": "\nadded 233 packages in 53s\n",
+            "stdout_tail": "\nadded 233 packages in 59s\n",
             "stderr_tail": ""
           }
         },
@@ -236,7 +236,7 @@
             ],
             "exit_code": 0,
             "stdout_tail": "",
-            "stderr_tail": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\nUsing Python 3.14.3 environment at: $SANDBOX/venv-browser-use\nResolved 109 packages in 4.98s\n   Building browser-use @ file://$SANDBOX/browser-use\nDownloading openai (1.0MiB)\nDownloading cryptography (7.6MiB)\nDownloading pygments (1.2MiB)\nDownloading reportlab (1.9MiB)\nDownloading cython (2.8MiB)\nDownloading lxml (8.2MiB)\nDownloading pillow (4.5MiB)\nDownloading google-api-python-client (14.2MiB)\nDownloading pydantic-core (1.8MiB)\n Downloaded openai\n Downloaded pygments\n Downloaded reportlab\n Downloaded pydantic-core\n Downloaded cython\n Downloaded pillow\n Downloaded lxml\n Downloaded cryptography\n      Built browser-use @ file://$SANDBOX/browser-use\n Downloaded google-api-python-client\nPrepared 109 packages in 5.88s\nInstalled 109 packages in 233ms\n + aiofiles==25.1.0\n + aiohappyeyeballs==2.6.2\n + aiohttp==3.13.4\n + aiosignal==1.4.0\n + annotated-types==0.7.0\n + anthropic==0.76.0\n + anyio==4.12.1\n + attrs==26.1.0\n + backoff==2.2.1\n + beautifulsoup4==4.14.3\n + browser-use==0.12.8 (from file://$SANDBOX/browser-use)\n + browser-use-sdk==3.4.2\n + bubus==1.5.6\n + cdp-use==1.4.5\n + certifi==2026.5.20\n + cffi==2.0.0\n + charset-normalizer==3.4.7\n + click==8.3.1\n + cloudpickle==3.1.2\n + cryptography==48.0.0\n + cython==3.2.5\n + distro==1.9.0\n + docstring-parser==0.18.0\n + frozenlist==1.8.0\n + google-api-core==2.29.0\n + google-api-python-client==2.188.0\n + google-auth==2.48.0\n + google-auth-httplib2==0.4.0\n + google-auth-oauthlib==1.2.4\n + google-genai==1.65.0\n + googleapis-common-protos==1.75.0\n + groq==1.0.0\n + h11==0.16.0\n + httpcore==1.0.9\n + httplib2==0.31.2\n + httpx==0.28.1\n + httpx-sse==0.4.3\n + idna==3.16\n + iniconfig==2.3.0\n + inquirerpy==0.3.4\n + jiter==0.15.0\n + jsonschema==4.26.0\n + jsonschema-specifications==2025.9.1\n + lxml==6.1.1\n + markdown-it-py==4.2.0\n + markdownify==1.2.2\n + markupsafe==3.0.3\n + mcp==1.26.0\n + mdurl==0.1.2\n + multidict==6.7.1\n + oauthlib==3.3.1\n + ollama==0.6.1\n + openai==2.16.0\n + packaging==26.2\n + pfzy==0.3.4\n + pillow==12.2.0\n + pluggy==1.6.0\n + portalocker==3.2.0\n + posthog==7.7.0\n + prompt-toolkit==3.0.52\n + propcache==0.5.2\n + proto-plus==1.28.0\n + protobuf==6.33.6\n + psutil==7.2.2\n + pyasn1==0.6.3\n + pyasn1-modules==0.4.2\n + pycparser==3.0\n + pydantic==2.12.5\n + pydantic-core==2.41.5\n + pydantic-settings==2.14.1\n + pygments==2.20.0\n + pyjwt==2.13.0\n + pyobjc-core==12.1\n + pyobjc-framework-cocoa==12.1\n + pyotp==2.9.0\n + pyparsing==3.3.2\n + pypdf==6.10.2\n + pytest==9.0.3\n + pytest-asyncio==1.3.0\n + pytest-httpserver==1.1.5\n + python-dateutil==2.9.0.post0\n + python-docx==1.2.0\n + python-dotenv==1.2.2\n + python-multipart==0.0.29\n + referencing==0.37.0\n + reportlab==4.4.9\n + requests==2.33.0\n + requests-oauthlib==2.0.0\n + rich==14.3.1\n + rpds-py==0.30.0\n + rsa==4.9.1\n + screeninfo==0.8.1\n + six==1.17.0\n + sniffio==1.3.1\n + soupsieve==2.8.4\n + sse-starlette==3.4.4\n + starlette==1.1.0\n + tenacity==9.1.4\n + tqdm==4.67.3\n + typing-extensions==4.15.0\n + typing-inspection==0.4.2\n + uritemplate==4.2.0\n + urllib3==2.7.0\n + uuid7==0.1.0\n + uvicorn==0.48.0\n + wcwidth==0.7.0\n + websockets==16.0\n + werkzeug==3.1.8\n + yarl==1.24.2\n"
+            "stderr_tail": "warning: The `tool.uv.dev-dependencies` field (used in `pyproject.toml`) is deprecated and will be removed in a future release; use `dependency-groups.dev` instead\nUsing Python 3.14.3 environment at: $SANDBOX/venv-browser-use\nResolved 109 packages in 5.44s\n   Building browser-use @ file://$SANDBOX/browser-use\nDownloading pygments (1.2MiB)\nDownloading lxml (8.2MiB)\nDownloading openai (1.0MiB)\nDownloading cryptography (7.6MiB)\nDownloading cython (2.8MiB)\nDownloading pillow (4.5MiB)\nDownloading google-api-python-client (14.2MiB)\nDownloading pydantic-core (1.8MiB)\nDownloading reportlab (1.9MiB)\n Downloaded openai\n Downloaded pygments\n Downloaded pydantic-core\n Downloaded reportlab\n Downloaded cython\n Downloaded pillow\n Downloaded cryptography\n      Built browser-use @ file://$SANDBOX/browser-use\n Downloaded lxml\n Downloaded google-api-python-client\nPrepared 109 packages in 6.81s\nInstalled 109 packages in 240ms\n + aiofiles==25.1.0\n + aiohappyeyeballs==2.6.2\n + aiohttp==3.13.4\n + aiosignal==1.4.0\n + annotated-types==0.7.0\n + anthropic==0.76.0\n + anyio==4.12.1\n + attrs==26.1.0\n + backoff==2.2.1\n + beautifulsoup4==4.14.3\n + browser-use==0.12.8 (from file://$SANDBOX/browser-use)\n + browser-use-sdk==3.4.2\n + bubus==1.5.6\n + cdp-use==1.4.5\n + certifi==2026.5.20\n + cffi==2.0.0\n + charset-normalizer==3.4.7\n + click==8.3.1\n + cloudpickle==3.1.2\n + cryptography==48.0.0\n + cython==3.2.5\n + distro==1.9.0\n + docstring-parser==0.18.0\n + frozenlist==1.8.0\n + google-api-core==2.29.0\n + google-api-python-client==2.188.0\n + google-auth==2.48.0\n + google-auth-httplib2==0.4.0\n + google-auth-oauthlib==1.2.4\n + google-genai==1.65.0\n + googleapis-common-protos==1.75.0\n + groq==1.0.0\n + h11==0.16.0\n + httpcore==1.0.9\n + httplib2==0.31.2\n + httpx==0.28.1\n + httpx-sse==0.4.3\n + idna==3.16\n + iniconfig==2.3.0\n + inquirerpy==0.3.4\n + jiter==0.15.0\n + jsonschema==4.26.0\n + jsonschema-specifications==2025.9.1\n + lxml==6.1.1\n + markdown-it-py==4.2.0\n + markdownify==1.2.2\n + markupsafe==3.0.3\n + mcp==1.26.0\n + mdurl==0.1.2\n + multidict==6.7.1\n + oauthlib==3.3.1\n + ollama==0.6.1\n + openai==2.16.0\n + packaging==26.2\n + pfzy==0.3.4\n + pillow==12.2.0\n + pluggy==1.6.0\n + portalocker==3.2.0\n + posthog==7.7.0\n + prompt-toolkit==3.0.52\n + propcache==0.5.2\n + proto-plus==1.28.0\n + protobuf==6.33.6\n + psutil==7.2.2\n + pyasn1==0.6.3\n + pyasn1-modules==0.4.2\n + pycparser==3.0\n + pydantic==2.12.5\n + pydantic-core==2.41.5\n + pydantic-settings==2.14.1\n + pygments==2.20.0\n + pyjwt==2.13.0\n + pyobjc-core==12.1\n + pyobjc-framework-cocoa==12.1\n + pyotp==2.9.0\n + pyparsing==3.3.2\n + pypdf==6.10.2\n + pytest==9.0.3\n + pytest-asyncio==1.3.0\n + pytest-httpserver==1.1.5\n + python-dateutil==2.9.0.post0\n + python-docx==1.2.0\n + python-dotenv==1.2.2\n + python-multipart==0.0.29\n + referencing==0.37.0\n + reportlab==4.4.9\n + requests==2.33.0\n + requests-oauthlib==2.0.0\n + rich==14.3.1\n + rpds-py==0.30.0\n + rsa==4.9.1\n + screeninfo==0.8.1\n + six==1.17.0\n + sniffio==1.3.1\n + soupsieve==2.8.4\n + sse-starlette==3.4.4\n + starlette==1.1.0\n + tenacity==9.1.4\n + tqdm==4.67.3\n + typing-extensions==4.15.0\n + typing-inspection==0.4.2\n + uritemplate==4.2.0\n + urllib3==2.7.0\n + uuid7==0.1.0\n + uvicorn==0.48.0\n + wcwidth==0.7.0\n + websockets==16.0\n + werkzeug==3.1.8\n + yarl==1.24.2\n"
           }
         },
         {
@@ -264,7 +264,7 @@
               "addopts="
             ],
             "exit_code": 0,
-            "stdout_tail": "_code_fence_not_split PASSED [ 13%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownCodeFence::test_unclosed_code_fence PASSED [ 15%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownTable::test_table_not_split_mid_row PASSED [ 17%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownTable::test_table_header_in_overlap_for_continuation PASSED [ 19%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownTable::test_table_header_carried_across_three_plus_chunks PASSED [ 21%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownListItems::test_list_items_not_split PASSED [ 23%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownStartFromChar::test_start_from_char_returns_correct_chunk PASSED [ 25%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownStartFromChar::test_start_from_char_past_end_returns_empty PASSED [ 26%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownStartFromChar::test_start_from_char_zero_returns_all PASSED [ 28%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownOverlap::test_overlap_lines_carry_context PASSED [ 30%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownOverlap::test_no_overlap_on_first_chunk PASSED [ 32%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownMixed::test_paragraph_splitting PASSED [ 34%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownMixed::test_single_oversized_block_allowed PASSED [ 36%]\ntests/ci/test_markdown_chunking.py::TestHTMLToMarkdownChunking::test_large_table_produces_valid_chunks PASSED [ 38%]\ntests/ci/test_markdown_chunking.py::TestHTMLToMarkdownChunking::test_table_without_thead_normalization PASSED [ 40%]\ntests/ci/test_variable_detection.py::test_detect_email_from_attributes PASSED [ 42%]\ntests/ci/test_variable_detection.py::test_detect_email_from_pattern PASSED [ 44%]\ntests/ci/test_variable_detection.py::test_detect_phone_from_attributes PASSED [ 46%]\ntests/ci/test_variable_detection.py::test_detect_phone_from_pattern PASSED [ 48%]\ntests/ci/test_variable_detection.py::test_detect_date_from_attributes PASSED [ 50%]\ntests/ci/test_variable_detection.py::test_detect_date_from_pattern PASSED [ 51%]\ntests/ci/test_variable_detection.py::test_detect_first_name_from_attributes PASSED [ 53%]\ntests/ci/test_variable_detection.py::test_detect_first_name_from_pattern PASSED [ 55%]\ntests/ci/test_variable_detection.py::test_detect_full_name_from_pattern PASSED [ 57%]\ntests/ci/test_variable_detection.py::test_detect_address_from_attributes PASSED [ 59%]\ntests/ci/test_variable_detection.py::test_detect_billing_address_from_attributes PASSED [ 61%]\ntests/ci/test_variable_detection.py::test_detect_comment_from_attributes PASSED [ 63%]\ntests/ci/test_variable_detection.py::test_detect_city_from_attributes PASSED [ 65%]\ntests/ci/test_variable_detection.py::test_detect_state_from_attributes PASSED [ 67%]\ntests/ci/test_variable_detection.py::test_detect_country_from_attributes PASSED [ 69%]\ntests/ci/test_variable_detection.py::test_detect_zip_code_from_attributes PASSED [ 71%]\ntests/ci/test_variable_detection.py::test_detect_company_from_attributes PASSED [ 73%]\ntests/ci/test_variable_detection.py::test_detect_number_from_pattern PASSED [ 75%]\ntests/ci/test_variable_detection.py::test_no_detection_for_random_text PASSED [ 76%]\ntests/ci/test_variable_detection.py::test_no_detection_for_short_text PASSED [ 78%]\ntests/ci/test_variable_detection.py::test_element_attributes_take_priority_over_pattern PASSED [ 80%]\ntests/ci/test_variable_detection.py::test_pattern_matching_used_when_no_element PASSED [ 82%]\ntests/ci/test_variable_detection.py::test_ensure_unique_name_no_conflict PASSED [ 84%]\ntests/ci/test_variable_detection.py::test_ensure_unique_name_with_conflict PASSED [ 86%]\ntests/ci/test_variable_detection.py::test_ensure_unique_name_with_multiple_conflicts PASSED [ 88%]\ntests/ci/test_variable_detection.py::test_detect_variables_in_empty_history PASSED [ 90%]\ntests/ci/test_variable_detection.py::test_detect_variables_in_history_with_input_action PASSED [ 92%]\ntests/ci/test_variable_detection.py::test_detect_variables_skips_duplicate_values PASSED [ 94%]\ntests/ci/test_variable_detection.py::test_detect_variables_handles_missing_state PASSED [ 96%]\ntests/ci/test_variable_detection.py::test_detect_variables_handles_missing_interacted_element PASSED [ 98%]\ntests/ci/test_variable_detection.py::test_detect_variables_multiple_types PASSED [100%]\n\n=============================== warnings summary ===============================\n../venv-browser-use/lib/python3.14/site-packages/_pytest/config/__init__.py:1434\n  $SANDBOX/venv-browser-use/lib/python3.14/site-packages/_pytest/config/__init__.py:1434: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 52 passed, 1 warning in 1.30s =========================\n",
+            "stdout_tail": "_code_fence_not_split PASSED [ 13%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownCodeFence::test_unclosed_code_fence PASSED [ 15%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownTable::test_table_not_split_mid_row PASSED [ 17%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownTable::test_table_header_in_overlap_for_continuation PASSED [ 19%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownTable::test_table_header_carried_across_three_plus_chunks PASSED [ 21%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownListItems::test_list_items_not_split PASSED [ 23%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownStartFromChar::test_start_from_char_returns_correct_chunk PASSED [ 25%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownStartFromChar::test_start_from_char_past_end_returns_empty PASSED [ 26%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownStartFromChar::test_start_from_char_zero_returns_all PASSED [ 28%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownOverlap::test_overlap_lines_carry_context PASSED [ 30%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownOverlap::test_no_overlap_on_first_chunk PASSED [ 32%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownMixed::test_paragraph_splitting PASSED [ 34%]\ntests/ci/test_markdown_chunking.py::TestChunkMarkdownMixed::test_single_oversized_block_allowed PASSED [ 36%]\ntests/ci/test_markdown_chunking.py::TestHTMLToMarkdownChunking::test_large_table_produces_valid_chunks PASSED [ 38%]\ntests/ci/test_markdown_chunking.py::TestHTMLToMarkdownChunking::test_table_without_thead_normalization PASSED [ 40%]\ntests/ci/test_variable_detection.py::test_detect_email_from_attributes PASSED [ 42%]\ntests/ci/test_variable_detection.py::test_detect_email_from_pattern PASSED [ 44%]\ntests/ci/test_variable_detection.py::test_detect_phone_from_attributes PASSED [ 46%]\ntests/ci/test_variable_detection.py::test_detect_phone_from_pattern PASSED [ 48%]\ntests/ci/test_variable_detection.py::test_detect_date_from_attributes PASSED [ 50%]\ntests/ci/test_variable_detection.py::test_detect_date_from_pattern PASSED [ 51%]\ntests/ci/test_variable_detection.py::test_detect_first_name_from_attributes PASSED [ 53%]\ntests/ci/test_variable_detection.py::test_detect_first_name_from_pattern PASSED [ 55%]\ntests/ci/test_variable_detection.py::test_detect_full_name_from_pattern PASSED [ 57%]\ntests/ci/test_variable_detection.py::test_detect_address_from_attributes PASSED [ 59%]\ntests/ci/test_variable_detection.py::test_detect_billing_address_from_attributes PASSED [ 61%]\ntests/ci/test_variable_detection.py::test_detect_comment_from_attributes PASSED [ 63%]\ntests/ci/test_variable_detection.py::test_detect_city_from_attributes PASSED [ 65%]\ntests/ci/test_variable_detection.py::test_detect_state_from_attributes PASSED [ 67%]\ntests/ci/test_variable_detection.py::test_detect_country_from_attributes PASSED [ 69%]\ntests/ci/test_variable_detection.py::test_detect_zip_code_from_attributes PASSED [ 71%]\ntests/ci/test_variable_detection.py::test_detect_company_from_attributes PASSED [ 73%]\ntests/ci/test_variable_detection.py::test_detect_number_from_pattern PASSED [ 75%]\ntests/ci/test_variable_detection.py::test_no_detection_for_random_text PASSED [ 76%]\ntests/ci/test_variable_detection.py::test_no_detection_for_short_text PASSED [ 78%]\ntests/ci/test_variable_detection.py::test_element_attributes_take_priority_over_pattern PASSED [ 80%]\ntests/ci/test_variable_detection.py::test_pattern_matching_used_when_no_element PASSED [ 82%]\ntests/ci/test_variable_detection.py::test_ensure_unique_name_no_conflict PASSED [ 84%]\ntests/ci/test_variable_detection.py::test_ensure_unique_name_with_conflict PASSED [ 86%]\ntests/ci/test_variable_detection.py::test_ensure_unique_name_with_multiple_conflicts PASSED [ 88%]\ntests/ci/test_variable_detection.py::test_detect_variables_in_empty_history PASSED [ 90%]\ntests/ci/test_variable_detection.py::test_detect_variables_in_history_with_input_action PASSED [ 92%]\ntests/ci/test_variable_detection.py::test_detect_variables_skips_duplicate_values PASSED [ 94%]\ntests/ci/test_variable_detection.py::test_detect_variables_handles_missing_state PASSED [ 96%]\ntests/ci/test_variable_detection.py::test_detect_variables_handles_missing_interacted_element PASSED [ 98%]\ntests/ci/test_variable_detection.py::test_detect_variables_multiple_types PASSED [100%]\n\n=============================== warnings summary ===============================\n../venv-browser-use/lib/python3.14/site-packages/_pytest/config/__init__.py:1434\n  $SANDBOX/venv-browser-use/lib/python3.14/site-packages/_pytest/config/__init__.py:1434: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 52 passed, 1 warning in 1.49s =========================\n",
             "stderr_tail": ""
           }
         },
@@ -283,12 +283,109 @@
               "addopts="
             ],
             "exit_code": 0,
-            "stdout_tail": "\ntests/ci/test_doctor_command.py::test_doctor_handle_returns_valid_structure PASSED [ 11%]\ntests/ci/test_doctor_command.py::test_check_package_installed PASSED     [ 22%]\ntests/ci/test_doctor_command.py::test_check_browser_returns_valid_structure PASSED [ 33%]\ntests/ci/test_doctor_command.py::test_check_network_returns_valid_structure PASSED [ 44%]\ntests/ci/test_doctor_command.py::test_check_cloudflared_returns_valid_structure PASSED [ 55%]\ntests/ci/test_doctor_command.py::test_check_profile_use_returns_valid_structure PASSED [ 66%]\ntests/ci/test_doctor_command.py::test_summarize_checks_all_ok PASSED     [ 77%]\ntests/ci/test_doctor_command.py::test_summarize_checks_mixed PASSED      [ 88%]\ntests/ci/test_doctor_command.py::test_summarize_checks_with_errors PASSED [100%]\n\n=============================== warnings summary ===============================\n../venv-browser-use/lib/python3.14/site-packages/_pytest/config/__init__.py:1434\n  $SANDBOX/venv-browser-use/lib/python3.14/site-packages/_pytest/config/__init__.py:1434: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n========================= 9 passed, 1 warning in 1.84s =========================\n",
+            "stdout_tail": "\ntests/ci/test_doctor_command.py::test_doctor_handle_returns_valid_structure PASSED [ 11%]\ntests/ci/test_doctor_command.py::test_check_package_installed PASSED     [ 22%]\ntests/ci/test_doctor_command.py::test_check_browser_returns_valid_structure PASSED [ 33%]\ntests/ci/test_doctor_command.py::test_check_network_returns_valid_structure PASSED [ 44%]\ntests/ci/test_doctor_command.py::test_check_cloudflared_returns_valid_structure PASSED [ 55%]\ntests/ci/test_doctor_command.py::test_check_profile_use_returns_valid_structure PASSED [ 66%]\ntests/ci/test_doctor_command.py::test_summarize_checks_all_ok PASSED     [ 77%]\ntests/ci/test_doctor_command.py::test_summarize_checks_mixed PASSED      [ 88%]\ntests/ci/test_doctor_command.py::test_summarize_checks_with_errors PASSED [100%]\n\n=============================== warnings summary ===============================\n../venv-browser-use/lib/python3.14/site-packages/_pytest/config/__init__.py:1434\n  $SANDBOX/venv-browser-use/lib/python3.14/site-packages/_pytest/config/__init__.py:1434: PytestConfigWarning: Unknown config option: timeout\n  \n    self._warn_or_fail_if_strict(f\"Unknown config option: {key}\\n\")\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n========================= 9 passed, 1 warning in 1.86s =========================\n",
             "stderr_tail": ""
           }
         }
       ],
       "distilled_lesson": "Browser-agent repos need a split between local deterministic tests and browser/network/cloud tests; ShipGrade should preserve that split in Chinese templates."
+    },
+    {
+      "id": "addyosmani-agent-skills-hook-contracts",
+      "source_repo": "addyosmani/agent-skills",
+      "license": "MIT",
+      "runtime": "shell/node/multi-tool-agent-skill-pack",
+      "materialized_paths": [
+        "README.md",
+        ".github/workflows",
+        ".claude/commands",
+        ".gemini/commands",
+        "agents",
+        "docs",
+        "hooks",
+        "skills"
+      ],
+      "test_discovery": {
+        "include": "skills/*/SKILL.md + .claude/.gemini commands + hook tests",
+        "count": 39,
+        "sample": [
+          "api-and-interface-design/SKILL.md",
+          "browser-testing-with-devtools/SKILL.md",
+          "ci-cd-and-automation/SKILL.md",
+          "code-review-and-quality/SKILL.md",
+          "code-simplification/SKILL.md",
+          "context-engineering/SKILL.md",
+          "debugging-and-error-recovery/SKILL.md",
+          "deprecation-and-migration/SKILL.md",
+          "build.md",
+          "code-simplify.md",
+          "plan.md",
+          "review.md",
+          "ship.md",
+          "spec.md",
+          "test.md",
+          "build.toml",
+          "hooks/session-start-test.sh",
+          "hooks/simplify-ignore-test.sh"
+        ]
+      },
+      "steps": [
+        {
+          "name": "addyosmani-structure-contract",
+          "required": true,
+          "result": {
+            "argv": [
+              "python3",
+              "-c",
+              "from pathlib import Path\nroot = Path('.')\nskills = sorted(root.glob('skills/*/SKILL.md'))\nclaude = sorted(root.glob('.claude/commands/*.md'))\ngemini = sorted(root.glob('.gemini/commands/*.toml'))\ndocs = [root / 'docs/skill-anatomy.md', root / 'docs/getting-started.md', root / 'docs/cursor-setup.md']\nagents = sorted(root.glob('agents/*.md'))\nmissing_docs = [str(path) for path in docs if not path.exists()]\nassert len(skills) >= 20, len(skills)\nassert len(claude) >= 6, len(claude)\nassert len(gemini) >= 6, len(gemini)\nassert len(agents) >= 3, len(agents)\nassert not missing_docs, missing_docs\nprint(f'agent-skills-structure-ok skills={len(skills)} claude={len(claude)} gemini={len(gemini)} agents={len(agents)}')\n"
+            ],
+            "exit_code": 0,
+            "stdout_tail": "agent-skills-structure-ok skills=23 claude=7 gemini=7 agents=4\n",
+            "stderr_tail": ""
+          }
+        },
+        {
+          "name": "addyosmani-hook-shell-syntax",
+          "required": true,
+          "result": {
+            "argv": [
+              "bash",
+              "-lc",
+              "bash -n hooks/*.sh"
+            ],
+            "exit_code": 0,
+            "stdout_tail": "",
+            "stderr_tail": ""
+          }
+        },
+        {
+          "name": "addyosmani-session-start-hook-test",
+          "required": true,
+          "result": {
+            "argv": [
+              "bash",
+              "hooks/session-start-test.sh"
+            ],
+            "exit_code": 0,
+            "stdout_tail": "session-start JSON payload OK\n",
+            "stderr_tail": ""
+          }
+        },
+        {
+          "name": "addyosmani-simplify-ignore-hook-test",
+          "required": true,
+          "result": {
+            "argv": [
+              "bash",
+              "hooks/simplify-ignore-test.sh"
+            ],
+            "exit_code": 0,
+            "stdout_tail": "Test 1: Single-line block (start+end on same line)\n  PASS: exactly one placeholder line\n  PASS: line before block preserved\n  PASS: line after block preserved\n  PASS: one block file in cache\n  PASS: block content matches\n\nTest 2: Multi-line block\n  PASS: exactly one placeholder for multi-line block\n  PASS: output has 3 lines (before + placeholder + after)\n\nTest 3: Multiple blocks in one file\n  PASS: two placeholders for two blocks\n  PASS: two block files in cache\n\nTest 4: Reason string in placeholder\n  PASS: placeholder includes reason\n  PASS: reason file saved\n  PASS: reason content\n\nTest 5: Trailing newline preservation\n  PASS: dest preserves no-trailing-newline from source\n\nTest 6: No blocks returns 1\n  PASS: returns 1 when no blocks found\n\nTest 7: Unclosed block\n  PASS: warning emitted for unclosed block\n  PASS: orphan code flushed to output\n\nTest 8: Single-line block with reason\n  PASS: exactly one placeholder for single-line+reason\n  PASS: reason in placeholder\n\nTest 9: HTML comment syntax\n  PASS: HTML block replaced\n  PASS: HTML suffix preserved\n\nTest 10: Malformed JSON input produces warning\n  PASS: warning on bad JSON\n\n══════════════════════════════════════════\nResults: 21 passed, 0 failed\n",
+            "stderr_tail": ""
+          }
+        }
+      ],
+      "distilled_lesson": "A world-class skill pack should prove cross-tool command parity and hook behavior with tiny local tests, not just present polished skill prose."
     }
   ]
 }

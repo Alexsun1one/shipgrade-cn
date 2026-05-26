@@ -85,7 +85,7 @@ CLAUDE.shipgrade.md
 | 会不会停在旧信源 | 不会。`docs/high-signal-source-radar.md` 用 GitHub 搜索和候选元数据维护新信源池,并把 license review、off-scope 噪声和 sandbox 优先级分开。 |
 | 发现后怎么行动 | `docs/source-promotion-queue.md` 把候选分成 next deep/sandbox、manual license review、metadata-only watchlist 和 off-scope search noise。 |
 | 拉下来以后有没有审 | `docs/source-promotion-batch.md` 对前排候选做 license probe、sparse clone、结构计数、命令拓扑和安全静态 smoke。 |
-| 真的跑了没有 | `docs/source-promotion-sandbox-cases.md` 把 `affaan-m/ECC` 和 `browser-use/browser-use` 放进无密钥临时沙箱,安装依赖并跑代表性上游测试。 |
+| 真的跑了没有 | `docs/source-promotion-sandbox-cases.md` 把 `affaan-m/ECC`、`browser-use/browser-use` 和 `addyosmani/agent-skills` 放进无密钥临时沙箱,安装依赖或执行本地 hook/结构测试。 |
 | 有没有真实运行证据 | 有。`docs/transcript-evidence.md`、`docs/runtime-smoke-evidence.md`、`docs/sandbox-runtime-cases.md` 和 `docs/real-project-gauntlet.md` 保留脱敏执行证据。 |
 | 发 GitHub 前怎么把关 | `docs/GITHUB_PUBLISH_PREFLIGHT.md` 和 `tools/github_publish_preflight.py` 会检查 README、workflow、repo metadata、issue/PR 模板、证据 manifest、social preview 和安全边界。 |
 | 能不能独立发布 | 能。`.github/workflows/validate.yml` 跑 standalone release check。 |
@@ -98,7 +98,7 @@ CLAUDE.shipgrade.md
 - High-signal source radar: 87 candidates / 64 new / 65 green-license / 8 off-scope search-noise
 - Source promotion queue: 87 rows / 12 next deep-sandbox / 18 license-review targets
 - Source promotion batch: 4 selected / 4 audited / 2 runtime candidates / 2 static smoke passed (`affaan-m/ECC`, `addyosmani/agent-skills`, `browser-use/browser-use`, `VoltAgent/awesome-agent-skills`)
-- Source promotion sandbox cases: 2/2 cases / 9/9 required steps / 225 configured upstream tests (`affaan-m/ECC`, `browser-use/browser-use`)
+- Source promotion sandbox cases: 3/3 cases / 13/13 required steps / 264 configured upstream tests (`affaan-m/ECC`, `browser-use/browser-use`, `addyosmani/agent-skills`)
 - Deep code case studies: 11 repos / 17649 files / 5381 test paths / 786 eval paths
 - Eval tasks: 12
 - Runtime smoke checks: 33 passed checks / 33 checks on 7 cloned repos

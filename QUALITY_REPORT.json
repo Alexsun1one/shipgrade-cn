@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T01:27:08Z",
+  "generated_at": "2026-05-26T02:53:15Z",
   "required_files_present": true,
   "templates": 6,
   "examples": 3,
@@ -16,7 +16,7 @@
   "source_radar": "87 candidates; 64 new; 65 green-license candidates",
   "source_promotion_queue": "87 rows; 12 next deep/sandbox; 18 license review targets",
   "source_promotion_batch": "4 selected; 4 audited; 2 runtime candidates; 2 static smoke passed",
-  "source_promotion_sandbox_cases": "2/2 cases; 9/9 required steps; 225 configured tests",
+  "source_promotion_sandbox_cases": "3/3 cases; 13/13 required steps; 264 configured tests",
   "deep_code_case_studies": "11 repos; 17649 files; 5381 test paths; 786 eval paths",
   "audience_tiers": [
     "中文小白",

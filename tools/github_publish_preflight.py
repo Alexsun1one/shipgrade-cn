@@ -163,9 +163,10 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
     add(
         checks,
         "source-promotion-sandbox-cases",
-        promotion_sandbox.get("passed_case_count") == promotion_sandbox.get("case_count") == 2
+        promotion_sandbox.get("passed_case_count") == promotion_sandbox.get("case_count")
+        and promotion_sandbox.get("case_count", 0) >= 3
         and promotion_sandbox.get("passed_required_step_count") == promotion_sandbox.get("required_step_count")
-        and promotion_sandbox.get("configured_test_count", 0) >= 200,
+        and promotion_sandbox.get("configured_test_count", 0) >= 250,
         f"cases={promotion_sandbox.get('passed_case_count')}/{promotion_sandbox.get('case_count')} required={promotion_sandbox.get('passed_required_step_count')}/{promotion_sandbox.get('required_step_count')} configured_tests={promotion_sandbox.get('configured_test_count')}",
     )
 

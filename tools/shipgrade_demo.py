@@ -64,15 +64,15 @@ def write_good_handoff(path: Path, project: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the 30-second ShipGrade CN demo.")
-    parser.add_argument("--target", default=str(Path(tempfile.gettempdir()) / "shipgrade-demo-project"), help="demo project directory under the system temp folder")
+    parser.add_argument("--target", help="demo project directory under the system temp folder")
     parser.add_argument("--clean", action="store_true", help="remove the generated demo project after printing proof")
     args = parser.parse_args()
 
-    target = Path(args.target).expanduser()
+    target = Path(args.target).expanduser() if args.target else Path(tempfile.mkdtemp(prefix="shipgrade-demo-project-"))
     ensure_safe_target(target)
-    if target.exists():
+    if args.target and target.exists():
         shutil.rmtree(target)
-    target.mkdir(parents=True)
+    target.mkdir(parents=True, exist_ok=True)
 
     init = run([sys.executable, "tools/shipgrade_init.py", str(target)])
     if init.returncode != 0:

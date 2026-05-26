@@ -2,7 +2,7 @@
   "name": "shipgrade-cn",
   "display_name": "ShipGrade CN",
   "version": "v0.1",
-  "generated_at": "2026-05-26T02:14:35Z",
+  "generated_at": "2026-05-26T02:53:19Z",
   "source_dist": "dist/ship-grade-engineering-cn-v0.1",
   "source_manifest_name": "ship-grade-engineering-cn",
   "ready_to_git_init": true,
@@ -35,7 +35,7 @@
   },
   "stats": {
     "file_count": 100,
-    "total_bytes": 1478891
+    "total_bytes": 1486124
   },
   "forbidden": [
     ".DS_Store",

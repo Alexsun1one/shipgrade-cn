@@ -20,7 +20,7 @@ Ship-Grade Engineering CN v0.1 has a GitHub-ready artifact: README, SKILL, agent
 - high-signal source radar: `87` candidates / `64` new / `65` green-license candidates / `8` off-scope search noise
 - source promotion queue: `87` rows / `12` next deep-sandbox targets / `18` license-review targets
 - source promotion batch: `4` selected / `4` audited / `2` runtime candidates / `2` static smoke passed
-- source promotion sandbox cases: `2/2` cases / `9/9` required steps / `225` configured upstream tests discovered
+- source promotion sandbox cases: `3/3` cases / `13/13` required steps / `264` configured upstream tests discovered
 - deep code case studies: `11` repos / `17649` files / `5381` test paths / `786` eval paths
 - audience tiers: 中文小白 / 进阶用户 / 专业工程师
 - influence profiles: `10`

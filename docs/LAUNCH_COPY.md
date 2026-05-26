@@ -14,7 +14,7 @@ What is inside:
 
 - `shipgrade_init.py`: creates `.shipgrade/` and wires AGENTS/CLAUDE/Cursor rules into the target project.
 - `shipgrade_doctor.py`: rejects fake completion unless there is a concrete artifact and command/browser evidence.
-- Evidence backbone: 88 repo structure scans, 11 repos / 17649 files / 5381 test paths / 786 eval paths, 2/2 cases / 9/9 required steps / 225 configured upstream tests (`affaan-m/ECC`, `browser-use/browser-use`), and 3/3 cases and 12/12 steps across `Yeachan-Heo/oh-my-claudecode`, `SuperClaude-Org/SuperClaude_Framework`, `github/spec-kit`, with 590 configured upstream tests discovered.
+- Evidence backbone: 88 repo structure scans, 11 repos / 17649 files / 5381 test paths / 786 eval paths, 3/3 cases / 13/13 required steps / 264 configured upstream tests (`affaan-m/ECC`, `browser-use/browser-use`, `addyosmani/agent-skills`), and 3/3 cases and 12/12 steps across `Yeachan-Heo/oh-my-claudecode`, `SuperClaude-Org/SuperClaude_Framework`, `github/spec-kit`, with 590 configured upstream tests discovered.
 - Public release kit: CI, license/notice/security/contributing, issue templates, publish preflight, staging script, and release package.
 
 Run:

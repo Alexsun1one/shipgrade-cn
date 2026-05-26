@@ -213,6 +213,12 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "不要覆盖用户已有规则",
         "每次任务开始前",
         "每次任务完成时",
+        "不是计划交付",
+        "主控智能",
+        "信源蒸馏怎么做",
+        "证据矩阵",
+        "完成审计",
+        "不要用一个小 smoke 证明一个大目标",
         "中文小白",
         "专业工程师",
         "可选增强,不是前置条件",
@@ -232,6 +238,20 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         and "description:" in frontmatter_text
         and "Use when" in frontmatter_text,
         "machine-readable frontmatter with name/description triggers" if frontmatter else "missing YAML frontmatter",
+    )
+    skill_contract_terms = [
+        "主控智能职责",
+        "信源蒸馏协议",
+        "完成审计",
+        "不能用计划、loss、stars、README 摘要或单个 smoke 冒充质量",
+        "中文小白能入口,进阶用户能执行,专业工程师能审计",
+    ]
+    missing_skill_contract_terms = [term for term in skill_contract_terms if term not in skill]
+    add(
+        checks,
+        "world-class-skill-contract",
+        not missing_skill_contract_terms,
+        "SKILL.md encodes controller intelligence, source distillation, and completion audit" if not missing_skill_contract_terms else "missing_terms=" + ", ".join(missing_skill_contract_terms),
     )
 
     workflow = read_text(".github/workflows/validate.yml")

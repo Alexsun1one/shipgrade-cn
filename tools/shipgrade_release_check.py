@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     "README.md",
     "START_HERE.md",
+    "SHIPGRADE.md",
     "SKILL.md",
     "AGENTS.md",
     "CLAUDE.md",
@@ -92,6 +93,31 @@ def assert_skill_frontmatter() -> None:
         fail("SKILL.md frontmatter description must include trigger guidance")
 
 
+def assert_world_class_contract() -> None:
+    shipgrade = read("SHIPGRADE.md")
+    for term in (
+        "不是计划交付",
+        "主控智能",
+        "信源蒸馏怎么做",
+        "证据矩阵",
+        "完成审计",
+        "不要用一个小 smoke 证明一个大目标",
+    ):
+        if term not in shipgrade:
+            fail(f"SHIPGRADE.md missing world-class contract term: {term}")
+
+    skill = read("SKILL.md")
+    for term in (
+        "主控智能职责",
+        "信源蒸馏协议",
+        "完成审计",
+        "不能用计划、loss、stars、README 摘要或单个 smoke 冒充质量",
+        "中文小白能入口,进阶用户能执行,专业工程师能审计",
+    ):
+        if term not in skill:
+            fail(f"SKILL.md missing world-class contract term: {term}")
+
+
 def main() -> None:
     for path in ROOT.rglob("*"):
         if path.name == "__pycache__" or path.name == ".DS_Store" or path.name.startswith("._") or path.suffix in {".pyc", ".pyo"}:
@@ -100,6 +126,7 @@ def main() -> None:
     for rel in REQUIRED_FILES:
         read(rel)
     assert_skill_frontmatter()
+    assert_world_class_contract()
 
     manifest = json.loads(read("manifest.json"))
     files = manifest.get("files") or {}

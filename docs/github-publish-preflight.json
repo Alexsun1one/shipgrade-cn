@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-26T10:36:50Z",
+  "generated_at": "2026-05-26T10:51:52Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 24,
-  "total": 24,
+  "passed": 25,
+  "total": 25,
   "checks": [
     {
       "id": "required-files",
@@ -29,6 +29,11 @@
       "id": "skill-frontmatter",
       "passed": true,
       "detail": "machine-readable frontmatter with name/description triggers"
+    },
+    {
+      "id": "world-class-skill-contract",
+      "passed": true,
+      "detail": "SKILL.md encodes controller intelligence, source distillation, and completion audit"
     },
     {
       "id": "github-workflow",

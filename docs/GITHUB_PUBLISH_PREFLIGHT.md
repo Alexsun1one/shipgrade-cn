@@ -2,7 +2,7 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `24/24`
+- passed: `25/25`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
@@ -12,6 +12,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `readme-english-surface` | `pass` | README.en.md has standalone onboarding surface |
 | `shipgrade-zero-install-rule` | `pass` | SHIPGRADE.md is Chinese-first and zero-install |
 | `skill-frontmatter` | `pass` | machine-readable frontmatter with name/description triggers |
+| `world-class-skill-contract` | `pass` | SKILL.md encodes controller intelligence, source distillation, and completion audit |
 | `github-workflow` | `pass` | validate workflow has PR/push and release check |
 | `repo-metadata` | `pass` | topics=10 missing=[] |
 | `public-evidence-manifest` | `pass` | evidence_files=17 |

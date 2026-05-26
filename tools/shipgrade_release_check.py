@@ -40,6 +40,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_real_issue_case.py",
     "tools/shipgrade_real_task_suite.py",
     "tools/shipgrade_eval_corpus.py",
+    "tools/shipgrade_holdout_replay.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -199,6 +200,19 @@ def main() -> None:
         or "source_body_copied_to_public=false" not in eval_corpus_out
     ):
         fail("eval corpus did not prove chosen/rejected scoring")
+    holdout_replay_out = run([sys.executable, "tools/shipgrade_holdout_replay.py", "--clean"])
+    if (
+        "shipgrade-holdout-replay-ok" not in holdout_replay_out
+        or "cases=8" not in holdout_replay_out
+        or "base_overlap_repos=0" not in holdout_replay_out
+        or "strong_passed=8/8" not in holdout_replay_out
+        or "weak_failed=8/8" not in holdout_replay_out
+        or "holdout_not_training=true" not in holdout_replay_out
+        or "rubric_scored=true" not in holdout_replay_out
+        or "source_body_copied_to_public=false" not in holdout_replay_out
+        or "secret_scan=pass" not in holdout_replay_out
+    ):
+        fail("holdout replay did not prove unseen-repo chosen/weak separation")
     with tempfile.TemporaryDirectory() as tmp:
         fake = Path(tmp) / "fake-pass.md"
         fake.write_text(

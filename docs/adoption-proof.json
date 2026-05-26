@@ -11,7 +11,7 @@
   },
   "output_tail": [
     "shipgrade-zero-install-demo-ok",
-    "target=$TMP/shipgrade-zero-install-demo-4pb0fytc",
+    "target=$TMP/shipgrade-zero-install-demo-68s6p9bv",
     "source=SHIPGRADE.md",
     "created=SHIPGRADE.md,AGENTS.md,CLAUDE.md,.cursor/rules/shipgrade.mdc",
     "preserved_existing_rules=true",

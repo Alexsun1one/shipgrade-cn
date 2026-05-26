@@ -1,0 +1,296 @@
+{
+  "base_eval_repos": [
+    "pallets/click",
+    "pallets/itsdangerous"
+  ],
+  "base_overlap_repos": [],
+  "case_count": 8,
+  "holdout_not_training": true,
+  "licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "ok": true,
+  "public_boundary": "No upstream source bodies, secrets, cookies, sessions, private keys, browser profiles, auth databases, or private repositories.",
+  "repos": [
+    "SuperClaude-Org/SuperClaude_Framework",
+    "UKGovernmentBEIS/inspect_ai",
+    "addyosmani/agent-skills",
+    "affaan-m/ECC",
+    "browser-use/browser-use",
+    "github/spec-kit",
+    "humanlayer/12-factor-agents",
+    "promptfoo/promptfoo"
+  ],
+  "strong_passed": 8,
+  "strong_results": [
+    {
+      "case_id": "spec-kit-spec-drift-review",
+      "forbidden_hit": [],
+      "matched": [
+        "spec",
+        "plan",
+        "tasks",
+        "quick-check",
+        "templates"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "browser-use-agent-runtime-boundary",
+      "forbidden_hit": [],
+      "matched": [
+        "pyproject.toml",
+        "test.yaml",
+        "browser_use/agent",
+        "local gate",
+        "browser/model boundary"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "promptfoo-eval-first-quality-loop",
+      "forbidden_hit": [],
+      "matched": [
+        "package.json",
+        "eval-on-pr",
+        "test",
+        "examples",
+        "quality gate"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "inspect-ai-tool-sandbox-review",
+      "forbidden_hit": [],
+      "matched": [
+        "tool",
+        "solver",
+        "sandbox",
+        "pyproject.toml",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "superclaude-command-layering-repair",
+      "forbidden_hit": [],
+      "matched": [
+        "command",
+        "persona",
+        "rule",
+        "Makefile",
+        "tests"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "humanlayer-agent-handoff-anti-pattern",
+      "forbidden_hit": [],
+      "matched": [
+        "state",
+        "resume",
+        "human handoff",
+        "boundary",
+        "reject"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "addyosmani-agent-skills-install-boundary",
+      "forbidden_hit": [],
+      "matched": [
+        "SKILL.md",
+        "install",
+        "workflow",
+        "commands",
+        "boundary"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    },
+    {
+      "case_id": "ecc-catalog-runtime-gate",
+      "forbidden_hit": [],
+      "matched": [
+        "package.json",
+        "pyproject.toml",
+        "ci.yml",
+        "catalog",
+        "runtime gate"
+      ],
+      "missing": [],
+      "passed": true,
+      "score": 1.0
+    }
+  ],
+  "task_types": [
+    "anti_pattern_detection",
+    "engineering_plan",
+    "migration",
+    "repair",
+    "review",
+    "runtime_gate",
+    "skill_design"
+  ],
+  "weak_failed": 8,
+  "weak_results": [
+    {
+      "case_id": "spec-kit-spec-drift-review",
+      "forbidden_hit": [
+        "直接相信实现",
+        "不用跑"
+      ],
+      "matched": [],
+      "missing": [
+        "spec",
+        "plan",
+        "tasks",
+        "quick-check",
+        "templates"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "case_id": "browser-use-agent-runtime-boundary",
+      "forbidden_hit": [
+        "跑 import 就够",
+        "不需要隔离",
+        "真实浏览器随便跑"
+      ],
+      "matched": [],
+      "missing": [
+        "pyproject.toml",
+        "test.yaml",
+        "browser_use/agent",
+        "local gate",
+        "browser/model boundary"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "case_id": "promptfoo-eval-first-quality-loop",
+      "forbidden_hit": [
+        "一个 smoke 过了",
+        "不用 eval",
+        "凭感觉"
+      ],
+      "matched": [],
+      "missing": [
+        "package.json",
+        "eval-on-pr",
+        "test",
+        "examples",
+        "quality gate"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "case_id": "inspect-ai-tool-sandbox-review",
+      "forbidden_hit": [
+        "直接执行任意工具",
+        "忽略 sandbox",
+        "不补测试"
+      ],
+      "matched": [
+        "sandbox"
+      ],
+      "missing": [
+        "tool",
+        "solver",
+        "pyproject.toml",
+        "tests"
+      ],
+      "passed": false,
+      "score": 0.2
+    },
+    {
+      "case_id": "superclaude-command-layering-repair",
+      "forbidden_hit": [
+        "全部塞进一个提示词",
+        "不用分层",
+        "没有回归"
+      ],
+      "matched": [],
+      "missing": [
+        "command",
+        "persona",
+        "rule",
+        "Makefile",
+        "tests"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "case_id": "humanlayer-agent-handoff-anti-pattern",
+      "forbidden_hit": [
+        "聊天记录就行",
+        "没有恢复点也接受",
+        "不用人工边界"
+      ],
+      "matched": [],
+      "missing": [
+        "state",
+        "resume",
+        "human handoff",
+        "boundary",
+        "reject"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "case_id": "addyosmani-agent-skills-install-boundary",
+      "forbidden_hit": [
+        "只写 README 就够",
+        "复制所有命令",
+        "没有安装验证"
+      ],
+      "matched": [],
+      "missing": [
+        "SKILL.md",
+        "install",
+        "workflow",
+        "commands",
+        "boundary"
+      ],
+      "passed": false,
+      "score": 0.0
+    },
+    {
+      "case_id": "ecc-catalog-runtime-gate",
+      "forbidden_hit": [
+        "只数条目",
+        "不跑命令",
+        "质量自然高"
+      ],
+      "matched": [],
+      "missing": [
+        "package.json",
+        "pyproject.toml",
+        "ci.yml",
+        "catalog",
+        "runtime gate"
+      ],
+      "passed": false,
+      "score": 0.0
+    }
+  ]
+}

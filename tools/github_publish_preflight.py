@@ -69,6 +69,11 @@ REQUIRED_FILES = [
     "docs/eval-corpus/README.md",
     "docs/eval-corpus/real-task-eval-cases.jsonl",
     "docs/eval-corpus/real-task-eval-report.json",
+    "docs/HOLDOUT_REPLAY_PROOF.md",
+    "docs/holdout-replay-proof.json",
+    "docs/holdout-replay/README.md",
+    "docs/holdout-replay/holdout-replay-cases.jsonl",
+    "docs/holdout-replay/holdout-replay-report.json",
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
@@ -78,6 +83,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_real_issue_case.py",
     "tools/shipgrade_real_task_suite.py",
     "tools/shipgrade_eval_corpus.py",
+    "tools/shipgrade_holdout_replay.py",
     "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
@@ -163,6 +169,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "python3 tools/shipgrade_eval_corpus.py --clean",
         "docs/EVAL_CORPUS_PROOF.md",
         "docs/eval-corpus/",
+        "python3 tools/shipgrade_holdout_replay.py --clean",
+        "docs/HOLDOUT_REPLAY_PROOF.md",
+        "docs/holdout-replay/",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -211,6 +220,9 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "python3 tools/shipgrade_eval_corpus.py --clean",
         "docs/EVAL_CORPUS_PROOF.md",
         "docs/eval-corpus/",
+        "python3 tools/shipgrade_holdout_replay.py --clean",
+        "docs/HOLDOUT_REPLAY_PROOF.md",
+        "docs/holdout-replay/",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",
@@ -583,6 +595,36 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         and eval_corpus_report.get("rejected_failed") == 4
         and len(eval_corpus_cases) == 4,
         "4 scored eval cases separate chosen/rejected answers" if not missing_eval_corpus_terms else "missing_terms=" + ", ".join(missing_eval_corpus_terms),
+    )
+
+    holdout_replay_proof = read_text("docs/HOLDOUT_REPLAY_PROOF.md")
+    holdout_replay_payload = json.loads(read_text("docs/holdout-replay-proof.json"))
+    holdout_replay_report = json.loads(read_text("docs/holdout-replay/holdout-replay-report.json"))
+    holdout_replay_cases = [line for line in read_text("docs/holdout-replay/holdout-replay-cases.jsonl").splitlines() if line.strip()]
+    holdout_replay_terms = [
+        "shipgrade-holdout-replay-ok",
+        "cases=8",
+        "base_overlap_repos=0",
+        "strong_passed=8/8",
+        "weak_failed=8/8",
+        "holdout_not_training=true",
+        "rubric_scored=true",
+        "source_body_copied_to_public=false",
+        "secret_scan=pass",
+    ]
+    missing_holdout_replay_terms = [term for term in holdout_replay_terms if term not in holdout_replay_proof]
+    add(
+        checks,
+        "scored-holdout-replay",
+        not missing_holdout_replay_terms
+        and holdout_replay_payload.get("ok") is True
+        and holdout_replay_report.get("ok") is True
+        and holdout_replay_report.get("case_count") == 8
+        and holdout_replay_report.get("holdout_not_training") is True
+        and holdout_replay_report.get("strong_passed") == 8
+        and holdout_replay_report.get("weak_failed") == 8
+        and len(holdout_replay_cases) == 8,
+        "8 holdout replay cases separate strong/weak answers with no base-repo overlap" if not missing_holdout_replay_terms else "missing_terms=" + ", ".join(missing_holdout_replay_terms),
     )
 
     if run_verify:

@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T12:04:41Z",
+  "generated_at": "2026-05-26T13:00:22Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 28,
-  "total": 28,
+  "passed": 29,
+  "total": 29,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "74 required files present"
+      "detail": "80 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -139,6 +139,11 @@
       "id": "scored-eval-corpus",
       "passed": true,
       "detail": "4 scored eval cases separate chosen/rejected answers"
+    },
+    {
+      "id": "scored-holdout-replay",
+      "passed": true,
+      "detail": "8 holdout replay cases separate strong/weak answers with no base-repo overlap"
     },
     {
       "id": "shipgrade-verify",

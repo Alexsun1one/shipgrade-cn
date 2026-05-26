@@ -116,6 +116,14 @@ Python tools are optional enhancers: `shipgrade_init.py` creates the workbench, 
 
 See [docs/zero-install.md](docs/zero-install.md).
 
+Zero install is tested, not just described. The release package runs a maintainer-side proof command that reads `SHIPGRADE.md`, wires `AGENTS.md`, `CLAUDE.md`, and Cursor rules into a temporary project, preserves existing user rules, and does not install Python or start a service in the target project:
+
+```bash
+python3 tools/shipgrade_zero_install_demo.py --clean
+```
+
+See [docs/ADOPTION_PROOF.md](docs/ADOPTION_PROOF.md).
+
 ## Quick Demo
 
 Requirements: Python 3.10+. No API key and no network access are required.
@@ -256,6 +264,7 @@ Current generated assets: 11 Repo Cards / 15 Pattern Cards / 90 Task Cards / 90 
 | `SKILL.md` | The actual skill instructions consumed by agents. |
 | `START_HERE.md` | The first navigation file for new users. |
 | `tools/shipgrade_init.py` | Generates the project workbench and agent-rule wiring. |
+| `tools/shipgrade_zero_install_demo.py` | Proves `SHIPGRADE.md` can wire a target project without Python or a service in that target. |
 | `tools/shipgrade_doctor.py` | Checks whether a handoff contains result, validation, source, risk, security, and next-step evidence. |
 | `tools/shipgrade_demo.py` | Runs the quick proof path. |
 | `tools/shipgrade_patterns.py` | Lists distilled patterns and writes `.shipgrade/pattern-brief.md`. |

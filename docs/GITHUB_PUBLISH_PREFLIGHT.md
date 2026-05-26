@@ -2,12 +2,12 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `21/21`
+- passed: `22/22`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
 | --- | --- | --- |
-| `required-files` | `pass` | 53 required files present |
+| `required-files` | `pass` | 56 required files present |
 | `readme-launch-surface` | `pass` | README has hook, proof, and preflight surface |
 | `readme-english-surface` | `pass` | README.en.md has standalone onboarding surface |
 | `shipgrade-zero-install-rule` | `pass` | SHIPGRADE.md is Chinese-first and zero-install |
@@ -27,6 +27,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `secret-and-metadata-scan` | `pass` | no generated metadata, local paths, or secret patterns |
 | `doctor-fake-rejection` | `pass` | fake completion rejected |
 | `demo-proof` | `pass` | demo proof captures init/reject/accept path |
+| `zero-install-adoption-proof` | `pass` | SHIPGRADE.md-only adoption proof preserves existing rules and avoids target Python/service |
 | `shipgrade-verify` | `pass` | shipgrade-verify-ok  |
 
 ## Publish Command Surface
@@ -34,6 +35,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 ```bash
 python3 tools/github_publish_preflight.py --write-docs --run-verify
 python3 tools/shipgrade_verify.py
+python3 tools/shipgrade_zero_install_demo.py --clean
 python3 tools/shipgrade_demo.py
 python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate
 python3 tools/shipgrade_patterns.py validate

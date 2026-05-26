@@ -4,9 +4,9 @@
 
 - First standalone GitHub-ready release.
 - Includes Codex / Claude / Cursor agent entry files.
-- Adds `shipgrade_init.py`, `install_skill.py`, `shipgrade_doctor.py`, `shipgrade_demo.py`, `shipgrade_patterns.py`, and `shipgrade_release_check.py`.
+- Adds `shipgrade_init.py`, `install_skill.py`, `shipgrade_doctor.py`, `shipgrade_demo.py`, `shipgrade_zero_install_demo.py`, `shipgrade_patterns.py`, and `shipgrade_release_check.py`.
 - Includes source-depth dossier, real-project gauntlet, transcript evidence, eval tasks, templates, and a 30-second init/reject/accept demo.
-- Adds `docs/DEMO_PROOF.md`, `docs/demo-proof.json`, `PUBLISH_PROOF.md`, and `publish-proof.json` so people can inspect the demo and staging proof without trusting a claim.
+- Adds `docs/DEMO_PROOF.md`, `docs/demo-proof.json`, `docs/ADOPTION_PROOF.md`, `docs/adoption-proof.json`, `PUBLISH_PROOF.md`, and `publish-proof.json` so people can inspect the demo, zero-install adoption, and staging proof without trusting a claim.
 - Adds high-signal source radar, source promotion queue, and source promotion batch evidence so discovery keeps turning into audited code review work.
 - Local GitHub publish preflight covers bilingual README onboarding, distillation-pipeline docs, generated Repo/Pattern/Task/Eval assets, `shipgrade_patterns.py`, `shipgrade_init.py --pattern`, `demo-proof`, fake-completion rejection, social preview dimensions, evidence manifest, workflow file, and secret/metadata scan.
 
@@ -14,6 +14,7 @@
 
 ```bash
 python3 tools/shipgrade_verify.py
+python3 tools/shipgrade_zero_install_demo.py --clean
 python3 tools/shipgrade_demo.py --clean
 python3 tools/shipgrade_init.py /tmp/shipgrade-demo-project --pattern command_topology_quality_gate
 python3 tools/github_publish_preflight.py --write-docs --run-verify

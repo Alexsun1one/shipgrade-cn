@@ -133,6 +133,14 @@ ShipGrade CN 的 Python 工具只做三件事:
 
 完整说明见 [docs/zero-install.md](docs/zero-install.md)。
 
+零安装不是口号。发布包会运行一条维护者验证命令,证明一个临时项目只读取 `SHIPGRADE.md` 就能写入 `AGENTS.md`、`CLAUDE.md` 和 Cursor 规则,同时保留已有用户规则、不安装 Python、不启动服务:
+
+```bash
+python3 tools/shipgrade_zero_install_demo.py --clean
+```
+
+证据见 [docs/ADOPTION_PROOF.md](docs/ADOPTION_PROOF.md)。
+
 ## 30 秒看懂差异
 
 ```bash
@@ -284,6 +292,7 @@ ShipGrade CN 真正产出的不是代码复制件,而是四类可以被检索、
 | `SKILL.md` | AI 编程助手真正会读取的核心技能说明。 |
 | `START_HERE.md` | 第一次打开项目时的路线图。 |
 | `tools/shipgrade_init.py` | 给任意项目生成 `.shipgrade/`、`AGENTS.md`、`CLAUDE.md` 和 Cursor 规则。 |
+| `tools/shipgrade_zero_install_demo.py` | 证明只读 `SHIPGRADE.md` 也能接入项目,不要求目标项目安装 Python 或启动服务。 |
 | `tools/shipgrade_doctor.py` | 检查交付说明是否包含结果、验证、来源、风险、安全边界和接手入口。 |
 | `tools/shipgrade_demo.py` | 30 秒演示初始化、拒绝假完成、接受合格交付。 |
 | `tools/shipgrade_patterns.py` | 查看 Pattern Card,并生成可执行的 `.shipgrade/pattern-brief.md`。 |

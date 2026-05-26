@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "command": "python3 tools/shipgrade_zero_install_demo.py --clean",
+  "contains": {
+    "zero_install_ok": true,
+    "source_shipgrade_md": true,
+    "preserved_existing_rules": true,
+    "no_python_helper_in_target": true,
+    "no_service": true,
+    "cleaned": true
+  },
+  "output_tail": [
+    "shipgrade-zero-install-demo-ok",
+    "target=$TMP/shipgrade-zero-install-demo-x_j2euk6",
+    "source=SHIPGRADE.md",
+    "created=SHIPGRADE.md,AGENTS.md,CLAUDE.md,.cursor/rules/shipgrade.mdc",
+    "preserved_existing_rules=true",
+    "python_helper_used_in_target=false",
+    "service_started=false",
+    "next=ask an AI coding agent: 用 ShipGrade 做这个任务",
+    "cleaned=true"
+  ]
+}

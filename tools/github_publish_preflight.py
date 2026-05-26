@@ -54,9 +54,12 @@ REQUIRED_FILES = [
     "docs/evidence/repo_engineering_distillation/eval_cases.jsonl",
     "docs/DEMO_PROOF.md",
     "docs/demo-proof.json",
+    "docs/ADOPTION_PROOF.md",
+    "docs/adoption-proof.json",
     "tools/shipgrade_verify.py",
     "tools/shipgrade_release_check.py",
     "tools/shipgrade_demo.py",
+    "tools/shipgrade_zero_install_demo.py",
     "tools/shipgrade_patterns.py",
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
@@ -129,6 +132,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "两种接入方式",
         "SHIPGRADE.md",
         "docs/zero-install.md",
+        "python3 tools/shipgrade_zero_install_demo.py --clean",
+        "docs/ADOPTION_PROOF.md",
         "python3 tools/shipgrade_demo.py",
         "python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate",
         "python3 tools/shipgrade_patterns.py list",
@@ -164,6 +169,8 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "Two Install Paths",
         "SHIPGRADE.md",
         "docs/zero-install.md",
+        "python3 tools/shipgrade_zero_install_demo.py --clean",
+        "docs/ADOPTION_PROOF.md",
         "Generated Structure",
         "What Is Inside",
         "Evidence Snapshot",
@@ -382,6 +389,17 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
         "demo proof captures init/reject/accept path" if not missing_demo_terms else "missing_terms=" + ", ".join(missing_demo_terms),
     )
 
+    adoption_proof = read_text("docs/ADOPTION_PROOF.md")
+    adoption_payload = json.loads(read_text("docs/adoption-proof.json"))
+    adoption_terms = ["shipgrade-zero-install-demo-ok", "source=SHIPGRADE.md", "preserved_existing_rules=true", "python_helper_used_in_target=false", "service_started=false"]
+    missing_adoption_terms = [term for term in adoption_terms if term not in adoption_proof]
+    add(
+        checks,
+        "zero-install-adoption-proof",
+        not missing_adoption_terms and adoption_payload.get("ok") is True,
+        "SHIPGRADE.md-only adoption proof preserves existing rules and avoids target Python/service" if not missing_adoption_terms else "missing_terms=" + ", ".join(missing_adoption_terms),
+    )
+
     if run_verify:
         verify = run([sys.executable, "tools/shipgrade_verify.py"])
         add(checks, "shipgrade-verify", verify.returncode == 0 and "shipgrade-verify-ok" in verify.stdout, (verify.stdout + verify.stderr)[-500:])
@@ -423,6 +441,7 @@ def write_docs(checks: list[dict[str, Any]]) -> None:
             "```bash",
             "python3 tools/github_publish_preflight.py --write-docs --run-verify",
             "python3 tools/shipgrade_verify.py",
+            "python3 tools/shipgrade_zero_install_demo.py --clean",
             "python3 tools/shipgrade_demo.py",
             "python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate",
             "python3 tools/shipgrade_patterns.py validate",

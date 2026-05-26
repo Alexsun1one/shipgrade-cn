@@ -33,6 +33,7 @@ REQUIRED_FILES = [
     "tools/shipgrade_init.py",
     "tools/shipgrade_demo.py",
     "tools/shipgrade_patterns.py",
+    "tools/shipgrade_zero_install_demo.py",
     "tools/install_skill.py",
     "tools/shipgrade_release_check.py",
     "demo/demo-task.md",
@@ -127,6 +128,9 @@ def main() -> None:
         pattern_brief = pattern_target / ".shipgrade" / "pattern-brief.md"
         if not pattern_brief.exists() or "先读命令拓扑" not in pattern_brief.read_text(encoding="utf-8"):
             fail("init --pattern did not create pattern brief")
+    zero_install_out = run([sys.executable, "tools/shipgrade_zero_install_demo.py", "--clean"])
+    if "shipgrade-zero-install-demo-ok" not in zero_install_out or "preserved_existing_rules=true" not in zero_install_out:
+        fail("zero-install demo did not prove SHIPGRADE.md adoption")
     demo_out = run([sys.executable, "tools/shipgrade_demo.py"])
     if "shipgrade-demo-ok" not in demo_out or "fake_rejection=" not in demo_out:
         fail("demo tool did not prove init/reject/accept path")

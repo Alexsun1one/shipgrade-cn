@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-26T08:11:36Z",
+  "generated_at": "2026-05-26T09:08:40Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 21,
-  "total": 21,
+  "passed": 22,
+  "total": 22,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "53 required files present"
+      "detail": "56 required files present"
     },
     {
       "id": "readme-launch-surface",
@@ -104,6 +104,11 @@
       "id": "demo-proof",
       "passed": true,
       "detail": "demo proof captures init/reject/accept path"
+    },
+    {
+      "id": "zero-install-adoption-proof",
+      "passed": true,
+      "detail": "SHIPGRADE.md-only adoption proof preserves existing rules and avoids target Python/service"
     },
     {
       "id": "shipgrade-verify",

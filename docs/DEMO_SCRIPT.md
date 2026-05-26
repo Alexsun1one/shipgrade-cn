@@ -6,7 +6,10 @@ Goal: record a 3 minute demo that makes the repository feel immediately useful a
 
 Show the README first screen:
 
+- `assets/shipgrade-hero-cn.png`
 - `assets/shipgrade-loop.png`
+- `assets/shipgrade-proof-map-cn.png`
+- `assets/shipgrade-audience-cn.png`
 - 30 second quick proof command
 - Evidence snapshot
 

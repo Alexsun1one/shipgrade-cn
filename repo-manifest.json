@@ -2,7 +2,7 @@
   "name": "shipgrade-cn",
   "display_name": "ShipGrade CN",
   "version": "v0.1",
-  "generated_at": "2026-05-26T02:53:19Z",
+  "generated_at": "2026-05-26T04:13:43Z",
   "source_dist": "dist/ship-grade-engineering-cn-v0.1",
   "source_manifest_name": "ship-grade-engineering-cn",
   "ready_to_git_init": true,
@@ -11,7 +11,7 @@
     "name": "shipgrade-cn",
     "description": "中文工程 skill for Codex / Claude Code / Cursor: turn vague Chinese requests into verifiable engineering delivery.",
     "homepage": "https://github.com/<owner>/shipgrade-cn",
-    "social_preview": "assets/shipgrade-loop.png",
+    "social_preview": "assets/shipgrade-hero-cn.png",
     "topics": [
       "agent-skills",
       "ai-engineering",
@@ -34,8 +34,8 @@
     "release": "bash scripts/package.sh"
   },
   "stats": {
-    "file_count": 100,
-    "total_bytes": 1486124
+    "file_count": 105,
+    "total_bytes": 4922443
   },
   "forbidden": [
     ".DS_Store",

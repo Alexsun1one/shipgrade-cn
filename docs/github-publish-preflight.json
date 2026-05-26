@@ -1,19 +1,24 @@
 {
-  "generated_at": "2026-05-26T02:56:54Z",
+  "generated_at": "2026-05-26T04:16:21Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 16,
-  "total": 16,
+  "passed": 17,
+  "total": 17,
   "checks": [
     {
       "id": "required-files",
       "passed": true,
-      "detail": "39 required files present"
+      "detail": "44 required files present"
     },
     {
       "id": "readme-launch-surface",
       "passed": true,
       "detail": "README has hook, proof, and preflight surface"
+    },
+    {
+      "id": "readme-english-surface",
+      "passed": true,
+      "detail": "README.en.md has standalone onboarding surface"
     },
     {
       "id": "skill-frontmatter",
@@ -53,7 +58,7 @@
     {
       "id": "social-preview",
       "passed": true,
-      "detail": "dimensions=(1600, 900)"
+      "detail": "dimensions=(1672, 941)"
     },
     {
       "id": "demo-gif",

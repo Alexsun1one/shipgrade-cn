@@ -6,7 +6,7 @@ This file is for the human who publishes ShipGrade CN.
 
 - Repository name: `shipgrade-cn`
 - Description: `中文工程 skill for Codex / Claude Code / Cursor: turn vague Chinese requests into verifiable engineering delivery.`
-- Social preview: `assets/shipgrade-loop.png`
+- Social preview: `assets/shipgrade-hero-cn.png`
 - Topics: copy from `.github/repo-metadata.json`
 
 ## Publish Preflight

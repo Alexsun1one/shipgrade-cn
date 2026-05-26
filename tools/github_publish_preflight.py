@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_FILES = [
     "README.md",
+    "README.en.md",
     "START_HERE.md",
     "SKILL.md",
     "agents/openai.yaml",
@@ -34,6 +35,7 @@ REQUIRED_FILES = [
     ".github/pull_request_template.md",
     "docs/EVIDENCE_INDEX.md",
     "docs/public-evidence-manifest.json",
+    "docs/repository-engineering-distillation-pipeline.md",
     "docs/sandbox-runtime-cases.md",
     "docs/high-signal-source-radar.md",
     "docs/source-promotion-queue.md",
@@ -50,9 +52,12 @@ REQUIRED_FILES = [
     "tools/github_publish_preflight.py",
     "scripts/create-public-stage.py",
     "scripts/verify.sh",
+    "assets/shipgrade-hero-cn.png",
     "assets/shipgrade-loop.png",
     "assets/shipgrade-terminal-demo.png",
     "assets/shipgrade-demo.gif",
+    "assets/shipgrade-proof-map-cn.png",
+    "assets/shipgrade-audience-cn.png",
 ]
 
 SECRET_PATTERNS = [
@@ -102,26 +107,48 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
 
     readme = read_text("README.md")
     readme_terms = [
-        "3 分钟上手",
-        "30 秒跑出差异",
+        "5 分钟装进你的项目",
+        "30 秒看懂差异",
         "python3 tools/shipgrade_demo.py",
         "docs/DEMO_PROOF.md",
+        "assets/shipgrade-hero-cn.png",
         "assets/shipgrade-demo.gif",
-        "为什么值得 Star",
+        "assets/shipgrade-proof-map-cn.png",
+        "assets/shipgrade-audience-cn.png",
+        "仓库工程蒸馏流水线",
+        "四类蒸馏资产",
+        "docs/repository-engineering-distillation-pipeline.md",
+        "怎么用",
+        "里面有什么",
+        "工作流结构",
         "证据快照",
-        "GitHub publish preflight",
+        "发布前检查",
         "拒绝“看起来好了”的假完成",
-        "High-signal source radar",
-        "Source promotion queue",
-        "Source promotion batch",
-        "Source promotion sandbox cases",
         "docs/GITHUB_PUBLISH_PREFLIGHT.md",
         "docs/EVIDENCE_INDEX.md",
-        "Sandbox runtime matrix",
-        "Deep code case studies",
+        "代码级案例研究",
+        "晋级信源沙箱",
     ]
     missing_terms = [term for term in readme_terms if term not in readme]
     add(checks, "readme-launch-surface", not missing_terms, "missing_terms=" + ", ".join(missing_terms) if missing_terms else "README has hook, proof, and preflight surface")
+
+    readme_en = read_text("README.en.md")
+    readme_en_terms = [
+        "Quick Demo",
+        "Install Into A Project",
+        "Generated Structure",
+        "What Is Inside",
+        "Evidence Snapshot",
+        "Release Preflight",
+        "Repository Engineering Distillation Pipeline",
+        "Distilled Asset Types",
+        "python3 tools/shipgrade_demo.py",
+        "python3 tools/shipgrade_init.py",
+        "docs/EVIDENCE_INDEX.md",
+        "docs/source-promotion-sandbox-cases.md",
+    ]
+    missing_en_terms = [term for term in readme_en_terms if term not in readme_en]
+    add(checks, "readme-english-surface", not missing_en_terms, "missing_terms=" + ", ".join(missing_en_terms) if missing_en_terms else "README.en.md has standalone onboarding surface")
 
     skill = read_text("SKILL.md")
     frontmatter = re.match(r"^---\n(.*?)\n---\n", skill, re.DOTALL)

@@ -183,6 +183,23 @@ def collect_checks(run_verify: bool) -> list[dict[str, Any]]:
     missing_en_terms = [term for term in readme_en_terms if term not in readme_en]
     add(checks, "readme-english-surface", not missing_en_terms, "missing_terms=" + ", ".join(missing_en_terms) if missing_en_terms else "README.en.md has standalone onboarding surface")
 
+    shipgrade = read_text("SHIPGRADE.md")
+    shipgrade_terms = [
+        "ShipGrade CN 零安装规则",
+        "中文工程交付契约",
+        "用户只需要说什么",
+        "如果用户只说“用 ShipGrade 做”",
+        "不要覆盖用户已有规则",
+        "每次任务开始前",
+        "每次任务完成时",
+        "中文小白",
+        "专业工程师",
+        "可选增强,不是前置条件",
+        "No Python installation",
+    ]
+    missing_shipgrade_terms = [term for term in shipgrade_terms if term not in shipgrade]
+    add(checks, "shipgrade-zero-install-rule", not missing_shipgrade_terms, "missing_terms=" + ", ".join(missing_shipgrade_terms) if missing_shipgrade_terms else "SHIPGRADE.md is Chinese-first and zero-install")
+
     skill = read_text("SKILL.md")
     frontmatter = re.match(r"^---\n(.*?)\n---\n", skill, re.DOTALL)
     frontmatter_text = frontmatter.group(1) if frontmatter else ""

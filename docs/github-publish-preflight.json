@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-26T07:52:02Z",
+  "generated_at": "2026-05-26T08:11:36Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 20,
-  "total": 20,
+  "passed": 21,
+  "total": 21,
   "checks": [
     {
       "id": "required-files",
@@ -19,6 +19,11 @@
       "id": "readme-english-surface",
       "passed": true,
       "detail": "README.en.md has standalone onboarding surface"
+    },
+    {
+      "id": "shipgrade-zero-install-rule",
+      "passed": true,
+      "detail": "SHIPGRADE.md is Chinese-first and zero-install"
     },
     {
       "id": "skill-frontmatter",

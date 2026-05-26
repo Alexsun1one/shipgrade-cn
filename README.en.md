@@ -93,7 +93,7 @@ The delivery contract has six parts:
 
 ## Zero Install: One MD File
 
-**No Python, no background service, no API key.** The lowest-friction version is just [SHIPGRADE.md](SHIPGRADE.md). Put it in a project or ask Codex, Claude Code, or Cursor to read it.
+**No Python, no background service, no API key.** The lowest-friction version is the Chinese-first [SHIPGRADE.md](SHIPGRADE.md). Put it in a project or ask Codex, Claude Code, or Cursor to read it.
 
 You can tell an AI coding tool:
 

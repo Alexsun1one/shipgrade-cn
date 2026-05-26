@@ -98,7 +98,7 @@ ShipGrade CN 会把一次模糊请求压成五件事:
 
 ## 零安装: 只用一个 MD 文件
 
-**不需要 Python、不需要服务、不需要 API key。** 最低门槛就是把 [SHIPGRADE.md](SHIPGRADE.md) 放进你的项目,或让 Codex / Claude Code / Cursor 读取它。
+**不需要 Python、不需要服务、不需要 API key。** 最低门槛就是把中文优先的 [SHIPGRADE.md](SHIPGRADE.md) 放进你的项目,或让 Codex / Claude Code / Cursor 读取它。
 
 你可以直接对任意 AI 编程工具说:
 

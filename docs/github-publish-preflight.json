@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-26T05:39:07Z",
+  "generated_at": "2026-05-26T05:54:19Z",
   "kind": "local_github_publish_preflight",
   "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
-  "passed": 19,
-  "total": 19,
+  "passed": 20,
+  "total": 20,
   "checks": [
     {
       "id": "required-files",
@@ -49,6 +49,11 @@
       "id": "patterns-tool",
       "passed": true,
       "detail": "shipgrade-patterns-ok patterns=15 tasks=90 evals=90; show=command_topology_quality_gate; brief=pattern-brief-ok"
+    },
+    {
+      "id": "init-pattern-workbench",
+      "passed": true,
+      "detail": "shipgrade_init --pattern writes pattern-brief and wires agent rules"
     },
     {
       "id": "source-promotion-batch",

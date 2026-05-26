@@ -92,7 +92,13 @@ python3 tools/install_skill.py --force
 
 ## 用蒸馏出来的模式开工
 
-如果你不是从空白 brief 开始,可以直接挑一个真实仓库里提炼过的工程模式:
+如果你不是从空白 brief 开始,可以在初始化时直接带一个真实仓库里提炼过的工程模式:
+
+```bash
+python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate
+```
+
+或者在已有项目里单独生成模式 brief:
 
 ```bash
 python3 tools/shipgrade_patterns.py list
@@ -107,6 +113,7 @@ python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type e
 ```text
 .shipgrade/
   task-brief.md       # 把口语需求压成目标、非目标、证据、验收和第一刀
+  pattern-brief.md    # 可选: 从真实仓库蒸馏模式生成的开工 brief
   quality-gate.md     # 每次交付前必须过的质量门
   handoff.md          # 下一位 agent 或未来自己的接手入口
   AGENTS.snippet.md   # 可追加到项目 AGENTS.md 的规则片段

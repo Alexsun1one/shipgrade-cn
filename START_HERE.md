@@ -23,6 +23,7 @@ python3 tools/shipgrade_doctor.py demo/demo-output.md
 你也可以不从空白 brief 开始,而是从真实仓库里提炼出的工程模式开工:
 
 ```bash
+python3 tools/shipgrade_init.py /tmp/shipgrade-demo-project --pattern command_topology_quality_gate
 python3 tools/shipgrade_patterns.py list
 python3 tools/shipgrade_patterns.py show command_topology_quality_gate
 python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type engineering_plan --write .shipgrade/pattern-brief.md

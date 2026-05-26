@@ -12,11 +12,11 @@ It proves the first-screen demo path does three things without private code, cre
 
 ```text
 shipgrade-demo-ok
-target=$TMP/shipgrade-demo-project-f_wwidpt
+target=$TMP/shipgrade-demo-project-el4ooye9
 created=.shipgrade/task-brief.md,.shipgrade/quality-gate.md,.shipgrade/handoff.md,AGENTS.md,CLAUDE.md,.cursor/rules/shipgrade.mdc,fake-completion.md,accepted-handoff.md
-fake_rejection=$TMP/shipgrade-demo-project-f_wwidpt/fake-completion.md: ship-grade-fail vague_or_unverified_language missing_concrete_artifact_path missing_command_or_browser_evidence
-accepted=$TMP/shipgrade-demo-project-f_wwidpt/accepted-handoff.md: ship-grade-ok
-next=open $TMP/shipgrade-demo-project-f_wwidpt/.shipgrade/task-brief.md
+fake_rejection=$TMP/shipgrade-demo-project-el4ooye9/fake-completion.md: ship-grade-fail vague_or_unverified_language missing_concrete_artifact_path missing_command_or_browser_evidence
+accepted=$TMP/shipgrade-demo-project-el4ooye9/accepted-handoff.md: ship-grade-ok
+next=open $TMP/shipgrade-demo-project-el4ooye9/.shipgrade/task-brief.md
 cleaned=true
 ```
 

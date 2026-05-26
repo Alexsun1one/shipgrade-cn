@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T05:38:30Z",
+  "generated_at": "2026-05-26T05:53:02Z",
   "purpose": "Public, redacted, repository-local evidence index for README and QUALITY_REPORT claims.",
   "boundary": "No private source bodies, secrets, cookies, sessions, auth databases, browser profiles, private keys, or API tokens.",
   "evidence_files": [
@@ -126,6 +126,7 @@
   "verification_commands": [
     "python3 tools/shipgrade_verify.py",
     "python3 tools/shipgrade_release_check.py",
+    "python3 tools/shipgrade_init.py /tmp/shipgrade-demo-project --pattern command_topology_quality_gate",
     "python3 scripts/create-public-stage.py /tmp/shipgrade-cn-public --init-git",
     "bash scripts/verify.sh"
   ]

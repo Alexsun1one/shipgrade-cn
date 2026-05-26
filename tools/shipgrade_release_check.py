@@ -121,6 +121,12 @@ def main() -> None:
     patterns_show = run([sys.executable, "tools/shipgrade_patterns.py", "show", "command_topology_quality_gate"])
     if "先读命令拓扑" not in patterns_show:
         fail("patterns tool did not show core pattern")
+    with tempfile.TemporaryDirectory() as tmp:
+        pattern_target = Path(tmp) / "pattern-project"
+        run([sys.executable, "tools/shipgrade_init.py", str(pattern_target), "--pattern", "command_topology_quality_gate"])
+        pattern_brief = pattern_target / ".shipgrade" / "pattern-brief.md"
+        if not pattern_brief.exists() or "先读命令拓扑" not in pattern_brief.read_text(encoding="utf-8"):
+            fail("init --pattern did not create pattern brief")
     demo_out = run([sys.executable, "tools/shipgrade_demo.py"])
     if "shipgrade-demo-ok" not in demo_out or "fake_rejection=" not in demo_out:
         fail("demo tool did not prove init/reject/accept path")

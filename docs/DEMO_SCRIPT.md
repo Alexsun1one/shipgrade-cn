@@ -28,11 +28,11 @@ Show `shipgrade-demo-ok`, `fake_rejection=...ship-grade-fail`, and `accepted=...
 Run:
 
 ```bash
-python3 tools/shipgrade_init.py /tmp/shipgrade-demo-project
+python3 tools/shipgrade_init.py /tmp/shipgrade-demo-project --pattern command_topology_quality_gate
 find /tmp/shipgrade-demo-project -maxdepth 3 -type f | sort
 ```
 
-Open `.shipgrade/task-brief.md`, `.shipgrade/quality-gate.md`, and `.shipgrade/handoff.md`.
+Open `.shipgrade/task-brief.md`, `.shipgrade/pattern-brief.md`, `.shipgrade/quality-gate.md`, and `.shipgrade/handoff.md`.
 
 ## Scene 3 - Verify The Package
 

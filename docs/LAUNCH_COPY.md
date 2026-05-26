@@ -13,6 +13,7 @@ ShipGrade CN turns vague Chinese requests into verifiable engineering delivery f
 What is inside:
 
 - `shipgrade_init.py`: creates `.shipgrade/` and wires AGENTS/CLAUDE/Cursor rules into the target project.
+- `shipgrade_init.py --pattern`: starts the project from a distilled engineering pattern instead of a blank brief.
 - `shipgrade_doctor.py`: rejects fake completion unless there is a concrete artifact and command/browser evidence.
 - Evidence backbone: 88 repo structure scans, 11 repos / 17649 files / 5381 test paths / 786 eval paths, 3/3 cases / 13/13 required steps / 264 configured upstream tests (`affaan-m/ECC`, `browser-use/browser-use`, `addyosmani/agent-skills`), and 3/3 cases and 12/12 steps across `Yeachan-Heo/oh-my-claudecode`, `SuperClaude-Org/SuperClaude_Framework`, `github/spec-kit`, with 590 configured upstream tests discovered.
 - Public release kit: CI, license/notice/security/contributing, issue templates, publish preflight, staging script, and release package.
@@ -21,7 +22,7 @@ Run:
 
 ```bash
 python3 tools/shipgrade_demo.py
-python3 tools/shipgrade_init.py /tmp/my-project
+python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate
 python3 tools/github_publish_preflight.py --write-docs --run-verify
 python3 tools/shipgrade_verify.py
 ```

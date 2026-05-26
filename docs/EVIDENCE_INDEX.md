@@ -18,6 +18,7 @@ This file maps public README claims to repository-local evidence. It exists so S
 | Promoted runtime candidates are actually executed | `docs/source-promotion-sandbox-cases.md` and `docs/evidence/source_promotion_sandbox_cases.json` |
 | Deep code case studies inspected runtime clones | `docs/deep-code-case-studies.md` and `docs/evidence/deep_code_case_studies.json` |
 | Repo/Pattern/Task/Eval assets are generated from code evidence | `docs/repo-engineering-distillation-assets.md` and `docs/evidence/repo_engineering_distillation/*.jsonl` |
+| Distilled patterns can initialize a real project workbench | `tools/shipgrade_init.py`, `tools/shipgrade_patterns.py`, and `docs/GITHUB_PUBLISH_PREFLIGHT.md` |
 | Source overlap was compressed, not blindly merged | `docs/overlap-decisions.md` and `docs/evidence/source_overlap_report.json` |
 | Adapter metrics are bounded execution evidence | `QUALITY_REPORT.md` and `docs/evidence/qwen_lora_quality_review.json` |
 | Non-self release artifacts have stable hashes | `docs/public-evidence-manifest.json` |
@@ -27,6 +28,7 @@ This file maps public README claims to repository-local evidence. It exists so S
 ```bash
 python3 tools/shipgrade_verify.py
 python3 tools/shipgrade_release_check.py
+python3 tools/shipgrade_init.py /tmp/shipgrade-demo-project --pattern command_topology_quality_gate
 python3 scripts/create-public-stage.py /tmp/shipgrade-cn-public --init-git
 ```
 

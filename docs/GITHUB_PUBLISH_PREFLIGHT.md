@@ -2,7 +2,7 @@
 
 This is a local publish-readiness report for the standalone GitHub repository. It does not claim that remote GitHub Actions have run yet.
 
-- passed: `19/19`
+- passed: `20/20`
 - remote CI boundary: `must be verified after the real GitHub repository exists`
 
 | check | status | detail |
@@ -16,6 +16,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 | `public-evidence-manifest` | `pass` | evidence_files=17 |
 | `repo-engineering-distillation-assets` | `pass` | summary=11/15/90/90 files={'repo_cards': 11, 'pattern_cards': 15, 'task_cards': 90, 'eval_cases': 90} |
 | `patterns-tool` | `pass` | shipgrade-patterns-ok patterns=15 tasks=90 evals=90; show=command_topology_quality_gate; brief=pattern-brief-ok |
+| `init-pattern-workbench` | `pass` | shipgrade_init --pattern writes pattern-brief and wires agent rules |
 | `source-promotion-batch` | `pass` | selected=4 audited=4 runtime=2 static_smoke=2 |
 | `source-promotion-sandbox-cases` | `pass` | cases=3/3 required=13/13 configured_tests=264 |
 | `sandbox-runtime-matrix` | `pass` | cases=3/3 steps=12/12 |
@@ -33,6 +34,7 @@ This is a local publish-readiness report for the standalone GitHub repository. I
 python3 tools/github_publish_preflight.py --write-docs --run-verify
 python3 tools/shipgrade_verify.py
 python3 tools/shipgrade_demo.py
+python3 tools/shipgrade_init.py /tmp/my-project --pattern command_topology_quality_gate
 python3 tools/shipgrade_patterns.py validate
 python3 tools/shipgrade_patterns.py brief command_topology_quality_gate --type engineering_plan --write .shipgrade/pattern-brief.md
 python3 scripts/create-public-stage.py /tmp/shipgrade-cn-public --init-git

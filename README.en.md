@@ -89,7 +89,13 @@ python3 tools/install_skill.py --force
 
 ## Use A Distilled Pattern
 
-If you are not starting from a blank brief, pick an engineering pattern distilled from real repositories:
+If you are not starting from a blank brief, initialize the project with an engineering pattern distilled from real repositories:
+
+```bash
+python3 tools/shipgrade_init.py /path/to/your-project --pattern command_topology_quality_gate
+```
+
+Or write the pattern brief into an existing project:
 
 ```bash
 python3 tools/shipgrade_patterns.py list
@@ -104,6 +110,7 @@ The generated `pattern-brief.md` is ready for Codex, Claude Code, or Cursor. It 
 ```text
 .shipgrade/
   task-brief.md
+  pattern-brief.md
   quality-gate.md
   handoff.md
   AGENTS.snippet.md

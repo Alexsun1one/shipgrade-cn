@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-05-26T00:00:37Z",
+  "selected_count": 4,
+  "audited_count": 4,
+  "runtime_candidate_count": 2,
+  "static_smoke_pass_count": 2,
+  "rows": [
+    {
+      "repo": "affaan-m/ECC",
+      "promotion_score": 378,
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "manifest_license_policy": "allow_extract",
+      "manifest_license_spdx": "MIT",
+      "github_license_probe": {
+        "ok": true,
+        "path": "LICENSE",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "html_url": "https://github.com/affaan-m/ECC/blob/main/LICENSE"
+      },
+      "source_boundary": "allow_extract in source_manifest; body extraction remains provenance-tracked and excludes secrets/private/session/cookie/auth data",
+      "clone_status": "audited",
+      "clone_action": "cloned",
+      "clone_returncode": 0,
+      "file_count": 2870,
+      "source_file_count": 156,
+      "test_file_count": 304,
+      "eval_file_count": 85,
+      "doc_file_count": 1409,
+      "governance_file_count": 274,
+      "runtime_decision": {
+        "tier": "runtime_candidate",
+        "score": 3521,
+        "policy": "Run only in disposable sandbox with no secrets and preferably no network. Default audit is clone plus static evidence."
+      },
+      "safe_static_smoke": {
+        "python_py_compile": {
+          "files_checked": 40,
+          "returncode": 0,
+          "stderr_tail": ""
+        }
+      },
+      "command_topology": {
+        "package_manager": "npm",
+        "script_names": [
+          "build:opencode",
+          "catalog:check",
+          "command-registry:check",
+          "lint",
+          "test"
+        ],
+        "language_commands": {
+          "python": [
+            "python -m pytest",
+            "python -m compileall"
+          ]
+        },
+        "runtime_tier": "runtime_candidate"
+      },
+      "next_step": "promote to a disposable no-secret sandbox case after reviewing install lifecycle and test command scope"
+    },
+    {
+      "repo": "addyosmani/agent-skills",
+      "promotion_score": 353,
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "manifest_license_policy": "allow_extract",
+      "manifest_license_spdx": "MIT",
+      "github_license_probe": {
+        "ok": true,
+        "path": "LICENSE",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "html_url": "https://github.com/addyosmani/agent-skills/blob/main/LICENSE"
+      },
+      "source_boundary": "allow_extract in source_manifest; body extraction remains provenance-tracked and excludes secrets/private/session/cookie/auth data",
+      "clone_status": "audited",
+      "clone_action": "cloned",
+      "clone_returncode": 0,
+      "file_count": 77,
+      "source_file_count": 0,
+      "test_file_count": 11,
+      "eval_file_count": 0,
+      "doc_file_count": 14,
+      "governance_file_count": 7,
+      "runtime_decision": {
+        "tier": "deep_static_candidate",
+        "score": 61,
+        "policy": "Run only in disposable sandbox with no secrets and preferably no network. Default audit is clone plus static evidence."
+      },
+      "safe_static_smoke": {},
+      "command_topology": {
+        "package_manager": null,
+        "script_names": [],
+        "language_commands": {},
+        "runtime_tier": "deep_static_candidate"
+      },
+      "next_step": "run deep-code case study first; defer executable sandbox"
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "promotion_score": 324,
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "manifest_license_policy": "allow_extract",
+      "manifest_license_spdx": "MIT",
+      "github_license_probe": {
+        "ok": true,
+        "path": "LICENSE",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "html_url": "https://github.com/browser-use/browser-use/blob/main/LICENSE"
+      },
+      "source_boundary": "allow_extract in source_manifest; body extraction remains provenance-tracked and excludes secrets/private/session/cookie/auth data",
+      "clone_status": "audited",
+      "clone_action": "cloned",
+      "clone_returncode": 0,
+      "file_count": 486,
+      "source_file_count": 0,
+      "test_file_count": 104,
+      "eval_file_count": 4,
+      "doc_file_count": 17,
+      "governance_file_count": 14,
+      "runtime_decision": {
+        "tier": "runtime_candidate",
+        "score": 373,
+        "policy": "Run only in disposable sandbox with no secrets and preferably no network. Default audit is clone plus static evidence."
+      },
+      "safe_static_smoke": {
+        "python_py_compile": {
+          "files_checked": 40,
+          "returncode": 0,
+          "stderr_tail": ""
+        }
+      },
+      "command_topology": {
+        "package_manager": null,
+        "script_names": [],
+        "language_commands": {
+          "python": [
+            "python -m pytest",
+            "python -m compileall"
+          ]
+        },
+        "runtime_tier": "runtime_candidate"
+      },
+      "next_step": "inspect language/package files manually before sandbox execution"
+    },
+    {
+      "repo": "VoltAgent/awesome-agent-skills",
+      "promotion_score": 323,
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "manifest_license_policy": "allow_extract",
+      "manifest_license_spdx": "MIT",
+      "github_license_probe": {
+        "ok": true,
+        "path": "LICENSE",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "html_url": "https://github.com/VoltAgent/awesome-agent-skills/blob/main/LICENSE"
+      },
+      "source_boundary": "allow_extract in source_manifest; body extraction remains provenance-tracked and excludes secrets/private/session/cookie/auth data",
+      "clone_status": "audited",
+      "clone_action": "cloned",
+      "clone_returncode": 0,
+      "file_count": 4,
+      "source_file_count": 0,
+      "test_file_count": 0,
+      "eval_file_count": 0,
+      "doc_file_count": 1,
+      "governance_file_count": 2,
+      "runtime_decision": {
+        "tier": "docs_or_metadata_candidate",
+        "score": 5,
+        "policy": "Run only in disposable sandbox with no secrets and preferably no network. Default audit is clone plus static evidence."
+      },
+      "safe_static_smoke": {},
+      "command_topology": {
+        "package_manager": null,
+        "script_names": [],
+        "language_commands": {},
+        "runtime_tier": "docs_or_metadata_candidate"
+      },
+      "next_step": "keep as docs/metadata signal; executable sandbox is low priority"
+    }
+  ],
+  "skipped": [],
+  "boundary": "Promotion batch only. It performs sparse clone and safe static smoke, not arbitrary dependency execution."
+}

@@ -1,0 +1,673 @@
+{
+  "generated_at": "2026-05-25T23:25:35Z",
+  "checks": [
+    {
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "kind": "tree_inventory",
+      "argv": [
+        "git",
+        "ls-files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files": 409,
+        "tests": 30,
+        "evals_or_benchmarks": 0,
+        "ci": 6,
+        "docs": 138
+      },
+      "lesson": "Structure first: count tests/evals/CI/docs before deciding whether runtime execution is worth the risk."
+    },
+    {
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "kind": "npm_metadata",
+      "relative_cwd": ".",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "lint",
+          "postinstall",
+          "test",
+          "update"
+        ],
+        "dependency_count": 0,
+        "dev_dependency_count": 0
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "kind": "python_py_compile",
+      "argv": [
+        "python3",
+        "-m",
+        "py_compile",
+        "40 files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files_checked": 40,
+        "stderr_tail": ""
+      },
+      "lesson": "Syntax-only checks are useful smoke tests because they do not import dependencies or execute app code."
+    },
+    {
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "kind": "make_dry_run",
+      "argv": [
+        "make",
+        "-n"
+      ],
+      "exit_code": 0,
+      "evidence": "echo \"🔧 Installing SuperClaude Framework (development mode)...\"\nuv pip install -e \".[dev]\"\necho \"\"\necho \"✅ Installation complete!\"\necho \"   Run 'make verify' to check installation\"\n",
+      "lesson": "A dry-run Makefile is enough to learn command topology; full execution still belongs in a sandbox."
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "kind": "tree_inventory",
+      "argv": [
+        "git",
+        "ls-files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files": 1725,
+        "tests": 579,
+        "evals_or_benchmarks": 104,
+        "ci": 9,
+        "docs": 197
+      },
+      "lesson": "Structure first: count tests/evals/CI/docs before deciding whether runtime execution is worth the risk."
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "kind": "python_py_compile",
+      "argv": [
+        "python3",
+        "-m",
+        "py_compile",
+        "40 files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files_checked": 40,
+        "stderr_tail": ""
+      },
+      "lesson": "Syntax-only checks are useful smoke tests because they do not import dependencies or execute app code."
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "kind": "make_dry_run",
+      "argv": [
+        "make",
+        "-n"
+      ],
+      "exit_code": 0,
+      "evidence": "pre-commit install\n",
+      "lesson": "A dry-run Makefile is enough to learn command topology; full execution still belongs in a sandbox."
+    },
+    {
+      "repo": "Yeachan-Heo/oh-my-claudecode",
+      "kind": "tree_inventory",
+      "argv": [
+        "git",
+        "ls-files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files": 5621,
+        "tests": 2735,
+        "evals_or_benchmarks": 83,
+        "ci": 7,
+        "docs": 80
+      },
+      "lesson": "Structure first: count tests/evals/CI/docs before deciding whether runtime execution is worth the risk."
+    },
+    {
+      "repo": "Yeachan-Heo/oh-my-claudecode",
+      "kind": "npm_metadata",
+      "relative_cwd": ".",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "bench:prompts",
+          "bench:prompts:compare",
+          "bench:prompts:save",
+          "build",
+          "build:bridge",
+          "build:bridge-entry",
+          "build:cli",
+          "build:runtime-cli",
+          "build:team-server",
+          "compose-docs",
+          "dev",
+          "dev:full",
+          "format",
+          "lint",
+          "prepublishOnly",
+          "release",
+          "start",
+          "sync-featured-contributors"
+        ],
+        "dependency_count": 12,
+        "dev_dependency_count": 14
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "github/spec-kit",
+      "kind": "tree_inventory",
+      "argv": [
+        "git",
+        "ls-files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files": 319,
+        "tests": 87,
+        "evals_or_benchmarks": 0,
+        "ci": 13,
+        "docs": 37
+      },
+      "lesson": "Structure first: count tests/evals/CI/docs before deciding whether runtime execution is worth the risk."
+    },
+    {
+      "repo": "github/spec-kit",
+      "kind": "python_py_compile",
+      "argv": [
+        "python3",
+        "-m",
+        "py_compile",
+        "40 files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files_checked": 40,
+        "stderr_tail": ""
+      },
+      "lesson": "Syntax-only checks are useful smoke tests because they do not import dependencies or execute app code."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "tree_inventory",
+      "argv": [
+        "git",
+        "ls-files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files": 499,
+        "tests": 22,
+        "evals_or_benchmarks": 0,
+        "ci": 0,
+        "docs": 22
+      },
+      "lesson": "Structure first: count tests/evals/CI/docs before deciding whether runtime execution is worth the risk."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "npm_metadata",
+      "relative_cwd": "packages/create-12-factor-agent/template",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "build",
+          "dev"
+        ],
+        "dependency_count": 6,
+        "dev_dependency_count": 6
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "npm_metadata",
+      "relative_cwd": "packages/walkthroughgen",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "test",
+          "test:watch"
+        ],
+        "dependency_count": 6,
+        "dev_dependency_count": 3
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "npm_metadata",
+      "relative_cwd": "workshops/2025-05-17",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "build",
+          "dev"
+        ],
+        "dependency_count": 3,
+        "dev_dependency_count": 4
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "npm_metadata",
+      "relative_cwd": "workshops/2025-05/final",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "build",
+          "dev"
+        ],
+        "dependency_count": 5,
+        "dev_dependency_count": 6
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "npm_metadata",
+      "relative_cwd": "workshops/2025-05/sections/01-cli-and-agent",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "build",
+          "dev"
+        ],
+        "dependency_count": 2,
+        "dev_dependency_count": 4
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "npm_metadata",
+      "relative_cwd": "workshops/2025-05/sections/02-calculator-tools",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "build",
+          "dev"
+        ],
+        "dependency_count": 3,
+        "dev_dependency_count": 4
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "npm_metadata",
+      "relative_cwd": "workshops/2025-05/sections/03-tool-loop",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "build",
+          "dev"
+        ],
+        "dependency_count": 3,
+        "dev_dependency_count": 4
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "npm_metadata",
+      "relative_cwd": "workshops/2025-05/sections/04-baml-tests",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "build",
+          "dev"
+        ],
+        "dependency_count": 3,
+        "dev_dependency_count": 4
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "kind": "make_dry_run",
+      "argv": [
+        "make",
+        "-n"
+      ],
+      "exit_code": 0,
+      "evidence": "echo \"Setting up project...\"\nnpm install || bun install || yarn install\necho \"Setup complete!\"\n",
+      "lesson": "A dry-run Makefile is enough to learn command topology; full execution still belongs in a sandbox."
+    },
+    {
+      "repo": "microsoft/code-with-engineering-playbook",
+      "kind": "tree_inventory",
+      "argv": [
+        "git",
+        "ls-files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files": 391,
+        "tests": 61,
+        "evals_or_benchmarks": 1,
+        "ci": 3,
+        "docs": 359
+      },
+      "lesson": "Structure first: count tests/evals/CI/docs before deciding whether runtime execution is worth the risk."
+    },
+    {
+      "repo": "microsoft/code-with-engineering-playbook",
+      "kind": "npm_metadata",
+      "relative_cwd": ".",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [],
+        "dependency_count": 2,
+        "dev_dependency_count": 0
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "tree_inventory",
+      "argv": [
+        "git",
+        "ls-files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files": 5248,
+        "tests": 1451,
+        "evals_or_benchmarks": 509,
+        "ci": 11,
+        "docs": 307
+      },
+      "lesson": "Structure first: count tests/evals/CI/docs before deciding whether runtime execution is worth the risk."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "npm_metadata",
+      "relative_cwd": "code-scan-action",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "build",
+          "dev",
+          "package",
+          "test",
+          "tsc",
+          "tsc:watch"
+        ],
+        "dependency_count": 5,
+        "dev_dependency_count": 4
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "npm_metadata",
+      "relative_cwd": "examples/config-node-package-typescript",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "test"
+        ],
+        "dependency_count": 1,
+        "dev_dependency_count": 3
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "npm_metadata",
+      "relative_cwd": "examples/config-node-package",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "test"
+        ],
+        "dependency_count": 1,
+        "dev_dependency_count": 0
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "npm_metadata",
+      "relative_cwd": "examples/config-stateful-session-management",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "server"
+        ],
+        "dependency_count": 3,
+        "dev_dependency_count": 0
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "npm_metadata",
+      "relative_cwd": "examples/config-ts",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "eval",
+          "eval-schema",
+          "view"
+        ],
+        "dependency_count": 3,
+        "dev_dependency_count": 2
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "npm_metadata",
+      "relative_cwd": "examples/integration-jest",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "test",
+          "test:jest",
+          "test:vitest"
+        ],
+        "dependency_count": 0,
+        "dev_dependency_count": 5
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "npm_metadata",
+      "relative_cwd": "examples/openai-agents-advanced",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [],
+        "dependency_count": 2,
+        "dev_dependency_count": 0
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "npm_metadata",
+      "relative_cwd": "examples/openai-agents-basic",
+      "argv": [
+        "npm",
+        "pkg",
+        "get",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "scripts": [
+          "eval",
+          "view"
+        ],
+        "dependency_count": 2,
+        "dev_dependency_count": 0
+      },
+      "lesson": "Package metadata exposes the real validation surface without running install scripts."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "kind": "python_py_compile",
+      "argv": [
+        "python3",
+        "-m",
+        "py_compile",
+        "24 files"
+      ],
+      "exit_code": 0,
+      "evidence": {
+        "files_checked": 24,
+        "stderr_tail": ""
+      },
+      "lesson": "Syntax-only checks are useful smoke tests because they do not import dependencies or execute app code."
+    }
+  ]
+}

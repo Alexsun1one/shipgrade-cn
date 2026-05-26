@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-05-26T01:45:50Z",
+  "kind": "local_github_publish_preflight",
+  "boundary": "Local preflight only. Real remote GitHub Actions must still be verified after publishing.",
+  "passed": 15,
+  "total": 15,
+  "checks": [
+    {
+      "id": "required-files",
+      "passed": true,
+      "detail": "38 required files present"
+    },
+    {
+      "id": "readme-launch-surface",
+      "passed": true,
+      "detail": "README has hook, proof, and preflight surface"
+    },
+    {
+      "id": "skill-frontmatter",
+      "passed": true,
+      "detail": "machine-readable frontmatter with name/description triggers"
+    },
+    {
+      "id": "github-workflow",
+      "passed": true,
+      "detail": "validate workflow has PR/push and release check"
+    },
+    {
+      "id": "repo-metadata",
+      "passed": true,
+      "detail": "topics=10 missing=[]"
+    },
+    {
+      "id": "public-evidence-manifest",
+      "passed": true,
+      "detail": "evidence_files=12"
+    },
+    {
+      "id": "source-promotion-batch",
+      "passed": true,
+      "detail": "selected=4 audited=4 runtime=2 static_smoke=2"
+    },
+    {
+      "id": "source-promotion-sandbox-cases",
+      "passed": true,
+      "detail": "cases=2/2 required=9/9 configured_tests=225"
+    },
+    {
+      "id": "sandbox-runtime-matrix",
+      "passed": true,
+      "detail": "cases=3/3 steps=12/12"
+    },
+    {
+      "id": "social-preview",
+      "passed": true,
+      "detail": "dimensions=(1600, 900)"
+    },
+    {
+      "id": "issue-pr-templates",
+      "passed": true,
+      "detail": "issue and PR templates include validation language"
+    },
+    {
+      "id": "secret-and-metadata-scan",
+      "passed": true,
+      "detail": "no generated metadata or secret patterns"
+    },
+    {
+      "id": "doctor-fake-rejection",
+      "passed": true,
+      "detail": "fake completion rejected"
+    },
+    {
+      "id": "demo-proof",
+      "passed": true,
+      "detail": "demo proof captures init/reject/accept path"
+    },
+    {
+      "id": "shipgrade-verify",
+      "passed": true,
+      "detail": "shipgrade-verify-ok\n"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "case_count": 5,
+  "passed_count": 5,
+  "cases": [
+    {
+      "id": "enterprise-paperclip-runtime",
+      "name": "Enterprise AI Hub Paperclip runtime closure",
+      "project_ref": "local-project:enterprise",
+      "exists": true,
+      "expected_files": [
+        "AGENTS.md",
+        "docs/CODEX_HANDOFF.md",
+        "docs/CODEX_START_HERE.md",
+        "package.json"
+      ],
+      "found_files": [
+        "AGENTS.md",
+        "docs/CODEX_HANDOFF.md",
+        "docs/CODEX_START_HERE.md",
+        "package.json"
+      ],
+      "missing_files": [],
+      "package_script_names": [
+        "build",
+        "check:bundle",
+        "check:critical-coverage",
+        "check:guardrails",
+        "dev:portal",
+        "lint",
+        "screenshots",
+        "sync:paperclip",
+        "test",
+        "typecheck"
+      ],
+      "validation_script_names": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ],
+      "validation_file_names": [
+        "apps/portal-web/src/api/actionsRoute.test.ts",
+        "apps/portal-web/src/api/agentsRoute.test.ts",
+        "apps/portal-web/src/api/localToolRegistrationRoute.test.ts",
+        "apps/portal-web/src/api/localToolsRoute.test.ts",
+        "apps/portal-web/src/api/paperclipRuntime.test.ts",
+        "apps/portal-web/src/api/policyPermissionsVerificationApi.test.ts",
+        "apps/portal-web/src/api/readRoutes.test.ts",
+        "apps/portal-web/src/api/securityAuditTokenLedgerVerificationApi.test.ts",
+        "apps/portal-web/src/components/BenchmarkVisibleLanguage.test.tsx",
+        "apps/portal-web/src/components/CatalogPage.test.tsx",
+        "apps/portal-web/src/components/DashboardPage.test.tsx",
+        "apps/portal-web/src/components/DataTable.table.test.tsx",
+        "apps/portal-web/src/components/UsagePage.test.tsx",
+        "apps/portal-web/src/components/actions-ui.smoke.test.tsx",
+        "services/paperclip-bridge/src/actionsAuditReadAdapter.test.ts",
+        "services/paperclip-bridge/src/catalogApprovalReadAdapter.test.ts",
+        "services/paperclip-bridge/src/knowledgeReadAdapter.test.ts",
+        "services/paperclip-bridge/src/mappers.test.ts",
+        "services/paperclip-bridge/src/sync.test.ts",
+        "services/paperclip-bridge/src/usageTokenLedgerReadAdapter.test.ts"
+      ],
+      "docs_count": 1820,
+      "tests_or_smoke_count": 1378,
+      "task": "验证 Paperclip/Core/local-tools 读模型是否真实进入前端,并给出可复烟的 release gate。",
+      "required_contract": [
+        "route smoke",
+        "field coverage",
+        "read-only boundary",
+        "handoff"
+      ],
+      "passed": true,
+      "case_doc": "outputs/real_project_gauntlet/cases/enterprise-paperclip-runtime.md"
+    },
+    {
+      "id": "hardwrite-rewrite-safety",
+      "name": "HardWrite rewrite safety and editorial gate",
+      "project_ref": "local-project:AutoW/Autow-source",
+      "exists": true,
+      "expected_files": [
+        "CLAUDE.md",
+        "README.md",
+        "package.json"
+      ],
+      "found_files": [
+        "CLAUDE.md",
+        "README.md",
+        "package.json"
+      ],
+      "missing_files": [],
+      "package_script_names": [
+        "build",
+        "dev",
+        "lint",
+        "package:mac",
+        "release",
+        "test",
+        "typecheck",
+        "verify:publish-manifests"
+      ],
+      "validation_script_names": [
+        "build",
+        "lint",
+        "test",
+        "typecheck"
+      ],
+      "validation_file_names": [
+        "packages/cli/src/__tests__/analytics.test.ts",
+        "packages/cli/src/__tests__/cli-integration.test.ts",
+        "packages/cli/src/__tests__/interact-command.test.ts",
+        "packages/cli/src/__tests__/localization.test.ts",
+        "packages/cli/src/__tests__/progress-text.test.ts",
+        "packages/cli/src/__tests__/publish-package.test.ts",
+        "packages/cli/src/__tests__/revision-command.test.ts",
+        "packages/cli/src/__tests__/studio-runtime.test.ts",
+        "packages/cli/src/__tests__/studio.test.ts",
+        "packages/cli/src/__tests__/tui-activity-state.test.ts",
+        "packages/cli/src/__tests__/tui-agent-session.test.ts",
+        "packages/cli/src/__tests__/tui-chat-draft.test.ts",
+        "packages/cli/src/__tests__/tui-command.test.ts",
+        "packages/cli/src/__tests__/tui-composer-caret.test.ts",
+        "packages/cli/src/__tests__/tui-composer-display.test.ts",
+        "packages/cli/src/__tests__/tui-i18n.test.ts",
+        "packages/cli/src/__tests__/tui-input-chrome.test.ts",
+        "packages/cli/src/__tests__/tui-session-store.test.ts",
+        "packages/cli/src/__tests__/tui-setup-i18n.test.ts",
+        "packages/cli/src/__tests__/tui-slash-autocomplete.test.ts"
+      ],
+      "docs_count": 7,
+      "tests_or_smoke_count": 195,
+      "task": "定位章节改写质量门失败时,先保护已有正文和 truth files,再给出最小可验证修复。",
+      "required_contract": [
+        "truth-file check",
+        "non-destructive rewrite",
+        "chapter evidence",
+        "rollback"
+      ],
+      "passed": true,
+      "case_doc": "outputs/real_project_gauntlet/cases/hardwrite-rewrite-safety.md"
+    },
+    {
+      "id": "silicoville-ledger-migration",
+      "name": "SilicoVille ledger and migration discipline",
+      "project_ref": "local-project:cursor_0311",
+      "exists": true,
+      "expected_files": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "README.md",
+        "docs/ARCHITECTURE.md",
+        "docs/DB_SCHEMA.md"
+      ],
+      "found_files": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "README.md",
+        "docs/ARCHITECTURE.md",
+        "docs/DB_SCHEMA.md"
+      ],
+      "missing_files": [],
+      "package_script_names": [
+        "adopt-codex-pet",
+        "analyze",
+        "audit:api-dynamic",
+        "audit:api-req",
+        "build",
+        "build:claw",
+        "dev",
+        "lint",
+        "provision:hk-ssl",
+        "start",
+        "sync-codex-pet",
+        "tauri",
+        "tauri:android:build",
+        "tauri:android:dev",
+        "tauri:android:init",
+        "tauri:dev",
+        "test",
+        "test:watch",
+        "validate:i18n"
+      ],
+      "validation_script_names": [
+        "build",
+        "build:claw",
+        "lint",
+        "tauri:android:build",
+        "test",
+        "test:watch"
+      ],
+      "validation_file_names": [
+        "scripts/build-admin-menu-i18n.mjs",
+        "scripts/build-and-sign-apk.sh",
+        "scripts/build-android.sh",
+        "scripts/test-lianlu-sign.mjs",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/dateutil/zoneinfo/rebuild.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/flatbuffers/builder.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/benchmarks/json_schema_test_suite.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/__init__.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/_suite.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/fuzz_validate.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/test_cli.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/test_deprecations.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/test_exceptions.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/test_format.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/test_jsonschema_test_suite.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/test_types.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/test_utils.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema/tests/test_validators.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema_specifications/tests/__init__.py",
+        "videos/silicoville-intro/.tts-venv/lib/python3.14/site-packages/jsonschema_specifications/tests/test_jsonschema_specifications.py"
+      ],
+      "docs_count": 307,
+      "tests_or_smoke_count": 895,
+      "task": "处理经济账本或 SQL 迁移时,把 live DB 证据、迁移脚本、回滚和产品文档对齐。",
+      "required_contract": [
+        "migration proof",
+        "ledger invariant",
+        "rollback",
+        "architecture docs"
+      ],
+      "passed": true,
+      "case_doc": "outputs/real_project_gauntlet/cases/silicoville-ledger-migration.md"
+    },
+    {
+      "id": "exo-harness-contract",
+      "name": "exo harness contract and maintainer-facing proof",
+      "project_ref": "local-project:exo",
+      "exists": true,
+      "expected_files": [
+        "AGENTS.md",
+        "README.md",
+        "docs/coding-agent-harnesses.md",
+        "package.json"
+      ],
+      "found_files": [
+        "AGENTS.md",
+        "README.md",
+        "docs/coding-agent-harnesses.md",
+        "package.json"
+      ],
+      "missing_files": [],
+      "package_script_names": [
+        "check",
+        "e2e:agent-harnesses",
+        "format",
+        "format:check",
+        "lint",
+        "lint:fix",
+        "prepare",
+        "test",
+        "typecheck"
+      ],
+      "validation_script_names": [
+        "lint",
+        "lint:fix",
+        "test",
+        "typecheck"
+      ],
+      "validation_file_names": [
+        "tests/agent-harness-events.test.ts"
+      ],
+      "docs_count": 5,
+      "tests_or_smoke_count": 14,
+      "task": "把 harness/CLI 改动拆成 maintainer 能审的最小 slice,保留运行命令、边界和后续协作入口。",
+      "required_contract": [
+        "harness command",
+        "maintainer proof",
+        "compatibility boundary",
+        "handoff"
+      ],
+      "passed": true,
+      "case_doc": "outputs/real_project_gauntlet/cases/exo-harness-contract.md"
+    },
+    {
+      "id": "skillscn-release-quality",
+      "name": "SkillsCN release quality and provenance",
+      "project_ref": "local-project:skills-cn-distill",
+      "exists": true,
+      "expected_files": [
+        "AGENTS.md",
+        "README.md",
+        "scripts/validate_flagship_skill.py",
+        "dist/ship-grade-engineering-cn-v0.1/SKILL.md"
+      ],
+      "found_files": [
+        "AGENTS.md",
+        "README.md",
+        "scripts/validate_flagship_skill.py",
+        "dist/ship-grade-engineering-cn-v0.1/SKILL.md"
+      ],
+      "missing_files": [],
+      "package_script_names": [],
+      "validation_script_names": [],
+      "validation_file_names": [
+        "scripts/validate_flagship_skill.py",
+        "scripts/validate_outputs.py",
+        "scripts/validate_project_kickoff_skill.py",
+        "scripts/validate_sft_dataset.py"
+      ],
+      "docs_count": 1,
+      "tests_or_smoke_count": 25,
+      "task": "发布中文工程 skill 包时,同时证明来源、许可证、训练、runtime audit、doctor、eval 和多机器同步。",
+      "required_contract": [
+        "source attribution",
+        "license boundary",
+        "training probes",
+        "release hash"
+      ],
+      "passed": true,
+      "case_doc": "outputs/real_project_gauntlet/cases/skillscn-release-quality.md"
+    }
+  ],
+  "public_boundary": "safe structural evidence only; no private source body, secrets, cookies, sessions, auth databases, or credentials"
+}

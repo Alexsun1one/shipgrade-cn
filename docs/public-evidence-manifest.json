@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-05-26T01:44:57Z",
+  "purpose": "Public, redacted, repository-local evidence index for README and QUALITY_REPORT claims.",
+  "boundary": "No private source bodies, secrets, cookies, sessions, auth databases, browser profiles, private keys, or API tokens.",
+  "evidence_files": [
+    {
+      "path": "docs/evidence/sandbox_runtime_cases.json",
+      "source": "outputs/sandbox_runtime_cases.json",
+      "sha256": "dbea4b7478a14dc6c2bb97f01492f94b2e8ed7bc1664cb742f5d7275e8b4155b",
+      "bytes": 15734
+    },
+    {
+      "path": "docs/evidence/runtime_smoke_evidence.json",
+      "source": "outputs/runtime_smoke_evidence.json",
+      "sha256": "4596cfb9ff141ba55c426bf40835977383d21a44b7703879865789f8544e1139",
+      "bytes": 17242
+    },
+    {
+      "path": "docs/evidence/real_project_gauntlet.json",
+      "source": "outputs/real_project_gauntlet/real_project_gauntlet.json",
+      "sha256": "63ba2ff4832f76091e1bc0ae418feabcac913e65f1fc6ae33125b13870fcce27",
+      "bytes": 11564
+    },
+    {
+      "path": "docs/evidence/shipgrade_transcript_evidence.json",
+      "source": "outputs/shipgrade_transcript_cases/shipgrade_transcript_evidence.json",
+      "sha256": "00d80a81bd79fa610b2506c50f1383699fcc85355c5ebb479fd2022ba8e40539",
+      "bytes": 7088
+    },
+    {
+      "path": "docs/evidence/repo_structure_report.json",
+      "source": "outputs/repo_structure_report.json",
+      "sha256": "64852acd6a0c6ca3318a87915e4887fc6549c473918890515628c69e0098e75b",
+      "bytes": 474390
+    },
+    {
+      "path": "docs/evidence/high_signal_source_radar.json",
+      "source": "outputs/high_signal_source_radar.json",
+      "sha256": "127c945c5a37a79e5a090eed77e8434b900e62c2990c7fe695563ab694386249",
+      "bytes": 83013
+    },
+    {
+      "path": "docs/evidence/source_promotion_queue.json",
+      "source": "outputs/source_promotion_queue.json",
+      "sha256": "dcf4da87cc10a296c6e943ca30f508a1ab2d8851ff0b096db52ae370109d3ff6",
+      "bytes": 68072
+    },
+    {
+      "path": "docs/evidence/source_promotion_batch.json",
+      "source": "outputs/source_promotion_batch.json",
+      "sha256": "8c572fd707c54cad6e35b1bde5b68a3f213b73e95976dafa607a1e84c36915e1",
+      "bytes": 6794
+    },
+    {
+      "path": "docs/evidence/source_promotion_sandbox_cases.json",
+      "source": "outputs/source_promotion_sandbox_cases.json",
+      "sha256": "26f0b9403d98a542b5f500d1b0cfe3649c83be6c5faa07fc8af2eee0e03da443",
+      "bytes": 22819
+    },
+    {
+      "path": "docs/evidence/deep_code_case_studies.json",
+      "source": "outputs/deep_code_case_studies.json",
+      "sha256": "9b73cfb80f50505e42bd36b8e54256c0889abeaebcd7c7c20f7bcc5eebd5b603",
+      "bytes": 85667
+    },
+    {
+      "path": "docs/evidence/source_overlap_report.json",
+      "source": "outputs/source_overlap_report.json",
+      "sha256": "866d8acaf9fa18adbc73f8f6f60d88bc405b2f654f78b13e56768ac504dc0e10",
+      "bytes": 66372
+    },
+    {
+      "path": "docs/evidence/qwen_lora_quality_review.json",
+      "source": "outputs/training_runs/qwen-lora-20260526-041639/quality_review.json",
+      "sha256": "50a756f6f6f639712001b8f0d4c8912a680d06c62328375ecc365661f89d2b11",
+      "bytes": 1887
+    }
+  ],
+  "release_files": [
+    {
+      "path": "releases/agent-ready-kickoff-docs-cn-v0.1.tar.gz.sha256",
+      "content": "9a4e132b15915985987cab9d7ceaa125a1dd9b6252ee86fdd69eb27d8e1eb801  agent-ready-kickoff-docs-cn-v0.1.tar.gz",
+      "sha256": "3bc76c0bdb2e405b982541a9744b7bec7f8c8258545d7169887a62ee7e5b84cb"
+    },
+    {
+      "path": "releases/shipgrade-cn-v0.1.tar.gz.sha256",
+      "content": "02da329079fa5eed2ff17460381f078b10ad5e661e092aeccf5e38ccdae84a0b  releases/shipgrade-cn-v0.1.tar.gz",
+      "sha256": "2d297603b32b1c237a5b23162493bfa7eda8b95e0f6fb7dd7ebb09c5dbbe6c5f"
+    },
+    {
+      "path": "releases/skills-cn-v0.1.tar.gz.sha256",
+      "content": "591f62cca43df8baf7b9e3db39b19abeba420310049e7b31ed8194dec67a3fd5  skills-cn-v0.1.tar.gz",
+      "sha256": "b927ed0e3223eaffa56c1c0f3c670459e13ec78d6383206caa4414c332d62033"
+    }
+  ],
+  "verification_commands": [
+    "python3 tools/shipgrade_verify.py",
+    "python3 tools/shipgrade_release_check.py",
+    "python3 scripts/create-public-stage.py /tmp/shipgrade-cn-public --init-git",
+    "bash scripts/verify.sh"
+  ]
+}

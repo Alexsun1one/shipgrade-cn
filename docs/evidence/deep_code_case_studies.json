@@ -1,0 +1,2729 @@
+{
+  "generated_at": "2026-05-26T00:49:43Z",
+  "case_count": 11,
+  "total_files": 17649,
+  "total_test_paths": 5381,
+  "total_eval_paths": 786,
+  "total_skill_paths": 313,
+  "public_boundary": "Public, license-reviewed runtime/promotion clones only; source bodies are not copied into the report.",
+  "cases": [
+    {
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "stars": 22982,
+      "license_spdx": "MIT",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 409,
+      "code_file_count": 55,
+      "source_file_count": 31,
+      "test_file_count": 30,
+      "eval_file_count": 0,
+      "design_doc_file_count": 132,
+      "deep_code_source": "runtime_repo_audit",
+      "line_counts": {
+        "doc_lines": 61580,
+        "test_lines": 3396,
+        "source_lines": 4646
+      },
+      "package_json": [
+        {
+          "path": "package.json",
+          "scripts": [
+            "lint",
+            "test"
+          ],
+          "script_count": 4,
+          "dependency_count": 0,
+          "dev_dependency_count": 0
+        }
+      ],
+      "pyproject": [
+        {
+          "path": "pyproject.toml",
+          "section_count": 16,
+          "quality_sections": [
+            "project.entry-points.pytest11",
+            "tool.hatch.build.targets.wheel",
+            "tool.hatch.build.targets.wheel.force-include",
+            "tool.hatch.build.targets.sdist",
+            "tool.pytest.ini_options",
+            "tool.coverage.run",
+            "tool.coverage.report",
+            "tool.black",
+            "tool.ruff",
+            "tool.ruff.lint",
+            "tool.mypy"
+          ],
+          "has_project_metadata": true
+        }
+      ],
+      "makefiles": [
+        {
+          "path": "Makefile",
+          "target_count": 16,
+          "quality_targets": [
+            "test",
+            "test-plugin",
+            "lint",
+            "build-plugin"
+          ]
+        }
+      ],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/publish-pypi.yml",
+          "job_count": 2,
+          "jobs": [
+            "build-and-publish",
+            "test-installation"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/pull-sync-framework.yml",
+          "job_count": 1,
+          "jobs": [
+            "sync-and-isolate"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/quick-check.yml",
+          "job_count": 1,
+          "jobs": [
+            "quick-test"
+          ],
+          "command_hits": [
+            "cargo",
+            "pytest",
+            "ruff"
+          ]
+        },
+        {
+          "path": ".github/workflows/readme-quality-check.yml",
+          "job_count": 1,
+          "jobs": [
+            "readme-quality-check"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/test.yml",
+          "job_count": 5,
+          "jobs": [
+            "test",
+            "lint",
+            "plugin-check",
+            "doctor-check",
+            "test-summary"
+          ],
+          "command_hits": [
+            "cargo",
+            "pytest",
+            "ruff"
+          ]
+        }
+      ],
+      "docs": {
+        "doc_file_count": 305,
+        "taxonomy": {
+          "reference": 107,
+          "validation": 13,
+          "governance": 4,
+          "design": 14,
+          "onboarding": 2
+        },
+        "heading_signals": {
+          "design": 76,
+          "governance": 17,
+          "validation": 120,
+          "usage": 122
+        },
+        "sample_paths": [
+          ".claude/skills/confidence-check/SKILL.md",
+          ".github/PULL_REQUEST_TEMPLATE.md",
+          ".github/workflows/README.md",
+          ".github/workflows/readme-quality-check.yml",
+          "AGENTS.md",
+          "CHANGELOG.md",
+          "CLAUDE.md",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "DELETION_RATIONALE.md",
+          "KNOWLEDGE.md",
+          "PARALLEL_INDEXING_PLAN.md",
+          "PLANNING.md",
+          "PLUGIN_INSTALL.md",
+          "PROJECT_INDEX.md",
+          "PR_DOCUMENTATION.md",
+          "QUALITY_COMPARISON.md",
+          "README-ja.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 45,
+        "classes": 34,
+        "functions": 272,
+        "test_functions": 136,
+        "parse_errors": 0,
+        "sample_paths": [
+          "scripts/ab_test_workflows.py",
+          "src/superclaude/__init__.py",
+          "src/superclaude/__version__.py",
+          "src/superclaude/agents/__init__.py",
+          "src/superclaude/cli/__init__.py",
+          "src/superclaude/cli/doctor.py",
+          "src/superclaude/cli/install_commands.py",
+          "src/superclaude/cli/install_mcp.py",
+          "src/superclaude/cli/install_skill.py",
+          "src/superclaude/cli/main.py"
+        ]
+      },
+      "js_ts_symbols": {
+        "files_sampled": 1,
+        "export_symbols": 4,
+        "describe_blocks": 0,
+        "test_blocks": 0,
+        "sample_paths": [
+          "src/superclaude/skills/confidence-check/confidence.ts"
+        ]
+      },
+      "agent_surface": {
+        "surface_count": 259,
+        "buckets": {
+          "claude": 222,
+          "skills": 20,
+          "agents": 66,
+          "commands": 71,
+          "hooks": 4
+        },
+        "sample_paths": [
+          ".claude/settings.json",
+          ".claude/skills/confidence-check/SKILL.md",
+          ".claude/skills/confidence-check/confidence.ts",
+          "AGENTS.md",
+          "CLAUDE.md",
+          "docs/Development/pm-agent-ideal-workflow.md",
+          "docs/Development/pm-agent-integration.md",
+          "docs/agents/pm-agent-guide.md",
+          "docs/architecture/PM_AGENT_COMPARISON.md",
+          "docs/architecture/SKILLS_CLEANUP.md",
+          "docs/architecture/pm-agent-auto-activation.md",
+          "docs/architecture/pm-agent-responsibility-cleanup.md",
+          "docs/mcp/mcp-integration-policy.md",
+          "docs/mcp/mcp-optional-design.md",
+          "docs/pm-agent-implementation-status.md",
+          "docs/reference/claude-code-history-management.md",
+          "docs/reference/commands-list.md",
+          "docs/reference/mcp-server-guide.md",
+          "docs/reference/pm-agent-autonomous-reflection.md",
+          "docs/reference/suggested-commands.md",
+          "docs/research/complete-python-skills-migration.md",
+          "docs/research/llm-agent-token-efficiency-2025.md",
+          "docs/research/mcp-installer-fix-summary.md",
+          "docs/research/pm-skills-migration-results.md"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 1,
+        "skill_frontmatter_count": 1,
+        "skill_frontmatter_with_description": 1,
+        "skill_frontmatter_with_use_when": 0,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 0,
+        "hook_file_count": 0,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 2,
+        "command_lifecycle": [],
+        "sample_skill_paths": [
+          "skills/confidence-check/SKILL.md"
+        ],
+        "sample_command_paths": [],
+        "sample_persona_paths": [],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "把 skill frontmatter、触发条件和验证清单当作可安装协作界面,而不是普通 Markdown。",
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "先读取 package scripts 再决定命令,不要凭经验猜 npm/pnpm/yarn gate。",
+        "把 pyproject 的 pytest/ruff/mypy/coverage 配置当成 Python 项目的验证入口。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。"
+      ]
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "stars": 2126,
+      "license_spdx": "MIT",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 1725,
+      "code_file_count": 1311,
+      "source_file_count": 776,
+      "test_file_count": 579,
+      "eval_file_count": 104,
+      "design_doc_file_count": 1055,
+      "deep_code_source": "runtime_repo_audit",
+      "line_counts": {
+        "doc_lines": 1716,
+        "source_lines": 201939,
+        "test_lines": 148814
+      },
+      "package_json": [
+        {
+          "path": "docs/_extensions/meridianlabs-ai/inspect-docs/resources/excalidraw/package.json",
+          "scripts": [],
+          "script_count": 0,
+          "dependency_count": 3,
+          "dev_dependency_count": 0
+        }
+      ],
+      "pyproject": [
+        {
+          "path": "pyproject.toml",
+          "section_count": 19,
+          "quality_sections": [
+            "tool.setuptools.dynamic",
+            "tool.setuptools_scm",
+            "tool.setuptools.packages.find",
+            "tool.setuptools.package-data",
+            "tool.ruff",
+            "tool.ruff.lint",
+            "tool.ruff.lint.flake8-tidy-imports.banned-api",
+            "tool.ruff.lint.pydocstyle",
+            "tool.pytest.ini_options",
+            "tool.mypy",
+            "[tool.mypy.overrides",
+            "tool.check-wheel-contents",
+            "tool.typos.default.extend-words",
+            "tool.uv"
+          ],
+          "has_project_metadata": true
+        },
+        {
+          "path": "src/inspect_ai/tool/_tools/_computer/_resources/tool/pyproject.toml",
+          "section_count": 12,
+          "quality_sections": [
+            "tool.setuptools_scm",
+            "tool.setuptools.packages.find",
+            "tool.ruff",
+            "tool.ruff.lint",
+            "tool.ruff.lint.pydocstyle",
+            "tool.pytest.ini_options",
+            "tool.mypy",
+            "tool.pydantic-mypy",
+            "tool.check-wheel-contents"
+          ],
+          "has_project_metadata": true
+        },
+        {
+          "path": "src/inspect_sandbox_tools/pyproject.toml",
+          "section_count": 15,
+          "quality_sections": [
+            "tool.setuptools.packages.find",
+            "tool.setuptools.package-data",
+            "tool.ruff",
+            "tool.ruff.lint",
+            "tool.ruff.lint.pydocstyle",
+            "tool.mypy",
+            "[tool.mypy.overrides",
+            "tool.pytest.ini_options",
+            "tool.check-wheel-contents",
+            "tool.towncrier"
+          ],
+          "has_project_metadata": true
+        },
+        {
+          "path": "src/inspect_tool_support/pyproject.toml",
+          "section_count": 11,
+          "quality_sections": [
+            "tool.setuptools.packages.find",
+            "tool.setuptools.package-data",
+            "tool.mypy",
+            "[tool.mypy.overrides",
+            "tool.check-wheel-contents",
+            "tool.towncrier"
+          ],
+          "has_project_metadata": true
+        },
+        {
+          "path": "tests/test_package/pyproject.toml",
+          "section_count": 3,
+          "quality_sections": [],
+          "has_project_metadata": true
+        }
+      ],
+      "makefiles": [
+        {
+          "path": "Makefile",
+          "target_count": 12,
+          "quality_targets": [
+            "check",
+            "test",
+            "test-parallel"
+          ]
+        }
+      ],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/build.yml",
+          "job_count": 9,
+          "jobs": [
+            "ruff",
+            "mypy",
+            "pre-commit",
+            "test",
+            "check-tool-paths",
+            "check-version-bump",
+            "slow-tool-tests-dev",
+            "slow-tool-tests-release",
+            "package"
+          ],
+          "command_hits": [
+            "mypy",
+            "pytest",
+            "ruff"
+          ]
+        },
+        {
+          "path": ".github/workflows/build_sandbox_tools.yml",
+          "job_count": 3,
+          "jobs": [
+            "detect-version",
+            "build-executables",
+            "update-pr-status"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/docker.yml",
+          "job_count": 1,
+          "jobs": [
+            "build-and-push"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/docs.yml",
+          "job_count": 1,
+          "jobs": [
+            "build-deploy"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/log_viewer.yml",
+          "job_count": 3,
+          "jobs": [
+            "check-schema-and-types",
+            "submodule-on-main",
+            "dist-validation"
+          ],
+          "command_hits": [
+            "npm",
+            "pnpm"
+          ]
+        },
+        {
+          "path": ".github/workflows/npm-publish.yml",
+          "job_count": 1,
+          "jobs": [
+            "publish"
+          ],
+          "command_hits": [
+            "npm",
+            "pnpm"
+          ]
+        },
+        {
+          "path": ".github/workflows/pypi.yml",
+          "job_count": 1,
+          "jobs": [
+            "publish"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/test.yml",
+          "job_count": 2,
+          "jobs": [
+            "create-and-store",
+            "retrieve-and-upload"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/vscode.yml",
+          "job_count": 1,
+          "jobs": [
+            "deploy"
+          ],
+          "command_hits": [
+            "yarn"
+          ]
+        }
+      ],
+      "docs": {
+        "doc_file_count": 77,
+        "taxonomy": {
+          "reference": 28,
+          "governance": 1,
+          "design": 25,
+          "onboarding": 15,
+          "validation": 8
+        },
+        "heading_signals": {
+          "validation": 5,
+          "usage": 3,
+          "design": 9
+        },
+        "sample_paths": [
+          ".github/pull_request_template.md",
+          "CHANGELOG.md",
+          "CLAUDE.md",
+          "CONTRIBUTING.md",
+          "README.md",
+          "design/acp/agent-acp-tui.md",
+          "design/acp/agent-acp.md",
+          "design/deepagents.md",
+          "design/eval-set-scanners.md",
+          "design/hf-lazy-dataset.md",
+          "design/log_edits_tags_metadata.md",
+          "design/model-proxy-lifecycle.md",
+          "design/plans/checkpointing-hydration.md",
+          "design/plans/checkpointing-phasing.md",
+          "design/plans/checkpointing-working.md",
+          "design/recover.md",
+          "design/sandbox-tools-ci-gates.md",
+          "design/temporal-data-handling.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 80,
+        "classes": 97,
+        "functions": 783,
+        "test_functions": 0,
+        "parse_errors": 0,
+        "sample_paths": [
+          "src/inspect_ai/__init__.py",
+          "src/inspect_ai/__main__.py",
+          "src/inspect_ai/_cli/_scanner.py",
+          "src/inspect_ai/_cli/acp.py",
+          "src/inspect_ai/_cli/cache.py",
+          "src/inspect_ai/_cli/common.py",
+          "src/inspect_ai/_cli/download.py",
+          "src/inspect_ai/_cli/eval.py",
+          "src/inspect_ai/_cli/info.py",
+          "src/inspect_ai/_cli/list.py"
+        ]
+      },
+      "js_ts_symbols": {
+        "files_sampled": 7,
+        "export_symbols": 0,
+        "describe_blocks": 0,
+        "test_blocks": 19,
+        "sample_paths": [
+          "src/inspect_ai/_view/dist/assets/chunk-DfAF0w94.js",
+          "src/inspect_ai/_view/dist/assets/index.js",
+          "src/inspect_ai/_view/dist/assets/lib-CBtriEt5.js",
+          "src/inspect_ai/_view/dist/assets/liteDOM-Cp0aN3bP.js",
+          "src/inspect_ai/_view/dist/assets/tex-svg-full-BI3fonbT.js",
+          "src/inspect_ai/_view/dist/assets/wgxpath.install-node-Csk64Aj9.js",
+          "src/inspect_ai/_view/dist/assets/xypic-DrMJn58R.js"
+        ]
+      },
+      "agent_surface": {
+        "surface_count": 257,
+        "buckets": {
+          "claude": 5,
+          "agents": 192,
+          "commands": 9,
+          "hooks": 18,
+          "skills": 14,
+          "cursor": 1
+        },
+        "sample_paths": [
+          "CLAUDE.md",
+          "design/acp/agent-acp-tui.md",
+          "design/acp/agent-acp.md",
+          "design/deepagents.md",
+          "docs/_agent_limits.md",
+          "docs/_extensions/meridianlabs-ai/inspect-docs/filters/reference/commands.py",
+          "docs/agent-bridge.qmd",
+          "docs/agent-custom.qmd",
+          "docs/agents.qmd",
+          "docs/deepagent.qmd",
+          "docs/human-agent.qmd",
+          "docs/images/inspect-human-agent-container.png",
+          "docs/images/inspect-human-agent.png",
+          "docs/multi-agent.qmd",
+          "docs/react-agent.qmd",
+          "docs/reference/inspect_ai.agent.qmd",
+          "docs/reference/inspect_ai.hooks.qmd",
+          "docs/tools-mcp.qmd",
+          "examples/bridge/agentsdk/README.md",
+          "examples/bridge/agentsdk/agent.py",
+          "examples/bridge/agentsdk/dataset.json",
+          "examples/bridge/agentsdk/task.py",
+          "examples/bridge/langchain/agent.py",
+          "examples/bridge/pydantic-ai/agent.py"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 0,
+        "skill_frontmatter_count": 0,
+        "skill_frontmatter_with_description": 0,
+        "skill_frontmatter_with_use_when": 0,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 0,
+        "hook_file_count": 0,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 1,
+        "command_lifecycle": [],
+        "sample_skill_paths": [],
+        "sample_command_paths": [],
+        "sample_persona_paths": [],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "先读取 package scripts 再决定命令,不要凭经验猜 npm/pnpm/yarn gate。",
+        "把 pyproject 的 pytest/ruff/mypy/coverage 配置当成 Python 项目的验证入口。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。",
+        "设计文档不是装饰: brief/RFC/ADR 要把 motivation、alternatives、rollout 和 unresolved 写清。"
+      ]
+    },
+    {
+      "repo": "VoltAgent/awesome-agent-skills",
+      "stars": 23080,
+      "license_spdx": "MIT",
+      "runtime_tier": "docs_or_metadata_candidate",
+      "file_count": 4,
+      "code_file_count": 0,
+      "source_file_count": 0,
+      "test_file_count": 0,
+      "eval_file_count": 0,
+      "design_doc_file_count": 0,
+      "deep_code_source": "source_promotion_batch",
+      "line_counts": {
+        "doc_lines": 1768
+      },
+      "package_json": [],
+      "pyproject": [],
+      "makefiles": [],
+      "workflow_files": [],
+      "docs": {
+        "doc_file_count": 2,
+        "taxonomy": {
+          "governance": 1,
+          "reference": 1
+        },
+        "heading_signals": {},
+        "sample_paths": [
+          "CONTRIBUTING.md",
+          "README.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 0,
+        "classes": 0,
+        "functions": 0,
+        "test_functions": 0,
+        "parse_errors": 0,
+        "sample_paths": []
+      },
+      "js_ts_symbols": {
+        "files_sampled": 0,
+        "export_symbols": 0,
+        "describe_blocks": 0,
+        "test_blocks": 0,
+        "sample_paths": []
+      },
+      "agent_surface": {
+        "surface_count": 0,
+        "buckets": {},
+        "sample_paths": []
+      },
+      "skill_architecture": {
+        "skill_count": 0,
+        "skill_frontmatter_count": 0,
+        "skill_frontmatter_with_description": 0,
+        "skill_frontmatter_with_use_when": 0,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 0,
+        "hook_file_count": 0,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 0,
+        "command_lifecycle": [],
+        "sample_skill_paths": [],
+        "sample_command_paths": [],
+        "sample_persona_paths": [],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "当前仓库主要提供结构 radar: 先识别验证入口,再决定是否进入 sandbox。"
+      ]
+    },
+    {
+      "repo": "Yeachan-Heo/oh-my-claudecode",
+      "stars": 34818,
+      "license_spdx": "MIT",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 5621,
+      "code_file_count": 3157,
+      "source_file_count": 1047,
+      "test_file_count": 2735,
+      "eval_file_count": 83,
+      "design_doc_file_count": 50,
+      "deep_code_source": "runtime_repo_audit",
+      "line_counts": {
+        "doc_lines": 35835,
+        "test_lines": 172347,
+        "source_lines": 141866
+      },
+      "package_json": [
+        {
+          "path": "package.json",
+          "scripts": [
+            "bench:prompts",
+            "bench:prompts:compare",
+            "bench:prompts:save",
+            "build",
+            "build:bridge",
+            "build:bridge-entry",
+            "build:cli",
+            "build:runtime-cli",
+            "build:team-server",
+            "lint",
+            "test",
+            "test:coverage",
+            "test:run",
+            "test:ui"
+          ],
+          "script_count": 28,
+          "dependency_count": 12,
+          "dev_dependency_count": 14
+        },
+        {
+          "path": "tests/fixtures/typescript-pnpm/package.json",
+          "scripts": [
+            "build",
+            "lint",
+            "test"
+          ],
+          "script_count": 4,
+          "dependency_count": 2,
+          "dev_dependency_count": 4
+        }
+      ],
+      "pyproject": [],
+      "makefiles": [],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/auto-label.yml",
+          "job_count": 1,
+          "jobs": [
+            "label"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "job_count": 5,
+          "jobs": [
+            "lint-and-typecheck",
+            "test",
+            "build",
+            "version-check",
+            "npm-pack-test"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/cleanup.yml",
+          "job_count": 2,
+          "jobs": [
+            "cleanup-artifacts",
+            "cleanup-caches"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/pr-check.yml",
+          "job_count": 3,
+          "jobs": [
+            "size-check",
+            "base-branch-check",
+            "draft-check"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/release.yml",
+          "job_count": 1,
+          "jobs": [
+            "release"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/stale.yml",
+          "job_count": 1,
+          "jobs": [
+            "stale"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/upgrade-test.yml",
+          "job_count": 1,
+          "jobs": [
+            "upgrade-test"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        }
+      ],
+      "docs": {
+        "doc_file_count": 250,
+        "taxonomy": {
+          "reference": 103,
+          "governance": 3,
+          "design": 9,
+          "validation": 25
+        },
+        "heading_signals": {
+          "usage": 41,
+          "design": 22,
+          "validation": 23,
+          "governance": 1
+        },
+        "sample_paths": [
+          ".github/CLAUDE.md",
+          ".github/SPONSOR_TIERS.md",
+          ".github/release-body.md",
+          ".github/release-notes.md",
+          ".omx/plans/source-overall-cleanup/fallback-classification-inventory.md",
+          ".omx/plans/source-overall-cleanup/first-safe-cleanup-batch.md",
+          ".omx/plans/source-overall-cleanup/generated-artifact-policy.md",
+          ".omx/plans/source-overall-cleanup/ownership-matrix.md",
+          "AGENTS.md",
+          "CHANGELOG.md",
+          "CLAUDE.md",
+          "CONTRIBUTING.md",
+          "README.de.md",
+          "README.es.md",
+          "README.fr.md",
+          "README.it.md",
+          "README.ja.md",
+          "README.ko.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 0,
+        "classes": 0,
+        "functions": 0,
+        "test_functions": 0,
+        "parse_errors": 0,
+        "sample_paths": []
+      },
+      "js_ts_symbols": {
+        "files_sampled": 90,
+        "export_symbols": 0,
+        "describe_blocks": 13,
+        "test_blocks": 51,
+        "sample_paths": [
+          "benchmarks/harsh-critic/scoring/__tests__/parser.test.ts",
+          "benchmarks/harsh-critic/scoring/__tests__/scorer.test.ts",
+          "benchmarks/harsh-critic/vitest.config.ts",
+          "dist/__tests__/agent-boundary-guidance.test.d.ts",
+          "dist/__tests__/agent-boundary-guidance.test.js",
+          "dist/__tests__/agent-registry.test.d.ts",
+          "dist/__tests__/agent-registry.test.js",
+          "dist/__tests__/artifact-descriptor-handoff.test.d.ts",
+          "dist/__tests__/artifact-descriptor-handoff.test.js",
+          "dist/__tests__/artifact-descriptor-integration.test.d.ts"
+        ]
+      },
+      "agent_surface": {
+        "surface_count": 1961,
+        "buckets": {
+          "claude": 39,
+          "agents": 249,
+          "commands": 127,
+          "skills": 164,
+          "hooks": 1347
+        },
+        "sample_paths": [
+          ".claude-plugin/marketplace.json",
+          ".claude-plugin/plugin.json",
+          ".github/CLAUDE.md",
+          ".mcp.json",
+          "AGENTS.md",
+          "CLAUDE.md",
+          "agents/analyst.md",
+          "agents/architect.md",
+          "agents/code-reviewer.md",
+          "agents/code-simplifier.md",
+          "agents/critic.md",
+          "agents/debugger.md",
+          "agents/designer.md",
+          "agents/document-specialist.md",
+          "agents/executor.md",
+          "agents/explore.md",
+          "agents/git-master.md",
+          "agents/planner.md",
+          "agents/qa-tester.md",
+          "agents/scientist.md",
+          "agents/security-reviewer.md",
+          "agents/test-engineer.md",
+          "agents/tracer.md",
+          "agents/verifier.md"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 39,
+        "skill_frontmatter_count": 39,
+        "skill_frontmatter_with_description": 39,
+        "skill_frontmatter_with_use_when": 0,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 19,
+        "hook_file_count": 1,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 4,
+        "command_lifecycle": [],
+        "sample_skill_paths": [
+          "skills/ai-slop-cleaner/SKILL.md",
+          "skills/ask/SKILL.md",
+          "skills/autopilot/SKILL.md",
+          "skills/autoresearch/SKILL.md",
+          "skills/cancel/SKILL.md",
+          "skills/ccg/SKILL.md",
+          "skills/configure-notifications/SKILL.md",
+          "skills/debug/SKILL.md",
+          "skills/deep-dive/SKILL.md",
+          "skills/deep-interview/SKILL.md",
+          "skills/deepinit/SKILL.md",
+          "skills/external-context/SKILL.md"
+        ],
+        "sample_command_paths": [],
+        "sample_persona_paths": [
+          "agents/analyst.md",
+          "agents/architect.md",
+          "agents/code-reviewer.md",
+          "agents/code-simplifier.md",
+          "agents/critic.md",
+          "agents/debugger.md",
+          "agents/designer.md",
+          "agents/document-specialist.md"
+        ],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "把 Skill / Persona / Command 分层: skill 管 how, persona 管 who, command 管 when,避免大而全的混合提示词。",
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "先读取 package scripts 再决定命令,不要凭经验猜 npm/pnpm/yarn gate。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。",
+        "设计文档不是装饰: brief/RFC/ADR 要把 motivation、alternatives、rollout 和 unresolved 写清。"
+      ]
+    },
+    {
+      "repo": "addyosmani/agent-skills",
+      "stars": 45641,
+      "license_spdx": "MIT",
+      "runtime_tier": "deep_static_candidate",
+      "file_count": 77,
+      "code_file_count": 1,
+      "source_file_count": 0,
+      "test_file_count": 9,
+      "eval_file_count": 0,
+      "design_doc_file_count": 12,
+      "deep_code_source": "source_promotion_batch",
+      "line_counts": {
+        "doc_lines": 8078,
+        "test_lines": 803
+      },
+      "package_json": [],
+      "pyproject": [],
+      "makefiles": [],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/test-plugin-install.yml",
+          "job_count": 3,
+          "jobs": [
+            "validate-skills",
+            "validate",
+            "test-install"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        }
+      ],
+      "docs": {
+        "doc_file_count": 55,
+        "taxonomy": {
+          "reference": 40,
+          "design": 4,
+          "validation": 6,
+          "governance": 4,
+          "onboarding": 1
+        },
+        "heading_signals": {
+          "design": 24,
+          "usage": 16,
+          "governance": 10,
+          "validation": 35
+        },
+        "sample_paths": [
+          ".claude/commands/build.md",
+          ".claude/commands/code-simplify.md",
+          ".claude/commands/plan.md",
+          ".claude/commands/review.md",
+          ".claude/commands/ship.md",
+          ".claude/commands/spec.md",
+          ".claude/commands/test.md",
+          "AGENTS.md",
+          "CLAUDE.md",
+          "CONTRIBUTING.md",
+          "README.md",
+          "agents/README.md",
+          "agents/code-reviewer.md",
+          "agents/security-auditor.md",
+          "agents/test-engineer.md",
+          "docs/copilot-setup.md",
+          "docs/cursor-setup.md",
+          "docs/gemini-cli-setup.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 0,
+        "classes": 0,
+        "functions": 0,
+        "test_functions": 0,
+        "parse_errors": 0,
+        "sample_paths": []
+      },
+      "js_ts_symbols": {
+        "files_sampled": 0,
+        "export_symbols": 0,
+        "describe_blocks": 0,
+        "test_blocks": 0,
+        "sample_paths": []
+      },
+      "agent_surface": {
+        "surface_count": 61,
+        "buckets": {
+          "claude": 10,
+          "commands": 14,
+          "skills": 29,
+          "agents": 6,
+          "cursor": 1,
+          "hooks": 9
+        },
+        "sample_paths": [
+          ".claude-plugin/marketplace.json",
+          ".claude-plugin/plugin.json",
+          ".claude/commands/build.md",
+          ".claude/commands/code-simplify.md",
+          ".claude/commands/plan.md",
+          ".claude/commands/review.md",
+          ".claude/commands/ship.md",
+          ".claude/commands/spec.md",
+          ".claude/commands/test.md",
+          ".gemini/commands/build.toml",
+          ".gemini/commands/code-simplify.toml",
+          ".gemini/commands/planning.toml",
+          ".gemini/commands/review.toml",
+          ".gemini/commands/ship.toml",
+          ".gemini/commands/spec.toml",
+          ".gemini/commands/test.toml",
+          ".opencode/skills",
+          "AGENTS.md",
+          "CLAUDE.md",
+          "agents/README.md",
+          "agents/code-reviewer.md",
+          "agents/security-auditor.md",
+          "agents/test-engineer.md",
+          "docs/cursor-setup.md"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 23,
+        "skill_frontmatter_count": 23,
+        "skill_frontmatter_with_description": 23,
+        "skill_frontmatter_with_use_when": 23,
+        "claude_command_count": 7,
+        "gemini_command_count": 7,
+        "persona_count": 3,
+        "hook_file_count": 9,
+        "setup_doc_count": 5,
+        "reference_doc_count": 5,
+        "harness_surface_count": 19,
+        "command_lifecycle": [
+          "build",
+          "code-simplify",
+          "plan",
+          "review",
+          "ship",
+          "spec",
+          "test"
+        ],
+        "sample_skill_paths": [
+          "skills/api-and-interface-design/SKILL.md",
+          "skills/browser-testing-with-devtools/SKILL.md",
+          "skills/ci-cd-and-automation/SKILL.md",
+          "skills/code-review-and-quality/SKILL.md",
+          "skills/code-simplification/SKILL.md",
+          "skills/context-engineering/SKILL.md",
+          "skills/debugging-and-error-recovery/SKILL.md",
+          "skills/deprecation-and-migration/SKILL.md",
+          "skills/documentation-and-adrs/SKILL.md",
+          "skills/doubt-driven-development/SKILL.md",
+          "skills/frontend-ui-engineering/SKILL.md",
+          "skills/git-workflow-and-versioning/SKILL.md"
+        ],
+        "sample_command_paths": [
+          ".claude/commands/build.md",
+          ".claude/commands/code-simplify.md",
+          ".claude/commands/plan.md",
+          ".claude/commands/review.md",
+          ".claude/commands/ship.md",
+          ".claude/commands/spec.md",
+          ".claude/commands/test.md",
+          ".gemini/commands/build.toml",
+          ".gemini/commands/code-simplify.toml",
+          ".gemini/commands/planning.toml",
+          ".gemini/commands/review.toml",
+          ".gemini/commands/ship.toml",
+          ".gemini/commands/spec.toml",
+          ".gemini/commands/test.toml"
+        ],
+        "sample_persona_paths": [
+          "agents/code-reviewer.md",
+          "agents/security-auditor.md",
+          "agents/test-engineer.md"
+        ],
+        "setup_docs": [
+          "docs/copilot-setup.md",
+          "docs/cursor-setup.md",
+          "docs/gemini-cli-setup.md",
+          "docs/opencode-setup.md",
+          "docs/windsurf-setup.md"
+        ],
+        "orchestration_signals": [
+          "anti-meta-orchestrator",
+          "main-agent-merge",
+          "parallel-fanout-ship",
+          "personas-do-not-call-personas",
+          "single-perspective-persona",
+          "skill-persona-command-layering"
+        ]
+      },
+      "distilled_moves": [
+        "把 Skill / Persona / Command 分层: skill 管 how, persona 管 who, command 管 when,避免大而全的混合提示词。",
+        "把 spec/plan/build/test/review/ship 做成稳定命令生命周期,让小白按入口走、高手按证据审。",
+        "多 agent 编排只在独立视角可并行时 fan-out,最终由主 agent 合并 go/no-go 与回滚计划。",
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。"
+      ]
+    },
+    {
+      "repo": "affaan-m/ECC",
+      "stars": 192280,
+      "license_spdx": "MIT",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 2870,
+      "code_file_count": 402,
+      "source_file_count": 19,
+      "test_file_count": 302,
+      "eval_file_count": 85,
+      "design_doc_file_count": 1387,
+      "deep_code_source": "source_promotion_batch",
+      "line_counts": {
+        "doc_lines": 344922,
+        "test_lines": 91282,
+        "source_lines": 1356
+      },
+      "package_json": [
+        {
+          "path": ".opencode/package.json",
+          "scripts": [
+            "build"
+          ],
+          "script_count": 3,
+          "dependency_count": 0,
+          "dev_dependency_count": 3
+        },
+        {
+          "path": "package.json",
+          "scripts": [
+            "build:opencode",
+            "catalog:check",
+            "command-registry:check",
+            "lint",
+            "test"
+          ],
+          "script_count": 27,
+          "dependency_count": 3,
+          "dev_dependency_count": 8
+        }
+      ],
+      "pyproject": [
+        {
+          "path": "pyproject.toml",
+          "section_count": 12,
+          "quality_sections": [
+            "tool.hatch.build.targets.wheel",
+            "tool.pytest.ini_options",
+            "tool.coverage.run",
+            "tool.coverage.report",
+            "tool.ruff",
+            "tool.ruff.lint",
+            "tool.mypy"
+          ],
+          "has_project_metadata": true
+        },
+        {
+          "path": "skills/skill-comply/pyproject.toml",
+          "section_count": 3,
+          "quality_sections": [
+            "tool.pytest.ini_options"
+          ],
+          "has_project_metadata": true
+        }
+      ],
+      "makefiles": [],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "job_count": 5,
+          "jobs": [
+            "test",
+            "validate",
+            "security",
+            "coverage",
+            "lint"
+          ],
+          "command_hits": [
+            "npm",
+            "pnpm",
+            "yarn"
+          ]
+        },
+        {
+          "path": ".github/workflows/maintenance.yml",
+          "job_count": 3,
+          "jobs": [
+            "dependency-check",
+            "security-audit",
+            "stale"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/monthly-metrics.yml",
+          "job_count": 1,
+          "jobs": [
+            "snapshot"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/release.yml",
+          "job_count": 2,
+          "jobs": [
+            "verify",
+            "publish"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/reusable-release.yml",
+          "job_count": 2,
+          "jobs": [
+            "verify",
+            "publish"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/reusable-test.yml",
+          "job_count": 1,
+          "jobs": [
+            "test"
+          ],
+          "command_hits": [
+            "npm",
+            "pnpm",
+            "yarn"
+          ]
+        },
+        {
+          "path": ".github/workflows/reusable-validate.yml",
+          "job_count": 1,
+          "jobs": [
+            "validate"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/supply-chain-watch.yml",
+          "job_count": 1,
+          "jobs": [
+            "ioc-watch"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        }
+      ],
+      "docs": {
+        "doc_file_count": 2218,
+        "taxonomy": {
+          "design": 3,
+          "reference": 116,
+          "validation": 10,
+          "governance": 11
+        },
+        "heading_signals": {
+          "design": 25,
+          "usage": 42,
+          "validation": 78,
+          "governance": 25
+        },
+        "sample_paths": [
+          ".agents/skills/agent-introspection-debugging/SKILL.md",
+          ".agents/skills/agent-sort/SKILL.md",
+          ".agents/skills/api-design/SKILL.md",
+          ".agents/skills/article-writing/SKILL.md",
+          ".agents/skills/backend-patterns/SKILL.md",
+          ".agents/skills/brand-voice/SKILL.md",
+          ".agents/skills/brand-voice/references/voice-profile-schema.md",
+          ".agents/skills/bun-runtime/SKILL.md",
+          ".agents/skills/coding-standards/SKILL.md",
+          ".agents/skills/content-engine/SKILL.md",
+          ".agents/skills/crosspost/SKILL.md",
+          ".agents/skills/deep-research/SKILL.md",
+          ".agents/skills/dmux-workflows/SKILL.md",
+          ".agents/skills/documentation-lookup/SKILL.md",
+          ".agents/skills/e2e-testing/SKILL.md",
+          ".agents/skills/eval-harness/SKILL.md",
+          ".agents/skills/everything-claude-code/SKILL.md",
+          ".agents/skills/exa-search/SKILL.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 37,
+        "classes": 60,
+        "functions": 306,
+        "test_functions": 181,
+        "parse_errors": 0,
+        "sample_paths": [
+          "integrations/aura/tests/__init__.py",
+          "integrations/aura/tests/fixtures.py",
+          "integrations/aura/tests/test_adapter.py",
+          "skills/continuous-learning-v2/scripts/test_parse_instinct.py",
+          "skills/skill-comply/tests/test_grader.py",
+          "skills/skill-comply/tests/test_parser.py",
+          "skills/skill-comply/tests/test_runner.py",
+          "src/llm/__init__.py",
+          "src/llm/__main__.py",
+          "src/llm/cli/__init__.py"
+        ]
+      },
+      "js_ts_symbols": {
+        "files_sampled": 90,
+        "export_symbols": 10,
+        "describe_blocks": 0,
+        "test_blocks": 1892,
+        "sample_paths": [
+          ".opencode/tools/run-tests.ts",
+          "tests/ci/agent-instruction-safety.test.js",
+          "tests/ci/agent-yaml-surface.test.js",
+          "tests/ci/catalog.test.js",
+          "tests/ci/code-reviewer-false-positive-guard.test.js",
+          "tests/ci/codex-skill-surface.test.js",
+          "tests/ci/command-registry.test.js",
+          "tests/ci/mle-workflow-coverage.test.js",
+          "tests/ci/no-personal-paths.test.js",
+          "tests/ci/scan-supply-chain-iocs.test.js"
+        ]
+      },
+      "agent_surface": {
+        "surface_count": 2000,
+        "buckets": {
+          "agents": 442,
+          "skills": 1020,
+          "claude": 68,
+          "commands": 392,
+          "cursor": 69,
+          "hooks": 202
+        },
+        "sample_paths": [
+          ".agents/plugins/marketplace.json",
+          ".agents/skills/agent-introspection-debugging/SKILL.md",
+          ".agents/skills/agent-introspection-debugging/agents/openai.yaml",
+          ".agents/skills/agent-sort/SKILL.md",
+          ".agents/skills/agent-sort/agents/openai.yaml",
+          ".agents/skills/api-design/SKILL.md",
+          ".agents/skills/api-design/agents/openai.yaml",
+          ".agents/skills/article-writing/SKILL.md",
+          ".agents/skills/article-writing/agents/openai.yaml",
+          ".agents/skills/backend-patterns/SKILL.md",
+          ".agents/skills/backend-patterns/agents/openai.yaml",
+          ".agents/skills/brand-voice/SKILL.md",
+          ".agents/skills/brand-voice/agents/openai.yaml",
+          ".agents/skills/brand-voice/references/voice-profile-schema.md",
+          ".agents/skills/bun-runtime/SKILL.md",
+          ".agents/skills/bun-runtime/agents/openai.yaml",
+          ".agents/skills/coding-standards/SKILL.md",
+          ".agents/skills/coding-standards/agents/openai.yaml",
+          ".agents/skills/content-engine/SKILL.md",
+          ".agents/skills/content-engine/agents/openai.yaml",
+          ".agents/skills/crosspost/SKILL.md",
+          ".agents/skills/crosspost/agents/openai.yaml",
+          ".agents/skills/deep-research/SKILL.md",
+          ".agents/skills/deep-research/agents/openai.yaml"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 246,
+        "skill_frontmatter_count": 80,
+        "skill_frontmatter_with_description": 80,
+        "skill_frontmatter_with_use_when": 24,
+        "claude_command_count": 3,
+        "gemini_command_count": 0,
+        "persona_count": 61,
+        "hook_file_count": 4,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 76,
+        "command_lifecycle": [
+          "add-language-rules",
+          "database-migration",
+          "feature-development"
+        ],
+        "sample_skill_paths": [
+          "skills/accessibility/SKILL.md",
+          "skills/agent-architecture-audit/SKILL.md",
+          "skills/agent-eval/SKILL.md",
+          "skills/agent-harness-construction/SKILL.md",
+          "skills/agent-introspection-debugging/SKILL.md",
+          "skills/agent-payment-x402/SKILL.md",
+          "skills/agent-sort/SKILL.md",
+          "skills/agentic-engineering/SKILL.md",
+          "skills/agentic-os/SKILL.md",
+          "skills/ai-first-engineering/SKILL.md",
+          "skills/ai-regression-testing/SKILL.md",
+          "skills/android-clean-architecture/SKILL.md"
+        ],
+        "sample_command_paths": [
+          ".claude/commands/add-language-rules.md",
+          ".claude/commands/database-migration.md",
+          ".claude/commands/feature-development.md"
+        ],
+        "sample_persona_paths": [
+          "agents/a11y-architect.md",
+          "agents/architect.md",
+          "agents/build-error-resolver.md",
+          "agents/chief-of-staff.md",
+          "agents/code-architect.md",
+          "agents/code-explorer.md",
+          "agents/code-reviewer.md",
+          "agents/code-simplifier.md"
+        ],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "把 Skill / Persona / Command 分层: skill 管 how, persona 管 who, command 管 when,避免大而全的混合提示词。",
+        "把高频工程动作做成稳定 slash commands,先复用入口,再让 agent 展开细节。",
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "先读取 package scripts 再决定命令,不要凭经验猜 npm/pnpm/yarn gate。",
+        "把 pyproject 的 pytest/ruff/mypy/coverage 配置当成 Python 项目的验证入口。"
+      ]
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "stars": 95508,
+      "license_spdx": "MIT",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 486,
+      "code_file_count": 377,
+      "source_file_count": 0,
+      "test_file_count": 104,
+      "eval_file_count": 4,
+      "design_doc_file_count": 0,
+      "deep_code_source": "source_promotion_batch",
+      "line_counts": {
+        "doc_lines": 6699,
+        "test_lines": 25634
+      },
+      "package_json": [],
+      "pyproject": [
+        {
+          "path": "pyproject.toml",
+          "section_count": 14,
+          "quality_sections": [
+            "tool.codespell",
+            "tool.ruff",
+            "tool.ruff.lint",
+            "tool.ruff.format",
+            "tool.pyright",
+            "tool.hatch.build",
+            "tool.pytest.ini_options",
+            "tool.hatch.metadata",
+            "tool.uv"
+          ],
+          "has_project_metadata": true
+        }
+      ],
+      "makefiles": [],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/claude.yml",
+          "job_count": 1,
+          "jobs": [
+            "claude"
+          ],
+          "command_hits": [
+            "playwright",
+            "pytest",
+            "ruff"
+          ]
+        },
+        {
+          "path": ".github/workflows/cloud_evals.yml",
+          "job_count": 1,
+          "jobs": [
+            "trigger_cloud_eval_image_build"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/docker.yml",
+          "job_count": 1,
+          "jobs": [
+            "build_publish_image"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/eval-on-pr.yml",
+          "job_count": 1,
+          "jobs": [
+            "trigger-evaluation"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/install-script.yml",
+          "job_count": 6,
+          "jobs": [
+            "test-install-sh-linux",
+            "test-install-sh-macos",
+            "test-install-sh-windows",
+            "test-uv-pip-install",
+            "test-uvx-run",
+            "test-uvx-pypi"
+          ],
+          "command_hits": [
+            "playwright"
+          ]
+        },
+        {
+          "path": ".github/workflows/lint.yml",
+          "job_count": 3,
+          "jobs": [
+            "lint-syntax",
+            "lint-style",
+            "lint-typecheck"
+          ],
+          "command_hits": [
+            "ruff"
+          ]
+        },
+        {
+          "path": ".github/workflows/package.yaml",
+          "job_count": 2,
+          "jobs": [
+            "build",
+            "build_test"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/publish.yml",
+          "job_count": 2,
+          "jobs": [
+            "tag_pre_release",
+            "publish_to_pypi"
+          ],
+          "command_hits": [
+            "playwright",
+            "pytest",
+            "ruff"
+          ]
+        },
+        {
+          "path": ".github/workflows/stale-bot.yml",
+          "job_count": 1,
+          "jobs": [
+            "stale"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/test.yaml",
+          "job_count": 4,
+          "jobs": [
+            "setup-chromium",
+            "find_tests",
+            "tests",
+            "evaluate-tasks"
+          ],
+          "command_hits": [
+            "playwright",
+            "pytest"
+          ]
+        }
+      ],
+      "docs": {
+        "doc_file_count": 56,
+        "taxonomy": {
+          "governance": 2,
+          "reference": 42,
+          "onboarding": 11,
+          "validation": 1
+        },
+        "heading_signals": {
+          "governance": 8,
+          "usage": 40,
+          "design": 7,
+          "validation": 4
+        },
+        "sample_paths": [
+          ".github/CONTRIBUTING.md",
+          ".github/SECURITY.md",
+          "AGENTS.md",
+          "CLAUDE.md",
+          "CLOUD.md",
+          "README.md",
+          "browser_use/README.md",
+          "browser_use/actor/README.md",
+          "browser_use/agent/system_prompts/system_prompt.md",
+          "browser_use/agent/system_prompts/system_prompt_anthropic_flash.md",
+          "browser_use/agent/system_prompts/system_prompt_browser_use.md",
+          "browser_use/agent/system_prompts/system_prompt_browser_use_flash.md",
+          "browser_use/agent/system_prompts/system_prompt_browser_use_no_thinking.md",
+          "browser_use/agent/system_prompts/system_prompt_flash.md",
+          "browser_use/agent/system_prompts/system_prompt_flash_anthropic.md",
+          "browser_use/agent/system_prompts/system_prompt_no_thinking.md",
+          "browser_use/llm/README.md",
+          "browser_use/llm/oci_raw/README.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 80,
+        "classes": 130,
+        "functions": 941,
+        "test_functions": 702,
+        "parse_errors": 0,
+        "sample_paths": [
+          "browser_use/llm/tests/test_anthropic_cache.py",
+          "browser_use/llm/tests/test_chat_models.py",
+          "browser_use/llm/tests/test_gemini_image.py",
+          "browser_use/llm/tests/test_groq_loop.py",
+          "browser_use/llm/tests/test_mistral_schema.py",
+          "browser_use/llm/tests/test_single_step.py",
+          "browser_use/tokens/tests/test_cost.py",
+          "tests/ci/browser/test_cdp_headers.py",
+          "tests/ci/browser/test_cloud_browser.py",
+          "tests/ci/browser/test_cross_origin_click.py"
+        ]
+      },
+      "js_ts_symbols": {
+        "files_sampled": 0,
+        "export_symbols": 0,
+        "describe_blocks": 0,
+        "test_blocks": 0,
+        "sample_paths": []
+      },
+      "agent_surface": {
+        "surface_count": 78,
+        "buckets": {
+          "claude": 3,
+          "agents": 32,
+          "skills": 37,
+          "commands": 6
+        },
+        "sample_paths": [
+          ".github/workflows/claude.yml",
+          "AGENTS.md",
+          "CLAUDE.md",
+          "browser_use/agent/cloud_events.py",
+          "browser_use/agent/gif.py",
+          "browser_use/agent/judge.py",
+          "browser_use/agent/message_manager/service.py",
+          "browser_use/agent/message_manager/utils.py",
+          "browser_use/agent/message_manager/views.py",
+          "browser_use/agent/prompts.py",
+          "browser_use/agent/service.py",
+          "browser_use/agent/system_prompts/__init__.py",
+          "browser_use/agent/system_prompts/system_prompt.md",
+          "browser_use/agent/system_prompts/system_prompt_anthropic_flash.md",
+          "browser_use/agent/system_prompts/system_prompt_browser_use.md",
+          "browser_use/agent/system_prompts/system_prompt_browser_use_flash.md",
+          "browser_use/agent/system_prompts/system_prompt_browser_use_no_thinking.md",
+          "browser_use/agent/system_prompts/system_prompt_flash.md",
+          "browser_use/agent/system_prompts/system_prompt_flash_anthropic.md",
+          "browser_use/agent/system_prompts/system_prompt_no_thinking.md",
+          "browser_use/agent/variable_detector.py",
+          "browser_use/agent/views.py",
+          "browser_use/mcp/.dxtignore",
+          "browser_use/mcp/__init__.py"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 4,
+        "skill_frontmatter_count": 4,
+        "skill_frontmatter_with_description": 4,
+        "skill_frontmatter_with_use_when": 2,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 0,
+        "hook_file_count": 0,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 2,
+        "command_lifecycle": [],
+        "sample_skill_paths": [
+          "skills/browser-use/SKILL.md",
+          "skills/cloud/SKILL.md",
+          "skills/open-source/SKILL.md",
+          "skills/remote-browser/SKILL.md"
+        ],
+        "sample_command_paths": [],
+        "sample_persona_paths": [],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "把 skill frontmatter、触发条件和验证清单当作可安装协作界面,而不是普通 Markdown。",
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "把 pyproject 的 pytest/ruff/mypy/coverage 配置当成 Python 项目的验证入口。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。",
+        "从测试命名和 test block 学项目的验收语言,再写自己的最小验证。"
+      ]
+    },
+    {
+      "repo": "github/spec-kit",
+      "stars": 105805,
+      "license_spdx": "MIT",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 319,
+      "code_file_count": 139,
+      "source_file_count": 69,
+      "test_file_count": 87,
+      "eval_file_count": 0,
+      "design_doc_file_count": 124,
+      "deep_code_source": "runtime_repo_audit",
+      "line_counts": {
+        "doc_lines": 8057,
+        "test_lines": 29709,
+        "source_lines": 22467
+      },
+      "package_json": [],
+      "pyproject": [
+        {
+          "path": "pyproject.toml",
+          "section_count": 9,
+          "quality_sections": [
+            "tool.hatch.build.targets.wheel",
+            "tool.hatch.build.targets.wheel.force-include",
+            "tool.pytest.ini_options",
+            "tool.coverage.run",
+            "tool.coverage.report"
+          ],
+          "has_project_metadata": true
+        }
+      ],
+      "makefiles": [],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/add-community-extension.lock.yml",
+          "job_count": 6,
+          "jobs": [
+            "activation",
+            "agent",
+            "conclusion",
+            "detection",
+            "pre_activation",
+            "safe_outputs"
+          ],
+          "command_hits": [
+            "npm",
+            "pnpm",
+            "yarn"
+          ]
+        },
+        {
+          "path": ".github/workflows/add-community-preset.lock.yml",
+          "job_count": 6,
+          "jobs": [
+            "activation",
+            "agent",
+            "conclusion",
+            "detection",
+            "pre_activation",
+            "safe_outputs"
+          ],
+          "command_hits": [
+            "npm",
+            "pnpm",
+            "yarn"
+          ]
+        },
+        {
+          "path": ".github/workflows/catalog-assign.yml",
+          "job_count": 1,
+          "jobs": [
+            "assign"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/codeql.yml",
+          "job_count": 1,
+          "jobs": [
+            "analyze"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/docs.yml",
+          "job_count": 2,
+          "jobs": [
+            "build",
+            "deploy"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/lint.yml",
+          "job_count": 1,
+          "jobs": [
+            "markdownlint"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/release-trigger.yml",
+          "job_count": 1,
+          "jobs": [
+            "bump-version"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/release.yml",
+          "job_count": 1,
+          "jobs": [
+            "release"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/stale.yml",
+          "job_count": 1,
+          "jobs": [
+            "stale"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/test.yml",
+          "job_count": 2,
+          "jobs": [
+            "ruff",
+            "pytest"
+          ],
+          "command_hits": [
+            "pytest",
+            "ruff"
+          ]
+        }
+      ],
+      "docs": {
+        "doc_file_count": 102,
+        "taxonomy": {
+          "reference": 63,
+          "governance": 4,
+          "onboarding": 3,
+          "design": 23,
+          "validation": 9
+        },
+        "heading_signals": {
+          "validation": 21,
+          "design": 31,
+          "usage": 60,
+          "governance": 3
+        },
+        "sample_paths": [
+          ".github/PULL_REQUEST_TEMPLATE.md",
+          ".github/skills/add-community-extension/SKILL.md",
+          ".github/workflows/RELEASE-PROCESS.md",
+          ".github/workflows/add-community-extension.md",
+          ".github/workflows/add-community-preset.md",
+          "AGENTS.md",
+          "CHANGELOG.md",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "DEVELOPMENT.md",
+          "README.md",
+          "SECURITY.md",
+          "SUPPORT.md",
+          "docs/README.md",
+          "docs/community/extensions.md",
+          "docs/community/friends.md",
+          "docs/community/overview.md",
+          "docs/community/presets.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 80,
+        "classes": 133,
+        "functions": 804,
+        "test_functions": 174,
+        "parse_errors": 0,
+        "sample_paths": [
+          "src/specify_cli/__init__.py",
+          "src/specify_cli/_assets.py",
+          "src/specify_cli/_console.py",
+          "src/specify_cli/_github_http.py",
+          "src/specify_cli/_utils.py",
+          "src/specify_cli/_version.py",
+          "src/specify_cli/agents.py",
+          "src/specify_cli/authentication/__init__.py",
+          "src/specify_cli/authentication/azure_devops.py",
+          "src/specify_cli/authentication/base.py"
+        ]
+      },
+      "js_ts_symbols": {
+        "files_sampled": 0,
+        "export_symbols": 0,
+        "describe_blocks": 0,
+        "test_blocks": 0,
+        "sample_paths": []
+      },
+      "agent_surface": {
+        "surface_count": 43,
+        "buckets": {
+          "agents": 7,
+          "skills": 3,
+          "commands": 25,
+          "claude": 3,
+          "cursor": 2,
+          "hooks": 5
+        },
+        "sample_paths": [
+          ".github/ISSUE_TEMPLATE/agent_request.yml",
+          ".github/skills/add-community-extension/SKILL.md",
+          "AGENTS.md",
+          "extensions/git/commands/speckit.git.commit.md",
+          "extensions/git/commands/speckit.git.feature.md",
+          "extensions/git/commands/speckit.git.initialize.md",
+          "extensions/git/commands/speckit.git.remote.md",
+          "extensions/git/commands/speckit.git.validate.md",
+          "extensions/selftest/commands/selftest.md",
+          "extensions/template/commands/example.md",
+          "media/bootstrap-claude-code.gif",
+          "presets/lean/commands/speckit.constitution.md",
+          "presets/lean/commands/speckit.implement.md",
+          "presets/lean/commands/speckit.plan.md",
+          "presets/lean/commands/speckit.specify.md",
+          "presets/lean/commands/speckit.tasks.md",
+          "presets/scaffold/commands/speckit.myext.myextcmd.md",
+          "presets/scaffold/commands/speckit.specify.md",
+          "presets/self-test/commands/speckit.specify.md",
+          "presets/self-test/commands/speckit.wrap-test.md",
+          "presets/self-test/templates/agent-file-template.md",
+          "src/specify_cli/agents.py",
+          "src/specify_cli/integrations/claude/__init__.py",
+          "src/specify_cli/integrations/cursor_agent/__init__.py"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 0,
+        "skill_frontmatter_count": 0,
+        "skill_frontmatter_with_description": 0,
+        "skill_frontmatter_with_use_when": 0,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 0,
+        "hook_file_count": 0,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 1,
+        "command_lifecycle": [],
+        "sample_skill_paths": [],
+        "sample_command_paths": [],
+        "sample_persona_paths": [],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "把 pyproject 的 pytest/ruff/mypy/coverage 配置当成 Python 项目的验证入口。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。",
+        "设计文档不是装饰: brief/RFC/ADR 要把 motivation、alternatives、rollout 和 unresolved 写清。",
+        "从测试命名和 test block 学项目的验收语言,再写自己的最小验证。"
+      ]
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "stars": 22309,
+      "license_spdx": "Apache-2.0",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 499,
+      "code_file_count": 175,
+      "source_file_count": 15,
+      "test_file_count": 22,
+      "eval_file_count": 0,
+      "design_doc_file_count": 2,
+      "deep_code_source": "runtime_repo_audit",
+      "line_counts": {
+        "doc_lines": 4935,
+        "source_lines": 1186,
+        "test_lines": 1144
+      },
+      "package_json": [
+        {
+          "path": "packages/create-12-factor-agent/template/package.json",
+          "scripts": [
+            "build"
+          ],
+          "script_count": 2,
+          "dependency_count": 6,
+          "dev_dependency_count": 6
+        },
+        {
+          "path": "packages/walkthroughgen/examples/typescript/walkthrough/00-package.json",
+          "scripts": [
+            "test"
+          ],
+          "script_count": 1,
+          "dependency_count": 1,
+          "dev_dependency_count": 0
+        },
+        {
+          "path": "packages/walkthroughgen/package.json",
+          "scripts": [
+            "test",
+            "test:watch"
+          ],
+          "script_count": 2,
+          "dependency_count": 6,
+          "dev_dependency_count": 3
+        },
+        {
+          "path": "workshops/2025-05-17/package.json",
+          "scripts": [
+            "build"
+          ],
+          "script_count": 2,
+          "dependency_count": 3,
+          "dev_dependency_count": 4
+        },
+        {
+          "path": "workshops/2025-05-17/sections/00-hello-world/walkthrough/00-package.json",
+          "parse_error": true
+        },
+        {
+          "path": "workshops/2025-05-17/walkthrough/00-package.json",
+          "parse_error": true
+        },
+        {
+          "path": "workshops/2025-05/final/package.json",
+          "scripts": [
+            "build"
+          ],
+          "script_count": 2,
+          "dependency_count": 5,
+          "dev_dependency_count": 6
+        },
+        {
+          "path": "workshops/2025-05/sections/00-hello-world/walkthrough/00-package.json",
+          "parse_error": true
+        }
+      ],
+      "pyproject": [
+        {
+          "path": "hack/contributors_markdown/pyproject.toml",
+          "section_count": 1,
+          "quality_sections": [],
+          "has_project_metadata": true
+        },
+        {
+          "path": "workshops/2025-07-16/pyproject.toml",
+          "section_count": 1,
+          "quality_sections": [],
+          "has_project_metadata": true
+        }
+      ],
+      "makefiles": [
+        {
+          "path": "Makefile",
+          "target_count": 3,
+          "quality_targets": []
+        },
+        {
+          "path": "workshops/2025-05/Makefile",
+          "target_count": 4,
+          "quality_targets": []
+        }
+      ],
+      "workflow_files": [],
+      "docs": {
+        "doc_file_count": 52,
+        "taxonomy": {
+          "reference": 49,
+          "design": 1,
+          "validation": 2
+        },
+        "heading_signals": {
+          "design": 1,
+          "governance": 3,
+          "validation": 3,
+          "usage": 3
+        },
+        "sample_paths": [
+          "CLAUDE.md",
+          "README.md",
+          "content/appendix-13-pre-fetch.md",
+          "content/brief-history-of-software.md",
+          "content/factor-01-natural-language-to-tool-calls.md",
+          "content/factor-02-own-your-prompts.md",
+          "content/factor-03-own-your-context-window.md",
+          "content/factor-04-tools-are-structured-outputs.md",
+          "content/factor-05-unify-execution-state.md",
+          "content/factor-06-launch-pause-resume.md",
+          "content/factor-07-contact-humans-with-tools.md",
+          "content/factor-08-own-your-control-flow.md",
+          "content/factor-09-compact-errors.md",
+          "content/factor-1-natural-language-to-tool-calls.md",
+          "content/factor-10-small-focused-agents.md",
+          "content/factor-11-trigger-from-anywhere.md",
+          "content/factor-12-stateless-reducer.md",
+          "content/factor-2-own-your-prompts.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 0,
+        "classes": 0,
+        "functions": 0,
+        "test_functions": 0,
+        "parse_errors": 0,
+        "sample_paths": []
+      },
+      "js_ts_symbols": {
+        "files_sampled": 18,
+        "export_symbols": 27,
+        "describe_blocks": 5,
+        "test_blocks": 20,
+        "sample_paths": [
+          "packages/create-12-factor-agent/template/src/a2h.ts",
+          "packages/create-12-factor-agent/template/src/agent.ts",
+          "packages/create-12-factor-agent/template/src/cli.ts",
+          "packages/create-12-factor-agent/template/src/index.ts",
+          "packages/create-12-factor-agent/template/src/server.ts",
+          "packages/create-12-factor-agent/template/src/state.ts",
+          "packages/walkthroughgen/examples/typescript/walkthrough/01-index.ts",
+          "packages/walkthroughgen/examples/typescript/walkthrough/02-cli.ts",
+          "packages/walkthroughgen/examples/typescript/walkthrough/02-index.ts",
+          "packages/walkthroughgen/jest.config.js"
+        ]
+      },
+      "agent_surface": {
+        "surface_count": 146,
+        "buckets": {
+          "claude": 2,
+          "agents": 144,
+          "hooks": 2
+        },
+        "sample_paths": [
+          "CLAUDE.md",
+          "content/factor-10-small-focused-agents.md",
+          "img/025-agent-dag.png",
+          "img/026-agent-dag-lines.png",
+          "img/027-agent-loop-animation.gif",
+          "img/027-agent-loop-animation.mp4",
+          "img/027-agent-loop-dag.png",
+          "img/027-agent-loop.png",
+          "img/028-micro-agent-dag.png",
+          "img/175-outer-loop-agents.png",
+          "img/1a0-small-focused-agents.png",
+          "img/1a5-agent-scope-grow.gif",
+          "img/1c5-agent-foldl.png",
+          "packages/create-12-factor-agent/template/.gitignore",
+          "packages/create-12-factor-agent/template/README.md",
+          "packages/create-12-factor-agent/template/baml_src/agent.baml",
+          "packages/create-12-factor-agent/template/baml_src/clients.baml",
+          "packages/create-12-factor-agent/template/baml_src/generators.baml",
+          "packages/create-12-factor-agent/template/baml_src/tool_calculator.baml",
+          "packages/create-12-factor-agent/template/package-lock.json",
+          "packages/create-12-factor-agent/template/package.json",
+          "packages/create-12-factor-agent/template/src/a2h.ts",
+          "packages/create-12-factor-agent/template/src/agent.ts",
+          "packages/create-12-factor-agent/template/src/cli.ts"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 0,
+        "skill_frontmatter_count": 0,
+        "skill_frontmatter_with_description": 0,
+        "skill_frontmatter_with_use_when": 0,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 0,
+        "hook_file_count": 0,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 1,
+        "command_lifecycle": [],
+        "sample_skill_paths": [],
+        "sample_command_paths": [],
+        "sample_persona_paths": [],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "先读取 package scripts 再决定命令,不要凭经验猜 npm/pnpm/yarn gate。",
+        "把 pyproject 的 pytest/ruff/mypy/coverage 配置当成 Python 项目的验证入口。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。",
+        "设计文档不是装饰: brief/RFC/ADR 要把 motivation、alternatives、rollout 和 unresolved 写清。",
+        "从测试命名和 test block 学项目的验收语言,再写自己的最小验证。"
+      ]
+    },
+    {
+      "repo": "microsoft/code-with-engineering-playbook",
+      "stars": 2663,
+      "license_spdx": "CC-BY-4.0",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 391,
+      "code_file_count": 0,
+      "source_file_count": 0,
+      "test_file_count": 61,
+      "eval_file_count": 1,
+      "design_doc_file_count": 358,
+      "deep_code_source": "runtime_repo_audit",
+      "line_counts": {
+        "doc_lines": 16078,
+        "test_lines": 4128
+      },
+      "package_json": [
+        {
+          "path": "package.json",
+          "scripts": [],
+          "script_count": 0,
+          "dependency_count": 2,
+          "dev_dependency_count": 0
+        }
+      ],
+      "pyproject": [],
+      "makefiles": [],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/mega-linter.yml",
+          "job_count": 1,
+          "jobs": [
+            "build"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/mkdocs.yml",
+          "job_count": 1,
+          "jobs": [
+            "deploy"
+          ],
+          "command_hits": []
+        }
+      ],
+      "docs": {
+        "doc_file_count": 250,
+        "taxonomy": {
+          "reference": 73,
+          "governance": 3,
+          "validation": 26,
+          "design": 36,
+          "onboarding": 2
+        },
+        "heading_signals": {
+          "design": 69,
+          "governance": 13,
+          "validation": 144,
+          "usage": 15
+        },
+        "sample_paths": [
+          ".github/ISSUE_TEMPLATE/bug_report.md",
+          ".github/ISSUE_TEMPLATE/feature_request.md",
+          ".github/pull_request_template.md",
+          "CONTRIBUTING.md",
+          "README.md",
+          "SECURITY.md",
+          "docs/CI-CD/README.md",
+          "docs/CI-CD/continuous-delivery.md",
+          "docs/CI-CD/continuous-integration.md",
+          "docs/CI-CD/dev-sec-ops/README.md",
+          "docs/CI-CD/dev-sec-ops/azure-devops-service-connection-security.md",
+          "docs/CI-CD/dev-sec-ops/dependency-and-container-scanning.md",
+          "docs/CI-CD/dev-sec-ops/evaluate-open-source-software.md",
+          "docs/CI-CD/dev-sec-ops/penetration-testing.md",
+          "docs/CI-CD/dev-sec-ops/secrets-management/README.md",
+          "docs/CI-CD/dev-sec-ops/secrets-management/credential_scanning.md",
+          "docs/CI-CD/dev-sec-ops/secrets-management/recipes/detect-secrets-ado.md",
+          "docs/CI-CD/dev-sec-ops/secrets-management/recipes/detect-secrets.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 0,
+        "classes": 0,
+        "functions": 0,
+        "test_functions": 0,
+        "parse_errors": 0,
+        "sample_paths": []
+      },
+      "js_ts_symbols": {
+        "files_sampled": 0,
+        "export_symbols": 0,
+        "describe_blocks": 0,
+        "test_blocks": 0,
+        "sample_paths": []
+      },
+      "agent_surface": {
+        "surface_count": 1,
+        "buckets": {
+          "skills": 1
+        },
+        "sample_paths": [
+          "docs/ml-and-ai-projects/images/ml-tpm-skills.png"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 0,
+        "skill_frontmatter_count": 0,
+        "skill_frontmatter_with_description": 0,
+        "skill_frontmatter_with_use_when": 0,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 0,
+        "hook_file_count": 0,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 0,
+        "command_lifecycle": [],
+        "sample_skill_paths": [],
+        "sample_command_paths": [],
+        "sample_persona_paths": [],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "先读取 package scripts 再决定命令,不要凭经验猜 npm/pnpm/yarn gate。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。",
+        "设计文档不是装饰: brief/RFC/ADR 要把 motivation、alternatives、rollout 和 unresolved 写清。"
+      ]
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "stars": 21585,
+      "license_spdx": "MIT",
+      "runtime_tier": "runtime_candidate",
+      "file_count": 5248,
+      "code_file_count": 2683,
+      "source_file_count": 1528,
+      "test_file_count": 1452,
+      "eval_file_count": 509,
+      "design_doc_file_count": 633,
+      "deep_code_source": "runtime_repo_audit",
+      "line_counts": {
+        "doc_lines": 129742,
+        "test_lines": 491531,
+        "source_lines": 297769
+      },
+      "package_json": [
+        {
+          "path": "code-scan-action/package.json",
+          "scripts": [
+            "build",
+            "test"
+          ],
+          "script_count": 6,
+          "dependency_count": 5,
+          "dev_dependency_count": 4
+        },
+        {
+          "path": "examples/claude-agent-sdk/advanced/workspace/package.json",
+          "scripts": [],
+          "script_count": 1,
+          "dependency_count": 0,
+          "dev_dependency_count": 0
+        },
+        {
+          "path": "examples/claude-agent-sdk/working-dir/sample-project/package.json",
+          "scripts": [],
+          "script_count": 1,
+          "dependency_count": 1,
+          "dev_dependency_count": 0
+        },
+        {
+          "path": "examples/config-node-package-typescript/package.json",
+          "scripts": [
+            "test"
+          ],
+          "script_count": 1,
+          "dependency_count": 1,
+          "dev_dependency_count": 3
+        },
+        {
+          "path": "examples/config-node-package/package.json",
+          "scripts": [
+            "test"
+          ],
+          "script_count": 1,
+          "dependency_count": 1,
+          "dev_dependency_count": 0
+        },
+        {
+          "path": "examples/config-stateful-session-management/package.json",
+          "scripts": [],
+          "script_count": 1,
+          "dependency_count": 3,
+          "dev_dependency_count": 0
+        },
+        {
+          "path": "examples/config-ts/package.json",
+          "scripts": [
+            "eval",
+            "eval-schema"
+          ],
+          "script_count": 3,
+          "dependency_count": 3,
+          "dev_dependency_count": 2
+        },
+        {
+          "path": "examples/config-websockets/basic/test-server/package.json",
+          "scripts": [
+            "test"
+          ],
+          "script_count": 1,
+          "dependency_count": 1,
+          "dev_dependency_count": 0
+        }
+      ],
+      "pyproject": [
+        {
+          "path": "examples/redteam-api-top-10/pyproject.toml",
+          "section_count": 4,
+          "quality_sections": [
+            "tool.hatch.build.targets.wheel"
+          ],
+          "has_project_metadata": true
+        }
+      ],
+      "makefiles": [],
+      "workflow_files": [
+        {
+          "path": ".github/workflows/deploy-launcher.yml",
+          "job_count": 1,
+          "jobs": [
+            "deploy"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/docker.yml",
+          "job_count": 4,
+          "jobs": [
+            "test",
+            "build-docker-and-push-digests",
+            "merge-docker-digests",
+            "attest-docker-image"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/image-actions.yml",
+          "job_count": 1,
+          "jobs": [
+            "build"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/main.yml",
+          "job_count": 19,
+          "jobs": [
+            "ci-config",
+            "test",
+            "build",
+            "style-check",
+            "shell-format",
+            "assets",
+            "python",
+            "docs",
+            "code-scan-action",
+            "site-tests"
+          ],
+          "command_hits": [
+            "go test",
+            "npm",
+            "ruff"
+          ]
+        },
+        {
+          "path": ".github/workflows/promptfoo-code-scan.yml",
+          "job_count": 1,
+          "jobs": [
+            "security-scan"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/release-please-format.yml",
+          "job_count": 1,
+          "jobs": [
+            "format"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/release-please.yml",
+          "job_count": 6,
+          "jobs": [
+            "release-please",
+            "build",
+            "publish-npm",
+            "publish-npm-backfill",
+            "docker",
+            "publish-code-scan-action"
+          ],
+          "command_hits": [
+            "npm"
+          ]
+        },
+        {
+          "path": ".github/workflows/tusk-test-runner-app-vitest-unit-tests.yml",
+          "job_count": 1,
+          "jobs": [
+            "test-action"
+          ],
+          "command_hits": [
+            "npm",
+            "vitest"
+          ]
+        },
+        {
+          "path": ".github/workflows/tusk-test-runner-vitest-unit-tests.yml",
+          "job_count": 1,
+          "jobs": [
+            "test-action"
+          ],
+          "command_hits": [
+            "npm",
+            "vitest"
+          ]
+        },
+        {
+          "path": ".github/workflows/validate-pr-title.yml",
+          "job_count": 1,
+          "jobs": [
+            "validate-pr-title"
+          ],
+          "command_hits": []
+        },
+        {
+          "path": ".github/workflows/validate-renovate-config.yml",
+          "job_count": 1,
+          "jobs": [
+            "validate"
+          ],
+          "command_hits": []
+        }
+      ],
+      "docs": {
+        "doc_file_count": 896,
+        "taxonomy": {
+          "reference": 27,
+          "validation": 3,
+          "governance": 4,
+          "design": 3,
+          "onboarding": 103
+        },
+        "heading_signals": {
+          "validation": 67,
+          "design": 9,
+          "governance": 7,
+          "usage": 59
+        },
+        "sample_paths": [
+          ".agents/AGENTS.md",
+          ".agents/skills/redteam-plugin-development/SKILL.md",
+          ".agents/skills/search-params/SKILL.md",
+          ".claude/skills/promptfoo-evals/SKILL.md",
+          ".claude/skills/promptfoo-evals/references/cheatsheet.md",
+          ".claude/skills/redteam-plugin-development/SKILL.md",
+          ".claude/skills/search-params/SKILL.md",
+          ".github/AGENTS.md",
+          ".github/ISSUE_TEMPLATE/bug_report.md",
+          ".github/ISSUE_TEMPLATE/feature_request.md",
+          "AGENTS.md",
+          "CHANGELOG.md",
+          "CLAUDE.md",
+          "CODE_OF_CONDUCT.md",
+          "CONTRIBUTING.md",
+          "README.md",
+          "SECURITY.md",
+          "code-scan-action/AGENTS.md"
+        ]
+      },
+      "python_symbols": {
+        "files_sampled": 32,
+        "classes": 45,
+        "functions": 179,
+        "test_functions": 71,
+        "parse_errors": 0,
+        "sample_paths": [
+          "examples/compare-agentic-sdks/test-codebase/payment_processor.py",
+          "examples/compare-agentic-sdks/test-codebase/user_service.py",
+          "examples/config-python-test-cases/test_cases.py",
+          "examples/integration-google-adk/provider_test.py",
+          "examples/integration-inspect-osworld/osworld_tests.py",
+          "examples/openai-agents/agent_provider_test.py",
+          "examples/openai-agents/promptfoo_tracing_test.py",
+          "examples/provider-amazon-sagemaker/deploy-test-model.py",
+          "src/python/persistent_wrapper.py",
+          "src/python/persistent_wrapper_test.py"
+        ]
+      },
+      "js_ts_symbols": {
+        "files_sampled": 90,
+        "export_symbols": 127,
+        "describe_blocks": 81,
+        "test_blocks": 389,
+        "sample_paths": [
+          "examples/config-javascript-test-cases/dynamicTests.ts",
+          "examples/config-javascript-test-cases/staticTests.ts",
+          "examples/config-node-module-package/node_modules/testpackage/main.js",
+          "examples/config-retry-testing/errorProvider.js",
+          "examples/config-websockets/basic/test-server/server.js",
+          "examples/integration-jest/index.test.ts",
+          "examples/integration-jest/vitest.config.js",
+          "examples/provider-amazon-sagemaker/test-sagemaker-provider.js",
+          "examples/redteam-cyberseceval/loadTests.js",
+          "examples/redteam-medical-agent/src/test-agent.js"
+        ]
+      },
+      "agent_surface": {
+        "surface_count": 615,
+        "buckets": {
+          "agents": 287,
+          "skills": 103,
+          "claude": 100,
+          "cursor": 1,
+          "hooks": 55,
+          "commands": 114
+        },
+        "sample_paths": [
+          ".agents/AGENTS.md",
+          ".agents/plugins/marketplace.json",
+          ".agents/skills/redteam-plugin-development/SKILL.md",
+          ".agents/skills/search-params/SKILL.md",
+          ".claude-plugin/marketplace.json",
+          ".claude/settings.json",
+          ".claude/skills/promptfoo-evals/SKILL.md",
+          ".claude/skills/promptfoo-evals/references/cheatsheet.md",
+          ".claude/skills/redteam-plugin-development/SKILL.md",
+          ".claude/skills/search-params/SKILL.md",
+          ".cursor/mcp.json",
+          ".github/AGENTS.md",
+          "AGENTS.md",
+          "CLAUDE.md",
+          "code-scan-action/AGENTS.md",
+          "docs/agents/AGENTS.md",
+          "docs/agents/codex-app-server-provider-notes.md",
+          "docs/agents/coding-agent-provider-taxonomy.md",
+          "docs/agents/database-security.md",
+          "docs/agents/dependency-management.md",
+          "docs/agents/git-workflow.md",
+          "docs/agents/logging.md",
+          "docs/agents/pr-conventions.md",
+          "docs/agents/python.md"
+        ]
+      },
+      "skill_architecture": {
+        "skill_count": 0,
+        "skill_frontmatter_count": 0,
+        "skill_frontmatter_with_description": 0,
+        "skill_frontmatter_with_use_when": 0,
+        "claude_command_count": 0,
+        "gemini_command_count": 0,
+        "persona_count": 0,
+        "hook_file_count": 0,
+        "setup_doc_count": 0,
+        "reference_doc_count": 0,
+        "harness_surface_count": 4,
+        "command_lifecycle": [],
+        "sample_skill_paths": [],
+        "sample_command_paths": [],
+        "sample_persona_paths": [],
+        "setup_docs": [],
+        "orchestration_signals": []
+      },
+      "distilled_moves": [
+        "把 CI/workflow 里的真实 job 名称反写到本地 quality gate,避免本地验收和远端脱节。",
+        "先读取 package scripts 再决定命令,不要凭经验猜 npm/pnpm/yarn gate。",
+        "把 pyproject 的 pytest/ruff/mypy/coverage 配置当成 Python 项目的验证入口。",
+        "把 AGENTS/CLAUDE/Cursor/skills/hooks 视为一等协作界面,纳入 handoff。",
+        "设计文档不是装饰: brief/RFC/ADR 要把 motivation、alternatives、rollout 和 unresolved 写清。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+---
+description: Ship-grade Chinese engineering workflow
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+Use `ship-grade-engineering-cn` for real engineering delivery. Keep changes small, verified, source-aware, license-aware, and handoff-ready. Do not copy secrets, auth/session/cookie data, leaked prompts/source, or unclear-license body text.

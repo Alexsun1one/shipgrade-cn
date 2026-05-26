@@ -1,0 +1,103 @@
+{
+  "case_count": 2,
+  "passed_count": 2,
+  "cases": [
+    {
+      "id": "enterprise-paperclip-api-smoke",
+      "title": "Enterprise Paperclip API smoke with ShipGrade contract",
+      "project_ref": "local-project:enterprise",
+      "status": "pass",
+      "command_count": 2,
+      "artifact": "outputs/shipgrade_transcript_cases/enterprise-paperclip-api-smoke.md",
+      "runs": [
+        {
+          "argv": [
+            "python3",
+            "-c",
+            "import json, pathlib; required=['AGENTS.md','docs/CODEX_HANDOFF.md','docs/CODEX_START_HERE.md','package.json']; missing=[p for p in required if not pathlib.Path(p).exists()]; print('missing=' + ','.join(missing)); scripts=json.loads(pathlib.Path('package.json').read_text()).get('scripts',{}); print('validation_scripts=' + ','.join(k for k in sorted(scripts) if any(x in k for x in ['typecheck','lint','test','build','screenshots'])))"
+          ],
+          "cwd_ref": "$PROJECT:enterprise",
+          "exit_code": 0,
+          "output": "missing=\nvalidation_scripts=build,lint,screenshots,test,typecheck",
+          "label": "handoff and script surface"
+        },
+        {
+          "argv": [
+            "pnpm",
+            "--filter",
+            "@enterprise-ai-hub/portal-web",
+            "exec",
+            "vitest",
+            "run",
+            "src/api/paperclipRuntime.test.ts",
+            "src/api/localToolsRoute.test.ts",
+            "--testTimeout",
+            "20000"
+          ],
+          "cwd_ref": "$PROJECT:enterprise",
+          "exit_code": 0,
+          "output": "RUN  v4.1.6 $PROJECT:enterprise/apps/portal-web\n\n\n Test Files  2 passed (2)\n      Tests  12 passed (12)\n   Start at  20:38:58\n   Duration  3.19s (transform 1.61s, setup 3.60s, import 71ms, tests 159ms, environment 1.82s)",
+          "label": "focused Paperclip/local-tools tests"
+        }
+      ]
+    },
+    {
+      "id": "skillscn-release-proof",
+      "title": "SkillsCN release proof with flagship validator",
+      "project_ref": "local-project:skills-cn-distill",
+      "status": "pass",
+      "command_count": 4,
+      "artifact": "outputs/shipgrade_transcript_cases/skillscn-release-proof.md",
+      "runs": [
+        {
+          "argv": [
+            "python3",
+            "scripts/validate_flagship_skill.py"
+          ],
+          "cwd_ref": "$PROJECT:skills-cn-distill",
+          "exit_code": 0,
+          "output": "flagship-validation-ok templates=6 examples=3 demos=2 evals=12 source_refs=103",
+          "label": "flagship package validator"
+        },
+        {
+          "argv": [
+            "python3",
+            "dist/ship-grade-engineering-cn-v0.1/tools/shipgrade_doctor.py",
+            "dist/ship-grade-engineering-cn-v0.1/docs/real-project-gauntlet.md",
+            "dist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/enterprise-paperclip-runtime.md",
+            "dist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/exo-harness-contract.md",
+            "dist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/hardwrite-rewrite-safety.md",
+            "dist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/silicoville-ledger-migration.md",
+            "dist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/skillscn-release-quality.md"
+          ],
+          "cwd_ref": "$PROJECT:skills-cn-distill",
+          "exit_code": 0,
+          "output": "dist/ship-grade-engineering-cn-v0.1/docs/real-project-gauntlet.md: ship-grade-ok\ndist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/enterprise-paperclip-runtime.md: ship-grade-ok\ndist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/exo-harness-contract.md: ship-grade-ok\ndist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/hardwrite-rewrite-safety.md: ship-grade-ok\ndist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/silicoville-ledger-migration.md: ship-grade-ok\ndist/ship-grade-engineering-cn-v0.1/docs/real-project-cases/skillscn-release-quality.md: ship-grade-ok",
+          "label": "real project case doctor"
+        },
+        {
+          "argv": [
+            "python3",
+            "scripts/validate_github_repo.py"
+          ],
+          "cwd_ref": "$PROJECT:skills-cn-distill",
+          "exit_code": 0,
+          "output": "github-repo-validation-ok files=94",
+          "label": "standalone GitHub repo validator"
+        },
+        {
+          "argv": [
+            "python3",
+            "-c",
+            "import json\nfrom pathlib import Path\nfor p in ['outputs/high_signal_source_radar.json','outputs/source_promotion_queue.json','outputs/source_promotion_batch.json','outputs/source_promotion_sandbox_cases.json','dist/github/shipgrade-cn/docs/evidence/high_signal_source_radar.json','dist/github/shipgrade-cn/docs/evidence/source_promotion_queue.json','dist/github/shipgrade-cn/docs/evidence/source_promotion_batch.json','dist/github/shipgrade-cn/docs/evidence/source_promotion_sandbox_cases.json','dist/github/shipgrade-cn/docs/github-publish-preflight.json']:\n    data=json.loads(Path(p).read_text())\n    print(p, data.get('candidate_count'), data.get('new_candidate_count'), data.get('green_license_candidate_count'), data.get('row_count'), len(data.get('top_deep_or_sandbox_targets', [])), len(data.get('license_review_targets', [])), data.get('selected_count'), data.get('audited_count'), data.get('runtime_candidate_count'), data.get('static_smoke_pass_count'), data.get('case_count'), data.get('passed_case_count'), data.get('required_step_count'), data.get('passed_required_step_count'), data.get('configured_test_count'), data.get('passed'), data.get('total'))"
+          ],
+          "cwd_ref": "$PROJECT:skills-cn-distill",
+          "exit_code": 0,
+          "output": "outputs/high_signal_source_radar.json 87 64 65 None 0 0 None None None None None None None None None None None\noutputs/source_promotion_queue.json None None None 87 12 18 None None None None None None None None None None None\noutputs/source_promotion_batch.json None None None None 0 0 4 4 2 2 None None None None None None None\noutputs/source_promotion_sandbox_cases.json None None None None 0 0 None None None None 2 2 9 9 225 None None\ndist/github/shipgrade-cn/docs/evidence/high_signal_source_radar.json 87 64 65 None 0 0 None None None None None None None None None None None\ndist/github/shipgrade-cn/docs/evidence/source_promotion_queue.json None None None 87 12 18 None None None None None None None None None None None\ndist/github/shipgrade-cn/docs/evidence/source_promotion_batch.json None None None None 0 0 4 4 2 2 None None None None None None None\ndist/github/shipgrade-cn/docs/evidence/source_promotion_sandbox_cases.json None None None None 0 0 None None None None 2 2 9 9 225 None None\ndist/github/shipgrade-cn/docs/github-publish-preflight.json None None None None 0 0 None None None None None None None None None 12 12",
+          "label": "source radar evidence"
+        }
+      ]
+    }
+  ],
+  "public_boundary": "redacted command transcripts only; no private source body, secrets, cookies, sessions, auth databases, or credentials"
+}

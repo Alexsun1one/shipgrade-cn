@@ -1,0 +1,1556 @@
+{
+  "generated_at": "2026-05-25T23:53:42Z",
+  "purpose": "Promotion queue from high-signal radar into whitelist review, deep-code analysis, and sandbox runtime work.",
+  "radar_candidate_count": 87,
+  "row_count": 87,
+  "lane_counts": {
+    "architecture_or_attribution_review": 4,
+    "manual_license_review": 42,
+    "metadata_only_watchlist": 16,
+    "next_deep_or_sandbox": 17,
+    "off_scope_search_noise": 8
+  },
+  "top_deep_or_sandbox_targets": [
+    "affaan-m/ECC",
+    "addyosmani/agent-skills",
+    "browser-use/browser-use",
+    "VoltAgent/awesome-agent-skills",
+    "obra/superpowers",
+    "wshobson/agents",
+    "alirezarezvani/claude-skills",
+    "promptfoo/promptfoo",
+    "openai/evals",
+    "karpathy/micrograd",
+    "Shubhamsaboo/awesome-llm-apps",
+    "mattpocock/skills"
+  ],
+  "license_review_targets": [
+    "openai/codex",
+    "garrytan/gstack",
+    "msitarzewski/agency-agents",
+    "punkpeye/awesome-mcp-servers",
+    "safishamsi/graphify",
+    "Priivacy-ai/spec-kitty",
+    "sickn33/antigravity-awesome-skills",
+    "ultraworkers/claw-code",
+    "bytedance/deer-flow",
+    "farion1231/cc-switch",
+    "colbymchenry/codegraph",
+    "paperclipai/paperclip",
+    "JuliusBrussee/caveman",
+    "jnMetaCode/agency-agents-zh",
+    "microsoft/playwright",
+    "taishi-i/awesome-ChatGPT-repositories",
+    "mem0ai/mem0",
+    "VoltAgent/awesome-design-md"
+  ],
+  "rows": [
+    {
+      "repo": "affaan-m/ECC",
+      "stars": 192280,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_rules",
+        "agent_skill",
+        "portable_agent_instructions"
+      ],
+      "why": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 378,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "addyosmani/agent-skills",
+      "stars": 45641,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_rules",
+        "agent_skill",
+        "spec_driven"
+      ],
+      "why": "Production-oriented engineering skills with strong review, spec, context, and shipping workflows.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 353,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "stars": 95508,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_runtime",
+        "agent_skill",
+        "portable_agent_instructions"
+      ],
+      "why": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 324,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "VoltAgent/awesome-agent-skills",
+      "stars": 23080,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "eval_quality",
+        "spec_driven"
+      ],
+      "why": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 323,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "obra/superpowers",
+      "stars": 206286,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_runtime",
+        "agent_skill"
+      ],
+      "why": "An agentic skills framework & software development methodology that works.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 314,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "wshobson/agents",
+      "stars": 35940,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 305,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "alirezarezvani/claude-skills",
+      "stars": 16183,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "329 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 320+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 304,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "openai/codex",
+      "stars": 85589,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_runtime"
+      ],
+      "why": "Authoritative Codex CLI and AGENTS.md-adjacent implementation surface; useful for agent rule contracts and validation ergonomics.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "learn command topology, sandbox boundaries, and long-running agent handoff",
+      "promotion_score": 298,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "stars": 21592,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "High-signal eval, red-team, and CI mindset for LLM quality gates.",
+      "deep_status": "already_in_deep_code_case_studies",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 296,
+      "next_action": "consider upgrading from deep-code to disposable sandbox if package commands are stable"
+    },
+    {
+      "repo": "openai/evals",
+      "stars": 18532,
+      "license_spdx": "NOASSERTION",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "Benchmark/eval registry; useful for acceptance-test framing and scorer separation.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 291,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "garrytan/gstack",
+      "stars": 102433,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_runtime",
+        "agent_skill",
+        "portable_agent_instructions"
+      ],
+      "why": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 286,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "msitarzewski/agency-agents",
+      "stars": 105048,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules",
+        "agent_runtime",
+        "agent_skill",
+        "portable_agent_instructions"
+      ],
+      "why": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 284,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "karpathy/micrograd",
+      "stars": 16007,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "minimal_training_reference"
+      ],
+      "why": "Ultra-minimal pedagogical implementation; useful for compression, teaching, and evidence style.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "keep training/eval examples minimal, legible, and probe-driven",
+      "promotion_score": 282,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "anthropics/skills",
+      "stars": 140675,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_skill",
+        "canonical_agent_skills"
+      ],
+      "why": "Canonical public Agent Skills surface; useful for skill anatomy, progressive disclosure, and packaging boundaries.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 281,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "Shubhamsaboo/awesome-llm-apps",
+      "stars": 111735,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "100+ AI Agent & RAG apps you can actually run — clone, customize, ship.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 281,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "stars": 105180,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "Skills for Real Engineers. Straight from my .claude directory.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 274,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "Fission-AI/OpenSpec",
+      "stars": 50693,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "Spec-driven development (SDD) for AI coding assistants.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 273,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "github/spec-kit",
+      "stars": 105852,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_runtime",
+        "agent_skill",
+        "spec_driven"
+      ],
+      "why": "💫 Toolkit to help you get started with Spec-Driven Development",
+      "deep_status": "already_in_sandbox_runtime_matrix",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 271,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "karpathy/nanoGPT",
+      "stars": 58771,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "minimal_training_reference"
+      ],
+      "why": "Minimal, legible training/distillation reference; ideal for small trusted core design.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "keep training/eval examples minimal, legible, and probe-driven",
+      "promotion_score": 270,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "multica-ai/andrej-karpathy-skills",
+      "stars": 154871,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_rules",
+        "agent_skill"
+      ],
+      "why": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 268,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "confident-ai/deepeval",
+      "stars": 15692,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "The LLM Evaluation Framework",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 262,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "punkpeye/awesome-mcp-servers",
+      "stars": 87878,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_runtime",
+        "agent_skill",
+        "portable_agent_instructions"
+      ],
+      "why": "A collection of MCP servers.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 256,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "safishamsi/graphify",
+      "stars": 53687,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 254,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "Priivacy-ai/spec-kitty",
+      "stars": 1262,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "Spec-driven development loop with explicit artifact flow; useful as a fresh candidate for spec-first comparison.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 252,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "sickn33/antigravity-awesome-skills",
+      "stars": 38682,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "discovery_index"
+      ],
+      "why": "Antigravity skills discovery feeder; useful for broader skill-market taxonomy.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "use as discovery signal for future taxonomy review",
+      "promotion_score": 252,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "ultraworkers/claw-code",
+      "stars": 192496,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "The repo is finally unlocked. enjoy the party! The fastest repo in history to surpass 100K stars ⭐. Join Discord: https://discord.gg/5TUQKqFWd Built in Rust using oh-my-codex.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 252,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "bytedance/deer-flow",
+      "stars": 69534,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_runtime",
+        "agent_skill"
+      ],
+      "why": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 250,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "farion1231/cc-switch",
+      "stars": 80688,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI & Hermes Agent. Only official website: ccswitch.io",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 247,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "colbymchenry/codegraph",
+      "stars": 24837,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, OpenCode, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 246,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "paperclipai/paperclip",
+      "stars": 67619,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_skill",
+        "portable_agent_instructions"
+      ],
+      "why": "The open-source app everyone uses to manage agents at work",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 246,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "JuliusBrussee/caveman",
+      "stars": 64699,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 245,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "buildermethods/agent-os",
+      "stars": 4642,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "Agent OS is a system for injecting your codebase standards and writing better specs for spec-driven development.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 242,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "jnMetaCode/agency-agents-zh",
+      "stars": 12918,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "🎭 211 个即插即用的 AI 专家角色 — 支持 Hermes Agent/Claude Code/Cursor/Copilot 等 16 种工具，覆盖工程/设计/营销/金融等 18 个部门。含 46 个中国市场原创智能体（小红书/抖音/微信/飞书/钉钉等）",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 240,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "microsoft/playwright",
+      "stars": 89397,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_runtime",
+        "agent_skill"
+      ],
+      "why": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. ",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 240,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "taishi-i/awesome-ChatGPT-repositories",
+      "stars": 3040,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "A curated list of resources dedicated to open source GitHub repositories related to ChatGPT, OpenAI API, and Codex. Searchable via Claude Code skills.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 240,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "trailofbits/skills",
+      "stars": 5389,
+      "license_spdx": "CC-BY-SA-4.0",
+      "effective_license_policy": "sharealike_review",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "security_review_skill"
+      ],
+      "why": "Security and audit skills from a high-rigor engineering organization; useful for hardening validation and review gates.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "architecture_or_attribution_review",
+      "distill_value": "harden secret/license/supply-chain review gates",
+      "promotion_score": 236,
+      "next_action": "read for taxonomy/architecture only; preserve attribution/share-alike constraints"
+    },
+    {
+      "repo": "shanraisshan/claude-code-best-practice",
+      "stars": 54825,
+      "license_spdx": "MIT",
+      "effective_license_policy": "allow_extract",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "from vibe coding to agentic engineering - practice makes claude perfect",
+      "deep_status": "not_yet_deep_run",
+      "lane": "next_deep_or_sandbox",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 234,
+      "next_action": "clone sparse, inspect package/workflow/test topology, then run no-secret sandbox smoke"
+    },
+    {
+      "repo": "mem0ai/mem0",
+      "stars": 56698,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "Universal memory layer for AI Agents",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 228,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "PatrickJS/awesome-cursorrules",
+      "stars": 39693,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "metadata_only",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "agent_rules",
+        "agent_rules_index"
+      ],
+      "why": "Large Cursor rules discovery index; useful for taxonomy mining, not automatic body ingestion.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 225,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "VoltAgent/awesome-design-md",
+      "stars": 84022,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 224,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "earendil-works/pi",
+      "stars": 54651,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 218,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "rust-unofficial/awesome-rust",
+      "stars": 57538,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "A curated list of Rust code and resources.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 216,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "groq/openbench",
+      "stars": 774,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "Provider-agnostic eval infra candidate; useful for reproducible benchmark packaging.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 211,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "toon-format/toon",
+      "stars": 24372,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "🎒 Token-Oriented Object Notation (TOON) – Compact, human-readable, schema-aware JSON for LLM prompts. Spec, benchmarks, TypeScript SDK.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 210,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "ollama/ollama",
+      "stars": 172301,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_runtime"
+      ],
+      "why": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "learn command topology, sandbox boundaries, and long-running agent handoff",
+      "promotion_score": 209,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "openclaw/openclaw",
+      "stars": 374618,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 208,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "automazeio/ccpm",
+      "stars": 8146,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "Project management skill system for Agents that uses GitHub Issues and Git worktrees for parallel agent execution.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 206,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "firecrawl/firecrawl",
+      "stars": 124211,
+      "license_spdx": "AGPL-3.0",
+      "effective_license_policy": "review_only_or_metadata_only",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "🔥 Search, scrape, and clean the web for AI agents.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "architecture_or_attribution_review",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 206,
+      "next_action": "read for taxonomy/architecture only; preserve attribution/share-alike constraints"
+    },
+    {
+      "repo": "NousResearch/hermes-agent",
+      "stars": 167199,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "The agent that grows with you",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 202,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "nicobailon/visual-explainer",
+      "stars": 8559,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "Agent skill that generates rich HTML pages or slide decks for diagrams, diff reviews, plan audits, data tables, and project recaps",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 200,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "awesome-opencode/awesome-opencode",
+      "stars": 7262,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "A curated list of awesome plugins, themes, agents, projects, and resources for https://opencode.ai",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 194,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "ruvnet/RuView",
+      "stars": 65921,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 194,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "evidentlyai/evidently",
+      "stars": 7534,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "Evidently is ​​an open-source ML and LLM observability framework. Evaluate, test, and monitor any AI-powered system or data pipeline. From tabular data to Gen AI. 100+ metrics.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 193,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "MrLesk/Backlog.md",
+      "stars": 5620,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "Backlog.md - A tool for managing project collaboration between humans and AI Agents in a git ecosystem",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 192,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "tensorchord/Awesome-LLMOps",
+      "stars": 5802,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "An awesome & curated list of best LLMOps tools for developers",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 190,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "jindongwang/transferlearning",
+      "stars": 14333,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "Transfer learning / domain adaptation / domain generalization / multi-task learning etc. Papers, codes, datasets, applications, tutorials.-迁移学习",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 189,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "daytonaio/daytona",
+      "stars": 72451,
+      "license_spdx": "AGPL-3.0",
+      "effective_license_policy": "review_only_or_metadata_only",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_runtime",
+        "portable_agent_instructions"
+      ],
+      "why": "Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code",
+      "deep_status": "not_yet_deep_run",
+      "lane": "architecture_or_attribution_review",
+      "distill_value": "learn command topology, sandbox boundaries, and long-running agent handoff",
+      "promotion_score": 186,
+      "next_action": "read for taxonomy/architecture only; preserve attribution/share-alike constraints"
+    },
+    {
+      "repo": "potpie-ai/potpie",
+      "stars": 5400,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "Spec-driven development for large codebases",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 186,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "block/agent-skills",
+      "stars": 12,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_skill_marketplace"
+      ],
+      "why": "Marketplace and validator-oriented skill model; useful for contribution policy and schema ideas.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "use as discovery signal for future taxonomy review",
+      "promotion_score": 185,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "amitness/learning",
+      "stars": 6878,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "A log of things I'm learning",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 182,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "ColorlibHQ/gentelella",
+      "stars": 21328,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "Free Bootstrap 5 Admin Dashboard Template",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 177,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "jphall663/awesome-machine-learning-interpretability",
+      "stars": 4035,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "A curated list of awesome responsible machine learning resources.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 177,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "Randroids-Dojo/skills",
+      "stars": 33,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "multi_tool_skill_packaging"
+      ],
+      "why": "Cross-tool skill packaging patterns for Claude Code, Codex, and OpenCode style environments.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "use as discovery signal for future taxonomy review",
+      "promotion_score": 177,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "filipecalegario/awesome-generative-ai",
+      "stars": 3452,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "A curated list of Generative AI tools, works, models, and references",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 175,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "ComposioHQ/awesome-claude-skills",
+      "stars": 61775,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": 169,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "travisvn/awesome-claude-skills",
+      "stars": 12879,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows — particularly Claude Code",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": 166,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "WooooDyy/LLM-Agent-Paper-List",
+      "stars": 8131,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "The paper list of the 86-page SCIS cover paper \"The Rise and Potential of Large Language Model Based Agents: A Survey\" by Zhiheng Xi et al.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 160,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "idank/explainshell",
+      "stars": 14062,
+      "license_spdx": "GPL-3.0",
+      "effective_license_policy": "review_only_or_metadata_only",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "match command-line arguments to their help text",
+      "deep_status": "not_yet_deep_run",
+      "lane": "architecture_or_attribution_review",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 159,
+      "next_action": "read for taxonomy/architecture only; preserve attribution/share-alike constraints"
+    },
+    {
+      "repo": "pjt222/agent-almanac",
+      "stars": 17,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_registry"
+      ],
+      "why": "Agent and skills registry candidate with teams and i18n structure.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "use as discovery signal for future taxonomy review",
+      "promotion_score": 157,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "agentmd/agent.md",
+      "stars": 80,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "Portable agent instruction standard candidate; useful for cross-tool rule compatibility research.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "manual_license_review",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 153,
+      "next_action": "verify LICENSE file and source boundaries; add to seed_sources only after review"
+    },
+    {
+      "repo": "mksglu/context-mode",
+      "stars": 15669,
+      "license_spdx": "NOASSERTION",
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "Context window optimization for AI coding agents. Sandboxes tool output, 98% reduction. 15 platforms",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 144,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "code-yeongyu/oh-my-openagent",
+      "stars": 59438,
+      "license_spdx": "NOASSERTION",
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "portable_agent_instructions"
+      ],
+      "why": "omo; the best agent harness - previously oh-my-opencode",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 135,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "DSXiangLi/DecryptPrompt",
+      "stars": 3408,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "总结Prompt&LLM论文，开源数据&模型，AIGC应用",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 135,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "subinium/awesome-claude-code",
+      "stars": 78,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only",
+      "already_in_manifest": true,
+      "radar_decision": "already_whitelisted_or_tracked",
+      "categories": [
+        "discovery_index"
+      ],
+      "why": "Claude Code ecosystem discovery feeder; use for candidate discovery, not direct body extraction.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "use as discovery signal for future taxonomy review",
+      "promotion_score": 135,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "TheQtCompanyRnD/agent-skills",
+      "stars": 177,
+      "license_spdx": "NOASSERTION",
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "enterprise_agent_skills"
+      ],
+      "why": "Enterprise-grade multi-tool skill organization candidate with progressive-loading docs.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "use as discovery signal for future taxonomy review",
+      "promotion_score": 135,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "luo-junyu/Awesome-Agent-Papers",
+      "stars": 2714,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "[Up-to-date] Large Language Model Agent: A Survey on Methodology, Applications and Challenges",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 127,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "tanweai/pua",
+      "stars": 17661,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 127,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "GitHubDaily/GitHubDaily",
+      "stars": 46591,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "agent_rules"
+      ],
+      "why": "坚持分享 GitHub 上高质量、有趣实用的开源技术教程、开发者工具、编程网站、技术资讯。A list cool, interesting projects of GitHub.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "improve AGENTS/CLAUDE/Cursor portability without duplicating rules",
+      "promotion_score": 126,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "ikaijua/Awesome-AITools",
+      "stars": 5963,
+      "license_spdx": null,
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "candidate_pending_review",
+      "categories": [
+        "eval_quality"
+      ],
+      "why": "Collection of AI-related utilities. Welcome to submit pull requests /收藏AI相关的实用工具，欢迎提交pull requests",
+      "deep_status": "not_yet_deep_run",
+      "lane": "metadata_only_watchlist",
+      "distill_value": "turn LLM quality into eval cases, red-team checks, and CI gates",
+      "promotion_score": 123,
+      "next_action": "track metadata/stars/topics only until license and source policy are explicit"
+    },
+    {
+      "repo": "avelino/awesome-go",
+      "stars": 173650,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "off_scope_search_noise",
+      "categories": [
+        "agent_runtime",
+        "agent_skill"
+      ],
+      "why": "A curated list of awesome Go frameworks, libraries and software",
+      "deep_status": "not_yet_deep_run",
+      "lane": "off_scope_search_noise",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": -75,
+      "next_action": "do not ingest avelino/awesome-go; keep as radar search-noise evidence"
+    },
+    {
+      "repo": "jaywcjlove/awesome-mac",
+      "stars": 104662,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "off_scope_search_noise",
+      "categories": [
+        "agent_runtime",
+        "spec_driven"
+      ],
+      "why": " This project is dedicated to collecting high-quality macOS software and organizing them systematically by different categories for easy search and use.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "off_scope_search_noise",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": -84,
+      "next_action": "do not ingest jaywcjlove/awesome-mac; keep as radar search-noise evidence"
+    },
+    {
+      "repo": "sindresorhus/awesome",
+      "stars": 470029,
+      "license_spdx": "CC0-1.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "off_scope_search_noise",
+      "categories": [
+        "agent_skill"
+      ],
+      "why": "😎 Awesome lists about all kinds of interesting topics",
+      "deep_status": "not_yet_deep_run",
+      "lane": "off_scope_search_noise",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": -90,
+      "next_action": "do not ingest sindresorhus/awesome; keep as radar search-noise evidence"
+    },
+    {
+      "repo": "promptslab/Awesome-Prompt-Engineering",
+      "stars": 5961,
+      "license_spdx": "Apache-2.0",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "off_scope_search_noise",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "This repository contains a hand-curated resources for Prompt Engineering with a focus on Generative Pre-trained Transformer (GPT), ChatGPT, PaLM etc ",
+      "deep_status": "not_yet_deep_run",
+      "lane": "off_scope_search_noise",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": -123,
+      "next_action": "do not ingest promptslab/Awesome-Prompt-Engineering; keep as radar search-noise evidence"
+    },
+    {
+      "repo": "vinta/awesome-python",
+      "stars": 299580,
+      "license_spdx": "NOASSERTION",
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "off_scope_search_noise",
+      "categories": [
+        "agent_runtime",
+        "agent_skill"
+      ],
+      "why": "An opinionated list of Python frameworks, libraries, tools, and resources",
+      "deep_status": "not_yet_deep_run",
+      "lane": "off_scope_search_noise",
+      "distill_value": "improve skill anatomy, progressive disclosure, examples, and installer ergonomics",
+      "promotion_score": -128,
+      "next_action": "do not ingest vinta/awesome-python; keep as radar search-noise evidence"
+    },
+    {
+      "repo": "punkpeye/awesome-mcp-clients",
+      "stars": 6443,
+      "license_spdx": "MIT",
+      "effective_license_policy": "candidate_for_extract_after_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "off_scope_search_noise",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "A collection of MCP clients.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "off_scope_search_noise",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": -131,
+      "next_action": "do not ingest punkpeye/awesome-mcp-clients; keep as radar search-noise evidence"
+    },
+    {
+      "repo": "ai-boost/awesome-prompts",
+      "stars": 8007,
+      "license_spdx": "GPL-3.0",
+      "effective_license_policy": "review_only_or_metadata_only",
+      "already_in_manifest": false,
+      "radar_decision": "off_scope_search_noise",
+      "categories": [
+        "spec_driven"
+      ],
+      "why": "Curated list of chatgpt prompts from the top-rated GPTs in the GPTs Store. Prompt Engineering, prompt attack & prompt protect. Advanced Prompt Engineering papers.",
+      "deep_status": "not_yet_deep_run",
+      "lane": "off_scope_search_noise",
+      "distill_value": "strengthen spec -> plan -> tasks -> implementation handoff",
+      "promotion_score": -151,
+      "next_action": "do not ingest ai-boost/awesome-prompts; keep as radar search-noise evidence"
+    },
+    {
+      "repo": "awesome-selfhosted/awesome-selfhosted",
+      "stars": 295199,
+      "license_spdx": "NOASSERTION",
+      "effective_license_policy": "metadata_only_until_manual_license_review",
+      "already_in_manifest": false,
+      "radar_decision": "off_scope_search_noise",
+      "categories": [
+        "agent_runtime"
+      ],
+      "why": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "deep_status": "not_yet_deep_run",
+      "lane": "off_scope_search_noise",
+      "distill_value": "learn command topology, sandbox boundaries, and long-running agent handoff",
+      "promotion_score": -156,
+      "next_action": "do not ingest awesome-selfhosted/awesome-selfhosted; keep as radar search-noise evidence"
+    }
+  ],
+  "boundary": "Queue only. It does not ingest body text or execute code."
+}

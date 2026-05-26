@@ -1,0 +1,2558 @@
+{
+  "source_count": 103,
+  "artifact_count": 128,
+  "theme_count": 12,
+  "themes": [
+    {
+      "theme": "release_ops",
+      "label_zh": "上线、监控、恢复和长期运行是交付的一部分",
+      "repo_count": 72,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "ci",
+            "release"
+          ]
+        },
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cd",
+            "ci",
+            "sre"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cd",
+            "ci"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cd",
+            "ci",
+            "deploy"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "ci"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cd",
+            "ci",
+            "deploy",
+            "monitor",
+            "release"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cd",
+            "ci"
+          ]
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "stars": 74947,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cd",
+            "ci"
+          ]
+        },
+        {
+          "repo": "openai/openai-cookbook",
+          "stars": 73775,
+          "license_policy": "allow_extract",
+          "matched": [
+            "ci"
+          ]
+        },
+        {
+          "repo": "gsd-build/get-shit-done",
+          "stars": 63702,
+          "license_policy": "allow_extract",
+          "matched": [
+            "release"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cd",
+            "ci",
+            "deploy",
+            "monitor"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cd",
+            "ci",
+            "deploy",
+            "monitor",
+            "release"
+          ]
+        }
+      ],
+      "merge_decision": "合并进 Ship mode,把上线和恢复视为交付一部分。"
+    },
+    {
+      "theme": "tool_use",
+      "label_zh": "工具调用必须可安装、可验收、可回滚",
+      "repo_count": 69,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "command",
+            "terminal",
+            "workflow"
+          ]
+        },
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "browser",
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "browser",
+            "cli",
+            "command",
+            "mcp",
+            "tool",
+            "tools",
+            "workflow"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "mcp",
+            "tool",
+            "tools",
+            "workflow"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "browser",
+            "command",
+            "hook",
+            "terminal",
+            "tool",
+            "tools",
+            "workflow"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "browser",
+            "cli",
+            "command",
+            "mcp",
+            "terminal",
+            "tool",
+            "tools",
+            "workflow"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "browser",
+            "cli",
+            "command",
+            "mcp",
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "stars": 74947,
+          "license_policy": "allow_extract",
+          "matched": [
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "repo": "openai/openai-cookbook",
+          "stars": 73775,
+          "license_policy": "allow_extract",
+          "matched": [
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cli",
+            "command",
+            "hook",
+            "mcp",
+            "terminal",
+            "tool",
+            "tools",
+            "workflow"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cli",
+            "command",
+            "hook",
+            "mcp",
+            "tool",
+            "tools",
+            "workflow"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cli",
+            "command",
+            "terminal",
+            "tool",
+            "tools",
+            "workflow"
+          ]
+        }
+      ],
+      "merge_decision": "合并成工具可安装、可验收、可回滚原则。"
+    },
+    {
+      "theme": "spec_first",
+      "label_zh": "先把愿望压成可验收规格",
+      "repo_count": 64,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "plan",
+            "spec",
+            "specification",
+            "tasks"
+          ]
+        },
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "plan",
+            "spec"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "plan",
+            "requirements",
+            "tasks"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "spec"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "plan",
+            "prd",
+            "spec"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "plan",
+            "spec",
+            "specification",
+            "tasks"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "spec",
+            "tasks"
+          ]
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "stars": 74947,
+          "license_policy": "allow_extract",
+          "matched": [
+            "tasks"
+          ]
+        },
+        {
+          "repo": "openai/openai-cookbook",
+          "stars": 73775,
+          "license_policy": "allow_extract",
+          "matched": [
+            "tasks"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "plan",
+            "requirements",
+            "spec",
+            "tasks"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "plan",
+            "requirements",
+            "spec",
+            "tasks"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "plan",
+            "requirements",
+            "spec",
+            "tasks"
+          ]
+        }
+      ],
+      "merge_decision": "合并进黄金闭环第 1 步: 先定义可验收结果。"
+    },
+    {
+      "theme": "evidence_validation",
+      "label_zh": "用测试、评测、日志和探针证明完成",
+      "repo_count": 63,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "test"
+          ]
+        },
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "eval",
+            "test",
+            "tests"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "eval",
+            "evaluation",
+            "test",
+            "validation"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "eval"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "assert",
+            "test",
+            "tests"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "test",
+            "tests",
+            "validation"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "benchmark"
+          ]
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "stars": 74947,
+          "license_policy": "allow_extract",
+          "matched": [
+            "eval",
+            "evaluation",
+            "test"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "test",
+            "tests"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "eval",
+            "evaluation",
+            "test",
+            "tests",
+            "validate",
+            "validation"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "test"
+          ]
+        },
+        {
+          "repo": "run-llama/llama_index",
+          "stars": 49659,
+          "license_policy": "allow_extract",
+          "matched": [
+            "eval",
+            "test"
+          ]
+        }
+      ],
+      "merge_decision": "合并进黄金闭环第 4 步和 Done Means Evidence。"
+    },
+    {
+      "theme": "quality_review",
+      "label_zh": "代码审查和可维护性是默认门槛",
+      "repo_count": 59,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "style"
+          ]
+        },
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "lint",
+            "maintainability",
+            "quality",
+            "review",
+            "style"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "code review",
+            "quality",
+            "review",
+            "style"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "style"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "lint"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "code review",
+            "review"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "review",
+            "style"
+          ]
+        },
+        {
+          "repo": "openai/openai-cookbook",
+          "stars": 73775,
+          "license_policy": "allow_extract",
+          "matched": [
+            "style"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "lint",
+            "review"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "review",
+            "style"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "review",
+            "style"
+          ]
+        },
+        {
+          "repo": "run-llama/llama_index",
+          "stars": 49659,
+          "license_policy": "allow_extract",
+          "matched": [
+            "style"
+          ]
+        }
+      ],
+      "merge_decision": "合并成 Review mode 和质量门槛。"
+    },
+    {
+      "theme": "context_engineering",
+      "label_zh": "上下文工程比单次提示词更重要",
+      "repo_count": 58,
+      "top_repos": [
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context",
+            "knowledge"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context",
+            "handoff",
+            "knowledge",
+            "memory",
+            "retrieval"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "knowledge",
+            "retrieval"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context",
+            "handoff"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "memory"
+          ]
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "stars": 74947,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context",
+            "knowledge",
+            "retrieval"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context",
+            "knowledge",
+            "memory"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context"
+          ]
+        },
+        {
+          "repo": "run-llama/llama_index",
+          "stars": 49659,
+          "license_policy": "allow_extract",
+          "matched": [
+            "context",
+            "knowledge",
+            "memory",
+            "retrieval"
+          ]
+        },
+        {
+          "repo": "anthropics/anthropic-cookbook",
+          "stars": 43951,
+          "license_policy": "allow_extract",
+          "matched": [
+            "knowledge",
+            "retrieval"
+          ]
+        }
+      ],
+      "merge_decision": "合并进找证据和写回,避免只靠一次提示词。"
+    },
+    {
+      "theme": "security_boundary",
+      "label_zh": "secret、私有数据、许可证和供应链风险必须前置",
+      "repo_count": 57,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key"
+          ]
+        },
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key",
+            "privacy",
+            "secret",
+            "token"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key",
+            "token"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key",
+            "security"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "token"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key",
+            "privacy",
+            "security",
+            "token"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key",
+            "privacy",
+            "token"
+          ]
+        },
+        {
+          "repo": "openai/openai-cookbook",
+          "stars": 73775,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "secret",
+            "token"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key",
+            "privacy",
+            "secret",
+            "security",
+            "token"
+          ]
+        },
+        {
+          "repo": "run-llama/llama_index",
+          "stars": 49659,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key",
+            "token"
+          ]
+        },
+        {
+          "repo": "anthropics/anthropic-cookbook",
+          "stars": 43951,
+          "license_policy": "allow_extract",
+          "matched": [
+            "key"
+          ]
+        }
+      ],
+      "merge_decision": "前置为硬 gate,不进入普通建议流。"
+    },
+    {
+      "theme": "multi_agent",
+      "label_zh": "多 agent 需要主控、分工、合并和证据",
+      "repo_count": 56,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents",
+            "subagent"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents",
+            "handoff",
+            "multi-agent",
+            "orchestration"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents",
+            "handoff"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents"
+          ]
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "stars": 74947,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents",
+            "multi-agent"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents",
+            "multi-agent",
+            "orchestration"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents"
+          ]
+        },
+        {
+          "repo": "run-llama/llama_index",
+          "stars": 49659,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents"
+          ]
+        },
+        {
+          "repo": "anthropics/anthropic-cookbook",
+          "stars": 43951,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agent",
+            "agents"
+          ]
+        }
+      ],
+      "merge_decision": "合并成主控/worker/本地 adapter 三层分工。"
+    },
+    {
+      "theme": "agent_rules",
+      "label_zh": "把 agent 行为写成仓库规则而不是口头约定",
+      "repo_count": 53,
+      "top_repos": [
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "rules"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "copilot"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "instructions"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agents.md",
+            "cursor"
+          ]
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "stars": 74947,
+          "license_policy": "allow_extract",
+          "matched": [
+            "instructions"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "rules"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "cursor",
+            "instructions"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "instructions"
+          ]
+        },
+        {
+          "repo": "wshobson/agents",
+          "stars": 35933,
+          "license_policy": "allow_extract",
+          "matched": [
+            "agents.md",
+            "cursor",
+            "rules"
+          ]
+        },
+        {
+          "repo": "Yeachan-Heo/oh-my-claudecode",
+          "stars": 34818,
+          "license_policy": "allow_extract",
+          "matched": [
+            "rules"
+          ]
+        },
+        {
+          "repo": "karpathy/llm.c",
+          "stars": 30023,
+          "license_policy": "allow_extract",
+          "matched": [
+            "instructions"
+          ]
+        },
+        {
+          "repo": "openai/openai-agents-python",
+          "stars": 26641,
+          "license_policy": "allow_extract",
+          "matched": [
+            "instructions"
+          ]
+        }
+      ],
+      "merge_decision": "合并成 AGENTS/CLAUDE/Cursor 三入口规则。"
+    },
+    {
+      "theme": "learning_training",
+      "label_zh": "训练要保留数据、配置、指标、探针和失败记录",
+      "repo_count": 50,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "lora"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "lora",
+            "model"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "model"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "model"
+          ]
+        },
+        {
+          "repo": "google-gemini/gemini-cli",
+          "stars": 104597,
+          "license_policy": "allow_extract",
+          "matched": [
+            "model"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "model"
+          ]
+        },
+        {
+          "repo": "dair-ai/Prompt-Engineering-Guide",
+          "stars": 74947,
+          "license_policy": "allow_extract",
+          "matched": [
+            "dataset",
+            "model",
+            "train",
+            "training"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "model"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "fine-tune",
+            "model",
+            "train",
+            "training"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "model"
+          ]
+        },
+        {
+          "repo": "run-llama/llama_index",
+          "stars": 49659,
+          "license_policy": "allow_extract",
+          "matched": [
+            "model",
+            "train"
+          ]
+        },
+        {
+          "repo": "wshobson/agents",
+          "stars": 35933,
+          "license_policy": "allow_extract",
+          "matched": [
+            "model"
+          ]
+        }
+      ],
+      "merge_decision": "合并为训练实验模板和坏 run 不算成果。"
+    },
+    {
+      "theme": "small_steps",
+      "label_zh": "小步迭代,每步都能回滚和验证",
+      "repo_count": 48,
+      "top_repos": [
+        {
+          "repo": "sst/opencode",
+          "stars": 165176,
+          "license_policy": "allow_extract",
+          "matched": [
+            "step"
+          ]
+        },
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "iterate",
+            "iteration",
+            "slice",
+            "small",
+            "step"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "step"
+          ]
+        },
+        {
+          "repo": "microsoft/generative-ai-for-beginners",
+          "stars": 111362,
+          "license_policy": "allow_extract",
+          "matched": [
+            "small"
+          ]
+        },
+        {
+          "repo": "mattpocock/skills",
+          "stars": 104998,
+          "license_policy": "allow_extract",
+          "matched": [
+            "slice",
+            "small",
+            "step"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "iteration"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "step"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "iterate",
+            "small",
+            "step"
+          ]
+        },
+        {
+          "repo": "run-llama/llama_index",
+          "stars": 49659,
+          "license_policy": "allow_extract",
+          "matched": [
+            "small"
+          ]
+        },
+        {
+          "repo": "google/googletest",
+          "stars": 38647,
+          "license_policy": "allow_extract",
+          "matched": [
+            "small"
+          ]
+        },
+        {
+          "repo": "Yeachan-Heo/oh-my-claudecode",
+          "stars": 34818,
+          "license_policy": "allow_extract",
+          "matched": [
+            "incremental",
+            "iteration",
+            "step"
+          ]
+        },
+        {
+          "repo": "langchain-ai/langgraph",
+          "stars": 32922,
+          "license_policy": "allow_extract",
+          "matched": [
+            "iterate"
+          ]
+        }
+      ],
+      "merge_decision": "合并成最小可验证 slice,丢弃大而全计划。"
+    },
+    {
+      "theme": "human_in_loop",
+      "label_zh": "关键判断保留人工/强模型复核",
+      "repo_count": 44,
+      "top_repos": [
+        {
+          "repo": "airbnb/javascript",
+          "stars": 148115,
+          "license_policy": "allow_extract",
+          "matched": [
+            "human"
+          ]
+        },
+        {
+          "repo": "Shubhamsaboo/awesome-llm-apps",
+          "stars": 111722,
+          "license_policy": "allow_extract",
+          "matched": [
+            "reviewer"
+          ]
+        },
+        {
+          "repo": "browser-use/browser-use",
+          "stars": 95485,
+          "license_policy": "allow_extract",
+          "matched": [
+            "human"
+          ]
+        },
+        {
+          "repo": "cline/cline",
+          "stars": 62301,
+          "license_policy": "allow_extract",
+          "matched": [
+            "approval",
+            "human"
+          ]
+        },
+        {
+          "repo": "crewAIInc/crewAI",
+          "stars": 52173,
+          "license_policy": "allow_extract",
+          "matched": [
+            "human"
+          ]
+        },
+        {
+          "repo": "Fission-AI/OpenSpec",
+          "stars": 50675,
+          "license_policy": "allow_extract",
+          "matched": [
+            "human"
+          ]
+        },
+        {
+          "repo": "google/googletest",
+          "stars": 38647,
+          "license_policy": "allow_extract",
+          "matched": [
+            "manual"
+          ]
+        },
+        {
+          "repo": "Yeachan-Heo/oh-my-claudecode",
+          "stars": 34818,
+          "license_policy": "allow_extract",
+          "matched": [
+            "manual"
+          ]
+        },
+        {
+          "repo": "kepano/obsidian-skills",
+          "stars": 32997,
+          "license_policy": "allow_extract",
+          "matched": [
+            "manual"
+          ]
+        },
+        {
+          "repo": "langchain-ai/langgraph",
+          "stars": 32922,
+          "license_policy": "allow_extract",
+          "matched": [
+            "human",
+            "oversight"
+          ]
+        },
+        {
+          "repo": "karpathy/llm.c",
+          "stars": 30023,
+          "license_policy": "allow_extract",
+          "matched": [
+            "manual"
+          ]
+        },
+        {
+          "repo": "davila7/claude-code-templates",
+          "stars": 27561,
+          "license_policy": "allow_extract",
+          "matched": [
+            "reviewer"
+          ]
+        }
+      ],
+      "merge_decision": "保留为强模型/人工最终判断,本地 adapter 不当老师。"
+    }
+  ],
+  "top_terms": [
+    {
+      "term": "https",
+      "repo_count": 70
+    },
+    {
+      "term": "com",
+      "repo_count": 66
+    },
+    {
+      "term": "see",
+      "repo_count": 56
+    },
+    {
+      "term": "new",
+      "repo_count": 51
+    },
+    {
+      "term": "docs",
+      "repo_count": 49
+    },
+    {
+      "term": "run",
+      "repo_count": 49
+    },
+    {
+      "term": "any",
+      "repo_count": 48
+    },
+    {
+      "term": "these",
+      "repo_count": 48
+    },
+    {
+      "term": "tools",
+      "repo_count": 48
+    },
+    {
+      "term": "api",
+      "repo_count": 47
+    },
+    {
+      "term": "install",
+      "repo_count": 47
+    },
+    {
+      "term": "how",
+      "repo_count": 46
+    },
+    {
+      "term": "when",
+      "repo_count": 45
+    },
+    {
+      "term": "project",
+      "repo_count": 44
+    },
+    {
+      "term": "work",
+      "repo_count": 44
+    },
+    {
+      "term": "bash",
+      "repo_count": 43
+    },
+    {
+      "term": "documentation",
+      "repo_count": 43
+    },
+    {
+      "term": "file",
+      "repo_count": 43
+    },
+    {
+      "term": "license",
+      "repo_count": 43
+    },
+    {
+      "term": "add",
+      "repo_count": 42
+    },
+    {
+      "term": "create",
+      "repo_count": 42
+    },
+    {
+      "term": "img",
+      "repo_count": 42
+    },
+    {
+      "term": "source",
+      "repo_count": 42
+    },
+    {
+      "term": "what",
+      "repo_count": 42
+    },
+    {
+      "term": "context",
+      "repo_count": 41
+    },
+    {
+      "term": "get",
+      "repo_count": 41
+    },
+    {
+      "term": "other",
+      "repo_count": 41
+    },
+    {
+      "term": "start",
+      "repo_count": 41
+    },
+    {
+      "term": "via",
+      "repo_count": 41
+    },
+    {
+      "term": "one",
+      "repo_count": 40
+    },
+    {
+      "term": "open",
+      "repo_count": 40
+    },
+    {
+      "term": "out",
+      "repo_count": 40
+    },
+    {
+      "term": "support",
+      "repo_count": 40
+    },
+    {
+      "term": "details",
+      "repo_count": 39
+    },
+    {
+      "term": "full",
+      "repo_count": 39
+    },
+    {
+      "term": "www",
+      "repo_count": 39
+    },
+    {
+      "term": "check",
+      "repo_count": 38
+    },
+    {
+      "term": "each",
+      "repo_count": 38
+    },
+    {
+      "term": "example",
+      "repo_count": 38
+    },
+    {
+      "term": "available",
+      "repo_count": 37
+    },
+    {
+      "term": "data",
+      "repo_count": 37
+    },
+    {
+      "term": "help",
+      "repo_count": 37
+    },
+    {
+      "term": "model",
+      "repo_count": 37
+    },
+    {
+      "term": "but",
+      "repo_count": 36
+    },
+    {
+      "term": "development",
+      "repo_count": 36
+    },
+    {
+      "term": "examples",
+      "repo_count": 36
+    },
+    {
+      "term": "files",
+      "repo_count": 36
+    },
+    {
+      "term": "main",
+      "repo_count": 36
+    },
+    {
+      "term": "only",
+      "repo_count": 36
+    },
+    {
+      "term": "repo",
+      "repo_count": 36
+    },
+    {
+      "term": "across",
+      "repo_count": 35
+    },
+    {
+      "term": "best",
+      "repo_count": 35
+    },
+    {
+      "term": "claude",
+      "repo_count": 35
+    },
+    {
+      "term": "have",
+      "repo_count": 35
+    },
+    {
+      "term": "here",
+      "repo_count": 35
+    },
+    {
+      "term": "issues",
+      "repo_count": 35
+    },
+    {
+      "term": "multiple",
+      "repo_count": 35
+    },
+    {
+      "term": "python",
+      "repo_count": 35
+    },
+    {
+      "term": "set",
+      "repo_count": 35
+    },
+    {
+      "term": "src",
+      "repo_count": 35
+    },
+    {
+      "term": "test",
+      "repo_count": 35
+    },
+    {
+      "term": "which",
+      "repo_count": 35
+    },
+    {
+      "term": "has",
+      "repo_count": 34
+    },
+    {
+      "term": "need",
+      "repo_count": 34
+    },
+    {
+      "term": "note",
+      "repo_count": 34
+    },
+    {
+      "term": "about",
+      "repo_count": 33
+    },
+    {
+      "term": "git",
+      "repo_count": 33
+    },
+    {
+      "term": "guide",
+      "repo_count": 33
+    },
+    {
+      "term": "like",
+      "repo_count": 33
+    },
+    {
+      "term": "through",
+      "repo_count": 33
+    },
+    {
+      "term": "also",
+      "repo_count": 32
+    },
+    {
+      "term": "contributing",
+      "repo_count": 32
+    },
+    {
+      "term": "directory",
+      "repo_count": 32
+    },
+    {
+      "term": "features",
+      "repo_count": 32
+    },
+    {
+      "term": "first",
+      "repo_count": 32
+    },
+    {
+      "term": "follow",
+      "repo_count": 32
+    },
+    {
+      "term": "own",
+      "repo_count": 32
+    },
+    {
+      "term": "read",
+      "repo_count": 32
+    },
+    {
+      "term": "style",
+      "repo_count": 32
+    },
+    {
+      "term": "tasks",
+      "repo_count": 32
+    },
+    {
+      "term": "them",
+      "repo_count": 32
+    },
+    {
+      "term": "workflow",
+      "repo_count": 32
+    },
+    {
+      "term": "works",
+      "repo_count": 32
+    },
+    {
+      "term": "before",
+      "repo_count": 31
+    },
+    {
+      "term": "commands",
+      "repo_count": 31
+    },
+    {
+      "term": "existing",
+      "repo_count": 31
+    },
+    {
+      "term": "its",
+      "repo_count": 31
+    },
+    {
+      "term": "list",
+      "repo_count": 31
+    },
+    {
+      "term": "openai",
+      "repo_count": 31
+    },
+    {
+      "term": "reference",
+      "repo_count": 31
+    },
+    {
+      "term": "repository",
+      "repo_count": 31
+    },
+    {
+      "term": "shields",
+      "repo_count": 31
+    },
+    {
+      "term": "should",
+      "repo_count": 31
+    },
+    {
+      "term": "they",
+      "repo_count": 31
+    },
+    {
+      "term": "type",
+      "repo_count": 31
+    },
+    {
+      "term": "command",
+      "repo_count": 30
+    },
+    {
+      "term": "installation",
+      "repo_count": 30
+    },
+    {
+      "term": "language",
+      "repo_count": 30
+    },
+    {
+      "term": "latest",
+      "repo_count": 30
+    },
+    {
+      "term": "mit",
+      "repo_count": 30
+    },
+    {
+      "term": "specific",
+      "repo_count": 30
+    },
+    {
+      "term": "svg",
+      "repo_count": 30
+    },
+    {
+      "term": "system",
+      "repo_count": 30
+    },
+    {
+      "term": "want",
+      "repo_count": 30
+    },
+    {
+      "term": "where",
+      "repo_count": 30
+    },
+    {
+      "term": "custom",
+      "repo_count": 29
+    },
+    {
+      "term": "design",
+      "repo_count": 29
+    },
+    {
+      "term": "integration",
+      "repo_count": 29
+    },
+    {
+      "term": "make",
+      "repo_count": 29
+    },
+    {
+      "term": "mcp",
+      "repo_count": 29
+    },
+    {
+      "term": "name",
+      "repo_count": 29
+    },
+    {
+      "term": "provides",
+      "repo_count": 29
+    },
+    {
+      "term": "quick",
+      "repo_count": 29
+    },
+    {
+      "term": "review",
+      "repo_count": 29
+    },
+    {
+      "term": "text",
+      "repo_count": 29
+    },
+    {
+      "term": "then",
+      "repo_count": 29
+    },
+    {
+      "term": "time",
+      "repo_count": 29
+    },
+    {
+      "term": "version",
+      "repo_count": 29
+    },
+    {
+      "term": "web",
+      "repo_count": 29
+    },
+    {
+      "term": "without",
+      "repo_count": 29
+    }
+  ],
+  "radar_sources": [
+    {
+      "repo": "obra/superpowers",
+      "stars": 206157,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "agentic_skills_methodology",
+      "why": "MIT-licensed agentic skills framework and software development methodology."
+    },
+    {
+      "repo": "affaan-m/ECC",
+      "stars": 192139,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "claude_code_rules_skills_hooks",
+      "why": "MIT-licensed high-star Claude/Codex/Cursor harness, skills, rules, hooks, and research-first development patterns."
+    },
+    {
+      "repo": "sst/opencode",
+      "stars": 165176,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "coding_agent_product",
+      "why": "MIT-licensed very high-star open-source coding agent; use for product/workflow signal and terminal-agent ergonomics."
+    },
+    {
+      "repo": "airbnb/javascript",
+      "stars": 148115,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "style_guides",
+      "why": "MIT-licensed JavaScript style guide with strong lint/review conventions."
+    },
+    {
+      "repo": "Shubhamsaboo/awesome-llm-apps",
+      "stars": 111722,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "ai_app_radar",
+      "why": "Apache-2.0 high-star runnable AI agents/RAG app collection; use as runnable-app pattern radar, not canonical engineering authority."
+    },
+    {
+      "repo": "microsoft/generative-ai-for-beginners",
+      "stars": 111362,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ai_curriculum",
+      "why": "MIT-licensed generative AI curriculum with practical lessons."
+    },
+    {
+      "repo": "github/spec-kit",
+      "stars": 105805,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "spec_driven_development",
+      "why": "MIT-licensed toolkit for spec-driven development; useful for Chinese product/engineering workflow skills."
+    },
+    {
+      "repo": "mattpocock/skills",
+      "stars": 104998,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "real_engineer_skills",
+      "why": "MIT-licensed, extremely high-star practical skills from Matt Pocock; strong signal for concise, senior-engineer agent workflows."
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "stars": 104597,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "coding_agent_cli",
+      "why": "Apache-2.0 high-star open-source Gemini CLI agent; useful for terminal-agent UX and tool workflow comparison."
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "stars": 95485,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "agent_browser_automation",
+      "why": "MIT-licensed high-star browser automation for agents; useful for tool-use and verification patterns."
+    },
+    {
+      "repo": "modelcontextprotocol/servers",
+      "stars": 86216,
+      "license_policy": "metadata_only",
+      "license_spdx": "NOASSERTION",
+      "source_kind": "mcp_server_index",
+      "why": "High-star MCP server collection; API license detection is not clean, so use as metadata/radar unless license is manually verified."
+    },
+    {
+      "repo": "dair-ai/Prompt-Engineering-Guide",
+      "stars": 74947,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "prompt_engineering_guide",
+      "why": "MIT-licensed prompt/context/RAG/agent guide and resources."
+    },
+    {
+      "repo": "All-Hands-AI/OpenHands",
+      "stars": 74828,
+      "license_policy": "metadata_only",
+      "license_spdx": "NOASSERTION",
+      "source_kind": "coding_agent_product",
+      "why": "High-star AI-driven development product; API license detection is not clean, so use as product radar only."
+    },
+    {
+      "repo": "openai/openai-cookbook",
+      "stars": 73775,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ai_cookbook",
+      "why": "MIT-licensed practical API recipes, eval patterns, and AI product examples."
+    },
+    {
+      "repo": "gsd-build/get-shit-done",
+      "stars": 63702,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "context_spec_workflow",
+      "why": "MIT-licensed meta-prompting, context engineering, and spec-driven development system for Claude Code."
+    },
+    {
+      "repo": "cline/cline",
+      "stars": 62301,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "coding_agent_product",
+      "why": "Apache-2.0 high-star autonomous coding agent; useful as product/workflow signal for coding-agent UX and safety boundaries."
+    },
+    {
+      "repo": "karpathy/nanoGPT",
+      "stars": 58766,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ml_training_reference",
+      "why": "MIT-licensed minimal GPT training/finetuning reference from Andrej Karpathy."
+    },
+    {
+      "repo": "shanraisshan/claude-code-best-practice",
+      "stars": 54810,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "claude_code_best_practices",
+      "why": "MIT-licensed high-star practice pack for moving from vibe coding to agentic engineering."
+    },
+    {
+      "repo": "crewAIInc/crewAI",
+      "stars": 52173,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "multi_agent_framework",
+      "why": "MIT-licensed high-star multi-agent orchestration framework; useful for role/task/handoff abstractions."
+    },
+    {
+      "repo": "Fission-AI/OpenSpec",
+      "stars": 50675,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "spec_driven_development",
+      "why": "MIT-licensed spec-driven development for AI coding assistants."
+    },
+    {
+      "repo": "run-llama/llama_index",
+      "stars": 49659,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "document_agent_framework",
+      "why": "MIT-licensed high-star document agent/OCR platform; useful for retrieval and document-grounded agent patterns."
+    },
+    {
+      "repo": "addyosmani/agent-skills",
+      "stars": 45613,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "production_agent_skills",
+      "why": "MIT-licensed production-grade engineering skills for AI coding agents."
+    },
+    {
+      "repo": "anthropics/anthropic-cookbook",
+      "stars": 43951,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ai_cookbook",
+      "why": "MIT-licensed Claude cookbook; useful for practical agent/prompt/eval examples and comparison with claude-cookbooks."
+    },
+    {
+      "repo": "anthropics/claude-cookbooks",
+      "stars": 43949,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ai_cookbook",
+      "why": "MIT-licensed Claude usage recipes and notebooks for agent/prompt/eval workflows."
+    },
+    {
+      "repo": "google/styleguide",
+      "stars": 39321,
+      "license_policy": "attribution_review",
+      "license_spdx": "CC-BY-3.0",
+      "source_kind": "style_guides",
+      "why": "Google open-source style guides with verified CC-BY-3.0 license; useful for code/doc quality rules."
+    },
+    {
+      "repo": "google/googletest",
+      "stars": 38647,
+      "license_policy": "allow_extract",
+      "license_spdx": "BSD-3-Clause",
+      "source_kind": "testing_framework_reference",
+      "why": "BSD-licensed GoogleTest docs and examples; useful for testing skill patterns."
+    },
+    {
+      "repo": "wshobson/agents",
+      "stars": 35933,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "agent_plugin_marketplace",
+      "why": "MIT-licensed multi-harness agent/plugin marketplace for Claude Code, Codex, Cursor, OpenCode, and Gemini CLI."
+    },
+    {
+      "repo": "github/awesome-copilot",
+      "stars": 33796,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "copilot_customization_library",
+      "why": "MIT-licensed community library for Copilot instructions, agents, skills, hooks, workflows, and plugins."
+    },
+    {
+      "repo": "continuedev/continue",
+      "stars": 33376,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "ai_coding_checks",
+      "why": "Apache-2.0 high-star source-controlled AI checks and coding-agent workflows; useful for enforceable rules and CI checks."
+    },
+    {
+      "repo": "kepano/obsidian-skills",
+      "stars": 32997,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "obsidian_agent_skills",
+      "why": "MIT-licensed Obsidian skills; directly useful for the user's shared local knowledge system."
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "stars": 32922,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "agent_graph_framework",
+      "why": "MIT-licensed high-star resilient agent graph framework; useful for state, edges, retries, and durable workflows."
+    },
+    {
+      "repo": "karpathy/llm.c",
+      "stars": 30023,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ml_training_reference",
+      "why": "MIT-licensed raw C/CUDA LLM training reference; useful for GPU worker training literacy."
+    },
+    {
+      "repo": "openai/openai-agents-python",
+      "stars": 26641,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "multi_agent_sdk",
+      "why": "MIT-licensed multi-agent workflow framework; useful for handoffs, tools, guardrails, and agent orchestration vocabulary."
+    },
+    {
+      "repo": "karpathy/minGPT",
+      "stars": 24442,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ml_training_reference",
+      "why": "MIT-licensed minimal GPT implementation; useful for teaching transformer training concepts."
+    },
+    {
+      "repo": "VoltAgent/awesome-agent-skills",
+      "stars": 23069,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "agent_skills_directory",
+      "why": "MIT-licensed cross-agent skills directory; useful as a discovery and taxonomy source."
+    },
+    {
+      "repo": "VoltAgent/awesome-claude-skills",
+      "stars": 23069,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "skill_radar_index",
+      "why": "MIT-licensed high-star index of 1000+ Claude skills; use as discovery/radar and overlap signal, not as authority for body extraction."
+    },
+    {
+      "repo": "SuperClaude-Org/SuperClaude_Framework",
+      "stars": 22982,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "claude_code_framework",
+      "why": "MIT-licensed high-star Claude Code configuration framework; useful for commands/personas/workflow taxonomy, with persona hype filtered out."
+    },
+    {
+      "repo": "karpathy/nn-zero-to-hero",
+      "stars": 22715,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ml_training_reference",
+      "why": "MIT-licensed neural networks curriculum from zero to hero."
+    },
+    {
+      "repo": "humanlayer/12-factor-agents",
+      "stars": 22309,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "production_agent_principles",
+      "why": "Production-grade agent principles covering prompt ownership, context windows, tool contracts, control flow, human contact, and small focused agents."
+    },
+    {
+      "repo": "google/eng-practices",
+      "stars": 22163,
+      "license_policy": "attribution_review",
+      "license_spdx": "CC-BY-3.0",
+      "source_kind": "engineering_practices",
+      "why": "Google engineering practices: code review author/reviewer norms with a verified CC-BY-3.0 license."
+    },
+    {
+      "repo": "agentsmd/agents.md",
+      "stars": 21682,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "agent_instruction_standard",
+      "why": "MIT-licensed AGENTS.md open format and examples for coding agents."
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "stars": 21585,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "prompt_agent_eval_security",
+      "why": "MIT-licensed high-star prompt/agent/RAG testing and red-team framework; useful for eval and security gates."
+    },
+    {
+      "repo": "VoltAgent/awesome-claude-code-subagents",
+      "stars": 20514,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "subagent_catalog",
+      "why": "MIT-licensed catalog of Claude Code subagents; useful for role taxonomy and install patterns."
+    },
+    {
+      "repo": "openai/evals",
+      "stars": 18531,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "eval_framework",
+      "why": "MIT-licensed OpenAI eval framework; useful for eval authoring discipline, registry mindset, and model-graded evaluation patterns."
+    },
+    {
+      "repo": "uber-go/guide",
+      "stars": 17513,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "style_guides",
+      "why": "Apache-2.0 Uber Go Style Guide; useful for concrete style-to-review examples."
+    },
+    {
+      "repo": "alirezarezvani/claude-skills",
+      "stars": 16165,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "claude_skills_collection",
+      "why": "MIT-licensed broad Claude Code skills/plugins/commands collection across engineering and productivity."
+    },
+    {
+      "repo": "karpathy/micrograd",
+      "stars": 16005,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "ml_training_reference",
+      "why": "MIT-licensed minimal autograd and neural net teaching implementation."
+    },
+    {
+      "repo": "architecture-decision-record/architecture-decision-record",
+      "stars": 15913,
+      "license_policy": "metadata_only",
+      "license_spdx": "NOASSERTION",
+      "source_kind": "adr_reference_index",
+      "why": "Large ADR examples/reference index; useful as radar for decision-record taxonomy but not clean for extraction because of non-commercial/share-alike terms."
+    },
+    {
+      "repo": "confident-ai/deepeval",
+      "stars": 15687,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "llm_eval_framework",
+      "why": "Apache-2.0 high-star LLM evaluation framework; useful for eval-first quality gates."
+    },
+    {
+      "repo": "coleam00/context-engineering-intro",
+      "stars": 13384,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "context_engineering",
+      "why": "MIT-licensed high-star context engineering intro; strong signal that production AI coding depends on context systems, not prompt tricks."
+    },
+    {
+      "repo": "langchain-ai/open_deep_research",
+      "stars": 11498,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "research_agent_workflow",
+      "why": "Open deep research agent workflow with model/tool separation and benchmark-aware iteration."
+    },
+    {
+      "repo": "humanlayer/humanlayer",
+      "stars": 10894,
+      "license_policy": "metadata_only",
+      "license_spdx": "NOASSERTION",
+      "source_kind": "human_in_loop_agents",
+      "why": "High-star human-in-the-loop agent workflow signal; API license detection is not clean, so use as metadata/radar."
+    },
+    {
+      "repo": "huggingface/skills",
+      "stars": 10574,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "official_agent_skills",
+      "why": "Apache-2.0 Hugging Face ecosystem skills for agents."
+    },
+    {
+      "repo": "google/skills",
+      "stars": 10528,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "official_agent_skills",
+      "why": "Apache-2.0 Google product and technology agent skills."
+    },
+    {
+      "repo": "davidkimai/Context-Engineering",
+      "stars": 9007,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "context_engineering_handbook",
+      "why": "MIT-licensed context engineering handbook inspired by Karpathy-style context design."
+    },
+    {
+      "repo": "gsd-build/gsd-2",
+      "stars": 7740,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "long_context_agent_workflow",
+      "why": "MIT-licensed meta-prompting and long-running autonomous agent workflow system."
+    },
+    {
+      "repo": "rust-lang/rfcs",
+      "stars": 6487,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "rfc_process",
+      "why": "Rust RFCs are a mature public record of design rationale, consensus, lifecycle, and tradeoff documentation."
+    },
+    {
+      "repo": "reactjs/rfcs",
+      "stars": 5789,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "frontend_rfc_process",
+      "why": "React RFCs show design-before-change for a world-scale frontend project and are useful for product/API proposal discipline."
+    },
+    {
+      "repo": "trailofbits/skills",
+      "stars": 5389,
+      "license_policy": "sharealike_review",
+      "license_spdx": "CC-BY-SA-4.0",
+      "source_kind": "security_audit_skills",
+      "why": "Security audit skills with reciprocal license requirements; useful but requires attribution/share-alike handling."
+    },
+    {
+      "repo": "SWE-bench/SWE-bench",
+      "stars": 5010,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "software_engineering_benchmark",
+      "why": "Real-world GitHub issue fixing benchmark; useful for verifier discipline, repo-context realism, and task taxonomy."
+    },
+    {
+      "repo": "buildermethods/agent-os",
+      "stars": 4639,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "standards_and_specs",
+      "why": "MIT-licensed standards/spec injection system for spec-driven development."
+    },
+    {
+      "repo": "open-telemetry/opentelemetry-specification",
+      "stars": 4245,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "specification_quality",
+      "why": "OpenTelemetry specification demonstrates strong versioning, stability, semantic conventions, compatibility, and library guidance."
+    },
+    {
+      "repo": "kubernetes/enhancements",
+      "stars": 3876,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "enhancement_proposal_process",
+      "why": "Kubernetes KEPs connect design docs to stage gates, release tracking, ownership, and cross-team coordination."
+    },
+    {
+      "repo": "Pimzino/claude-code-spec-workflow",
+      "stars": 3744,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "claude_spec_workflow",
+      "why": "MIT-licensed Claude Code requirements-design-tasks-implementation and bugfix workflows."
+    },
+    {
+      "repo": "golang/proposal",
+      "stars": 3447,
+      "license_policy": "allow_extract",
+      "license_spdx": "BSD-3-Clause",
+      "source_kind": "design_doc_process",
+      "why": "Go project design documents show a mature proposal workflow for deciding what deserves design-before-code and how changes are shepherded."
+    },
+    {
+      "repo": "microsoft/code-with-engineering-playbook",
+      "stars": 2663,
+      "license_policy": "attribution_review",
+      "license_spdx": "CC-BY-4.0",
+      "source_kind": "engineering_playbook",
+      "why": "Microsoft field engineering playbook with checklists for code-with engagements, testing, reviews, security, DevOps, documentation, and team execution."
+    },
+    {
+      "repo": "bregman-arie/sre-checklist",
+      "stars": 2539,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "sre_checklist",
+      "why": "Apache-2.0 SRE checklist; useful for long-running machine and service operations."
+    },
+    {
+      "repo": "microsoft/skills",
+      "stars": 2385,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "sdk_grounding_skills",
+      "why": "MIT-licensed skills, MCP servers, custom agents, and Agents.md for SDK grounding."
+    },
+    {
+      "repo": "adr/madr",
+      "stars": 2219,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT OR CC0-1.0",
+      "source_kind": "adr_template_workflow",
+      "why": "Markdown ADR template workflow with lightweight decision records that teams can actually maintain."
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "stars": 2126,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "llm_eval_framework",
+      "why": "MIT-licensed framework for large language model evaluations with task/scorer separation and tool/sandbox-aware evaluation."
+    },
+    {
+      "repo": "expo/skills",
+      "stars": 1972,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "mobile_app_skills",
+      "why": "MIT-licensed Expo/EAS skills, useful as a concrete mobile/app-platform skill pattern."
+    },
+    {
+      "repo": "rust-lang/api-guidelines",
+      "stars": 1329,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "api_design_guidelines",
+      "why": "Rust API guidelines provide crisp, evaluable API quality criteria: naming, ergonomics, future-proofing, errors, documentation, and consistency."
+    },
+    {
+      "repo": "sierra-research/tau2-bench",
+      "stars": 1230,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "tool_agent_user_benchmark",
+      "why": "Benchmark for realistic tool-agent-user interactions; useful for task realism and agent workflow evals."
+    },
+    {
+      "repo": "Gentleman-Programming/agent-teams-lite",
+      "stars": 1206,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "spec_driven_subagents",
+      "why": "MIT-licensed pure Markdown orchestrator plus specialized subagents for structured feature development."
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_evals",
+      "stars": 511,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "llm_eval_collection",
+      "why": "Companion eval collection for Inspect AI; useful for benchmark packaging and reusable eval conventions."
+    },
+    {
+      "repo": "mxyhi/ok-skills",
+      "stars": 357,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "agent_skills_playbooks",
+      "why": "Apache-2.0 curated coding-agent skills and AGENTS.md playbooks across Codex/Claude/Cursor/OpenAI Codex-like tools."
+    },
+    {
+      "repo": "Mathews-Tom/armory",
+      "stars": 236,
+      "license_policy": "allow_extract",
+      "license_spdx": "MIT",
+      "source_kind": "production_agent_skills",
+      "why": "MIT-licensed curated production-grade coding-agent skills; useful for battle-tested workflow comparison."
+    },
+    {
+      "repo": "sourcegraph/CodeScaleBench",
+      "stars": 24,
+      "license_policy": "allow_extract",
+      "license_spdx": "Apache-2.0",
+      "source_kind": "enterprise_coding_agent_benchmark",
+      "why": "Enterprise-scale coding-agent evaluation signal with repository-scale context and auditable task framing."
+    }
+  ]
+}

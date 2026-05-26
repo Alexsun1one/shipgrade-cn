@@ -1,0 +1,47 @@
+{
+  "name": "shipgrade-cn",
+  "display_name": "ShipGrade CN",
+  "version": "v0.1",
+  "generated_at": "2026-05-26T01:45:02Z",
+  "source_dist": "dist/ship-grade-engineering-cn-v0.1",
+  "source_manifest_name": "ship-grade-engineering-cn",
+  "ready_to_git_init": true,
+  "recommended_remote": "https://github.com/<owner>/shipgrade-cn",
+  "github_metadata": {
+    "name": "shipgrade-cn",
+    "description": "中文工程 skill for Codex / Claude Code / Cursor: turn vague Chinese requests into verifiable engineering delivery.",
+    "homepage": "https://github.com/<owner>/shipgrade-cn",
+    "social_preview": "assets/shipgrade-loop.png",
+    "topics": [
+      "agent-skills",
+      "ai-engineering",
+      "codex",
+      "claude-code",
+      "cursor",
+      "developer-tools",
+      "engineering-practices",
+      "llm-evals",
+      "software-engineering",
+      "chinese"
+    ]
+  },
+  "verification": {
+    "publish_preflight": "python3 tools/github_publish_preflight.py --write-docs --run-verify",
+    "local": "python3 tools/shipgrade_verify.py",
+    "local_unix": "bash scripts/verify.sh",
+    "public_stage": "python3 scripts/create-public-stage.py /tmp/shipgrade-cn-public --init-git",
+    "ci": ".github/workflows/validate.yml",
+    "release": "bash scripts/package.sh"
+  },
+  "stats": {
+    "file_count": 99,
+    "total_bytes": 1346622
+  },
+  "forbidden": [
+    ".DS_Store",
+    "._*",
+    "__pycache__",
+    "*.pyc",
+    "secret/token/cookie/session/auth/private key"
+  ]
+}

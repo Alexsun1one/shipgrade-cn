@@ -1,0 +1,18 @@
+{
+  "name": "shipgrade-cn",
+  "description": "中文工程 skill for Codex / Claude Code / Cursor: turn vague Chinese requests into verifiable engineering delivery.",
+  "homepage": "https://github.com/<owner>/shipgrade-cn",
+  "social_preview": "assets/shipgrade-loop.png",
+  "topics": [
+    "agent-skills",
+    "ai-engineering",
+    "codex",
+    "claude-code",
+    "cursor",
+    "developer-tools",
+    "engineering-practices",
+    "llm-evals",
+    "software-engineering",
+    "chinese"
+  ]
+}

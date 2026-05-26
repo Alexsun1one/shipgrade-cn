@@ -1,0 +1,7 @@
+interface:
+  display_name: "ShipGrade CN"
+  short_description: "中文工程交付闭环"
+  default_prompt: "Use $ship-grade-engineering-cn to turn this request into verified engineering delivery with evidence and handoff."
+
+policy:
+  allow_implicit_invocation: true

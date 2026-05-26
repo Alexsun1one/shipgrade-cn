@@ -1,0 +1,34 @@
+# Evidence Index
+
+This file maps public README claims to repository-local evidence. It exists so ShipGrade CN does not ask readers to trust private `outputs/`, local `dist/`, or unpublished release folders.
+
+## Claim Map
+
+| claim | repository-local evidence |
+| --- | --- |
+| Runtime sandbox matrix is real | `docs/sandbox-runtime-cases.md` and `docs/evidence/sandbox_runtime_cases.json` |
+| GitHub publish readiness was checked locally | `docs/GITHUB_PUBLISH_PREFLIGHT.md` and `docs/github-publish-preflight.json` |
+| Runtime smoke covered 5 cloned repos | `docs/runtime-smoke-evidence.md` and `docs/evidence/runtime_smoke_evidence.json` |
+| Real project gauntlet passed 5/5 | `docs/real-project-gauntlet.md`, `docs/real-project-cases/`, and `docs/evidence/real_project_gauntlet.json` |
+| Transcript evidence passed 2/2 | `docs/transcript-evidence.md`, `docs/transcript-cases/`, and `docs/evidence/shipgrade_transcript_evidence.json` |
+| Source structure was analyzed beyond README | `docs/source-depth-dossier.md`, `docs/code-structure-lessons.md`, and `docs/evidence/repo_structure_report.json` |
+| High-signal source discovery stays current | `docs/high-signal-source-radar.md` and `docs/evidence/high_signal_source_radar.json` |
+| Source discovery is converted into action | `docs/source-promotion-queue.md` and `docs/evidence/source_promotion_queue.json` |
+| Source promotion queue is actually audited | `docs/source-promotion-batch.md` and `docs/evidence/source_promotion_batch.json` |
+| Promoted runtime candidates are actually executed | `docs/source-promotion-sandbox-cases.md` and `docs/evidence/source_promotion_sandbox_cases.json` |
+| Deep code case studies inspected runtime clones | `docs/deep-code-case-studies.md` and `docs/evidence/deep_code_case_studies.json` |
+| Source overlap was compressed, not blindly merged | `docs/overlap-decisions.md` and `docs/evidence/source_overlap_report.json` |
+| Adapter metrics are bounded execution evidence | `QUALITY_REPORT.md` and `docs/evidence/qwen_lora_quality_review.json` |
+| Non-self release artifacts have stable hashes | `docs/public-evidence-manifest.json` |
+
+## Verification
+
+```bash
+python3 tools/shipgrade_verify.py
+python3 tools/shipgrade_release_check.py
+python3 scripts/create-public-stage.py /tmp/shipgrade-cn-public --init-git
+```
+
+## Boundary
+
+The evidence here is redacted and public-safe. It does not include private source bodies, credentials, cookies, sessions, auth databases, browser profiles, private keys, or API tokens.

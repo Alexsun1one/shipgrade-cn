@@ -15,5 +15,8 @@ COPYFILE_DISABLE=1 tar \
   --exclude='._*' \
   -czf .release/shipgrade-cn-v0.1.tar.gz \
   .
-shasum -a 256 .release/shipgrade-cn-v0.1.tar.gz > .release/shipgrade-cn-v0.1.tar.gz.sha256
+(
+  cd .release
+  shasum -a 256 shipgrade-cn-v0.1.tar.gz > shipgrade-cn-v0.1.tar.gz.sha256
+)
 cat .release/shipgrade-cn-v0.1.tar.gz.sha256
